@@ -1,6 +1,7 @@
 import Link from "next/link";
 import type { Metadata } from "next";
 import { ChannelBadge } from "@/components/ui/ChannelBadge";
+import { MarketsIcon } from "@/components/ui/SubsidiaryIcons";
 
 export const metadata: Metadata = {
   title: "FAVA Markets — Trade 1,000+ Instruments",
@@ -60,20 +61,25 @@ export default function MarketsPage() {
       {/* Hero */}
       <section className="pt-32 pb-20 max-md:pb-14">
         <div className="max-w-[1160px] mx-auto px-20 max-lg:px-6">
-          <ChannelBadge name="FAVA MARKETS" color="#14B8A6" />
-          <h1 className="text-display-alt text-primary">
-            Trade 1,000+ Instruments
-          </h1>
-          <p className="mt-5 text-secondary max-w-[520px]">
-            Institutional-grade execution, deep liquidity, and transparent
-            pricing across global markets. Built for traders who demand more.
-          </p>
-          <Link
-            href="/markets/accounts"
-            className="inline-block mt-8 text-label text-markets hover:opacity-80 transition-opacity"
-          >
-            Open Live Account &rarr;
-          </Link>
+          <div className="flex items-start justify-between gap-12">
+            <div className="flex-1">
+              <ChannelBadge name="FAVA MARKETS" color="#14B8A6" />
+              <h1 className="text-display-alt text-primary">
+                Trade 1,000+ Instruments
+              </h1>
+              <p className="mt-5 text-secondary max-w-[520px]">
+                Institutional-grade execution, deep liquidity, and transparent
+                pricing across global markets. Built for traders who demand more.
+              </p>
+              <Link
+                href="/markets/accounts"
+                className="inline-block mt-8 text-label text-markets hover:opacity-80 transition-opacity"
+              >
+                Open Live Account &rarr;
+              </Link>
+            </div>
+            <MarketsIcon size={160} className="opacity-20 shrink-0 hidden md:block" />
+          </div>
         </div>
       </section>
 

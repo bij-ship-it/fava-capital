@@ -1,5 +1,6 @@
 import Link from "next/link";
 import { ChannelBadge } from "@/components/ui/ChannelBadge";
+import { WealthIcon } from "@/components/ui/SubsidiaryIcons";
 
 const strategies = [
   {
@@ -37,15 +38,20 @@ export default function WealthPage() {
     <div className="bg-base pt-32">
       {/* Hero */}
       <section className="max-w-[1160px] mx-auto px-20 max-lg:px-6 pb-[140px]">
-        <ChannelBadge name="FAVA WEALTH" color="#059669" />
-        <h1 className="text-display-alt text-primary">
-          Patient Capital. Compounding Returns.
-        </h1>
-        <p className="text-secondary text-[15px] leading-[1.7] font-light max-w-xl mt-6">
-          A multi-strategy, conviction-driven investment fund designed for long-term capital
-          appreciation through disciplined allocation and rigorous risk management.
-        </p>
-        <div className="gold-rule-left w-32 mt-10" />
+        <div className="flex items-start justify-between gap-12">
+          <div className="flex-1">
+            <ChannelBadge name="FAVA WEALTH" color="#059669" />
+            <h1 className="text-display-alt text-primary">
+              Patient Capital. Compounding Returns.
+            </h1>
+            <p className="text-secondary text-[15px] leading-[1.7] font-light max-w-xl mt-6">
+              A multi-strategy, conviction-driven investment fund designed for long-term capital
+              appreciation through disciplined allocation and rigorous risk management.
+            </p>
+            <div className="gold-rule-left w-32 mt-10" />
+          </div>
+          <WealthIcon size={160} className="opacity-20 shrink-0 hidden md:block" />
+        </div>
       </section>
 
       {/* Strategy Overview */}

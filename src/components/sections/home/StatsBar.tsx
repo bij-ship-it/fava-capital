@@ -39,7 +39,7 @@ function CountUp({ target, suffix = "" }: { target: number; suffix?: string }) {
 }
 
 const stats = [
-  { value: 5, suffix: "", label: "Regulated Verticals", sublabel: "across 3 continents" },
+  { value: 6, suffix: "", label: "Regulated Verticals", sublabel: "across 3 continents" },
   { value: 1000, suffix: "+", label: "Tradeable Instruments", sublabel: "FX, crypto, commodities & more" },
   { value: 4, suffix: "", label: "Global Jurisdictions", sublabel: "FCA, DFSA, and beyond" },
   { value: 120, suffix: "+", label: "Team Members", sublabel: "London & Dubai" },

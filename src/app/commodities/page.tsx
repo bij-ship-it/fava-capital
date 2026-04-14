@@ -1,6 +1,7 @@
 import Link from "next/link";
 import type { Metadata } from "next";
 import { ChannelBadge } from "@/components/ui/ChannelBadge";
+import { CommoditiesIcon } from "@/components/ui/SubsidiaryIcons";
 
 export const metadata: Metadata = {
   title: "FAVA Commodities — The Raw Materials of Growth",
@@ -48,15 +49,20 @@ export default function CommoditiesPage() {
       {/* Hero */}
       <section className="pt-32">
         <div className="max-w-[1160px] mx-auto px-20 max-lg:px-6">
-          <ChannelBadge name="FAVA COMMODITIES" color="#D97706" />
-          <h1 className="text-display-alt text-primary max-w-[680px]">
-            The Raw Materials of Growth
-          </h1>
-          <p className="text-secondary mt-6 max-w-[520px] leading-[1.7]">
-            From precious metals to agricultural futures, access the world's
-            most essential markets with institutional execution, deep liquidity,
-            and expert research.
-          </p>
+          <div className="flex items-start justify-between gap-12">
+            <div className="flex-1">
+              <ChannelBadge name="FAVA COMMODITIES" color="#D97706" />
+              <h1 className="text-display-alt text-primary max-w-[680px]">
+                The Raw Materials of Growth
+              </h1>
+              <p className="text-secondary mt-6 max-w-[520px] leading-[1.7]">
+                From precious metals to agricultural futures, access the world&apos;s
+                most essential markets with institutional execution, deep liquidity,
+                and expert research.
+              </p>
+            </div>
+            <CommoditiesIcon size={160} className="opacity-20 shrink-0 hidden md:block" />
+          </div>
         </div>
       </section>
 

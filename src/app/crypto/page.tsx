@@ -1,6 +1,7 @@
 import Link from "next/link";
 import type { Metadata } from "next";
 import { ChannelBadge } from "@/components/ui/ChannelBadge";
+import { DigitalIcon } from "@/components/ui/SubsidiaryIcons";
 
 export const metadata: Metadata = {
   title: "FAVA Digital — The Regulated Exchange | FAVA Capital",
@@ -38,9 +39,11 @@ export default function CryptoPage() {
       {/* Hero */}
       <section className="pt-32 pb-20">
         <div className="max-w-[1160px] mx-auto px-20 max-lg:px-6">
-          <ChannelBadge name="FAVA DIGITAL" color="#6366F1" />
-          <h1 className="text-display-alt text-primary">The Regulated Exchange</h1>
-          <p className="mt-6 text-secondary max-w-[560px] leading-[1.75]">
+          <div className="flex items-start justify-between gap-12">
+            <div className="flex-1">
+              <ChannelBadge name="FAVA DIGITAL" color="#6366F1" />
+              <h1 className="text-display-alt text-primary">The Regulated Exchange</h1>
+              <p className="mt-6 text-secondary max-w-[560px] leading-[1.75]">
             FAVA Digital operates{" "}
             <Link href="https://cryptorio.com" target="_blank" className="text-crypto link-hover">
               Cryptorio
@@ -49,13 +52,16 @@ export default function CryptoPage() {
             deeply liquid, and built for traders who demand security, transparency,
             and serious infrastructure behind every trade.
           </p>
-          <div className="mt-8 flex items-center gap-8">
-            <Link href="/crypto/trade" className="text-label text-crypto link-hover">
-              Start trading on Cryptorio &rarr;
-            </Link>
-            <Link href="/crypto/assets" className="text-label text-secondary link-hover transition-colors hover:text-primary">
-              View supported assets
-            </Link>
+              <div className="mt-8 flex items-center gap-8">
+                <Link href="/crypto/trade" className="text-label text-crypto link-hover">
+                  Start trading on Cryptorio &rarr;
+                </Link>
+                <Link href="/crypto/assets" className="text-label text-secondary link-hover transition-colors hover:text-primary">
+                  View supported assets
+                </Link>
+              </div>
+            </div>
+            <DigitalIcon size={160} className="opacity-20 shrink-0 hidden md:block" />
           </div>
         </div>
       </section>

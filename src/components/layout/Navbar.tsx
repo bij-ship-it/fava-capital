@@ -8,6 +8,7 @@ import { usePathname } from "next/navigation";
 const subsidiaries = [
   { label: "Wealth", href: "/wealth", color: "#059669" },
   { label: "Markets", href: "/markets", color: "#14B8A6" },
+  { label: "Payments", href: "/payments", color: "#0EA5E9" },
   { label: "Digital", href: "/crypto", color: "#6366F1" },
   { label: "Commodities", href: "/commodities", color: "#D97706" },
 ];

@@ -6,6 +6,7 @@ const links = [
   { label: "Markets", href: "/markets" },
   { label: "Digital", href: "/crypto" },
   { label: "Commodities", href: "/commodities" },
+  { label: "Payments", href: "/payments" },
   { label: "About", href: "/about" },
   { label: "Legal", href: "/legal" },
   { label: "Contact", href: "/contact" },

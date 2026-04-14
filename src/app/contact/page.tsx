@@ -103,6 +103,7 @@ export default function ContactPage() {
                 <option value="crypto">FAVA Digital</option>
                 <option value="wealth">FAVA Wealth</option>
                 <option value="commodities">FAVA Commodities</option>
+                <option value="payments">FAVA Payments</option>
               </select>
             </div>
           </div>

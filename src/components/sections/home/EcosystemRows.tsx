@@ -2,6 +2,15 @@
 
 import { motion } from "framer-motion";
 import Link from "next/link";
+import { WealthIcon, MarketsIcon, DigitalIcon, CommoditiesIcon, PaymentsIcon } from "@/components/ui/SubsidiaryIcons";
+
+const iconMap: Record<string, React.ComponentType<{ size?: number; className?: string }>> = {
+  "/wealth": WealthIcon,
+  "/markets": MarketsIcon,
+  "/crypto": DigitalIcon,
+  "/commodities": CommoditiesIcon,
+  "/payments": PaymentsIcon,
+};
 
 const subsidiaries = [
   {
@@ -32,6 +41,19 @@ const subsidiaries = [
   },
   {
     number: "03",
+    name: "FAVA Payments",
+    tagline: "Move money. Everywhere.",
+    descriptor:
+      "Global payment infrastructure powered by Rebasive. Licensed in Africa, the USA, and Canada. Cards, wallets, cross-border transfers, and multi-currency accounts — built for the next billion.",
+    stats: [
+      { label: "Platform", value: "Rebasive" },
+      { label: "Licences", value: "3 regions" },
+    ],
+    href: "/payments",
+    color: "#0EA5E9",
+  },
+  {
+    number: "04",
     name: "FAVA Digital",
     tagline: "The regulated digital asset exchange.",
     descriptor:
@@ -44,7 +66,7 @@ const subsidiaries = [
     color: "#6366F1",
   },
   {
-    number: "04",
+    number: "05",
     name: "FAVA Commodities",
     tagline: "The raw materials of growth.",
     descriptor:
@@ -64,7 +86,7 @@ export function EcosystemRows() {
       <div className="max-w-[1160px] mx-auto px-20 max-lg:px-6">
         <p className="text-label text-secondary mb-4">OUR ECOSYSTEM</p>
         <h2 className="text-subhead text-primary mb-16 max-w-lg">
-          Four verticals. One infrastructure. Every market that matters.
+          Five verticals. One infrastructure. Every market that matters.
         </h2>
 
         <div className="grid grid-cols-1 md:grid-cols-2 gap-px bg-border">
@@ -90,14 +112,25 @@ export function EcosystemRows() {
                   style={{ backgroundColor: sub.color }}
                 />
 
-                {/* Number + Name */}
-                <div className="flex items-center gap-3 mb-4">
-                  <span className="text-caption" style={{ color: sub.color }}>
-                    {sub.number}
-                  </span>
-                  <span className="text-subhead text-primary group-hover:translate-x-0.5 transition-transform duration-300">
-                    {sub.name}
-                  </span>
+                {/* Icon + Name row */}
+                <div className="flex items-start justify-between mb-6">
+                  <div className="flex items-center gap-3">
+                    <span className="text-caption" style={{ color: sub.color }}>
+                      {sub.number}
+                    </span>
+                    <span className="text-subhead text-primary group-hover:translate-x-0.5 transition-transform duration-300">
+                      {sub.name}
+                    </span>
+                  </div>
+                  {(() => {
+                    const Icon = iconMap[sub.href];
+                    return Icon ? (
+                      <Icon
+                        size={48}
+                        className="opacity-30 group-hover:opacity-50 transition-opacity duration-300"
+                      />
+                    ) : null;
+                  })()}
                 </div>
 
                 {/* Tagline */}
