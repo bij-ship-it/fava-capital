@@ -1,5 +1,7 @@
 "use client";
 
+import { ChannelBadge } from "@/components/ui/ChannelBadge";
+
 const orderBookBids = [
   { price: "67,430.20", size: "0.4521", total: "30,504.18" },
   { price: "67,428.50", size: "1.2034", total: "81,128.72" },
@@ -25,6 +27,7 @@ export default function TradePage() {
     <div className="min-h-screen pt-32 pb-16">
       <div className="max-w-[1160px] mx-auto px-20 max-lg:px-6">
         {/* Header */}
+        <ChannelBadge name="FAVA DIGITAL" color="#6366F1" />
         <div className="flex items-baseline justify-between mb-6 border-b border-border pb-4">
           <div className="flex items-baseline gap-4">
             <span className="text-label text-secondary">BTC / USD</span>

@@ -1,5 +1,6 @@
 import Link from "next/link";
 import type { Metadata } from "next";
+import { ChannelBadge } from "@/components/ui/ChannelBadge";
 
 export const metadata: Metadata = {
   title: "FAVA Markets — Trade 1,000+ Instruments",
@@ -59,7 +60,7 @@ export default function MarketsPage() {
       {/* Hero */}
       <section className="pt-32 pb-20 max-md:pb-14">
         <div className="max-w-[1160px] mx-auto px-20 max-lg:px-6">
-          <p className="text-label text-markets mb-6">FAVA Markets</p>
+          <ChannelBadge name="FAVA MARKETS" color="#14B8A6" />
           <h1 className="text-display-alt text-primary">
             Trade 1,000+ Instruments
           </h1>

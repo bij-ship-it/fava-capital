@@ -2,6 +2,7 @@
 
 import { useState } from "react";
 import Link from "next/link";
+import { ChannelBadge } from "@/components/ui/ChannelBadge";
 
 type AccountType = "individual" | "corporate";
 
@@ -18,7 +19,7 @@ export default function ApplyPage() {
     <div className="min-h-screen bg-base pt-32">
       <div className="max-w-[1160px] mx-auto px-20 max-lg:px-6">
         {/* Header */}
-        <p className="text-label text-secondary mb-6">01 — Get Started</p>
+        <ChannelBadge name="FAVA COMMODITIES" color="#D97706" />
         <h1 className="text-display-alt text-primary">Open Your Account</h1>
         <p className="text-secondary mt-4 max-w-[520px] leading-[1.7]">
           Begin trading global commodities markets in minutes. Complete the

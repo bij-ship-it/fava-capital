@@ -1,5 +1,6 @@
 import Link from "next/link";
 import type { Metadata } from "next";
+import { ChannelBadge } from "@/components/ui/ChannelBadge";
 
 export const metadata: Metadata = {
   title: "FAVA Markets — Transparent Pricing",
@@ -45,7 +46,7 @@ export default function PricingPage() {
     <div className="min-h-screen pt-32">
       <div className="max-w-[1160px] mx-auto px-20 max-lg:px-6">
         {/* Header */}
-        <p className="text-label text-markets mb-6">FAVA Markets</p>
+        <ChannelBadge name="FAVA MARKETS" color="#14B8A6" />
         <h1 className="text-display-alt text-primary mb-4">Pricing</h1>
         <p className="text-secondary max-w-[520px] mb-20">
           Transparent pricing with no hidden fees. What you see is what you

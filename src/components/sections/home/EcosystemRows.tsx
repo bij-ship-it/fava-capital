@@ -7,28 +7,52 @@ const subsidiaries = [
   {
     number: "01",
     name: "FAVA Wealth",
-    descriptor: "Multi-strategy investment fund",
+    tagline: "Patient capital. Compounding returns.",
+    descriptor:
+      "Multi-strategy investment fund with a conviction-driven mandate. Designed for long-horizon investors who value disciplined allocation and institutional-grade risk management.",
+    stats: [
+      { label: "Strategy", value: "Multi-asset" },
+      { label: "Min. Investment", value: "$250K" },
+    ],
     href: "/wealth",
     color: "#059669",
   },
   {
     number: "02",
     name: "FAVA Markets",
-    descriptor: "Institutional FX & CFD execution",
+    tagline: "Institutional execution for every trader.",
+    descriptor:
+      "CFD and FX brokerage offering 1,000+ instruments with raw spreads from 0.0 pips. Co-located infrastructure in LD4, NY4, and TY3 for sub-30ms execution.",
+    stats: [
+      { label: "Instruments", value: "1,000+" },
+      { label: "Spreads from", value: "0.0 pips" },
+    ],
     href: "/markets",
     color: "#14B8A6",
   },
   {
     number: "03",
-    name: "Cryptorio",
-    descriptor: "The regulated digital asset exchange",
+    name: "FAVA Digital",
+    tagline: "The regulated digital asset exchange.",
+    descriptor:
+      "Institutional-grade crypto exchange built on our Cryptorio platform. Fully licensed, deeply liquid, with 95% cold storage and 1:1 proof of reserves.",
+    stats: [
+      { label: "Platform", value: "Cryptorio" },
+      { label: "Cold storage", value: "95%" },
+    ],
     href: "/crypto",
     color: "#6366F1",
   },
   {
     number: "04",
     name: "FAVA Commodities",
-    descriptor: "Physical & derivative commodity access",
+    tagline: "The raw materials of growth.",
+    descriptor:
+      "Physical and derivative exposure across precious metals, energy, base metals, and agriculture. Expert research, transparent pricing, and global market access.",
+    stats: [
+      { label: "Markets", value: "40+" },
+      { label: "Coverage", value: "24/5" },
+    ],
     href: "/commodities",
     color: "#D97706",
   },
@@ -36,55 +60,76 @@ const subsidiaries = [
 
 export function EcosystemRows() {
   return (
-    <section className="py-[140px] max-md:py-20">
+    <section id="ecosystem" className="py-[140px] max-md:py-20">
       <div className="max-w-[1160px] mx-auto px-20 max-lg:px-6">
-        <p className="text-label text-secondary mb-16">01 — OUR ECOSYSTEM</p>
+        <p className="text-label text-secondary mb-4">01 — OUR ECOSYSTEM</p>
+        <h2 className="text-subhead text-primary mb-16 max-w-lg">
+          Four verticals. One infrastructure. Every market that matters.
+        </h2>
 
-        <div className="border-t border-border">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-px bg-border">
           {subsidiaries.map((sub, i) => (
             <motion.div
               key={sub.number}
-              initial={{ opacity: 0, x: -12 }}
-              whileInView={{ opacity: 1, x: 0 }}
+              initial={{ opacity: 0, y: 16 }}
+              whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true, margin: "-40px" }}
               transition={{
                 duration: 0.6,
-                ease: [0.33, 1, 0.68, 1],
+                ease: [0.33, 1, 0.68, 1] as const,
                 delay: i * 0.1,
               }}
             >
               <Link
                 href={sub.href}
-                className="group flex items-center py-6 border-b border-border transition-colors duration-300 hover:bg-surface relative"
+                className="group block bg-base p-8 md:p-10 h-full transition-colors duration-300 hover:bg-surface relative"
               >
-                {/* Left accent border on hover */}
+                {/* Top accent line */}
                 <div
-                  className="absolute left-0 top-0 bottom-0 w-[2px] scale-y-0 group-hover:scale-y-100 transition-transform duration-300"
+                  className="absolute top-0 left-0 right-0 h-[2px] scale-x-0 group-hover:scale-x-100 transition-transform duration-500 origin-left"
                   style={{ backgroundColor: sub.color }}
                 />
 
-                {/* Dot + Number */}
-                <div className="flex items-center gap-2 w-16 shrink-0 pl-4">
-                  <div
-                    className="w-1 h-1 rounded-full opacity-0 group-hover:opacity-100 transition-opacity duration-300"
-                    style={{ backgroundColor: sub.color }}
-                  />
-                  <span className="text-caption text-gold">{sub.number}</span>
+                {/* Number + Name */}
+                <div className="flex items-center gap-3 mb-4">
+                  <span className="text-caption" style={{ color: sub.color }}>
+                    {sub.number}
+                  </span>
+                  <span className="text-subhead text-primary group-hover:translate-x-0.5 transition-transform duration-300">
+                    {sub.name}
+                  </span>
                 </div>
 
-                {/* Name */}
-                <span className="text-subhead text-primary w-56 max-md:w-40 shrink-0 transition-transform duration-300 group-hover:translate-x-1">
-                  {sub.name}
-                </span>
+                {/* Tagline */}
+                <p className="text-accent text-primary/70 mb-4">
+                  {sub.tagline}
+                </p>
 
-                {/* Descriptor */}
-                <span className="text-secondary flex-1 max-md:hidden">
+                {/* Description */}
+                <p className="text-[14px] text-secondary leading-[1.7] mb-8">
                   {sub.descriptor}
-                </span>
+                </p>
 
-                {/* Arrow */}
-                <span className="text-tertiary group-hover:text-gold transition-all duration-300 group-hover:translate-x-2 ml-auto pr-4">
-                  →
+                {/* Stats */}
+                <div className="flex gap-8 mb-6">
+                  {sub.stats.map((stat) => (
+                    <div key={stat.label}>
+                      <p className="text-caption text-tertiary mb-1">
+                        {stat.label}
+                      </p>
+                      <p className="text-[15px] text-primary font-light">
+                        {stat.value}
+                      </p>
+                    </div>
+                  ))}
+                </div>
+
+                {/* CTA */}
+                <span
+                  className="text-label transition-all duration-300 group-hover:translate-x-1"
+                  style={{ color: sub.color }}
+                >
+                  Learn more &rarr;
                 </span>
               </Link>
             </motion.div>

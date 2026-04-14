@@ -1,5 +1,6 @@
 import Link from "next/link";
 import type { Metadata } from "next";
+import { ChannelBadge } from "@/components/ui/ChannelBadge";
 
 export const metadata: Metadata = {
   title: "FAVA Markets — Account Types",
@@ -30,7 +31,7 @@ export default function AccountsPage() {
     <div className="min-h-screen pt-32">
       <div className="max-w-[1160px] mx-auto px-20 max-lg:px-6">
         {/* Header */}
-        <p className="text-label text-markets mb-6">FAVA Markets</p>
+        <ChannelBadge name="FAVA MARKETS" color="#14B8A6" />
         <h1 className="text-display-alt text-primary mb-4">Account Types</h1>
         <p className="text-secondary max-w-[520px] mb-20">
           Three tiers designed for different trading profiles. All accounts

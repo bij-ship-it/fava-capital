@@ -4,7 +4,7 @@ import Image from "next/image";
 const links = [
   { label: "Wealth", href: "/wealth" },
   { label: "Markets", href: "/markets" },
-  { label: "Cryptorio", href: "/crypto" },
+  { label: "Digital", href: "/crypto" },
   { label: "Commodities", href: "/commodities" },
   { label: "About", href: "/about" },
   { label: "Legal", href: "/legal" },

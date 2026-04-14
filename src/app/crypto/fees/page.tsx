@@ -1,7 +1,8 @@
 import type { Metadata } from "next";
+import { ChannelBadge } from "@/components/ui/ChannelBadge";
 
 export const metadata: Metadata = {
-  title: "Fee Schedule — Cryptorio | FAVA Capital",
+  title: "Fee Schedule — FAVA Digital | FAVA Capital",
   description:
     "Transparent, competitive fee structure with volume-based discounts. Maker-taker model with VIP tiers for high-volume traders.",
 };
@@ -27,7 +28,7 @@ export default function FeesPage() {
     <div className="min-h-screen pt-32">
       <div className="max-w-[1160px] mx-auto px-20 max-lg:px-6">
         {/* Header */}
-        <p className="text-label text-secondary mb-6">01 — Fees</p>
+        <ChannelBadge name="FAVA DIGITAL" color="#6366F1" />
         <h1 className="text-display-alt text-primary mb-6">Fee Schedule</h1>
         <p className="text-secondary max-w-[520px] mb-20">
           Transparent, volume-based pricing. The more you trade, the less you pay.

@@ -7,101 +7,73 @@ function easeOutExpo(t: number): number {
   return t === 1 ? 1 : 1 - Math.pow(2, -10 * t);
 }
 
-interface Metric {
-  target: number;
-  suffix: string;
-  prefix: string;
-  label: string;
-  countUp: boolean;
-}
-
-const metrics: Metric[] = [
-  { target: 5, suffix: "", prefix: "", label: "Regulated Verticals", countUp: true },
-  { target: 1000, suffix: "+", prefix: "", label: "Tradeable Instruments", countUp: true },
-  { target: 0, suffix: "", prefix: "24/7", label: "Market Access", countUp: false },
-  { target: 4, suffix: "", prefix: "", label: "Global Jurisdictions", countUp: true },
-];
-
-function CountUpNumber({ metric, start, delay }: { metric: Metric; start: boolean; delay: number }) {
-  const [display, setDisplay] = useState(metric.countUp ? "0" : metric.prefix);
+function CountUp({ target, suffix = "" }: { target: number; suffix?: string }) {
+  const ref = useRef<HTMLSpanElement>(null);
+  const isInView = useInView(ref, { once: true, margin: "-40px" });
+  const [value, setValue] = useState(0);
 
   const animate = useCallback(() => {
-    if (!metric.countUp) return;
-
     const duration = 1500;
-    let startTime: number | null = null;
-    let rafId: number;
+    const start = performance.now();
 
-    const step = (timestamp: number) => {
-      if (!startTime) startTime = timestamp;
-      const elapsed = timestamp - startTime;
+    function tick(now: number) {
+      const elapsed = now - start;
       const progress = Math.min(elapsed / duration, 1);
-      const eased = easeOutExpo(progress);
-      const current = Math.round(eased * metric.target);
+      setValue(Math.round(easeOutExpo(progress) * target));
+      if (progress < 1) requestAnimationFrame(tick);
+    }
 
-      if (metric.target >= 1000) {
-        setDisplay(current.toLocaleString() + (progress === 1 ? metric.suffix : ""));
-      } else {
-        setDisplay(String(current) + (progress === 1 ? metric.suffix : ""));
-      }
-
-      if (progress < 1) {
-        rafId = requestAnimationFrame(step);
-      }
-    };
-
-    const timeout = setTimeout(() => {
-      rafId = requestAnimationFrame(step);
-    }, delay);
-
-    return () => {
-      clearTimeout(timeout);
-      if (rafId) cancelAnimationFrame(rafId);
-    };
-  }, [metric, delay]);
+    requestAnimationFrame(tick);
+  }, [target]);
 
   useEffect(() => {
-    if (!start) return;
-    return animate();
-  }, [start, animate]);
-
-  return <>{display}</>;
-}
-
-export function StatsBar() {
-  const ref = useRef<HTMLDivElement>(null);
-  const isInView = useInView(ref, { once: true, margin: "-40px" });
+    if (isInView) animate();
+  }, [isInView, animate]);
 
   return (
-    <section className="py-[140px] max-md:py-20">
-      <div className="max-w-[1160px] mx-auto px-20 max-lg:px-6">
-        <p className="text-label text-secondary mb-16">02 — BY THE NUMBERS</p>
+    <span ref={ref}>
+      {value.toLocaleString()}
+      {suffix}
+    </span>
+  );
+}
 
-        <div ref={ref} className="grid grid-cols-4 max-md:grid-cols-2 gap-y-12">
-          {metrics.map((metric, i) => (
+const stats = [
+  { value: 5, suffix: "", label: "Regulated Verticals", sublabel: "across 3 continents" },
+  { value: 1000, suffix: "+", label: "Tradeable Instruments", sublabel: "FX, crypto, commodities & more" },
+  { value: 4, suffix: "", label: "Global Jurisdictions", sublabel: "FCA, DFSA, and beyond" },
+  { value: 120, suffix: "+", label: "Team Members", sublabel: "London & Dubai" },
+];
+
+export function StatsBar() {
+  return (
+    <section className="border-t border-b border-border">
+      <div className="max-w-[1160px] mx-auto px-20 max-lg:px-6">
+        <div className="grid grid-cols-2 md:grid-cols-4">
+          {stats.map((stat, i) => (
             <motion.div
-              key={metric.label}
-              className="flex flex-col items-center text-center"
-              initial={{ opacity: 0, y: 16 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true, margin: "-40px" }}
-              transition={{
-                duration: 0.6,
-                ease: [0.33, 1, 0.68, 1],
-                delay: i * 0.08,
-              }}
+              key={stat.label}
+              className={`py-14 max-md:py-10 ${
+                i < stats.length - 1 ? "md:border-r border-border" : ""
+              } ${i % 2 === 0 && i < 2 ? "max-md:border-r" : ""} ${
+                i < 2 ? "max-md:border-b border-border" : ""
+              }`}
+              initial={{ opacity: 0 }}
+              whileInView={{ opacity: 1 }}
+              viewport={{ once: true }}
+              transition={{ delay: i * 0.15, duration: 0.6 }}
             >
-              <span className="text-numbers text-primary">
-                <CountUpNumber
-                  metric={metric}
-                  start={isInView}
-                  delay={i * 150}
-                />
-              </span>
-              <div className="gold-rule-left w-8 mt-3 mx-auto" />
-              <span className="text-caption text-secondary mt-4">
-                {metric.label}
-              </span>
+              <div className={`${i > 0 ? "md:pl-10" : ""} ${i % 2 !== 0 ? "max-md:pl-6" : ""}`}>
+                <p className="text-numbers text-primary mb-1">
+                  <CountUp target={stat.value} suffix={stat.suffix} />
+                </p>
+                <p className="text-caption text-secondary mt-2">
+                  {stat.label}
+                </p>
+                <p className="text-[12px] text-tertiary mt-1">
+                  {stat.sublabel}
+                </p>
+              </div>
             </motion.div>
           ))}
         </div>

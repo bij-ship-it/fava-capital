@@ -1,7 +1,8 @@
 import type { Metadata } from "next";
+import { ChannelBadge } from "@/components/ui/ChannelBadge";
 
 export const metadata: Metadata = {
-  title: "API Documentation — Cryptorio | FAVA Capital",
+  title: "API Documentation — FAVA Digital | FAVA Capital",
   description:
     "RESTful and WebSocket APIs for programmatic trading. Low-latency market data, order management, and account operations.",
 };
@@ -99,10 +100,10 @@ export default function APIPage() {
     <div className="min-h-screen pt-32">
       <div className="max-w-[1160px] mx-auto px-20 max-lg:px-6">
         {/* Header */}
-        <p className="text-label text-secondary mb-6">01 — Developers</p>
+        <ChannelBadge name="FAVA DIGITAL" color="#6366F1" />
         <h1 className="text-display-alt text-primary mb-6">API Documentation</h1>
         <p className="text-secondary max-w-[560px] mb-20">
-          Programmatic access to Cryptorio&apos;s trading engine. Build bots,
+          Programmatic access to FAVA Digital&apos;s trading engine. Build bots,
           integrate market data, and manage your portfolio through our RESTful
           and WebSocket APIs.
         </p>

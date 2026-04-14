@@ -26,7 +26,7 @@ const team = [
 const milestones = [
   { year: "2024", description: "FAVA Capital established as a next-generation holding company with a mandate to build vertically integrated financial infrastructure." },
   { year: "2025", description: "FAVA Markets goes live, offering institutional-grade FX brokerage with proprietary execution technology." },
-  { year: "2026", description: "Cryptorio, FAVA Wealth, and FAVA Commodities launched in rapid succession, completing the core ecosystem." },
+  { year: "2026", description: "FAVA Digital, FAVA Wealth, and FAVA Commodities launched in rapid succession, completing the core ecosystem." },
 ];
 
 export default function AboutPage() {

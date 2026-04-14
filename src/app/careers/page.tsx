@@ -29,7 +29,7 @@ const positions = [
   },
   {
     title: "Blockchain Engineer",
-    subsidiary: "Cryptorio",
+    subsidiary: "FAVA Digital",
     location: "Remote / Dubai",
     type: "Full-time",
     color: "text-crypto",

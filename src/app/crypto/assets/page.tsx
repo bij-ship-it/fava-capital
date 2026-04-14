@@ -1,5 +1,7 @@
 "use client";
 
+import { ChannelBadge } from "@/components/ui/ChannelBadge";
+
 const assets = [
   { symbol: "BTC", name: "Bitcoin", price: "$67,432.18", change: "+2.41%", up: true, marketCap: "$1.32T", pairs: "USD, EUR, USDT, USDC" },
   { symbol: "ETH", name: "Ethereum", price: "$3,891.05", change: "+1.87%", up: true, marketCap: "$468.2B", pairs: "USD, EUR, USDT, BTC" },
@@ -18,7 +20,7 @@ export default function AssetsPage() {
     <div className="min-h-screen pt-32 pb-16">
       <div className="max-w-[1160px] mx-auto px-20 max-lg:px-6">
         {/* Header */}
-        <p className="text-label text-secondary mb-6">01 — Assets</p>
+        <ChannelBadge name="FAVA DIGITAL" color="#6366F1" />
         <h1 className="text-display-alt text-primary mb-6">Supported Assets</h1>
         <p className="text-secondary max-w-[520px] mb-12">
           Trade over 50 digital assets with deep liquidity and competitive spreads

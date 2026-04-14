@@ -5,7 +5,7 @@ import Link from "next/link";
 
 const categoryColors: Record<string, string> = {
   MARKETS: "text-markets",
-  CRYPTO: "text-crypto",
+  DIGITAL: "text-crypto",
   COMMODITIES: "text-commodities",
 };
 
@@ -15,17 +15,20 @@ const insights = [
     date: "12 APR 2026",
     title:
       "FAVA Markets Launches Zero-Commission Trading Across 400+ Instruments",
+    excerpt: "Retail and professional traders now access 400+ instruments with zero commission on standard accounts.",
   },
   {
-    category: "CRYPTO",
+    category: "DIGITAL",
     date: "08 APR 2026",
-    title: "Cryptorio Achieves SOC2 Type II Compliance Certification",
+    title: "FAVA Digital Achieves SOC2 Type II Compliance Certification",
+    excerpt: "Our Cryptorio exchange platform passes the industry's most rigorous operational security audit.",
   },
   {
     category: "COMMODITIES",
     date: "01 APR 2026",
     title:
       "Q1 Outlook: Supply Constraints Reshape Global Commodity Pricing",
+    excerpt: "Our research team analyses the macro forces driving unprecedented moves across energy and metals.",
   },
 ];
 
@@ -35,7 +38,7 @@ export function LatestInsights() {
       <div className="max-w-[1160px] mx-auto px-20 max-lg:px-6">
         {/* Header row */}
         <div className="flex items-center justify-between mb-16">
-          <p className="text-label text-secondary">03 — INSIGHTS</p>
+          <p className="text-label text-secondary">04 — INSIGHTS</p>
           <Link href="/news" className="text-caption text-gold link-hover">
             View all →
           </Link>
@@ -69,6 +72,9 @@ export function LatestInsights() {
                   </p>
                   <p className="text-subhead text-primary transition-colors duration-300 group-hover:text-gold">
                     {item.title}
+                  </p>
+                  <p className="text-[13px] text-secondary mt-2 max-w-xl">
+                    {item.excerpt}
                   </p>
                 </div>
               </Link>

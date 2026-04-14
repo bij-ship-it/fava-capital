@@ -1,4 +1,5 @@
 import Link from "next/link";
+import { ChannelBadge } from "@/components/ui/ChannelBadge";
 
 const strategies = [
   {
@@ -36,6 +37,7 @@ export default function WealthPage() {
     <div className="bg-base pt-32">
       {/* Hero */}
       <section className="max-w-[1160px] mx-auto px-20 max-lg:px-6 pb-[140px]">
+        <ChannelBadge name="FAVA WEALTH" color="#059669" />
         <h1 className="text-display-alt text-primary">
           Patient Capital. Compounding Returns.
         </h1>

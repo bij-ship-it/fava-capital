@@ -100,7 +100,7 @@ export default function ContactPage() {
                 <option value="">Select subsidiary...</option>
                 <option value="capital">FAVA Capital (Group)</option>
                 <option value="markets">FAVA Markets</option>
-                <option value="crypto">Cryptorio</option>
+                <option value="crypto">FAVA Digital</option>
                 <option value="wealth">FAVA Wealth</option>
                 <option value="commodities">FAVA Commodities</option>
               </select>

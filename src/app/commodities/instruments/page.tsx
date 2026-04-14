@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { ChannelBadge } from "@/components/ui/ChannelBadge";
 
 export const metadata: Metadata = {
   title: "Instrument Specifications — FAVA Commodities",
@@ -230,9 +231,7 @@ export default function InstrumentsPage() {
     <div className="min-h-screen bg-base pt-32">
       <div className="max-w-[1160px] mx-auto px-20 max-lg:px-6">
         {/* Header */}
-        <p className="text-label text-secondary mb-6">
-          01 — Specifications
-        </p>
+        <ChannelBadge name="FAVA COMMODITIES" color="#D97706" />
         <h1 className="text-display-alt text-primary">
           Instrument Specifications
         </h1>

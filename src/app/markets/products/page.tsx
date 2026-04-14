@@ -1,6 +1,7 @@
 "use client";
 
 import { useState } from "react";
+import { ChannelBadge } from "@/components/ui/ChannelBadge";
 
 const categories = ["FX", "Indices", "Shares", "Commodities", "Crypto"] as const;
 type Category = (typeof categories)[number];
@@ -66,7 +67,7 @@ export default function ProductsPage() {
     <div className="min-h-screen pt-32">
       <div className="max-w-[1160px] mx-auto px-20 max-lg:px-6">
         {/* Header */}
-        <p className="text-label text-markets mb-6">FAVA Markets</p>
+        <ChannelBadge name="FAVA MARKETS" color="#14B8A6" />
         <h1 className="text-display-alt text-primary mb-4">Products</h1>
         <p className="text-secondary max-w-[520px] mb-16">
           Trade 1,000+ instruments across FX, indices, shares, commodities, and

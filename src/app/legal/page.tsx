@@ -85,8 +85,8 @@ const content: Record<string, { title: string; sections: { heading: string; body
         body: "FAVA Markets Ltd is authorised and regulated by the Financial Conduct Authority (FCA) under firm reference number 000000. FAVA Markets Ltd is authorised to provide execution-only brokerage services in foreign exchange, contracts for difference, and other derivative instruments. Client funds are held in segregated accounts with tier-one banking institutions in accordance with FCA Client Assets Sourcebook (CASS) rules.",
       },
       {
-        heading: "Cryptorio Digital Assets Ltd",
-        body: "Cryptorio Digital Assets Ltd is registered with the Financial Conduct Authority (FCA) as a cryptoasset business under the Money Laundering, Terrorist Financing and Transfer of Funds Regulations 2017. Registration number: 000000. Cryptorio operates in compliance with applicable anti-money laundering (AML) and counter-terrorist financing (CTF) requirements. Cryptoassets are not covered by the Financial Services Compensation Scheme (FSCS).",
+        heading: "FAVA Digital Assets Ltd",
+        body: "FAVA Digital Assets Ltd is registered with the Financial Conduct Authority (FCA) as a cryptoasset business under the Money Laundering, Terrorist Financing and Transfer of Funds Regulations 2017. Registration number: 000000. FAVA Digital operates in compliance with applicable anti-money laundering (AML) and counter-terrorist financing (CTF) requirements. Cryptoassets are not covered by the Financial Services Compensation Scheme (FSCS).",
       },
       {
         heading: "FAVA Wealth Management Ltd",

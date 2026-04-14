@@ -1,5 +1,6 @@
 import Link from "next/link";
 import type { Metadata } from "next";
+import { ChannelBadge } from "@/components/ui/ChannelBadge";
 
 export const metadata: Metadata = {
   title: "FAVA Commodities — The Raw Materials of Growth",
@@ -47,9 +48,7 @@ export default function CommoditiesPage() {
       {/* Hero */}
       <section className="pt-32">
         <div className="max-w-[1160px] mx-auto px-20 max-lg:px-6">
-          <p className="text-label text-secondary mb-6">
-            01 — FAVA Commodities
-          </p>
+          <ChannelBadge name="FAVA COMMODITIES" color="#D97706" />
           <h1 className="text-display-alt text-primary max-w-[680px]">
             The Raw Materials of Growth
           </h1>

@@ -1,7 +1,8 @@
 import type { Metadata } from "next";
+import { ChannelBadge } from "@/components/ui/ChannelBadge";
 
 export const metadata: Metadata = {
-  title: "Security — Cryptorio | FAVA Capital",
+  title: "Security — FAVA Digital | FAVA Capital",
   description:
     "Institutional-grade security protecting your digital assets. Cold storage, proof of reserves, SOC2 compliance, and comprehensive insurance coverage.",
 };
@@ -44,7 +45,7 @@ export default function SecurityPage() {
     <div className="min-h-screen pt-32">
       <div className="max-w-[1160px] mx-auto px-20 max-lg:px-6">
         {/* Header */}
-        <p className="text-label text-secondary mb-6">01 — Security</p>
+        <ChannelBadge name="FAVA DIGITAL" color="#6366F1" />
         <h1 className="text-display-alt text-primary mb-6">Institutional-Grade Protection</h1>
         <p className="text-secondary max-w-[560px] mb-20">
           Your assets are protected by multiple layers of security, insurance, and

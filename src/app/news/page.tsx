@@ -20,7 +20,7 @@ const articles = [
   },
   {
     category: "Crypto",
-    title: "Cryptorio Receives Full FCA Cryptoasset Registration",
+    title: "FAVA Digital Receives Full FCA Cryptoasset Registration",
     date: "28 March 2026",
   },
   {
@@ -40,7 +40,7 @@ const articles = [
   },
   {
     category: "Crypto",
-    title: "Cryptorio Partners with Leading Custody Provider for Institutional Storage",
+    title: "FAVA Digital Partners with Leading Custody Provider for Institutional Storage",
     date: "5 February 2026",
   },
 ];
