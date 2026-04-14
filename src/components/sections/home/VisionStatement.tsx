@@ -4,21 +4,28 @@ import { motion } from "framer-motion";
 
 export function VisionStatement() {
   return (
-    <section className="bg-obsidian relative py-32 px-6">
-      <div className="grain absolute inset-0 pointer-events-none" />
-      <div className="relative mx-auto max-w-4xl text-center">
-        <motion.div
-          initial={{ opacity: 0, y: 30 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true, margin: "-100px" }}
-          transition={{ duration: 0.8, ease: "easeOut" }}
+    <section className="min-h-[50vh] flex items-center justify-center bg-base">
+      <div className="max-w-4xl mx-auto px-20 max-lg:px-6 text-center">
+        <motion.p
+          className="text-display text-primary"
+          initial={{ opacity: 0 }}
+          whileInView={{ opacity: 1 }}
+          viewport={{ once: true, margin: "-40px" }}
+          transition={{ duration: 0.6, ease: [0.33, 1, 0.68, 1] }}
         >
-          <div className="gold-rule w-24 mx-auto mb-12" />
-          <blockquote className="font-[family-name:var(--font-display)] text-3xl md:text-5xl lg:text-6xl font-light text-ivory leading-tight">
-            We don&apos;t predict markets. We build the infrastructure that
-            moves them.
-          </blockquote>
-        </motion.div>
+          We don&rsquo;t predict markets{" "}
+          <span className="text-gold">—</span> we build the infrastructure
+          that moves them.
+        </motion.p>
+
+        <motion.div
+          className="gold-rule w-full mt-12"
+          initial={{ scaleX: 0 }}
+          whileInView={{ scaleX: 1 }}
+          viewport={{ once: true, margin: "-40px" }}
+          transition={{ duration: 1, ease: [0.33, 1, 0.68, 1] }}
+          style={{ transformOrigin: "center" }}
+        />
       </div>
     </section>
   );

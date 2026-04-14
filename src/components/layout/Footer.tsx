@@ -1,99 +1,64 @@
 import Link from "next/link";
 import Image from "next/image";
 
-const footerColumns = [
-  {
-    title: "Subsidiaries",
-    links: [
-      { label: "FAVA Wealth", href: "/wealth" },
-      { label: "FAVA Markets", href: "/markets" },
-      { label: "Cryptorio", href: "/crypto" },
-      { label: "FAVA Commodities", href: "/commodities" },
-    ],
-  },
-  {
-    title: "Company",
-    links: [
-      { label: "About", href: "/about" },
-      { label: "Careers", href: "/careers" },
-      { label: "Newsroom", href: "/news" },
-      { label: "Partners", href: "/partners" },
-    ],
-  },
-  {
-    title: "Legal",
-    links: [
-      { label: "Terms of Service", href: "/legal" },
-      { label: "Privacy Policy", href: "/legal" },
-      { label: "Risk Disclosures", href: "/legal" },
-      { label: "Regulatory Licences", href: "/legal" },
-    ],
-  },
-  {
-    title: "Connect",
-    links: [
-      { label: "Contact Us", href: "/contact" },
-      { label: "LinkedIn", href: "#" },
-      { label: "Twitter / X", href: "#" },
-      { label: "Telegram", href: "#" },
-    ],
-  },
+const links = [
+  { label: "Wealth", href: "/wealth" },
+  { label: "Markets", href: "/markets" },
+  { label: "Cryptorio", href: "/crypto" },
+  { label: "Commodities", href: "/commodities" },
+  { label: "About", href: "/about" },
+  { label: "Legal", href: "/legal" },
+  { label: "Contact", href: "/contact" },
 ];
 
 export function Footer() {
   return (
-    <footer className="border-t border-white/5 bg-void">
-      <div className="mx-auto max-w-7xl px-6 py-16">
-        {/* Top — Logo & tagline */}
-        <div className="mb-12 flex flex-col items-start gap-4">
-          <Image
-            src="/images/fava-lattice-logo-dark-bg.svg"
-            alt="FAVA Capital"
-            width={150}
-            height={61}
-          />
-          <p className="font-[family-name:var(--font-display)] text-lg font-light italic text-platinum/50">
-            Building Empires. Compounding Futures.
-          </p>
-        </div>
+    <footer className="border-t border-border bg-base">
+      <div className="mx-auto max-w-[1160px] px-20 max-lg:px-6 py-16">
+        {/* Gold rule */}
+        <div className="gold-rule mb-16" />
 
-        {/* Link grid */}
-        <div className="mb-12 grid grid-cols-2 gap-8 md:grid-cols-4">
-          {footerColumns.map((col) => (
-            <div key={col.title}>
-              <h4 className="mb-4 font-[family-name:var(--font-heading)] text-sm font-medium tracking-wide text-ivory">
-                {col.title}
-              </h4>
-              <ul className="flex flex-col gap-2.5">
-                {col.links.map((link) => (
-                  <li key={link.label}>
-                    <Link
-                      href={link.href}
-                      className="text-sm text-platinum/40 transition-colors hover:text-platinum/70"
-                    >
-                      {link.label}
-                    </Link>
-                  </li>
-                ))}
-              </ul>
-            </div>
-          ))}
+        {/* Center content */}
+        <div className="flex flex-col items-center text-center gap-6">
+          <Image
+            src="/images/fava-lattice-mark-only-dark-bg.svg"
+            alt="FAVA"
+            width={24}
+            height={36}
+          />
+
+          <span className="text-label text-secondary tracking-[0.2em]">
+            FAVA Capital Group
+          </span>
+
+          {/* Links */}
+          <div className="flex flex-wrap justify-center gap-x-6 gap-y-2">
+            {links.map((link, i) => (
+              <span key={link.href} className="flex items-center gap-6">
+                <Link
+                  href={link.href}
+                  className="text-caption text-secondary link-hover transition-colors hover:text-primary"
+                >
+                  {link.label}
+                </Link>
+                {i < links.length - 1 && (
+                  <span className="text-tertiary hidden sm:inline">&middot;</span>
+                )}
+              </span>
+            ))}
+          </div>
         </div>
 
         {/* Divider */}
-        <div className="gold-rule mb-8" />
-
-        {/* Regulatory fine print */}
-        <div className="flex flex-col gap-4 md:flex-row md:items-center md:justify-between">
-          <p className="text-xs leading-relaxed text-platinum/30">
-            FAVA Capital Group and its subsidiaries are regulated entities.
-            Trading CFDs, forex, cryptocurrencies, and commodities carries
-            significant risk. Past performance is not indicative of future
-            results.
+        <div className="border-t border-border mt-16 pt-8">
+          <p className="text-center text-[11px] leading-relaxed text-tertiary max-w-2xl mx-auto">
+            FAVA Capital Group and its subsidiaries are regulated financial
+            entities. Trading CFDs, forex, cryptocurrencies, and commodities
+            carries significant risk. Past performance is not indicative of
+            future results.
           </p>
-          <p className="text-xs text-platinum/30">
-            &copy; {new Date().getFullYear()} FAVA Capital Group. All rights
-            reserved.
+          <p className="text-center text-[11px] text-tertiary mt-4">
+            &copy; {new Date().getFullYear()} FAVA Capital Group. All rights reserved.
           </p>
         </div>
       </div>

@@ -1,17 +1,17 @@
 import { Hero } from "@/components/sections/home/Hero";
-import { EcosystemGrid } from "@/components/sections/home/EcosystemGrid";
+import { EcosystemRows } from "@/components/sections/home/EcosystemRows";
 import { VisionStatement } from "@/components/sections/home/VisionStatement";
-import { StatsCredibility } from "@/components/sections/home/StatsCredibility";
-import { NewsInsights } from "@/components/sections/home/NewsInsights";
+import { StatsBar } from "@/components/sections/home/StatsBar";
+import { LatestInsights } from "@/components/sections/home/LatestInsights";
 
 export default function HomePage() {
   return (
     <main>
       <Hero />
-      <EcosystemGrid />
+      <EcosystemRows />
       <VisionStatement />
-      <StatsCredibility />
-      <NewsInsights />
+      <StatsBar />
+      <LatestInsights />
     </main>
   );
 }

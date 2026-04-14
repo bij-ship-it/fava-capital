@@ -1,0 +1,81 @@
+"use client";
+
+import { motion } from "framer-motion";
+import Link from "next/link";
+
+const categoryColors: Record<string, string> = {
+  MARKETS: "text-markets",
+  CRYPTO: "text-crypto",
+  COMMODITIES: "text-commodities",
+};
+
+const insights = [
+  {
+    category: "MARKETS",
+    date: "12 APR 2026",
+    title:
+      "FAVA Markets Launches Zero-Commission Trading Across 400+ Instruments",
+  },
+  {
+    category: "CRYPTO",
+    date: "08 APR 2026",
+    title: "Cryptorio Achieves SOC2 Type II Compliance Certification",
+  },
+  {
+    category: "COMMODITIES",
+    date: "01 APR 2026",
+    title:
+      "Q1 Outlook: Supply Constraints Reshape Global Commodity Pricing",
+  },
+];
+
+export function LatestInsights() {
+  return (
+    <section className="py-[140px] max-md:py-20">
+      <div className="max-w-[1160px] mx-auto px-20 max-lg:px-6">
+        {/* Header row */}
+        <div className="flex items-center justify-between mb-16">
+          <p className="text-label text-secondary">03 — INSIGHTS</p>
+          <Link href="/news" className="text-caption text-gold link-hover">
+            View all →
+          </Link>
+        </div>
+
+        {/* News items */}
+        <div className="border-t border-border">
+          {insights.map((item, i) => (
+            <motion.div
+              key={i}
+              initial={{ opacity: 0, y: 16 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true, margin: "-40px" }}
+              transition={{
+                duration: 0.6,
+                ease: [0.33, 1, 0.68, 1],
+                delay: i * 0.08,
+              }}
+            >
+              <Link
+                href="/news"
+                className="group block py-6 border-b border-border transition-all duration-300 hover:border-border-hover"
+              >
+                <div className="transition-transform duration-300 group-hover:translate-x-0.5">
+                  <p className="text-caption text-secondary mb-2">
+                    <span className={categoryColors[item.category]}>
+                      {item.category}
+                    </span>
+                    <span className="mx-2">·</span>
+                    {item.date}
+                  </p>
+                  <p className="text-subhead text-primary transition-colors duration-300 group-hover:text-gold">
+                    {item.title}
+                  </p>
+                </div>
+              </Link>
+            </motion.div>
+          ))}
+        </div>
+      </div>
+    </section>
+  );
+}

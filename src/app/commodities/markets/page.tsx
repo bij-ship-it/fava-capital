@@ -1,7 +1,6 @@
 "use client";
 
 import { useState } from "react";
-import Link from "next/link";
 
 type Category =
   | "All"
@@ -13,7 +12,7 @@ type Category =
 interface CommodityRow {
   name: string;
   symbol: string;
-  category: Category;
+  category: Exclude<Category, "All">;
   price: string;
   change: string;
   changePercent: string;
@@ -163,43 +162,30 @@ export default function CommoditiesMarketsPage() {
       : commodities.filter((c) => c.category === activeCategory);
 
   return (
-    <div className="bg-void min-h-screen pt-32 pb-16">
-      <div className="max-w-7xl mx-auto px-6">
+    <div className="min-h-screen bg-base pt-32">
+      <div className="max-w-[1160px] mx-auto px-20 max-lg:px-6">
         {/* Header */}
-        <div className="mb-4">
-          <Link
-            href="/commodities"
-            className="text-commodity-amber/70 text-sm font-[family-name:var(--font-heading)] hover:text-commodity-amber transition-colors"
-          >
-            ← FAVA Commodities
-          </Link>
-        </div>
-        <div className="mb-12">
-          <div className="flex items-center gap-3 mb-6">
-            <div className="h-px w-12 bg-commodity-amber" />
-            <span className="text-commodity-amber font-[family-name:var(--font-heading)] text-sm tracking-[0.2em] uppercase">
-              Markets Overview
-            </span>
-          </div>
-          <h1 className="font-[family-name:var(--font-display)] text-4xl md:text-6xl text-ivory mb-4">
-            Commodity <span className="text-commodity-amber">Markets</span>
-          </h1>
-          <p className="text-platinum/60 text-lg max-w-2xl">
-            Real-time pricing across precious metals, base metals, energy, and
-            agricultural commodities. Monitor spreads, volume, and daily ranges.
-          </p>
-        </div>
+        <p className="text-label text-secondary mb-6">
+          01 — Markets Overview
+        </p>
+        <h1 className="text-display-alt text-primary">
+          Commodity Markets
+        </h1>
+        <p className="text-secondary mt-4 max-w-[520px] leading-[1.7]">
+          Real-time pricing across precious metals, base metals, energy, and
+          agricultural commodities.
+        </p>
 
         {/* Category Filters */}
-        <div className="flex flex-wrap gap-3 mb-10">
+        <div className="flex gap-8 mt-12 border-b border-border">
           {categories.map((cat) => (
             <button
               key={cat}
               onClick={() => setActiveCategory(cat)}
-              className={`px-5 py-2.5 text-sm font-[family-name:var(--font-heading)] tracking-wide transition-all duration-200 ${
+              className={`pb-3 text-label transition-colors ${
                 activeCategory === cat
-                  ? "bg-commodity-amber text-void"
-                  : "border border-platinum/20 text-platinum/60 hover:border-commodity-amber/40 hover:text-ivory"
+                  ? "text-commodities border-b border-commodities"
+                  : "text-secondary hover:text-primary"
               }`}
             >
               {cat}
@@ -207,114 +193,85 @@ export default function CommoditiesMarketsPage() {
           ))}
         </div>
 
-        {/* Pricing Dashboard */}
-        <div className="border border-platinum/10 bg-obsidian/30 overflow-hidden">
-          <div className="overflow-x-auto">
-            <table className="w-full">
-              <thead>
-                <tr className="border-b border-platinum/10">
-                  <th className="text-left px-6 py-4 text-xs font-[family-name:var(--font-heading)] text-platinum/40 tracking-wider uppercase">
-                    Commodity
-                  </th>
-                  <th className="text-right px-6 py-4 text-xs font-[family-name:var(--font-heading)] text-platinum/40 tracking-wider uppercase">
-                    Price
-                  </th>
-                  <th className="text-right px-6 py-4 text-xs font-[family-name:var(--font-heading)] text-platinum/40 tracking-wider uppercase">
-                    Change
-                  </th>
-                  <th className="text-right px-6 py-4 text-xs font-[family-name:var(--font-heading)] text-platinum/40 tracking-wider uppercase hidden md:table-cell">
-                    High
-                  </th>
-                  <th className="text-right px-6 py-4 text-xs font-[family-name:var(--font-heading)] text-platinum/40 tracking-wider uppercase hidden md:table-cell">
-                    Low
-                  </th>
-                  <th className="text-right px-6 py-4 text-xs font-[family-name:var(--font-heading)] text-platinum/40 tracking-wider uppercase hidden lg:table-cell">
-                    Volume
-                  </th>
+        {/* Pricing Table */}
+        <div className="mt-10 overflow-x-auto">
+          <table className="w-full">
+            <thead>
+              <tr className="border-b border-border">
+                <th className="text-left py-4 pr-6 text-label text-tertiary">
+                  Commodity
+                </th>
+                <th className="text-right py-4 px-6 text-label text-tertiary">
+                  Price
+                </th>
+                <th className="text-right py-4 px-6 text-label text-tertiary">
+                  Change
+                </th>
+                <th className="text-right py-4 px-6 text-label text-tertiary hidden md:table-cell">
+                  High
+                </th>
+                <th className="text-right py-4 px-6 text-label text-tertiary hidden md:table-cell">
+                  Low
+                </th>
+                <th className="text-right py-4 pl-6 text-label text-tertiary hidden lg:table-cell">
+                  Volume
+                </th>
+              </tr>
+            </thead>
+            <tbody>
+              {filtered.map((c) => (
+                <tr
+                  key={c.symbol}
+                  className="border-b border-border/50 hover:bg-surface/50 transition-colors"
+                >
+                  <td className="py-5 pr-6">
+                    <span className="text-primary">{c.name}</span>
+                    <span className="text-tertiary text-caption ml-3">
+                      {c.symbol}
+                    </span>
+                  </td>
+                  <td className="text-right py-5 px-6 text-numbers text-primary text-[20px]">
+                    {c.price}
+                  </td>
+                  <td className="text-right py-5 px-6">
+                    <span
+                      className={`block ${
+                        c.change.startsWith("+")
+                          ? "text-green-500"
+                          : "text-rose-500"
+                      }`}
+                    >
+                      {c.change}
+                    </span>
+                    <span
+                      className={`text-caption block mt-0.5 ${
+                        c.changePercent.startsWith("+")
+                          ? "text-green-500/70"
+                          : "text-rose-500/70"
+                      }`}
+                    >
+                      {c.changePercent}
+                    </span>
+                  </td>
+                  <td className="text-right py-5 px-6 text-secondary hidden md:table-cell">
+                    {c.high}
+                  </td>
+                  <td className="text-right py-5 px-6 text-secondary hidden md:table-cell">
+                    {c.low}
+                  </td>
+                  <td className="text-right py-5 pl-6 text-tertiary hidden lg:table-cell">
+                    {c.volume}
+                  </td>
                 </tr>
-              </thead>
-              <tbody>
-                {filtered.map((commodity) => (
-                  <tr
-                    key={commodity.symbol}
-                    className="border-b border-platinum/5 hover:bg-commodity-amber/5 transition-colors"
-                  >
-                    <td className="px-6 py-5">
-                      <div className="flex items-center gap-3">
-                        <span className="text-ivory font-[family-name:var(--font-heading)] font-medium">
-                          {commodity.name}
-                        </span>
-                        <span className="text-platinum/30 text-xs">
-                          {commodity.symbol}
-                        </span>
-                      </div>
-                    </td>
-                    <td className="text-right px-6 py-5 text-ivory tabular-nums font-medium">
-                      {commodity.price}
-                    </td>
-                    <td className="text-right px-6 py-5">
-                      <div className="flex flex-col items-end">
-                        <span
-                          className={`tabular-nums text-sm ${
-                            commodity.change.startsWith("+")
-                              ? "text-green-400"
-                              : "text-red-400"
-                          }`}
-                        >
-                          {commodity.change}
-                        </span>
-                        <span
-                          className={`tabular-nums text-xs ${
-                            commodity.changePercent.startsWith("+")
-                              ? "text-green-400/70"
-                              : "text-red-400/70"
-                          }`}
-                        >
-                          {commodity.changePercent}
-                        </span>
-                      </div>
-                    </td>
-                    <td className="text-right px-6 py-5 text-platinum/60 tabular-nums text-sm hidden md:table-cell">
-                      {commodity.high}
-                    </td>
-                    <td className="text-right px-6 py-5 text-platinum/60 tabular-nums text-sm hidden md:table-cell">
-                      {commodity.low}
-                    </td>
-                    <td className="text-right px-6 py-5 text-platinum/40 tabular-nums text-sm hidden lg:table-cell">
-                      {commodity.volume}
-                    </td>
-                  </tr>
-                ))}
-              </tbody>
-            </table>
-          </div>
+              ))}
+            </tbody>
+          </table>
         </div>
 
-        {/* Market Hours Notice */}
-        <div className="mt-8 flex items-center gap-3 text-platinum/40 text-xs">
-          <div className="w-2 h-2 rounded-full bg-green-500 animate-pulse" />
-          <span>
-            Markets open. Prices are indicative and updated every 5 seconds
-            during trading hours.
-          </span>
-        </div>
-
-        {/* CTA */}
-        <div className="mt-16 pt-16 border-t border-platinum/10 text-center">
-          <h2 className="font-[family-name:var(--font-display)] text-2xl md:text-4xl text-ivory mb-4">
-            Ready to Trade?
-          </h2>
-          <p className="text-platinum/60 mb-8 max-w-lg mx-auto">
-            Access all commodity markets with institutional spreads and
-            professional execution.
-          </p>
-          <Link
-            href="/commodities/apply"
-            className="inline-flex items-center gap-2 bg-commodity-amber text-void px-8 py-4 font-[family-name:var(--font-heading)] font-medium tracking-wide hover:bg-commodity-amber/90 transition-colors"
-          >
-            Open Account
-          </Link>
-        </div>
+        {/* Footer note */}
+        <p className="text-caption text-tertiary mt-8 pb-[140px]">
+          Prices are indicative and updated during trading hours.
+        </p>
       </div>
     </div>
   );

@@ -5,121 +5,86 @@ import Link from "next/link";
 
 type AccountType = "individual" | "corporate";
 
+const inputClasses =
+  "w-full px-4 py-3 bg-surface border border-border text-primary placeholder:text-tertiary focus:outline-none focus:border-border-hover transition-colors";
+
+const selectClasses =
+  "w-full px-4 py-3 bg-surface border border-border text-secondary focus:outline-none focus:border-border-hover transition-colors appearance-none";
+
 export default function ApplyPage() {
   const [accountType, setAccountType] = useState<AccountType>("individual");
 
   return (
-    <div className="bg-void min-h-screen pt-32 pb-16">
-      <div className="max-w-7xl mx-auto px-6">
+    <div className="min-h-screen bg-base pt-32">
+      <div className="max-w-[1160px] mx-auto px-20 max-lg:px-6">
         {/* Header */}
-        <div className="mb-4">
-          <Link
-            href="/commodities"
-            className="text-commodity-amber/70 text-sm font-[family-name:var(--font-heading)] hover:text-commodity-amber transition-colors"
-          >
-            ← FAVA Commodities
-          </Link>
-        </div>
-        <div className="mb-16">
-          <div className="flex items-center gap-3 mb-6">
-            <div className="h-px w-12 bg-commodity-amber" />
-            <span className="text-commodity-amber font-[family-name:var(--font-heading)] text-sm tracking-[0.2em] uppercase">
-              Get Started
-            </span>
-          </div>
-          <h1 className="font-[family-name:var(--font-display)] text-4xl md:text-6xl text-ivory mb-4">
-            Open Your <span className="text-commodity-amber">Account</span>
-          </h1>
-          <p className="text-platinum/60 text-lg max-w-2xl">
-            Begin trading global commodities markets in minutes. Complete the
-            application below and our team will review your account within one
-            business day.
-          </p>
-        </div>
+        <p className="text-label text-secondary mb-6">01 — Get Started</p>
+        <h1 className="text-display-alt text-primary">Open Your Account</h1>
+        <p className="text-secondary mt-4 max-w-[520px] leading-[1.7]">
+          Begin trading global commodities markets in minutes. Complete the
+          application below and our team will review within one business day.
+        </p>
 
-        <div className="grid grid-cols-1 lg:grid-cols-3 gap-12">
+        <div className="grid grid-cols-1 lg:grid-cols-[1fr_320px] gap-16 mt-16 pb-[140px]">
           {/* Form */}
-          <div className="lg:col-span-2">
-            {/* Account Type Selector */}
-            <div className="mb-10">
-              <label className="text-ivory font-[family-name:var(--font-heading)] text-sm tracking-wider uppercase block mb-4">
-                Account Type
-              </label>
-              <div className="grid grid-cols-2 gap-4">
+          <div>
+            {/* Account Type Toggle */}
+            <div className="mb-12">
+              <p className="text-label text-secondary mb-5">Account Type</p>
+              <div className="flex border-b border-border">
                 <button
                   onClick={() => setAccountType("individual")}
-                  className={`p-6 border text-left transition-all duration-200 ${
+                  className={`pb-3 mr-8 text-label transition-colors ${
                     accountType === "individual"
-                      ? "border-commodity-amber bg-commodity-amber/5"
-                      : "border-platinum/10 bg-obsidian/30 hover:border-platinum/20"
+                      ? "text-commodities border-b border-commodities"
+                      : "text-secondary hover:text-primary"
                   }`}
                 >
-                  <div
-                    className={`text-lg font-[family-name:var(--font-heading)] mb-1 ${
-                      accountType === "individual"
-                        ? "text-commodity-amber"
-                        : "text-ivory"
-                    }`}
-                  >
-                    Individual
-                  </div>
-                  <p className="text-platinum/50 text-sm">
-                    Personal trading account for individual investors
-                  </p>
+                  Individual
                 </button>
                 <button
                   onClick={() => setAccountType("corporate")}
-                  className={`p-6 border text-left transition-all duration-200 ${
+                  className={`pb-3 text-label transition-colors ${
                     accountType === "corporate"
-                      ? "border-commodity-amber bg-commodity-amber/5"
-                      : "border-platinum/10 bg-obsidian/30 hover:border-platinum/20"
+                      ? "text-commodities border-b border-commodities"
+                      : "text-secondary hover:text-primary"
                   }`}
                 >
-                  <div
-                    className={`text-lg font-[family-name:var(--font-heading)] mb-1 ${
-                      accountType === "corporate"
-                        ? "text-commodity-amber"
-                        : "text-ivory"
-                    }`}
-                  >
-                    Corporate
-                  </div>
-                  <p className="text-platinum/50 text-sm">
-                    Business account for companies and institutions
-                  </p>
+                  Corporate
                 </button>
               </div>
             </div>
 
-            {/* Personal / Company Details */}
-            <div className="border border-platinum/10 bg-obsidian/30 p-8 mb-8">
-              <h3 className="font-[family-name:var(--font-heading)] text-lg text-ivory mb-6">
+            {/* Details */}
+            <div className="mb-12">
+              <p className="text-label text-secondary mb-6">
+                02 —{" "}
                 {accountType === "individual"
                   ? "Personal Details"
                   : "Company Details"}
-              </h3>
+              </p>
               <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                 {accountType === "individual" ? (
                   <>
                     <div>
-                      <label className="text-platinum/50 text-sm block mb-2">
+                      <label className="text-caption text-secondary block mb-2">
                         First Name
                       </label>
                       <input
                         type="text"
                         placeholder="John"
-                        className="w-full px-4 py-3 bg-void border border-platinum/15 text-ivory placeholder:text-platinum/25 text-sm focus:outline-none focus:border-commodity-amber/50 transition-colors"
+                        className={inputClasses}
                         readOnly
                       />
                     </div>
                     <div>
-                      <label className="text-platinum/50 text-sm block mb-2">
+                      <label className="text-caption text-secondary block mb-2">
                         Last Name
                       </label>
                       <input
                         type="text"
                         placeholder="Smith"
-                        className="w-full px-4 py-3 bg-void border border-platinum/15 text-ivory placeholder:text-platinum/25 text-sm focus:outline-none focus:border-commodity-amber/50 transition-colors"
+                        className={inputClasses}
                         readOnly
                       />
                     </div>
@@ -127,56 +92,56 @@ export default function ApplyPage() {
                 ) : (
                   <>
                     <div>
-                      <label className="text-platinum/50 text-sm block mb-2">
+                      <label className="text-caption text-secondary block mb-2">
                         Company Name
                       </label>
                       <input
                         type="text"
                         placeholder="Acme Trading Ltd"
-                        className="w-full px-4 py-3 bg-void border border-platinum/15 text-ivory placeholder:text-platinum/25 text-sm focus:outline-none focus:border-commodity-amber/50 transition-colors"
+                        className={inputClasses}
                         readOnly
                       />
                     </div>
                     <div>
-                      <label className="text-platinum/50 text-sm block mb-2">
+                      <label className="text-caption text-secondary block mb-2">
                         Registration Number
                       </label>
                       <input
                         type="text"
                         placeholder="12345678"
-                        className="w-full px-4 py-3 bg-void border border-platinum/15 text-ivory placeholder:text-platinum/25 text-sm focus:outline-none focus:border-commodity-amber/50 transition-colors"
+                        className={inputClasses}
                         readOnly
                       />
                     </div>
                   </>
                 )}
                 <div>
-                  <label className="text-platinum/50 text-sm block mb-2">
+                  <label className="text-caption text-secondary block mb-2">
                     Email Address
                   </label>
                   <input
                     type="email"
                     placeholder="john@example.com"
-                    className="w-full px-4 py-3 bg-void border border-platinum/15 text-ivory placeholder:text-platinum/25 text-sm focus:outline-none focus:border-commodity-amber/50 transition-colors"
+                    className={inputClasses}
                     readOnly
                   />
                 </div>
                 <div>
-                  <label className="text-platinum/50 text-sm block mb-2">
+                  <label className="text-caption text-secondary block mb-2">
                     Phone Number
                   </label>
                   <input
                     type="tel"
                     placeholder="+44 20 7123 4567"
-                    className="w-full px-4 py-3 bg-void border border-platinum/15 text-ivory placeholder:text-platinum/25 text-sm focus:outline-none focus:border-commodity-amber/50 transition-colors"
+                    className={inputClasses}
                     readOnly
                   />
                 </div>
                 <div>
-                  <label className="text-platinum/50 text-sm block mb-2">
+                  <label className="text-caption text-secondary block mb-2">
                     Country of Residence
                   </label>
-                  <select className="w-full px-4 py-3 bg-void border border-platinum/15 text-platinum/25 text-sm focus:outline-none focus:border-commodity-amber/50 transition-colors appearance-none">
+                  <select className={selectClasses}>
                     <option>Select country</option>
                     <option>United Kingdom</option>
                     <option>United States</option>
@@ -188,14 +153,14 @@ export default function ApplyPage() {
                   </select>
                 </div>
                 <div>
-                  <label className="text-platinum/50 text-sm block mb-2">
+                  <label className="text-caption text-secondary block mb-2">
                     Experience Level
                   </label>
-                  <select className="w-full px-4 py-3 bg-void border border-platinum/15 text-platinum/25 text-sm focus:outline-none focus:border-commodity-amber/50 transition-colors appearance-none">
+                  <select className={selectClasses}>
                     <option>Select experience</option>
-                    <option>Beginner (0–1 years)</option>
-                    <option>Intermediate (1–3 years)</option>
-                    <option>Advanced (3–5 years)</option>
+                    <option>Beginner (0-1 years)</option>
+                    <option>Intermediate (1-3 years)</option>
+                    <option>Advanced (3-5 years)</option>
                     <option>Professional (5+ years)</option>
                   </select>
                 </div>
@@ -203,85 +168,60 @@ export default function ApplyPage() {
             </div>
 
             {/* KYC Upload */}
-            <div className="border border-platinum/10 bg-obsidian/30 p-8 mb-8">
-              <h3 className="font-[family-name:var(--font-heading)] text-lg text-ivory mb-2">
-                Identity Verification (KYC)
-              </h3>
-              <p className="text-platinum/50 text-sm mb-6">
-                Upload a valid government-issued photo ID and proof of address
-                to verify your identity.
+            <div className="mb-12">
+              <p className="text-label text-secondary mb-2">
+                03 — Identity Verification
+              </p>
+              <p className="text-secondary mb-6">
+                Upload a valid government-issued photo ID and proof of address.
               </p>
               <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-                <div className="border border-dashed border-platinum/20 p-8 text-center hover:border-commodity-amber/30 transition-colors cursor-pointer">
-                  <div className="text-platinum/30 text-3xl mb-3">+</div>
-                  <p className="text-platinum/50 text-sm">
-                    Photo ID
-                  </p>
-                  <p className="text-platinum/30 text-xs mt-1">
-                    Passport, Driver&apos;s Licence, or National ID
+                <div className="border border-dashed border-border p-8 text-center hover:border-border-hover transition-colors cursor-pointer">
+                  <p className="text-tertiary text-2xl mb-2">+</p>
+                  <p className="text-secondary text-caption">Photo ID</p>
+                  <p className="text-tertiary text-caption mt-1">
+                    Passport, Licence, or National ID
                   </p>
                 </div>
-                <div className="border border-dashed border-platinum/20 p-8 text-center hover:border-commodity-amber/30 transition-colors cursor-pointer">
-                  <div className="text-platinum/30 text-3xl mb-3">+</div>
-                  <p className="text-platinum/50 text-sm">
-                    Proof of Address
-                  </p>
-                  <p className="text-platinum/30 text-xs mt-1">
+                <div className="border border-dashed border-border p-8 text-center hover:border-border-hover transition-colors cursor-pointer">
+                  <p className="text-tertiary text-2xl mb-2">+</p>
+                  <p className="text-secondary text-caption">Proof of Address</p>
+                  <p className="text-tertiary text-caption mt-1">
                     Utility bill or bank statement (last 3 months)
                   </p>
                 </div>
               </div>
             </div>
 
-            {/* Suitability Assessment */}
-            <div className="border border-commodity-amber/20 bg-commodity-amber/5 p-8 mb-10">
-              <div className="flex items-start gap-4">
-                <div className="text-commodity-amber text-xl mt-0.5">i</div>
-                <div>
-                  <h3 className="font-[family-name:var(--font-heading)] text-lg text-ivory mb-2">
-                    Suitability Assessment
-                  </h3>
-                  <p className="text-platinum/60 text-sm leading-relaxed">
-                    As a regulated entity, FAVA Commodities is required to
-                    assess your knowledge and experience before granting access
-                    to leveraged commodity products. After submitting this
-                    application, you will be asked to complete a brief
-                    suitability questionnaire covering your financial background,
-                    trading objectives, and risk tolerance.
-                  </p>
-                </div>
-              </div>
-            </div>
-
             {/* Submit */}
-            <button className="w-full bg-commodity-amber text-void py-4 font-[family-name:var(--font-heading)] font-medium text-lg tracking-wide hover:bg-commodity-amber/90 transition-colors">
+            <button className="w-full bg-surface border border-border text-commodities py-4 text-label hover:border-border-hover transition-colors">
               Submit Application
             </button>
-            <p className="text-platinum/30 text-xs text-center mt-4">
+            <p className="text-caption text-tertiary text-center mt-4">
               By submitting, you agree to our Terms of Service and Privacy
-              Policy. Your data is encrypted and handled in accordance with GDPR.
+              Policy.
             </p>
           </div>
 
           {/* Sidebar */}
-          <div className="lg:col-span-1">
-            <div className="sticky top-32 space-y-8">
-              {/* Process Steps */}
-              <div className="border border-platinum/10 bg-obsidian/30 p-8">
-                <h3 className="font-[family-name:var(--font-heading)] text-lg text-ivory mb-6">
+          <div>
+            <div className="sticky top-32 space-y-10">
+              {/* Application Steps */}
+              <div>
+                <p className="text-label text-secondary mb-6">
                   Application Process
-                </h3>
+                </p>
                 <div className="space-y-6">
                   {[
                     {
                       step: "01",
                       title: "Complete Application",
-                      desc: "Fill in your personal details and trading experience.",
+                      desc: "Fill in your details and trading experience.",
                     },
                     {
                       step: "02",
                       title: "Verify Identity",
-                      desc: "Upload KYC documents for identity verification.",
+                      desc: "Upload KYC documents for verification.",
                     },
                     {
                       step: "03",
@@ -291,18 +231,16 @@ export default function ApplyPage() {
                     {
                       step: "04",
                       title: "Account Approved",
-                      desc: "Fund your account and start trading commodities.",
+                      desc: "Fund your account and start trading.",
                     },
                   ].map((item) => (
                     <div key={item.step} className="flex items-start gap-4">
-                      <span className="text-commodity-amber font-[family-name:var(--font-heading)] text-sm tabular-nums">
+                      <span className="text-label text-commodities">
                         {item.step}
                       </span>
                       <div>
-                        <p className="text-ivory text-sm font-medium">
-                          {item.title}
-                        </p>
-                        <p className="text-platinum/50 text-xs mt-0.5">
+                        <p className="text-primary text-[15px]">{item.title}</p>
+                        <p className="text-tertiary text-[13px] mt-0.5">
                           {item.desc}
                         </p>
                       </div>
@@ -311,58 +249,30 @@ export default function ApplyPage() {
                 </div>
               </div>
 
-              {/* Trust Badges */}
-              <div className="border border-platinum/10 bg-obsidian/30 p-8">
-                <h3 className="font-[family-name:var(--font-heading)] text-lg text-ivory mb-6">
-                  Why Trust FAVA
-                </h3>
-                <div className="space-y-5">
+              {/* Trust */}
+              <div className="border-t border-border pt-8">
+                <p className="text-label text-secondary mb-6">Why Trust FAVA</p>
+                <div className="space-y-4">
                   {[
-                    {
-                      label: "Regulated",
-                      desc: "Multi-jurisdictional regulatory oversight",
-                    },
-                    {
-                      label: "Segregated Funds",
-                      desc: "Client assets held in segregated accounts",
-                    },
-                    {
-                      label: "Encrypted",
-                      desc: "256-bit SSL encryption on all data",
-                    },
-                    {
-                      label: "GDPR Compliant",
-                      desc: "Full compliance with data protection regulations",
-                    },
-                  ].map((badge) => (
-                    <div
-                      key={badge.label}
-                      className="flex items-start gap-3"
-                    >
-                      <div className="w-1.5 h-1.5 rounded-full bg-commodity-amber mt-2 shrink-0" />
-                      <div>
-                        <p className="text-ivory text-sm">{badge.label}</p>
-                        <p className="text-platinum/40 text-xs">
-                          {badge.desc}
-                        </p>
-                      </div>
+                    "Multi-jurisdictional regulatory oversight",
+                    "Client assets in segregated accounts",
+                    "256-bit SSL encryption",
+                    "Full GDPR compliance",
+                  ].map((item) => (
+                    <div key={item} className="flex items-start gap-3">
+                      <span className="text-tertiary mt-0.5">—</span>
+                      <p className="text-secondary text-[13px]">{item}</p>
                     </div>
                   ))}
                 </div>
               </div>
 
               {/* Support */}
-              <div className="border border-platinum/10 bg-obsidian/30 p-8">
-                <h3 className="font-[family-name:var(--font-heading)] text-sm text-ivory mb-3">
-                  Need Help?
-                </h3>
-                <p className="text-platinum/50 text-sm mb-4">
-                  Our onboarding team is available to assist you through the
-                  application process.
-                </p>
+              <div className="border-t border-border pt-8">
+                <p className="text-secondary mb-2">Need help?</p>
                 <Link
                   href="/contact"
-                  className="text-commodity-amber text-sm font-[family-name:var(--font-heading)] hover:underline"
+                  className="text-label text-commodities hover:text-primary transition-colors"
                 >
                   Contact Support →
                 </Link>

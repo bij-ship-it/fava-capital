@@ -1,173 +1,264 @@
+import Link from "next/link";
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "Pricing & Spreads — FAVA Markets",
+  title: "FAVA Markets — Transparent Pricing",
   description:
-    "Transparent pricing with tight spreads, low commissions, and competitive swap rates. No hidden fees.",
+    "No hidden fees. Clear spreads, commissions, swap rates, and margin requirements across all instruments.",
 };
 
 const spreadData = [
-  { instrument: "EUR/USD", standard: "1.0 pips", professional: "0.1 pips", institutional: "0.0 pips" },
-  { instrument: "GBP/USD", standard: "1.3 pips", professional: "0.3 pips", institutional: "0.1 pips" },
-  { instrument: "USD/JPY", standard: "1.1 pips", professional: "0.2 pips", institutional: "0.0 pips" },
-  { instrument: "Gold (XAU/USD)", standard: "0.30 pts", professional: "0.15 pts", institutional: "0.10 pts" },
-  { instrument: "US500", standard: "0.6 pts", professional: "0.4 pts", institutional: "0.3 pts" },
-  { instrument: "BTC/USD", standard: "25.0 pts", professional: "15.0 pts", institutional: "10.0 pts" },
+  { instrument: "EUR/USD", standard: "1.0", professional: "0.2", institutional: "0.0" },
+  { instrument: "GBP/USD", standard: "1.2", professional: "0.3", institutional: "0.1" },
+  { instrument: "USD/JPY", standard: "1.1", professional: "0.3", institutional: "0.1" },
+  { instrument: "XAU/USD", standard: "0.25", professional: "0.12", institutional: "0.08" },
+  { instrument: "US500", standard: "0.5", professional: "0.3", institutional: "0.2" },
+  { instrument: "BTC/USD", standard: "25.0", professional: "18.0", institutional: "15.0" },
 ];
 
 const commissionData = [
-  { account: "Standard", forex: "None (spread only)", indices: "None", shares: "0.10%", crypto: "None" },
-  { account: "Professional", forex: "$3.50 / lot", indices: "None", shares: "0.06%", crypto: "None" },
-  { account: "Institutional", forex: "$2.00 / lot", indices: "None", shares: "0.04%", crypto: "0.05%" },
+  { account: "Standard", commission: "$0", note: "Spreads from 1.0 pip" },
+  { account: "Professional", commission: "$3.50 / lot", note: "Spreads from 0.0 pip" },
+  { account: "Institutional", commission: "$2.00 / lot", note: "Spreads from 0.0 pip, volume-based" },
 ];
 
 const swapData = [
-  { pair: "EUR/USD", longSwap: "-6.25", shortSwap: "+1.10" },
-  { pair: "GBP/USD", longSwap: "-5.80", shortSwap: "+0.90" },
-  { pair: "USD/JPY", longSwap: "+3.20", shortSwap: "-8.40" },
-  { pair: "AUD/USD", longSwap: "-3.10", shortSwap: "+0.50" },
-  { pair: "Gold (XAU/USD)", longSwap: "-12.50", shortSwap: "+5.80" },
+  { instrument: "EUR/USD", longSwap: "-6.50", shortSwap: "+1.20" },
+  { instrument: "GBP/USD", longSwap: "-5.80", shortSwap: "+0.90" },
+  { instrument: "USD/JPY", longSwap: "+3.40", shortSwap: "-8.20" },
+  { instrument: "XAU/USD", longSwap: "-12.50", shortSwap: "+2.10" },
+  { instrument: "US500", longSwap: "-4.20", shortSwap: "-1.80" },
+  { instrument: "BTC/USD", longSwap: "-25.00", shortSwap: "-15.00" },
 ];
 
 const marginData = [
-  { instrument: "Major FX Pairs", retail: "3.33% (1:30)", professional: "0.20% (1:500)" },
-  { instrument: "Minor FX Pairs", retail: "5.00% (1:20)", professional: "0.50% (1:200)" },
-  { instrument: "Major Indices", retail: "5.00% (1:20)", professional: "0.50% (1:200)" },
-  { instrument: "Commodities (Gold)", retail: "5.00% (1:20)", professional: "0.50% (1:200)" },
-  { instrument: "Shares CFDs", retail: "20.00% (1:5)", professional: "5.00% (1:20)" },
-  { instrument: "Crypto CFDs", retail: "50.00% (1:2)", professional: "10.00% (1:10)" },
+  { category: "Major FX Pairs", standard: "0.2%", professional: "0.5%", institutional: "0.2%" },
+  { category: "Minor FX Pairs", standard: "0.5%", professional: "1.0%", institutional: "0.5%" },
+  { category: "Indices", standard: "0.5%", professional: "1.0%", institutional: "0.5%" },
+  { category: "Shares CFDs", standard: "5.0%", professional: "10.0%", institutional: "5.0%" },
+  { category: "Commodities", standard: "0.5%", professional: "1.0%", institutional: "0.5%" },
+  { category: "Crypto CFDs", standard: "10.0%", professional: "20.0%", institutional: "10.0%" },
 ];
-
-function SectionTable({
-  title,
-  subtitle,
-  headers,
-  rows,
-}: {
-  title: string;
-  subtitle: string;
-  headers: string[];
-  rows: string[][];
-}) {
-  return (
-    <div className="mb-20">
-      <h2 className="font-[family-name:var(--font-heading)] text-2xl md:text-3xl text-ivory font-light mb-2">
-        {title}
-      </h2>
-      <p className="text-platinum/60 text-sm mb-8 max-w-2xl">{subtitle}</p>
-      <div className="border border-white/5 rounded-sm overflow-hidden">
-        <div
-          className="grid bg-obsidian/60 px-6 py-4 border-b border-white/5"
-          style={{ gridTemplateColumns: `repeat(${headers.length}, minmax(0, 1fr))` }}
-        >
-          {headers.map((h) => (
-            <span key={h} className="font-[family-name:var(--font-heading)] text-xs uppercase tracking-wider text-platinum/50">
-              {h}
-            </span>
-          ))}
-        </div>
-        {rows.map((row, i) => (
-          <div
-            key={i}
-            className={`grid px-6 py-3.5 border-b border-white/5 last:border-b-0 ${
-              i % 2 === 0 ? "bg-obsidian/30" : "bg-obsidian/10"
-            }`}
-            style={{ gridTemplateColumns: `repeat(${headers.length}, minmax(0, 1fr))` }}
-          >
-            {row.map((cell, j) => (
-              <span
-                key={j}
-                className={j === 0 ? "text-ivory text-sm font-medium" : "text-platinum/70 text-sm"}
-              >
-                {cell}
-              </span>
-            ))}
-          </div>
-        ))}
-      </div>
-    </div>
-  );
-}
 
 export default function PricingPage() {
   return (
-    <div className="min-h-screen pt-32 pb-16">
-      <div className="max-w-7xl mx-auto px-6">
+    <div className="min-h-screen pt-32">
+      <div className="max-w-[1160px] mx-auto px-20 max-lg:px-6">
         {/* Header */}
-        <div className="mb-16">
-          <p className="font-[family-name:var(--font-heading)] text-fx-teal uppercase tracking-widest text-sm mb-4">
-            FAVA Markets
-          </p>
-          <h1 className="font-[family-name:var(--font-display)] text-4xl md:text-6xl font-light text-ivory">
-            Pricing &amp; Spreads
-          </h1>
-          <p className="mt-4 text-platinum/60 max-w-2xl text-lg">
-            Complete transparency. No hidden mark-ups, no requotes. What you see is what you trade.
-          </p>
-        </div>
-
-        {/* Key Highlights */}
-        <div className="grid sm:grid-cols-3 gap-6 mb-20">
-          {[
-            { value: "0.0", unit: "pips", label: "Raw spreads from" },
-            { value: "$2", unit: "/lot", label: "Commissions from" },
-            { value: "0", unit: "", label: "Hidden fees" },
-          ].map((stat) => (
-            <div key={stat.label} className="bg-obsidian/40 border border-white/5 rounded-sm p-6 text-center">
-              <p className="font-[family-name:var(--font-display)] text-4xl text-fx-teal">
-                {stat.value}
-                <span className="text-lg text-fx-teal/60 ml-1">{stat.unit}</span>
-              </p>
-              <p className="mt-2 text-platinum/60 text-sm font-[family-name:var(--font-heading)] uppercase tracking-wider">
-                {stat.label}
-              </p>
-            </div>
-          ))}
-        </div>
+        <p className="text-label text-markets mb-6">FAVA Markets</p>
+        <h1 className="text-display-alt text-primary mb-4">Pricing</h1>
+        <p className="text-secondary max-w-[520px] mb-20">
+          Transparent pricing with no hidden fees. What you see is what you
+          trade.
+        </p>
 
         {/* Spreads */}
-        <SectionTable
-          title="Typical Spreads"
-          subtitle="Indicative spreads under normal market conditions by account type."
-          headers={["Instrument", "Standard", "Professional", "Institutional"]}
-          rows={spreadData.map((d) => [d.instrument, d.standard, d.professional, d.institutional])}
-        />
+        <section className="mb-[140px] max-md:mb-20">
+          <p className="text-label text-secondary mb-12">01 &mdash; Spreads</p>
+          <div className="overflow-x-auto">
+            <table className="w-full min-w-[580px]">
+              <thead>
+                <tr className="border-b border-border">
+                  <th className="text-caption text-secondary text-left py-3 px-4 font-normal">
+                    Instrument
+                  </th>
+                  <th className="text-caption text-secondary text-right py-3 px-4 font-normal">
+                    Standard
+                  </th>
+                  <th className="text-caption text-secondary text-right py-3 px-4 font-normal">
+                    Professional
+                  </th>
+                  <th className="text-caption text-secondary text-right py-3 px-4 font-normal">
+                    Institutional
+                  </th>
+                </tr>
+              </thead>
+              <tbody>
+                {spreadData.map((row, i) => (
+                  <tr
+                    key={row.instrument}
+                    className={`border-b border-border ${
+                      i % 2 === 0 ? "bg-surface" : ""
+                    }`}
+                  >
+                    <td className="text-primary text-[15px] py-3 px-4">
+                      {row.instrument}
+                    </td>
+                    <td className="text-secondary text-[15px] text-right py-3 px-4 tabular-nums">
+                      {row.standard}
+                    </td>
+                    <td className="text-secondary text-[15px] text-right py-3 px-4 tabular-nums">
+                      {row.professional}
+                    </td>
+                    <td className="text-secondary text-[15px] text-right py-3 px-4 tabular-nums">
+                      {row.institutional}
+                    </td>
+                  </tr>
+                ))}
+              </tbody>
+            </table>
+          </div>
+          <p className="text-caption text-tertiary mt-4">
+            Spreads in pips. Values shown are minimum typical during peak
+            liquidity hours.
+          </p>
+        </section>
 
         {/* Commissions */}
-        <SectionTable
-          title="Commissions"
-          subtitle="Round-turn commission rates per asset class and account type."
-          headers={["Account Type", "Forex", "Indices", "Shares", "Crypto"]}
-          rows={commissionData.map((d) => [d.account, d.forex, d.indices, d.shares, d.crypto])}
-        />
+        <section className="mb-[140px] max-md:mb-20">
+          <p className="text-label text-secondary mb-12">
+            02 &mdash; Commissions
+          </p>
+          <table className="w-full">
+            <thead>
+              <tr className="border-b border-border">
+                <th className="text-caption text-secondary text-left py-3 px-4 font-normal">
+                  Account
+                </th>
+                <th className="text-caption text-secondary text-right py-3 px-4 font-normal">
+                  Commission
+                </th>
+                <th className="text-caption text-secondary text-left py-3 px-4 font-normal max-sm:hidden">
+                  Note
+                </th>
+              </tr>
+            </thead>
+            <tbody>
+              {commissionData.map((row, i) => (
+                <tr
+                  key={row.account}
+                  className={`border-b border-border ${
+                    i % 2 === 0 ? "bg-surface" : ""
+                  }`}
+                >
+                  <td className="text-primary text-[15px] py-3 px-4">
+                    {row.account}
+                  </td>
+                  <td className="text-primary text-[15px] text-right py-3 px-4 tabular-nums">
+                    {row.commission}
+                  </td>
+                  <td className="text-secondary text-[13px] py-3 px-4 max-sm:hidden">
+                    {row.note}
+                  </td>
+                </tr>
+              ))}
+            </tbody>
+          </table>
+        </section>
 
         {/* Swap Rates */}
-        <SectionTable
-          title="Swap Rates"
-          subtitle="Overnight financing rates in points. Updated daily. Positive values indicate credit."
-          headers={["Pair", "Long Swap", "Short Swap"]}
-          rows={swapData.map((d) => [d.pair, d.longSwap, d.shortSwap])}
-        />
+        <section className="mb-[140px] max-md:mb-20">
+          <p className="text-label text-secondary mb-12">
+            03 &mdash; Swap Rates
+          </p>
+          <div className="overflow-x-auto">
+            <table className="w-full min-w-[440px]">
+              <thead>
+                <tr className="border-b border-border">
+                  <th className="text-caption text-secondary text-left py-3 px-4 font-normal">
+                    Instrument
+                  </th>
+                  <th className="text-caption text-secondary text-right py-3 px-4 font-normal">
+                    Long Swap
+                  </th>
+                  <th className="text-caption text-secondary text-right py-3 px-4 font-normal">
+                    Short Swap
+                  </th>
+                </tr>
+              </thead>
+              <tbody>
+                {swapData.map((row, i) => (
+                  <tr
+                    key={row.instrument}
+                    className={`border-b border-border ${
+                      i % 2 === 0 ? "bg-surface" : ""
+                    }`}
+                  >
+                    <td className="text-primary text-[15px] py-3 px-4">
+                      {row.instrument}
+                    </td>
+                    <td className="text-secondary text-[15px] text-right py-3 px-4 tabular-nums">
+                      {row.longSwap}
+                    </td>
+                    <td className="text-secondary text-[15px] text-right py-3 px-4 tabular-nums">
+                      {row.shortSwap}
+                    </td>
+                  </tr>
+                ))}
+              </tbody>
+            </table>
+          </div>
+          <p className="text-caption text-tertiary mt-4">
+            Swap rates in points per lot. Updated daily. Triple swap on
+            Wednesdays.
+          </p>
+        </section>
 
         {/* Margin Requirements */}
-        <SectionTable
-          title="Margin Requirements"
-          subtitle="Margin rates vary based on client classification and applicable regulation."
-          headers={["Instrument", "Retail Client", "Professional Client"]}
-          rows={marginData.map((d) => [d.instrument, d.retail, d.professional])}
-        />
-
-        {/* Disclaimer */}
-        <div className="border-t border-white/5 pt-8">
-          <p className="text-platinum/40 text-xs leading-relaxed max-w-4xl">
-            All pricing information is indicative and subject to change. Spreads may widen during periods of
-            low liquidity or high volatility. Swap rates are updated daily and reflect prevailing interbank
-            rates. Margin requirements may differ based on your regulatory jurisdiction. CFDs are complex
-            instruments and come with a high risk of losing money rapidly due to leverage. You should consider
-            whether you understand how CFDs work and whether you can afford to take the high risk of losing
-            your money.
+        <section className="pb-32">
+          <p className="text-label text-secondary mb-12">
+            04 &mdash; Margin Requirements
           </p>
-        </div>
+          <div className="overflow-x-auto">
+            <table className="w-full min-w-[580px]">
+              <thead>
+                <tr className="border-b border-border">
+                  <th className="text-caption text-secondary text-left py-3 px-4 font-normal">
+                    Category
+                  </th>
+                  <th className="text-caption text-secondary text-right py-3 px-4 font-normal">
+                    Standard
+                  </th>
+                  <th className="text-caption text-secondary text-right py-3 px-4 font-normal">
+                    Professional
+                  </th>
+                  <th className="text-caption text-secondary text-right py-3 px-4 font-normal">
+                    Institutional
+                  </th>
+                </tr>
+              </thead>
+              <tbody>
+                {marginData.map((row, i) => (
+                  <tr
+                    key={row.category}
+                    className={`border-b border-border ${
+                      i % 2 === 0 ? "bg-surface" : ""
+                    }`}
+                  >
+                    <td className="text-primary text-[15px] py-3 px-4">
+                      {row.category}
+                    </td>
+                    <td className="text-secondary text-[15px] text-right py-3 px-4 tabular-nums">
+                      {row.standard}
+                    </td>
+                    <td className="text-secondary text-[15px] text-right py-3 px-4 tabular-nums">
+                      {row.professional}
+                    </td>
+                    <td className="text-secondary text-[15px] text-right py-3 px-4 tabular-nums">
+                      {row.institutional}
+                    </td>
+                  </tr>
+                ))}
+              </tbody>
+            </table>
+          </div>
+
+          {/* CTA */}
+          <div className="mt-16 flex items-center gap-6">
+            <Link
+              href="/markets/accounts"
+              className="inline-block bg-markets text-base text-label px-6 py-3 hover:opacity-90 transition-opacity"
+            >
+              Open Live Account
+            </Link>
+            <Link
+              href="/markets/products"
+              className="inline-block text-label text-markets hover:opacity-80 transition-opacity"
+            >
+              View All Instruments &rarr;
+            </Link>
+          </div>
+        </section>
       </div>
     </div>
   );

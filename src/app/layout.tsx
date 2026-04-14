@@ -2,11 +2,14 @@ import type { Metadata } from "next";
 import { Cormorant_Garamond, Outfit, DM_Sans } from "next/font/google";
 import { Navbar } from "@/components/layout/Navbar";
 import { Footer } from "@/components/layout/Footer";
+import { SmoothScroll } from "@/components/SmoothScroll";
+import { ScrollProgress } from "@/components/ScrollProgress";
 import "./globals.css";
 
 const cormorant = Cormorant_Garamond({
   subsets: ["latin"],
   weight: ["300", "400", "600"],
+  style: ["normal", "italic"],
   variable: "--font-display",
   display: "swap",
 });
@@ -28,7 +31,7 @@ const dmSans = DM_Sans({
 export const metadata: Metadata = {
   title: "FAVA Capital — Building Empires. Compounding Futures.",
   description:
-    "A next-generation holding company spanning FX brokerage, crypto exchange, investment funds, commodities, and property.",
+    "A next-generation holding company spanning investment funds, FX brokerage, crypto exchange, and commodities trading.",
 };
 
 export default function RootLayout({
@@ -41,7 +44,9 @@ export default function RootLayout({
       lang="en"
       className={`${cormorant.variable} ${outfit.variable} ${dmSans.variable}`}
     >
-      <body>
+      <body className="grain">
+        <SmoothScroll />
+        <ScrollProgress />
         <Navbar />
         <main>{children}</main>
         <Footer />

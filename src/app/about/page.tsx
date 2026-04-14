@@ -1,16 +1,4 @@
-"use client";
-
-import { motion } from "framer-motion";
 import Link from "next/link";
-
-const fadeUp = {
-  hidden: { opacity: 0, y: 30 },
-  visible: (i: number) => ({
-    opacity: 1,
-    y: 0,
-    transition: { delay: i * 0.15, duration: 0.7, ease: "easeOut" },
-  }),
-};
 
 const team = [
   {
@@ -35,209 +23,78 @@ const team = [
   },
 ];
 
-const subsidiaries = [
-  { name: "FAVA Markets", description: "Multi-asset FX brokerage", href: "/markets", color: "bg-fx-teal" },
-  { name: "Cryptorio", description: "Institutional crypto exchange", href: "/crypto", color: "bg-crypto-electric" },
-  { name: "FAVA Wealth", description: "Multi-strategy investment fund", href: "/wealth", color: "bg-fund-emerald" },
-  { name: "FAVA Commodities", description: "Physical & digital commodity trading", href: "/commodities", color: "bg-commodity-amber" },
-];
-
 const milestones = [
-  { year: "2024", title: "Founded", description: "FAVA Capital established as a next-generation holding company with a mandate to build vertically integrated financial infrastructure." },
-  { year: "2025", title: "First Subsidiary Launched", description: "FAVA Markets goes live, offering institutional-grade FX brokerage with proprietary execution technology." },
-  { year: "2026", title: "Multi-Vertical Expansion", description: "Cryptorio, FAVA Wealth, and FAVA Commodities launched in rapid succession, completing the core ecosystem." },
+  { year: "2024", description: "FAVA Capital established as a next-generation holding company with a mandate to build vertically integrated financial infrastructure." },
+  { year: "2025", description: "FAVA Markets goes live, offering institutional-grade FX brokerage with proprietary execution technology." },
+  { year: "2026", description: "Cryptorio, FAVA Wealth, and FAVA Commodities launched in rapid succession, completing the core ecosystem." },
 ];
 
 export default function AboutPage() {
   return (
-    <div className="bg-void pt-32 pb-16">
+    <div className="bg-base pt-32">
       {/* Hero */}
-      <section className="max-w-7xl mx-auto px-6 text-center mb-32">
-        <motion.p
-          custom={0}
-          variants={fadeUp}
-          initial="hidden"
-          animate="visible"
-          className="font-[family-name:var(--font-heading)] text-gold text-sm uppercase tracking-[0.2em] mb-6"
-        >
-          About FAVA Capital
-        </motion.p>
-        <motion.h1
-          custom={1}
-          variants={fadeUp}
-          initial="hidden"
-          animate="visible"
-          className="font-[family-name:var(--font-display)] text-5xl md:text-7xl font-light text-ivory leading-tight"
-        >
-          Building the Future
-        </motion.h1>
-        <motion.h1
-          custom={2}
-          variants={fadeUp}
-          initial="hidden"
-          animate="visible"
-          className="font-[family-name:var(--font-display)] text-5xl md:text-7xl font-light text-ivory leading-tight mt-2"
-        >
-          of Finance
-        </motion.h1>
-        <motion.div
-          custom={3}
-          variants={fadeUp}
-          initial="hidden"
-          animate="visible"
-          className="mt-8"
-        >
-          <div className="gold-rule w-32 mx-auto" />
-        </motion.div>
+      <section className="max-w-[1160px] mx-auto px-20 max-lg:px-6 pb-[140px]">
+        <h1 className="text-display text-primary">
+          Building the Future of Finance
+        </h1>
+        <div className="gold-rule w-32 mt-10" />
       </section>
 
-      {/* Mission Statement */}
-      <section className="max-w-7xl mx-auto px-6 mb-32">
-        <motion.div
-          initial={{ opacity: 0, y: 40 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.8 }}
-          className="max-w-4xl mx-auto text-center"
-        >
-          <h2 className="font-[family-name:var(--font-heading)] text-gold text-sm uppercase tracking-[0.2em] mb-8">
-            Our Mission
-          </h2>
-          <p className="font-[family-name:var(--font-display)] text-3xl md:text-4xl lg:text-5xl font-light text-ivory leading-snug">
-            To construct a vertically integrated financial ecosystem that empowers institutions and individuals
-            to access <span className="text-gold">world-class markets</span>, cutting-edge technology,
-            and <span className="text-gold">compounding wealth strategies</span> — all under one roof.
-          </p>
-        </motion.div>
+      {/* 01 — Mission */}
+      <section className="max-w-[1160px] mx-auto px-20 max-lg:px-6 py-[140px] border-t border-border">
+        <p className="text-label text-secondary mb-12">01 — Mission</p>
+        <p className="text-accent text-secondary max-w-3xl">
+          To construct a vertically integrated financial ecosystem that empowers institutions and individuals
+          to access world-class markets, cutting-edge technology, and compounding wealth strategies — all under one roof.
+        </p>
       </section>
 
-      {/* Leadership Team */}
-      <section className="max-w-7xl mx-auto px-6 mb-32">
-        <motion.div
-          initial={{ opacity: 0, y: 40 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.8 }}
-          className="text-center mb-16"
-        >
-          <h2 className="font-[family-name:var(--font-heading)] text-gold text-sm uppercase tracking-[0.2em] mb-4">
-            Leadership
-          </h2>
-          <p className="font-[family-name:var(--font-display)] text-3xl md:text-4xl font-light text-ivory">
-            The Team Behind FAVA
-          </p>
-        </motion.div>
+      <div className="max-w-[1160px] mx-auto px-20 max-lg:px-6">
+        <div className="gold-rule" />
+      </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+      {/* 02 — Leadership */}
+      <section className="max-w-[1160px] mx-auto px-20 max-lg:px-6 py-[140px]">
+        <p className="text-label text-secondary mb-12">02 — Leadership</p>
+
+        <div className="flex flex-col">
           {team.map((member, i) => (
-            <motion.div
+            <div
               key={member.name}
-              initial={{ opacity: 0, y: 30 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ delay: i * 0.1, duration: 0.6 }}
-              className="border border-platinum/10 rounded-sm p-8 bg-obsidian/40 hover:border-gold/30 transition-colors duration-300"
+              className={`py-8 ${i < team.length - 1 ? "border-b border-border" : ""}`}
             >
-              <div className="w-16 h-16 rounded-full bg-deep flex items-center justify-center mb-6">
-                <span className="font-[family-name:var(--font-heading)] text-gold text-lg font-medium">
-                  {member.name.split(" ").map((n) => n[0]).join("")}
-                </span>
-              </div>
-              <h3 className="font-[family-name:var(--font-heading)] text-ivory text-xl font-medium mb-1">
-                {member.name}
-              </h3>
-              <p className="text-gold text-sm mb-4">{member.title}</p>
-              <p className="text-platinum/60 text-sm leading-relaxed">{member.bio}</p>
-            </motion.div>
-          ))}
-        </div>
-      </section>
-
-      {/* Our Ecosystem */}
-      <section className="max-w-7xl mx-auto px-6 mb-32">
-        <motion.div
-          initial={{ opacity: 0, y: 40 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.8 }}
-          className="text-center mb-16"
-        >
-          <h2 className="font-[family-name:var(--font-heading)] text-gold text-sm uppercase tracking-[0.2em] mb-4">
-            Our Ecosystem
-          </h2>
-          <p className="font-[family-name:var(--font-display)] text-3xl md:text-4xl font-light text-ivory">
-            One Vision. Multiple Verticals.
-          </p>
-        </motion.div>
-
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
-          {subsidiaries.map((sub, i) => (
-            <motion.div
-              key={sub.name}
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ delay: i * 0.1, duration: 0.5 }}
-            >
-              <Link
-                href={sub.href}
-                className="block border border-platinum/10 rounded-sm p-6 bg-obsidian/30 hover:border-platinum/25 transition-all duration-300 group"
-              >
-                <div className={`w-3 h-3 rounded-full ${sub.color} mb-4`} />
-                <h3 className="font-[family-name:var(--font-heading)] text-ivory text-lg font-medium mb-2 group-hover:text-gold transition-colors">
-                  {sub.name}
-                </h3>
-                <p className="text-platinum/50 text-sm">{sub.description}</p>
-              </Link>
-            </motion.div>
-          ))}
-        </div>
-      </section>
-
-      {/* Timeline / Milestones */}
-      <section className="max-w-7xl mx-auto px-6">
-        <motion.div
-          initial={{ opacity: 0, y: 40 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.8 }}
-          className="text-center mb-16"
-        >
-          <h2 className="font-[family-name:var(--font-heading)] text-gold text-sm uppercase tracking-[0.2em] mb-4">
-            Milestones
-          </h2>
-          <p className="font-[family-name:var(--font-display)] text-3xl md:text-4xl font-light text-ivory">
-            Our Journey So Far
-          </p>
-        </motion.div>
-
-        <div className="max-w-3xl mx-auto">
-          {milestones.map((milestone, i) => (
-            <motion.div
-              key={milestone.year}
-              initial={{ opacity: 0, x: -30 }}
-              whileInView={{ opacity: 1, x: 0 }}
-              viewport={{ once: true }}
-              transition={{ delay: i * 0.15, duration: 0.6 }}
-              className="flex gap-8 mb-12 last:mb-0"
-            >
-              <div className="flex flex-col items-center">
-                <span className="font-[family-name:var(--font-display)] text-gold text-2xl font-semibold">
-                  {milestone.year}
-                </span>
-                {i < milestones.length - 1 && (
-                  <div className="w-px h-full bg-gradient-to-b from-gold/40 to-transparent mt-4" />
-                )}
-              </div>
-              <div className="pb-8">
-                <h3 className="font-[family-name:var(--font-heading)] text-ivory text-xl font-medium mb-2">
-                  {milestone.title}
-                </h3>
-                <p className="text-platinum/60 text-sm leading-relaxed">
-                  {milestone.description}
+              <div className="flex flex-col md:flex-row md:items-baseline md:gap-12">
+                <div className="md:w-64 shrink-0 mb-2 md:mb-0">
+                  <h3 className="text-subhead text-primary">{member.name}</h3>
+                  <p className="text-caption text-secondary mt-1">{member.title}</p>
+                </div>
+                <p className="text-primary/60 text-[15px] leading-[1.7] font-light">
+                  {member.bio}
                 </p>
               </div>
-            </motion.div>
+            </div>
+          ))}
+        </div>
+      </section>
+
+      <div className="max-w-[1160px] mx-auto px-20 max-lg:px-6">
+        <div className="gold-rule" />
+      </div>
+
+      {/* 03 — Timeline */}
+      <section className="max-w-[1160px] mx-auto px-20 max-lg:px-6 py-[140px]">
+        <p className="text-label text-secondary mb-12">03 — Timeline</p>
+
+        <div className="flex flex-col gap-10">
+          {milestones.map((milestone) => (
+            <div key={milestone.year} className="flex flex-col md:flex-row md:gap-12">
+              <span className="text-numbers text-gold md:w-32 shrink-0">
+                {milestone.year}
+              </span>
+              <p className="text-primary/60 text-[15px] leading-[1.7] font-light mt-2 md:mt-1">
+                {milestone.description}
+              </p>
+            </div>
           ))}
         </div>
       </section>

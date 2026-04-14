@@ -1,22 +1,12 @@
 "use client";
 
 import { useState } from "react";
-import { motion } from "framer-motion";
-
-const fadeUp = {
-  hidden: { opacity: 0, y: 30 },
-  visible: (i: number) => ({
-    opacity: 1,
-    y: 0,
-    transition: { delay: i * 0.15, duration: 0.7, ease: "easeOut" },
-  }),
-};
 
 const tabs = [
-  { id: "terms", label: "Terms of Service" },
-  { id: "privacy", label: "Privacy Policy" },
-  { id: "risk", label: "Risk Disclosures" },
-  { id: "regulatory", label: "Regulatory Licences" },
+  { id: "terms", label: "Terms" },
+  { id: "privacy", label: "Privacy" },
+  { id: "risk", label: "Risk" },
+  { id: "licences", label: "Licences" },
 ];
 
 const content: Record<string, { title: string; sections: { heading: string; body: string }[] }> = {
@@ -83,7 +73,7 @@ const content: Record<string, { title: string; sections: { heading: string; body
       },
     ],
   },
-  regulatory: {
+  licences: {
     title: "Regulatory Licences",
     sections: [
       {
@@ -111,123 +101,64 @@ export default function LegalPage() {
   const activeContent = content[activeTab];
 
   return (
-    <div className="bg-void pt-32 pb-16">
-      {/* Hero */}
-      <section className="max-w-7xl mx-auto px-6 text-center mb-16">
-        <motion.p
-          custom={0}
-          variants={fadeUp}
-          initial="hidden"
-          animate="visible"
-          className="font-[family-name:var(--font-heading)] text-bright text-sm uppercase tracking-[0.2em] mb-6"
-        >
-          Legal
-        </motion.p>
-        <motion.h1
-          custom={1}
-          variants={fadeUp}
-          initial="hidden"
-          animate="visible"
-          className="font-[family-name:var(--font-display)] text-5xl md:text-6xl font-light text-ivory leading-tight"
-        >
-          Legal & Compliance
-        </motion.h1>
-        <motion.div
-          custom={2}
-          variants={fadeUp}
-          initial="hidden"
-          animate="visible"
-          className="mt-8"
-        >
-          <div className="gold-rule w-32 mx-auto" />
-        </motion.div>
-      </section>
-
+    <div className="bg-base pt-32">
       {/* Risk Warning Banner */}
-      <section className="max-w-7xl mx-auto px-6 mb-16">
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.6 }}
-          className="border border-commodity-amber/30 rounded-sm p-6 bg-commodity-amber/5"
-        >
-          <div className="flex items-start gap-4">
-            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" className="text-commodity-amber shrink-0 mt-0.5">
-              <path d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z" />
-            </svg>
-            <div>
-              <p className="text-commodity-amber font-[family-name:var(--font-heading)] text-sm font-medium mb-1">
-                Risk Warning
-              </p>
-              <p className="text-platinum/60 text-sm leading-relaxed">
-                Trading leveraged products such as forex and CFDs carries a high level of risk and may not be suitable for all investors.
-                Cryptocurrency assets are highly volatile and unregulated. You should carefully consider your objectives, financial situation,
-                needs, and level of experience before engaging with any FAVA Capital subsidiary. You may lose more than your initial investment.
-              </p>
-            </div>
-          </div>
-        </motion.div>
+      <section className="max-w-[1160px] mx-auto px-20 max-lg:px-6 mb-16">
+        <div className="border border-commodities p-6">
+          <p className="text-commodities text-[15px] leading-[1.7] font-light">
+            Trading leveraged products such as forex and CFDs carries a high level of risk and may not be suitable for all investors.
+            Cryptocurrency assets are highly volatile and unregulated. You should carefully consider your objectives, financial situation,
+            needs, and level of experience before engaging with any FAVA Capital subsidiary. You may lose more than your initial investment.
+          </p>
+        </div>
       </section>
 
-      {/* Tabbed Content */}
-      <section className="max-w-7xl mx-auto px-6">
-        {/* Tab Navigation */}
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.6 }}
-          className="flex flex-wrap gap-2 mb-12 border-b border-platinum/10 pb-4"
-        >
+      {/* Hero */}
+      <section className="max-w-[1160px] mx-auto px-20 max-lg:px-6 pb-[140px]">
+        <h1 className="text-display text-primary">
+          Legal & Compliance
+        </h1>
+        <div className="gold-rule w-32 mt-10" />
+      </section>
+
+      {/* Tab Navigation */}
+      <section className="max-w-[1160px] mx-auto px-20 max-lg:px-6 border-t border-border">
+        <div className="flex gap-8 pt-1">
           {tabs.map((tab) => (
             <button
               key={tab.id}
               onClick={() => setActiveTab(tab.id)}
-              className={`px-5 py-2.5 rounded-sm text-sm font-[family-name:var(--font-heading)] transition-all duration-300 cursor-pointer ${
+              className={`text-label py-4 cursor-pointer transition-colors duration-200 border-b-[1px] -mb-px ${
                 activeTab === tab.id
-                  ? "bg-bright text-ivory"
-                  : "text-platinum/50 hover:text-ivory hover:bg-platinum/5"
+                  ? "text-gold border-gold"
+                  : "text-secondary border-transparent hover:text-primary"
               }`}
             >
               {tab.label}
             </button>
           ))}
-        </motion.div>
+        </div>
+      </section>
 
-        {/* Tab Content */}
-        <motion.div
-          key={activeTab}
-          initial={{ opacity: 0, y: 15 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.4 }}
-          className="max-w-4xl"
-        >
-          <h2 className="font-[family-name:var(--font-display)] text-3xl md:text-4xl font-light text-ivory mb-10">
-            {activeContent.title}
-          </h2>
+      {/* Tab Content */}
+      <section className="max-w-[1160px] mx-auto px-20 max-lg:px-6 py-[140px]">
+        <div className="max-w-3xl">
+          {activeContent.sections.map((section, i) => (
+            <div key={section.heading} className={`${i > 0 ? "mt-12" : ""}`}>
+              <h3 className="text-subhead text-primary mb-4">{section.heading}</h3>
+              <p className="text-primary/60 text-[15px] leading-[1.7] font-light">
+                {section.body}
+              </p>
+            </div>
+          ))}
+        </div>
 
-          <div className="space-y-10">
-            {activeContent.sections.map((section) => (
-              <div key={section.heading}>
-                <h3 className="font-[family-name:var(--font-heading)] text-ivory text-lg font-medium mb-4">
-                  {section.heading}
-                </h3>
-                <p className="text-platinum/60 text-sm leading-[1.8]">
-                  {section.body}
-                </p>
-              </div>
-            ))}
-          </div>
-
-          <div className="mt-16 pt-8 border-t border-platinum/10">
-            <p className="text-platinum/40 text-xs leading-relaxed">
-              Last updated: March 2026. FAVA Capital Holdings Ltd. All rights reserved.
-              This document is for informational purposes only and does not constitute legal advice.
-              Please consult a qualified legal professional for guidance specific to your circumstances.
-            </p>
-          </div>
-        </motion.div>
+        <div className="mt-16 pt-8 border-t border-border">
+          <p className="text-secondary/50 text-[11px] leading-relaxed">
+            Last updated: March 2026. FAVA Capital Holdings Ltd. All rights reserved.
+            This document is for informational purposes only and does not constitute legal advice.
+          </p>
+        </div>
       </section>
     </div>
   );
