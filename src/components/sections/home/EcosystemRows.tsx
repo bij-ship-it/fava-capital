@@ -62,7 +62,7 @@ export function EcosystemRows() {
   return (
     <section id="ecosystem" className="py-[140px] max-md:py-20">
       <div className="max-w-[1160px] mx-auto px-20 max-lg:px-6">
-        <p className="text-label text-secondary mb-4">01 — OUR ECOSYSTEM</p>
+        <p className="text-label text-secondary mb-4">OUR ECOSYSTEM</p>
         <h2 className="text-subhead text-primary mb-16 max-w-lg">
           Four verticals. One infrastructure. Every market that matters.
         </h2>

@@ -28,7 +28,7 @@ export function TrustBar() {
         <div className="flex flex-col md:flex-row md:items-start md:justify-between gap-6 mb-20">
           <div>
             <p className="text-label text-secondary mb-4">
-              02 — WHY FAVA
+              WHY FAVA
             </p>
             <h2 className="text-subhead text-primary max-w-md">
               Built for people who take their money seriously.

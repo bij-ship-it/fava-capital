@@ -38,7 +38,7 @@ export function LatestInsights() {
       <div className="max-w-[1160px] mx-auto px-20 max-lg:px-6">
         {/* Header row */}
         <div className="flex items-center justify-between mb-16">
-          <p className="text-label text-secondary">04 — INSIGHTS</p>
+          <p className="text-label text-secondary">INSIGHTS</p>
           <Link href="/news" className="text-caption text-gold link-hover">
             View all →
           </Link>

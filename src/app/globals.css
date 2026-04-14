@@ -58,7 +58,7 @@ body {
 /* Display typography */
 .text-display {
   font-family: var(--font-display);
-  font-weight: 300;
+  font-weight: 600;
   font-style: italic;
   font-size: 44px;
   line-height: 1.12;
@@ -67,7 +67,7 @@ body {
 
 .text-display-alt {
   font-family: var(--font-display);
-  font-weight: 300;
+  font-weight: 600;
   font-size: 44px;
   line-height: 1.12;
   letter-spacing: -0.02em;
@@ -75,7 +75,7 @@ body {
 
 .text-subhead {
   font-family: var(--font-display);
-  font-weight: 400;
+  font-weight: 600;
   font-size: 22px;
   line-height: 1.35;
 }

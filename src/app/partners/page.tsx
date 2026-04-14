@@ -63,7 +63,7 @@ export default function PartnersPage() {
 
       {/* Partnership Models */}
       <section className="max-w-[1160px] mx-auto px-20 max-lg:px-6 py-[140px] border-t border-border">
-        <p className="text-label text-secondary mb-16">01 — Partnership Models</p>
+        <p className="text-label text-secondary mb-16">Partnership Models</p>
 
         <div className="flex flex-col gap-24">
           {partnershipModels.map((model) => (
@@ -94,7 +94,7 @@ export default function PartnersPage() {
 
       {/* IB Programme Details */}
       <section className="max-w-[1160px] mx-auto px-20 max-lg:px-6 py-[140px]">
-        <p className="text-label text-secondary mb-12">02 — IB Programme</p>
+        <p className="text-label text-secondary mb-12">IB Programme</p>
 
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-16">
           <div>
@@ -129,7 +129,7 @@ export default function PartnersPage() {
 
       {/* CTA */}
       <section className="max-w-[1160px] mx-auto px-20 max-lg:px-6 py-[140px]">
-        <p className="text-label text-secondary mb-12">03 — Get Started</p>
+        <p className="text-label text-secondary mb-12">Get Started</p>
 
         <h2 className="text-subhead text-primary mb-4">Ready to Partner?</h2>
         <p className="text-primary/60 text-[15px] leading-[1.7] font-light max-w-lg mb-8">

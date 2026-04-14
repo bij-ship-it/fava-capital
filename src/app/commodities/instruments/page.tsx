@@ -278,7 +278,7 @@ export default function InstrumentsPage() {
 
         {/* Notes */}
         <div className="py-[140px]">
-          <p className="text-label text-secondary mb-8">04 — Notes</p>
+          <p className="text-label text-secondary mb-8">Notes</p>
           <div className="space-y-4">
             {[
               "All times are in GMT. Trading hours may vary on public holidays and during daylight saving transitions.",

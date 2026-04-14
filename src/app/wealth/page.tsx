@@ -50,7 +50,7 @@ export default function WealthPage() {
 
       {/* Strategy Overview */}
       <section className="max-w-[1160px] mx-auto px-20 max-lg:px-6 py-[140px] border-t border-border">
-        <p className="text-label text-secondary mb-12">01 — Strategy</p>
+        <p className="text-label text-secondary mb-12">Strategy</p>
 
         <div className="flex flex-col gap-12">
           {strategies.map((strategy) => (
@@ -70,7 +70,7 @@ export default function WealthPage() {
 
       {/* Performance */}
       <section className="max-w-[1160px] mx-auto px-20 max-lg:px-6 py-[140px]">
-        <p className="text-label text-secondary mb-12">02 — Performance</p>
+        <p className="text-label text-secondary mb-12">Performance</p>
 
         <div className="bg-surface border border-border p-8 md:p-12">
           <div className="grid grid-cols-2 md:grid-cols-4 gap-8 mb-8">
@@ -98,7 +98,7 @@ export default function WealthPage() {
 
       {/* Key Terms */}
       <section className="max-w-[1160px] mx-auto px-20 max-lg:px-6 py-[140px]">
-        <p className="text-label text-secondary mb-12">03 — Key Terms</p>
+        <p className="text-label text-secondary mb-12">Key Terms</p>
 
         <table className="w-full max-w-2xl">
           <tbody>
@@ -121,7 +121,7 @@ export default function WealthPage() {
 
       {/* Navigation */}
       <section className="max-w-[1160px] mx-auto px-20 max-lg:px-6 py-[140px]">
-        <p className="text-label text-secondary mb-12">04 — Explore</p>
+        <p className="text-label text-secondary mb-12">Explore</p>
 
         <div className="flex flex-col">
           {navLinks.map((link, i) => (

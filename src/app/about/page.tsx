@@ -40,9 +40,9 @@ export default function AboutPage() {
         <div className="gold-rule w-32 mt-10" />
       </section>
 
-      {/* 01 — Mission */}
+      {/* Mission */}
       <section className="max-w-[1160px] mx-auto px-20 max-lg:px-6 py-[140px] border-t border-border">
-        <p className="text-label text-secondary mb-12">01 — Mission</p>
+        <p className="text-label text-secondary mb-12">Mission</p>
         <p className="text-accent text-secondary max-w-3xl">
           To construct a vertically integrated financial ecosystem that empowers institutions and individuals
           to access world-class markets, cutting-edge technology, and compounding wealth strategies — all under one roof.
@@ -53,9 +53,9 @@ export default function AboutPage() {
         <div className="gold-rule" />
       </div>
 
-      {/* 02 — Leadership */}
+      {/* Leadership */}
       <section className="max-w-[1160px] mx-auto px-20 max-lg:px-6 py-[140px]">
-        <p className="text-label text-secondary mb-12">02 — Leadership</p>
+        <p className="text-label text-secondary mb-12">Leadership</p>
 
         <div className="flex flex-col">
           {team.map((member, i) => (
@@ -81,9 +81,9 @@ export default function AboutPage() {
         <div className="gold-rule" />
       </div>
 
-      {/* 03 — Timeline */}
+      {/* Timeline */}
       <section className="max-w-[1160px] mx-auto px-20 max-lg:px-6 py-[140px]">
-        <p className="text-label text-secondary mb-12">03 — Timeline</p>
+        <p className="text-label text-secondary mb-12">Timeline</p>
 
         <div className="flex flex-col gap-10">
           {milestones.map((milestone) => (

@@ -94,7 +94,7 @@ export default function CryptoPage() {
       {/* Why FAVA Digital */}
       <section className="py-[140px]">
         <div className="max-w-[1160px] mx-auto px-20 max-lg:px-6">
-          <p className="text-label text-secondary mb-16">02 — Why FAVA Digital</p>
+          <p className="text-label text-secondary mb-16">Why FAVA Digital</p>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-px bg-border">
             {whyDigital.map((item) => (
               <div key={item.label} className="bg-base p-10 first:pl-0 last:pr-0 max-md:px-0 max-md:py-10">
@@ -109,7 +109,7 @@ export default function CryptoPage() {
       {/* Cryptorio Platform */}
       <section className="py-[140px] border-t border-border">
         <div className="max-w-[1160px] mx-auto px-20 max-lg:px-6">
-          <p className="text-label text-secondary mb-4">03 — THE PLATFORM</p>
+          <p className="text-label text-secondary mb-4">THE PLATFORM</p>
           <h2 className="text-subhead text-primary mb-6 max-w-lg">
             Cryptorio &mdash; built from the ground up for digital assets.
           </h2>

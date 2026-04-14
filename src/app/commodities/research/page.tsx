@@ -99,7 +99,7 @@ export default function ResearchPage() {
 
         {/* Articles as rows */}
         <div className="mt-16">
-          <p className="text-label text-secondary mb-8">02 — Latest</p>
+          <p className="text-label text-secondary mb-8">Latest</p>
           {articles.map((article, i) => (
             <div
               key={article.title}
@@ -129,7 +129,7 @@ export default function ResearchPage() {
 
         {/* Expert Commentary */}
         <div className="py-[140px]">
-          <p className="text-label text-secondary mb-8">03 — The Desk</p>
+          <p className="text-label text-secondary mb-8">The Desk</p>
           <h2 className="text-display-alt text-primary mb-16">
             Expert Commentary
           </h2>

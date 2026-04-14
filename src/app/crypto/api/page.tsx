@@ -110,7 +110,7 @@ export default function APIPage() {
 
         {/* Authentication */}
         <section className="py-[140px] border-t border-border">
-          <p className="text-label text-secondary mb-10">02 — Authentication</p>
+          <p className="text-label text-secondary mb-10">Authentication</p>
           <p className="text-secondary text-[14px] mb-6 max-w-[560px]">
             All private endpoints require HMAC-SHA256 signed requests. Generate your
             API key and secret from the account settings dashboard. Include the
@@ -125,7 +125,7 @@ export default function APIPage() {
 
         {/* REST API */}
         <section className="py-[140px] border-t border-border">
-          <p className="text-label text-secondary mb-10">03 — REST API</p>
+          <p className="text-label text-secondary mb-10">REST API</p>
           <p className="text-secondary text-[14px] mb-8">
             Base URL:{" "}
             <code className="font-mono text-primary">https://api.cryptorio.exchange/v1</code>
@@ -166,7 +166,7 @@ export default function APIPage() {
 
         {/* WebSocket API */}
         <section className="py-[140px] border-t border-border">
-          <p className="text-label text-secondary mb-10">04 — WebSocket API</p>
+          <p className="text-label text-secondary mb-10">WebSocket API</p>
           <p className="text-secondary text-[14px] mb-8">
             Endpoint:{" "}
             <code className="font-mono text-primary">wss://stream.cryptorio.exchange/v1</code>
@@ -184,7 +184,7 @@ export default function APIPage() {
 
         {/* Rate Limits */}
         <section className="py-[140px] border-t border-border">
-          <p className="text-label text-secondary mb-10">05 — Rate Limits</p>
+          <p className="text-label text-secondary mb-10">Rate Limits</p>
           <p className="text-secondary text-[14px] mb-8">
             Rate limits are applied per API key. Exceeding limits returns HTTP 429.
           </p>

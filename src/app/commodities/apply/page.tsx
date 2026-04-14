@@ -171,7 +171,7 @@ export default function ApplyPage() {
             {/* KYC Upload */}
             <div className="mb-12">
               <p className="text-label text-secondary mb-2">
-                03 — Identity Verification
+                Identity Verification
               </p>
               <p className="text-secondary mb-6">
                 Upload a valid government-issued photo ID and proof of address.

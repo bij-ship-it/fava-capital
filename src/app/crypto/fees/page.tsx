@@ -37,7 +37,7 @@ export default function FeesPage() {
 
         {/* Trading Fees */}
         <section className="py-[140px] border-t border-border">
-          <p className="text-label text-secondary mb-10">02 — Trading Fees</p>
+          <p className="text-label text-secondary mb-10">Trading Fees</p>
           <p className="text-secondary text-[14px] mb-8">
             Maker-taker model based on 30-day trailing volume.
           </p>
@@ -69,7 +69,7 @@ export default function FeesPage() {
 
         {/* Deposit & Withdrawal Fees */}
         <section className="py-[140px] border-t border-border">
-          <p className="text-label text-secondary mb-10">03 — Network Fees</p>
+          <p className="text-label text-secondary mb-10">Network Fees</p>
           <p className="text-secondary text-[14px] mb-8">
             Deposits are always free. Withdrawal fees cover network transaction costs.
           </p>

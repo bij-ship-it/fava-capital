@@ -35,7 +35,7 @@ export default function ContactPage() {
 
       {/* Enquiry Types */}
       <section className="max-w-[1160px] mx-auto px-20 max-lg:px-6 py-[140px] border-t border-border">
-        <p className="text-label text-secondary mb-12">01 — Enquiry Type</p>
+        <p className="text-label text-secondary mb-12">Enquiry Type</p>
 
         <div className="flex flex-col">
           {enquiryTypes.map((type, i) => (
@@ -59,7 +59,7 @@ export default function ContactPage() {
 
       {/* Contact Form */}
       <section className="max-w-[1160px] mx-auto px-20 max-lg:px-6 py-[140px]">
-        <p className="text-label text-secondary mb-12">02 — Send a Message</p>
+        <p className="text-label text-secondary mb-12">Send a Message</p>
 
         <form onSubmit={(e) => e.preventDefault()} className="max-w-2xl">
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
@@ -131,7 +131,7 @@ export default function ContactPage() {
 
       {/* Office Locations */}
       <section className="max-w-[1160px] mx-auto px-20 max-lg:px-6 py-[140px]">
-        <p className="text-label text-secondary mb-12">03 — Offices</p>
+        <p className="text-label text-secondary mb-12">Offices</p>
 
         <div className="flex flex-col md:flex-row md:gap-24">
           {offices.map((office) => (

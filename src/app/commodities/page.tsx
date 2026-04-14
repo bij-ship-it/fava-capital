@@ -86,7 +86,7 @@ export default function CommoditiesPage() {
       {/* Category Overview */}
       <section className="py-[140px]">
         <div className="max-w-[1160px] mx-auto px-20 max-lg:px-6">
-          <p className="text-label text-secondary mb-16">02 — Markets</p>
+          <p className="text-label text-secondary mb-16">Markets</p>
           {categories.map((cat, i) => (
             <div
               key={cat.title}
@@ -111,7 +111,7 @@ export default function CommoditiesPage() {
       {/* CTA */}
       <section className="border-t border-border py-[140px]">
         <div className="max-w-[1160px] mx-auto px-20 max-lg:px-6">
-          <p className="text-label text-secondary mb-6">03 — Get Started</p>
+          <p className="text-label text-secondary mb-6">Get Started</p>
           <h2 className="text-display-alt text-primary max-w-[560px]">
             Start Trading Commodities
           </h2>

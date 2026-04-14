@@ -76,7 +76,7 @@ export default function CareersPage() {
 
       {/* Values */}
       <section className="max-w-[1160px] mx-auto px-20 max-lg:px-6 py-[140px] border-t border-border">
-        <p className="text-label text-secondary mb-12">01 — Values</p>
+        <p className="text-label text-secondary mb-12">Values</p>
 
         <div className="grid grid-cols-1 md:grid-cols-2 gap-x-16 gap-y-12">
           {values.map((value) => (
@@ -96,7 +96,7 @@ export default function CareersPage() {
 
       {/* Open Positions */}
       <section className="max-w-[1160px] mx-auto px-20 max-lg:px-6 py-[140px]">
-        <p className="text-label text-secondary mb-12">02 — Open Positions</p>
+        <p className="text-label text-secondary mb-12">Open Positions</p>
 
         <div className="flex flex-col">
           {positions.map((pos, i) => (
@@ -125,7 +125,7 @@ export default function CareersPage() {
 
       {/* Benefits */}
       <section className="max-w-[1160px] mx-auto px-20 max-lg:px-6 py-[140px]">
-        <p className="text-label text-secondary mb-12">03 — Benefits</p>
+        <p className="text-label text-secondary mb-12">Benefits</p>
 
         <ul className="flex flex-col gap-4 max-w-2xl">
           {benefits.map((benefit) => (
