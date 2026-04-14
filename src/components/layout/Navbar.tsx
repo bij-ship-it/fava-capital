@@ -2,7 +2,7 @@
 
 import Link from "next/link";
 import { useState } from "react";
-import { LatticeLogo } from "@/components/ui/LatticeLogo";
+import Image from "next/image";
 
 const navLinks = [
   { label: "Home", href: "/" },
@@ -22,11 +22,14 @@ export function Navbar() {
     <header className="fixed top-0 left-0 right-0 z-50 border-b border-white/5 bg-void/80 backdrop-blur-xl">
       <nav className="mx-auto flex max-w-7xl items-center justify-between px-6 py-4">
         {/* Logo */}
-        <Link href="/" className="flex items-center gap-3">
-          <LatticeLogo size={32} />
-          <span className="font-[family-name:var(--font-heading)] text-lg font-medium tracking-widest text-ivory">
-            FAVA
-          </span>
+        <Link href="/" className="flex items-center">
+          <Image
+            src="/images/fava-lattice-logo-dark-bg.svg"
+            alt="FAVA Capital"
+            width={130}
+            height={53}
+            priority
+          />
         </Link>
 
         {/* Desktop nav */}

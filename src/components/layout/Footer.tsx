@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { LatticeLogo } from "@/components/ui/LatticeLogo";
+import Image from "next/image";
 
 const footerColumns = [
   {
@@ -46,12 +46,12 @@ export function Footer() {
       <div className="mx-auto max-w-7xl px-6 py-16">
         {/* Top — Logo & tagline */}
         <div className="mb-12 flex flex-col items-start gap-4">
-          <div className="flex items-center gap-3">
-            <LatticeLogo size={28} />
-            <span className="font-[family-name:var(--font-heading)] text-lg font-medium tracking-widest text-ivory">
-              FAVA
-            </span>
-          </div>
+          <Image
+            src="/images/fava-lattice-logo-dark-bg.svg"
+            alt="FAVA Capital"
+            width={150}
+            height={61}
+          />
           <p className="font-[family-name:var(--font-display)] text-lg font-light italic text-platinum/50">
             Building Empires. Compounding Futures.
           </p>

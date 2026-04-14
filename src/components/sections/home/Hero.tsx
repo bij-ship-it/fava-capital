@@ -2,7 +2,7 @@
 
 import { motion } from "framer-motion";
 import Link from "next/link";
-import { LatticeLogo } from "@/components/ui/LatticeLogo";
+import Image from "next/image";
 
 const fadeUp = {
   hidden: { opacity: 0, y: 30 },
@@ -24,7 +24,14 @@ export function Hero() {
           animate="visible"
           className="mb-10"
         >
-          <LatticeLogo animated={true} size={80} className="mx-auto" />
+          <Image
+            src="/images/fava-lattice-mark-only-dark-bg.svg"
+            alt="FAVA Capital"
+            width={80}
+            height={120}
+            priority
+            className="mx-auto"
+          />
         </motion.div>
 
         <motion.h1
