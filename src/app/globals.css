@@ -1,0 +1,64 @@
+@import "tailwindcss";
+
+@theme {
+  /* Primary — Purple Spectrum */
+  --color-obsidian: #1A0A2E;
+  --color-deep: #2D1B69;
+  --color-core: #4A2C8A;
+  --color-mid: #6B3FA0;
+  --color-bright: #8B5CF6;
+  --color-accent: #A78BFA;
+  --color-light: #C4B5FD;
+  --color-wash: #EDE9FE;
+
+  /* Metallics & Neutrals */
+  --color-gold: #D4A843;
+  --color-gold-light: #F0D78C;
+  --color-platinum: #E8E4EC;
+  --color-void: #0D0D1A;
+  --color-ivory: #FAF9FC;
+
+  /* Subsidiary Accents */
+  --color-fx-teal: #14B8A6;
+  --color-crypto-electric: #6366F1;
+  --color-fund-emerald: #059669;
+  --color-commodity-amber: #D97706;
+  --color-property-slate: #475569;
+
+  /* Typography */
+  --font-display: "Cormorant Garamond", serif;
+  --font-heading: "Outfit", sans-serif;
+  --font-body: "DM Sans", sans-serif;
+}
+
+/* Base styles */
+body {
+  font-family: var(--font-body);
+  background-color: var(--color-void);
+  color: var(--color-ivory);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* Grain texture overlay */
+.grain::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)' opacity='0.04'/%3E%3C/svg%3E");
+  pointer-events: none;
+  z-index: 1;
+}
+
+/* Gold accent line */
+.gold-rule {
+  height: 1px;
+  background: linear-gradient(90deg, transparent, var(--color-gold), transparent);
+}
+
+/* Ambient gradient */
+.ambient-gradient {
+  background: radial-gradient(ellipse at 30% 20%, rgba(75, 44, 138, 0.3) 0%, transparent 60%),
+    radial-gradient(ellipse at 70% 80%, rgba(45, 27, 105, 0.2) 0%, transparent 60%),
+    var(--color-void);
+}
