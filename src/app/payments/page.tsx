@@ -16,6 +16,54 @@ const stats = [
   { value: "~$11M", label: "TPV TO DATE" },
 ];
 
+const capabilities = [
+  {
+    title: "Send Money Globally",
+    description:
+      "Transfer funds to 180+ countries with competitive rates and real-time tracking. Fast settlement, no hidden fees.",
+  },
+  {
+    title: "Multi-Currency Accounts",
+    description:
+      "Hold, convert, and manage balances in 130+ currencies. One account, multiple currencies, instant conversion.",
+  },
+  {
+    title: "Cards & Wallets",
+    description:
+      "Virtual and physical cards for everyday spending. Fund from any wallet, spend anywhere cards are accepted.",
+  },
+  {
+    title: "Business API",
+    description:
+      "Integrate payments directly into your platform. RESTful API with webhooks, batch payouts, and white-label options.",
+  },
+];
+
+const steps = [
+  {
+    number: "01",
+    title: "Sign Up",
+    description: "Create your account in minutes with simple verification.",
+  },
+  {
+    number: "02",
+    title: "Fund Your Account",
+    description: "Deposit via bank transfer, card, or crypto rails.",
+  },
+  {
+    number: "03",
+    title: "Send Anywhere",
+    description: "Move money to 180+ countries at transparent rates.",
+  },
+];
+
+const licences = [
+  { name: "Nigerian Tier-1 MFB", operational: true, year: "2021" },
+  { name: "US FinCEN MSB", operational: true, year: "2023" },
+  { name: "Canadian FINTRAC MSB", operational: true, year: "2023" },
+  { name: "UK EMI Licence", operational: false, year: "2026" },
+];
+
 const opportunityStats = [
   { value: "$190T", label: "Annual Cross-Border Flows" },
   { value: "$400B+", label: "Fees Extracted by Intermediaries" },
@@ -23,46 +71,11 @@ const opportunityStats = [
   { value: "3–5 Days", label: "Avg Emerging Market Settlement" },
 ];
 
-const structuralDrivers = [
-  {
-    title: "Banking Retreat",
-    body: "Correspondent relationships contracting across emerging markets.",
-  },
-  {
-    title: "Stablecoin Maturity",
-    body: "$170B+ market cap. Settlement infrastructure ready at scale.",
-  },
-  {
-    title: "Regulatory Clarity",
-    body: "MiCA, GENIUS Act, IMTO frameworks now codified.",
-  },
-  {
-    title: "Embedded Finance",
-    body: "Platforms require plug-and-play cross-border access.",
-  },
-];
-
-const licences = [
-  { licence: "Nigerian Tier-1 MFB", status: "Operational", statusColor: "text-green-400", year: "2021" },
-  { licence: "US FinCEN MSB", status: "Operational", statusColor: "text-green-400", year: "2023" },
-  { licence: "Canadian FINTRAC MSB", status: "Operational", statusColor: "text-green-400", year: "2023" },
-  { licence: "UK EMI Licence", status: "In Progress", statusColor: "text-gold", year: "2026" },
-];
-
-const platformCapabilities = [
-  "Cross-border payments and collections",
-  "Multi-currency wallets and accounts",
-  "FX conversion and treasury routing",
-  "Virtual account infrastructure (IBANs, local rails)",
-  "Card issuance and transaction processing",
-  "API and white-label integration",
-];
-
-const brokerageFeatures = [
-  "Multi-currency wallets",
-  "Cross-border transfers",
-  "Card spending",
-  "Savings and investment products",
+const brokerageItems = [
+  "Multi-currency wallets for trading and spending",
+  "Instant cross-border transfers between accounts",
+  "Card issuance linked to brokerage balances",
+  "Integrated savings and investment products",
 ];
 
 export default function PaymentsPage() {
@@ -111,21 +124,20 @@ export default function PaymentsPage() {
       </section>
 
       {/* Stats Bar */}
-      <section className="border-t border-b border-border">
+      <section className="bg-surface border-t border-b border-border">
         <div className="max-w-[1160px] mx-auto px-20 max-lg:px-6">
           <div className="grid grid-cols-2 md:grid-cols-4">
             {stats.map((stat, i) => (
               <div
                 key={stat.label}
                 className={`py-10 ${
-                  i < stats.length - 1
-                    ? "md:border-r border-border"
-                    : ""
+                  i < stats.length - 1 ? "md:border-r border-border" : ""
                 } ${i % 2 === 0 && i < 2 ? "max-md:border-r" : ""} ${
                   i < 2 ? "max-md:border-b border-border" : ""
                 }`}
               >
                 <div className={i > 0 ? "md:pl-10" : ""}>
+                  <div className="w-8 h-[2px] bg-payments mb-5" />
                   <p className="text-numbers text-primary">{stat.value}</p>
                   <p className="text-caption text-secondary mt-2">
                     {stat.label}
@@ -137,40 +149,26 @@ export default function PaymentsPage() {
         </div>
       </section>
 
-      {/* The Opportunity */}
-      <section className="py-[140px] max-md:py-20">
+      {/* What Rebasive Does */}
+      <section className="py-[120px] max-md:py-20">
         <div className="max-w-[1160px] mx-auto px-20 max-lg:px-6">
-          <p className="text-label text-secondary mb-4">THE OPPORTUNITY</p>
-          <h2 className="text-subhead text-primary max-w-xl mb-6">
-            Correspondent banking is retreating.
+          <p className="text-label text-payments mb-4">WHAT YOU GET</p>
+          <h2 className="text-subhead text-primary max-w-xl mb-16">
+            Everything you need to move money across borders.
           </h2>
-          <p className="text-secondary max-w-xl leading-[1.75] mb-16">
-            Africa has lost 10% of correspondent banking relationships in three
-            years. Cross-border payment infrastructure is fragmenting just as
-            demand accelerates.
-          </p>
 
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-x-12 gap-y-10 mb-20">
-            {opportunityStats.map((stat) => (
-              <div key={stat.label}>
-                <p className="text-numbers text-primary">{stat.value}</p>
-                <p className="text-caption text-secondary mt-2">{stat.label}</p>
-              </div>
-            ))}
-          </div>
-
-          <div className="gold-rule mb-10" />
-          <p className="text-label text-secondary mb-10">STRUCTURAL DRIVERS</p>
-
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-x-20 gap-y-12">
-            {structuralDrivers.map((driver) => (
-              <div key={driver.title}>
-                <div className="w-8 h-[2px] bg-[#0EA5E9] mb-6" />
-                <h3 className="text-[15px] text-primary font-light mb-3">
-                  {driver.title}
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+            {capabilities.map((cap) => (
+              <div
+                key={cap.title}
+                className="bg-surface border border-border p-10"
+              >
+                <div className="w-10 h-[2px] bg-payments mb-6" />
+                <h3 className="text-[17px] text-primary font-light mb-3">
+                  {cap.title}
                 </h3>
                 <p className="text-[14px] text-secondary leading-[1.75]">
-                  {driver.body}
+                  {cap.description}
                 </p>
               </div>
             ))}
@@ -178,116 +176,158 @@ export default function PaymentsPage() {
         </div>
       </section>
 
-      {/* Regulatory Footprint & Platform Capabilities */}
-      <section className="py-[140px] max-md:py-20 border-t border-border">
-        <div className="max-w-[1160px] mx-auto px-20 max-lg:px-6">
-          <div className="flex flex-col md:flex-row gap-20">
-            {/* Regulatory Footprint */}
-            <div className="flex-1">
-              <p className="text-label text-secondary mb-4">REGULATORY FOOTPRINT</p>
-              <h2 className="text-subhead text-primary mb-12">
-                Licensed across three continents.
-              </h2>
+      {/* How It Works */}
+      <section className="border-t border-border">
+        <div className="max-w-[1160px] mx-auto px-20 max-lg:px-6 py-[120px] max-md:py-20">
+          <p className="text-label text-payments mb-4">HOW IT WORKS</p>
+          <h2 className="text-subhead text-primary mb-16">
+            Three steps. That&rsquo;s it.
+          </h2>
 
-              <div className="border-t border-border">
-                <div className="grid grid-cols-[1fr_auto_auto] gap-x-8 py-4 border-b border-border">
-                  <p className="text-label text-tertiary">LICENCE</p>
-                  <p className="text-label text-tertiary">STATUS</p>
-                  <p className="text-label text-tertiary">YEAR</p>
+          <div className="bg-surface border border-border p-10 md:p-14">
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-10 md:gap-0 relative">
+              {steps.map((step, i) => (
+                <div
+                  key={step.number}
+                  className={`relative ${
+                    i < steps.length - 1
+                      ? "md:border-r border-border md:pr-10"
+                      : ""
+                  } ${i > 0 ? "md:pl-10" : ""} ${
+                    i < steps.length - 1
+                      ? "max-md:border-b max-md:pb-10"
+                      : ""
+                  }`}
+                >
+                  <span className="text-[32px] font-light text-payments leading-none">
+                    {step.number}
+                  </span>
+                  <h3 className="text-[17px] text-primary font-light mt-4 mb-2">
+                    {step.title}
+                  </h3>
+                  <p className="text-[14px] text-secondary leading-[1.75]">
+                    {step.description}
+                  </p>
                 </div>
-                {licences.map((lic) => (
-                  <div
-                    key={lic.licence}
-                    className="grid grid-cols-[1fr_auto_auto] gap-x-8 py-4 border-b border-border items-center"
-                  >
-                    <p className="text-[14px] text-primary">{lic.licence}</p>
-                    <p className={`text-[14px] ${lic.statusColor}`}>{lic.status}</p>
-                    <p className="text-[14px] text-secondary">{lic.year}</p>
-                  </div>
-                ))}
-              </div>
-            </div>
+              ))}
 
-            {/* Platform Capabilities */}
-            <div className="md:w-[380px] shrink-0">
-              <p className="text-label text-secondary mb-4">PLATFORM CAPABILITIES</p>
-              <div className="flex flex-col gap-4 mt-12">
-                {platformCapabilities.map((cap) => (
-                  <div key={cap} className="flex items-start gap-3">
-                    <span className="w-1.5 h-1.5 bg-payments mt-2 shrink-0" />
-                    <span className="text-[14px] text-primary/70">{cap}</span>
-                  </div>
-                ))}
-              </div>
+              {/* Connecting lines — desktop only */}
+              <div className="hidden md:block absolute top-5 left-[33.33%] w-[2px] h-3 bg-payments -translate-x-[1px]" />
+              <div className="hidden md:block absolute top-5 left-[66.66%] w-[2px] h-3 bg-payments -translate-x-[1px]" />
             </div>
           </div>
         </div>
       </section>
 
-      {/* Transparent Pricing */}
-      <section className="py-[140px] max-md:py-20 border-t border-border">
+      {/* Regulatory Trust */}
+      <section className="bg-surface border-t border-b border-border py-[80px] max-md:py-16">
         <div className="max-w-[1160px] mx-auto px-20 max-lg:px-6">
-          <p className="text-label text-secondary mb-4">PRICING</p>
-          <h2 className="text-subhead text-primary mb-6 max-w-lg">
-            Transparent, competitive rates. No hidden fees.
+          <p className="text-label text-payments mb-4">COMPLIANCE</p>
+          <h2 className="text-subhead text-primary mb-14">
+            Licensed &amp; Regulated
           </h2>
-          <p className="text-secondary max-w-xl leading-[1.75] mb-12">
-            Rebasive earns from small margins on FX conversion and transaction
-            fees — not from hidden markups or predatory pricing. What you see is
-            what you pay.
-          </p>
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-12">
-            <div>
-              <p className="text-numbers text-primary">0.4–0.8%</p>
-              <p className="text-caption text-secondary mt-2">FX conversion spread</p>
-            </div>
-            <div>
-              <p className="text-numbers text-primary">0–1%</p>
-              <p className="text-caption text-secondary mt-2">Transfer fees</p>
-            </div>
-            <div>
-              <p className="text-numbers text-primary">$0</p>
-              <p className="text-caption text-secondary mt-2">Account maintenance</p>
-            </div>
-          </div>
-        </div>
-      </section>
 
-      {/* Brokerage Integration */}
-      <section className="py-[140px] max-md:py-20 border-t border-border">
-        <div className="max-w-[1160px] mx-auto px-20 max-lg:px-6">
-          <p className="text-label text-secondary mb-4">BROKERAGE INTEGRATION</p>
-          <h2 className="text-subhead text-primary mb-6 max-w-xl">
-            Rails that extend the brokerage.
-          </h2>
-          <p className="text-secondary max-w-xl leading-[1.75] mb-12">
-            Rebasive rails integrate into FAVA Markets, extending the brokerage
-            into a complete financial services environment.
-          </p>
-
-          <p className="text-label text-secondary mb-6">CLIENTS ACCESS</p>
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-6">
-            {brokerageFeatures.map((feature) => (
-              <div key={feature} className="flex items-start gap-3">
-                <span className="w-1.5 h-1.5 bg-payments mt-2 shrink-0" />
-                <span className="text-[14px] text-primary/70">{feature}</span>
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
+            {licences.map((lic) => (
+              <div key={lic.name} className="flex flex-col gap-3">
+                <div className="flex items-center gap-2.5">
+                  <span
+                    className={`w-2 h-2 ${
+                      lic.operational ? "bg-green-400" : "bg-gold"
+                    }`}
+                  />
+                  <span className="text-[12px] text-secondary uppercase tracking-wider">
+                    {lic.operational ? "Operational" : "In Progress"}
+                  </span>
+                </div>
+                <p className="text-[15px] text-primary font-light">
+                  {lic.name}
+                </p>
+                <p className="text-[13px] text-tertiary">{lic.year}</p>
               </div>
             ))}
           </div>
         </div>
       </section>
 
-      {/* CTA */}
-      <section className="border-t border-border py-[140px] max-md:py-20">
+      {/* The Opportunity Context */}
+      <section className="py-[120px] max-md:py-20">
         <div className="max-w-[1160px] mx-auto px-20 max-lg:px-6">
-          <h2 className="text-display-alt text-primary max-w-[560px]">
-            The rails underneath the ecosystem.
+          <div className="flex flex-col md:flex-row gap-16 md:gap-20 items-start">
+            {/* Left — narrative */}
+            <div className="flex-1">
+              <p className="text-label text-payments mb-6">WHY IT MATTERS</p>
+              <p className="text-[28px] md:text-[34px] text-primary font-light italic leading-[1.35]">
+                8.4% is what it costs to send money to Africa.
+              </p>
+              <p className="text-[28px] md:text-[34px] text-payments font-light italic leading-[1.35] mt-1">
+                We&rsquo;re changing that.
+              </p>
+            </div>
+
+            {/* Right — stats */}
+            <div className="md:w-[440px] shrink-0 grid grid-cols-2 gap-x-12 gap-y-10">
+              {opportunityStats.map((stat) => (
+                <div key={stat.label}>
+                  <p className="text-numbers text-primary">{stat.value}</p>
+                  <p className="text-caption text-secondary mt-2">
+                    {stat.label}
+                  </p>
+                </div>
+              ))}
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Brokerage Integration */}
+      <section className="border-t border-border">
+        <div className="max-w-[1160px] mx-auto px-20 max-lg:px-6 py-[120px] max-md:py-20">
+          <div className="bg-surface border border-border p-10 md:p-14">
+            <div className="flex flex-col md:flex-row gap-14 md:gap-20">
+              {/* Left */}
+              <div className="flex-1">
+                <p className="text-label text-payments mb-4">
+                  BROKERAGE INTEGRATION
+                </p>
+                <h2 className="text-subhead text-primary mb-4">
+                  One account. Trading + Payments.
+                </h2>
+                <p className="text-[14px] text-secondary leading-[1.75] max-w-md">
+                  Rebasive rails integrate directly into FAVA Markets, giving
+                  brokerage clients a complete financial services environment
+                  from a single account.
+                </p>
+              </div>
+
+              {/* Right */}
+              <div className="md:w-[380px] shrink-0 flex flex-col gap-5">
+                <p className="text-label text-secondary mb-1">
+                  CLIENTS ACCESS
+                </p>
+                {brokerageItems.map((item) => (
+                  <div key={item} className="flex items-start gap-3">
+                    <span className="w-1.5 h-1.5 bg-payments mt-2 shrink-0" />
+                    <span className="text-[14px] text-primary/70">{item}</span>
+                  </div>
+                ))}
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* CTA */}
+      <section className="bg-surface border-t border-border py-[120px] max-md:py-20">
+        <div className="max-w-[1160px] mx-auto px-20 max-lg:px-6 text-center">
+          <h2 className="text-display-alt text-primary">
+            Move money. Everywhere.
           </h2>
-          <p className="text-secondary mt-6 max-w-[440px] leading-[1.7]">
-            Cross-border settlement infrastructure for consumers, businesses,
-            and platforms &mdash; licensed, operational, and scaling.
+          <p className="text-secondary mt-6 max-w-[480px] mx-auto leading-[1.75]">
+            Licensed in three jurisdictions. Live in 180+ countries. Transparent
+            rates. No hidden fees.
           </p>
-          <div className="mt-10 flex items-center gap-8">
+          <div className="mt-10 flex items-center justify-center gap-8">
             <Link
               href="https://rebasive.com"
               target="_blank"
@@ -299,7 +339,7 @@ export default function PaymentsPage() {
               href="/contact"
               className="text-label text-secondary link-hover transition-colors hover:text-primary"
             >
-              Contact us
+              Contact Us &rarr;
             </Link>
           </div>
         </div>
