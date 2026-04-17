@@ -2,35 +2,48 @@ import Link from "next/link";
 import { ChannelBadge } from "@/components/ui/ChannelBadge";
 import { WealthIcon } from "@/components/ui/SubsidiaryIcons";
 
-const strategies = [
+const steps = [
   {
-    title: "Multi-Strategy Allocation",
-    description: "A diversified approach spanning global equities, fixed income, alternatives, and digital assets — dynamically weighted to capture asymmetric opportunities.",
+    number: "01",
+    title: "Capital Deployment",
+    description: "Investor capital is pooled and deployed through institutional-grade execution infrastructure.",
   },
   {
-    title: "Conviction-Driven Selection",
-    description: "High-conviction positions informed by deep fundamental research, macro analysis, and proprietary quantitative signals. Quality over quantity.",
+    number: "02",
+    title: "Direct LP Routing",
+    description: "All trades passed directly to liquidity providers.",
   },
   {
-    title: "Risk-Managed Compounding",
-    description: "Systematic drawdown controls, correlation monitoring, and volatility-targeting ensure capital preservation remains the foundation of every allocation decision.",
+    number: "03",
+    title: "Systematic Hedging",
+    description: "Long and short positions neutralise directional exposure.",
+  },
+  {
+    number: "04",
+    title: "Volume Revenue",
+    description: "Income from spreads and commissions on executed trades.",
+  },
+  {
+    number: "05",
+    title: "Capital Protection",
+    description: "20% deployed, 80% reserve. Principal protected via reserve framework.",
   },
 ];
 
-const keyTerms = [
-  { label: "Fund Structure", value: "Open-ended UCITS (Lux)" },
-  { label: "Minimum Investment", value: "$250,000" },
-  { label: "Management Fee", value: "1.5% p.a." },
-  { label: "Performance Fee", value: "15% (HWM)" },
-  { label: "Liquidity", value: "Monthly (30-day notice)" },
-  { label: "Currency", value: "USD / GBP / EUR" },
+const investmentTerms = [
+  { label: "Target Return", value: "20% per annum" },
+  { label: "Distributions", value: "Quarterly" },
+  { label: "Minimum Investment", value: "$250,000 USD" },
+  { label: "Initial Lock-in", value: "12 months" },
+  { label: "Liquidity Post-Lock", value: "Quarterly" },
+  { label: "Fees", value: "0% management / 0% performance" },
 ];
 
-const navLinks = [
-  { title: "Strategy", description: "Our investment philosophy and approach", href: "/wealth/strategy" },
-  { title: "Performance", description: "Track record and historical returns", href: "/wealth/performance" },
-  { title: "Key Terms", description: "Fund structure, fees, and liquidity", href: "/wealth/terms" },
-  { title: "Invest", description: "Begin the onboarding process", href: "/wealth/invest" },
+const illustrativeReturns = [
+  { investment: "$250,000", quarterly: "$12,500", annual: "$50,000" },
+  { investment: "$500,000", quarterly: "$25,000", annual: "$100,000" },
+  { investment: "$1,000,000", quarterly: "$50,000", annual: "$200,000" },
+  { investment: "$5,000,000", quarterly: "$250,000", annual: "$1,000,000" },
 ];
 
 export default function WealthPage() {
@@ -42,11 +55,13 @@ export default function WealthPage() {
           <div className="flex-1">
             <ChannelBadge name="FAVA WEALTH" color="#059669" />
             <h1 className="text-display-alt text-primary">
-              Patient Capital. Compounding Returns.
+              20% Annual Returns. Zero Fees.
             </h1>
             <p className="text-secondary text-[15px] leading-[1.7] font-light max-w-xl mt-6">
-              A multi-strategy, conviction-driven investment fund designed for long-term capital
-              appreciation through disciplined allocation and rigorous risk management.
+              A managed investment fund that generates returns from trading
+              volume — not market direction. Your capital works through
+              institutional execution infrastructure, paid quarterly, with
+              no management or performance fees. AFSL-regulated.
             </p>
             <div className="gold-rule-left w-32 mt-10" />
           </div>
@@ -54,17 +69,49 @@ export default function WealthPage() {
         </div>
       </section>
 
-      {/* Strategy Overview */}
-      <section className="max-w-[1160px] mx-auto px-20 max-lg:px-6 py-[140px] border-t border-border">
-        <p className="text-label text-secondary mb-12">Strategy</p>
-
-        <div className="flex flex-col gap-12">
-          {strategies.map((strategy) => (
-            <div key={strategy.title} className="max-w-2xl">
-              <h3 className="text-subhead text-primary mb-3">{strategy.title}</h3>
-              <p className="text-primary/60 text-[15px] leading-[1.7] font-light">
-                {strategy.description}
+      {/* Key Highlight Panel */}
+      <section className="max-w-[1160px] mx-auto px-20 max-lg:px-6 pb-[140px]">
+        <div className="bg-surface border border-border p-10">
+          <div className="flex flex-col md:flex-row md:items-end gap-8 md:gap-16">
+            <div>
+              <p className="text-primary font-semibold" style={{ fontSize: "72px", lineHeight: 1 }}>
+                20%
               </p>
+              <p className="text-accent text-primary mt-3">Net annual return</p>
+            </div>
+            <div className="flex flex-col gap-2 pb-1">
+              <p className="text-caption text-primary">Paid quarterly &middot; Zero fees</p>
+              <p className="text-caption text-secondary">AFSL-regulated framework</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <div className="max-w-[1160px] mx-auto px-20 max-lg:px-6">
+        <div className="gold-rule" />
+      </div>
+
+      {/* How the Strategy Works */}
+      <section className="max-w-[1160px] mx-auto px-20 max-lg:px-6 py-[140px]">
+        <p className="text-label text-secondary mb-12">How the Strategy Works</p>
+
+        <div className="flex flex-col">
+          {steps.map((step, i) => (
+            <div
+              key={step.number}
+              className={`flex items-start gap-8 py-8 ${
+                i < steps.length - 1 ? "border-b border-border" : ""
+              }`}
+            >
+              <span className="text-gold font-semibold text-[15px] shrink-0 w-8">
+                {step.number}
+              </span>
+              <div className="max-w-2xl">
+                <h3 className="text-subhead text-primary mb-2">{step.title}</h3>
+                <p className="text-primary/60 text-[15px] leading-[1.7] font-light">
+                  {step.description}
+                </p>
+              </div>
             </div>
           ))}
         </div>
@@ -74,47 +121,21 @@ export default function WealthPage() {
         <div className="gold-rule" />
       </div>
 
-      {/* Performance */}
+      {/* Investment Terms */}
       <section className="max-w-[1160px] mx-auto px-20 max-lg:px-6 py-[140px]">
-        <p className="text-label text-secondary mb-12">Performance</p>
-
-        <div className="bg-surface border border-border p-8 md:p-12">
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-8 mb-8">
-            {[
-              { label: "YTD Return", value: "+8.4%" },
-              { label: "Since Inception", value: "+24.7%" },
-              { label: "Sharpe Ratio", value: "1.62" },
-              { label: "Max Drawdown", value: "-6.3%" },
-            ].map((stat) => (
-              <div key={stat.label}>
-                <p className="text-numbers text-primary">{stat.value}</p>
-                <p className="text-caption text-secondary mt-1">{stat.label}</p>
-              </div>
-            ))}
-          </div>
-          <p className="text-secondary/50 text-[11px] leading-relaxed">
-            Past performance is not indicative of future results. All figures are placeholder estimates for illustrative purposes only.
-          </p>
-        </div>
-      </section>
-
-      <div className="max-w-[1160px] mx-auto px-20 max-lg:px-6">
-        <div className="gold-rule" />
-      </div>
-
-      {/* Key Terms */}
-      <section className="max-w-[1160px] mx-auto px-20 max-lg:px-6 py-[140px]">
-        <p className="text-label text-secondary mb-12">Key Terms</p>
+        <p className="text-label text-secondary mb-12">Investment Terms</p>
 
         <table className="w-full max-w-2xl">
           <tbody>
-            {keyTerms.map((term, i) => (
+            {investmentTerms.map((term, i) => (
               <tr
                 key={term.label}
-                className={i < keyTerms.length - 1 ? "border-b border-border" : ""}
+                className={i < investmentTerms.length - 1 ? "border-b border-border" : ""}
               >
                 <td className="py-4 text-secondary text-[15px] font-light pr-8">{term.label}</td>
-                <td className="py-4 text-primary text-[15px] font-light text-right">{term.value}</td>
+                <td className="py-4 text-primary text-[15px] font-light text-right">
+                  {term.value}
+                </td>
               </tr>
             ))}
           </tbody>
@@ -125,31 +146,37 @@ export default function WealthPage() {
         <div className="gold-rule" />
       </div>
 
-      {/* Navigation */}
+      {/* Illustrative Returns */}
       <section className="max-w-[1160px] mx-auto px-20 max-lg:px-6 py-[140px]">
-        <p className="text-label text-secondary mb-12">Explore</p>
+        <p className="text-label text-secondary mb-12">Illustrative Returns</p>
 
-        <div className="flex flex-col">
-          {navLinks.map((link, i) => (
-            <Link
-              key={link.title}
-              href={link.href}
-              className={`py-6 flex items-center justify-between group ${
-                i < navLinks.length - 1 ? "border-b border-border" : ""
-              }`}
-            >
-              <div>
-                <h3 className="text-subhead text-primary group-hover:text-wealth transition-colors duration-200">
-                  {link.title}
-                </h3>
-                <p className="text-secondary text-[15px] font-light mt-1">{link.description}</p>
-              </div>
-              <span className="text-secondary group-hover:text-wealth transition-colors duration-200 shrink-0 ml-8">
-                &rarr;
-              </span>
-            </Link>
-          ))}
-        </div>
+        <table className="w-full max-w-3xl">
+          <thead>
+            <tr className="border-b border-border">
+              <th className="pb-4 text-left text-caption text-secondary font-normal">
+                Investment
+              </th>
+              <th className="pb-4 text-right text-caption text-secondary font-normal">
+                Quarterly
+              </th>
+              <th className="pb-4 text-right text-caption text-secondary font-normal">Annual</th>
+            </tr>
+          </thead>
+          <tbody>
+            {illustrativeReturns.map((row, i) => (
+              <tr
+                key={row.investment}
+                className={i < illustrativeReturns.length - 1 ? "border-b border-border" : ""}
+              >
+                <td className="py-4 text-primary text-[15px] font-light">{row.investment}</td>
+                <td className="py-4 text-primary text-[15px] font-light text-right">
+                  {row.quarterly}
+                </td>
+                <td className="py-4 text-gold text-[15px] font-light text-right">{row.annual}</td>
+              </tr>
+            ))}
+          </tbody>
+        </table>
       </section>
 
       <div className="max-w-[1160px] mx-auto px-20 max-lg:px-6">
@@ -158,13 +185,13 @@ export default function WealthPage() {
 
       {/* CTA */}
       <section className="max-w-[1160px] mx-auto px-20 max-lg:px-6 py-[140px]">
-        <h2 className="text-subhead text-primary mb-4">Start Compounding</h2>
+        <h2 className="text-subhead text-primary mb-4">Yield-generating managed fund.</h2>
         <p className="text-primary/60 text-[15px] leading-[1.7] font-light max-w-lg mb-8">
-          For qualified investors seeking long-term capital appreciation through a disciplined,
-          multi-strategy approach. Minimum investment $250,000.
+          For qualified investors seeking consistent, volume-based returns with zero fees and
+          quarterly distributions. Minimum investment $250,000 USD.
         </p>
-        <Link href="/wealth/invest" className="link-hover text-wealth text-label">
-          Get Started &rarr;
+        <Link href="/contact" className="link-hover text-wealth text-label">
+          Investor Enquiries &rarr;
         </Link>
       </section>
     </div>

@@ -4,50 +4,65 @@ import { ChannelBadge } from "@/components/ui/ChannelBadge";
 import { PaymentsIcon } from "@/components/ui/SubsidiaryIcons";
 
 export const metadata: Metadata = {
-  title: "FAVA Payments — Move Money. Everywhere. | FAVA Capital",
+  title: "FAVA Payments — Cross-Border Payments & Settlement Infrastructure | FAVA Capital",
   description:
-    "Global payment infrastructure powered by Rebasive. Licensed in Africa, the USA, and Canada. Cards, wallets, cross-border transfers, and multi-currency accounts.",
+    "Dual-rail settlement platform combining regulated fiat corridors with tokenised settlement. Licensed in Nigeria, US, and Canada. Powered by Rebasive.",
 };
 
-const capabilities = [
+const stats = [
+  { value: "180+", label: "PAYOUT COUNTRIES" },
+  { value: "130+", label: "CURRENCIES" },
+  { value: "25", label: "AFRICAN MARKETS" },
+  { value: "~$11M", label: "TPV TO DATE" },
+];
+
+const opportunityStats = [
+  { value: "$190T", label: "Annual Cross-Border Flows" },
+  { value: "$400B+", label: "Fees Extracted by Intermediaries" },
+  { value: "8.4%", label: "Avg Cost to Send to Africa" },
+  { value: "3–5 Days", label: "Avg Emerging Market Settlement" },
+];
+
+const structuralDrivers = [
   {
-    title: "Multi-Currency Accounts",
-    body: "Hold, send, and receive in 30+ currencies. Seamless conversion at interbank rates with no hidden markups. Personal and business accounts with full IBAN support.",
+    title: "Banking Retreat",
+    body: "Correspondent relationships contracting across emerging markets.",
   },
   {
-    title: "Cross-Border Transfers",
-    body: "Send money across borders in minutes, not days. Direct corridors into Africa, North America, and Europe with transparent fees and real-time tracking.",
+    title: "Stablecoin Maturity",
+    body: "$170B+ market cap. Settlement infrastructure ready at scale.",
   },
   {
-    title: "Cards & Wallets",
-    body: "Physical and virtual cards linked to your Rebasive account. Spend globally, earn cashback, and manage everything from one app. Apple Pay and Google Pay ready.",
+    title: "Regulatory Clarity",
+    body: "MiCA, GENIUS Act, IMTO frameworks now codified.",
   },
   {
-    title: "Business Payments",
-    body: "Payroll, vendor payments, and treasury management for businesses operating across borders. API-first infrastructure for platforms that need to move money programmatically.",
+    title: "Embedded Finance",
+    body: "Platforms require plug-and-play cross-border access.",
   },
 ];
 
 const licences = [
-  {
-    region: "Africa",
-    detail: "Licensed payment service provider across key African markets. Local currency settlement, mobile money interoperability, and agent network access.",
-  },
-  {
-    region: "United States",
-    detail: "Money transmitter licences across regulated US states. Compliant with FinCEN requirements, BSA/AML frameworks, and state-level regulatory obligations.",
-  },
-  {
-    region: "Canada",
-    detail: "Registered money services business (MSB) with FINTRAC. Authorised to provide foreign exchange dealing, money transfer, and payment services nationwide.",
-  },
+  { licence: "Nigerian Tier-1 MFB", status: "Operational", statusColor: "text-green-400", year: "2021" },
+  { licence: "US FinCEN MSB", status: "Operational", statusColor: "text-green-400", year: "2023" },
+  { licence: "Canadian FINTRAC MSB", status: "Operational", statusColor: "text-green-400", year: "2023" },
+  { licence: "UK EMI Licence", status: "In Progress", statusColor: "text-gold", year: "2026" },
 ];
 
-const platformFeatures = [
-  { label: "Currencies", value: "30+" },
-  { label: "Transfer corridors", value: "50+" },
-  { label: "API uptime", value: "99.99%" },
-  { label: "Avg. transfer time", value: "<2 min" },
+const platformCapabilities = [
+  "Cross-border payments and collections",
+  "Multi-currency wallets and accounts",
+  "FX conversion and treasury routing",
+  "Virtual account infrastructure (IBANs, local rails)",
+  "Card issuance and transaction processing",
+  "API and white-label integration",
+];
+
+const brokerageFeatures = [
+  "Multi-currency wallets",
+  "Cross-border transfers",
+  "Card spending",
+  "Savings and investment products",
 ];
 
 export default function PaymentsPage() {
@@ -60,10 +75,11 @@ export default function PaymentsPage() {
             <div className="flex-1">
               <ChannelBadge name="FAVA PAYMENTS" color="#0EA5E9" />
               <h1 className="text-display-alt text-primary">
-                Move Money. Everywhere.
+                Cross-Border Payments &amp; Settlement Infrastructure
               </h1>
               <p className="mt-6 text-secondary max-w-[560px] leading-[1.75]">
-                FAVA Payments operates{" "}
+                A dual-rail settlement platform combining regulated fiat
+                corridors with tokenised settlement. Powered by{" "}
                 <Link
                   href="https://rebasive.com"
                   target="_blank"
@@ -71,10 +87,7 @@ export default function PaymentsPage() {
                 >
                   Rebasive
                 </Link>
-                {" "}&mdash; our global payment platform. Licensed in Africa, the United
-                States, and Canada. Multi-currency accounts, cross-border transfers,
-                cards, and wallets — built for people and businesses that move money
-                across borders.
+                , our consumer and business-facing payments platform.
               </p>
               <div className="mt-8 flex items-center gap-8">
                 <Link
@@ -97,15 +110,15 @@ export default function PaymentsPage() {
         </div>
       </section>
 
-      {/* Platform Stats */}
+      {/* Stats Bar */}
       <section className="border-t border-b border-border">
         <div className="max-w-[1160px] mx-auto px-20 max-lg:px-6">
           <div className="grid grid-cols-2 md:grid-cols-4">
-            {platformFeatures.map((feat, i) => (
+            {stats.map((stat, i) => (
               <div
-                key={feat.label}
+                key={stat.label}
                 className={`py-10 ${
-                  i < platformFeatures.length - 1
+                  i < stats.length - 1
                     ? "md:border-r border-border"
                     : ""
                 } ${i % 2 === 0 && i < 2 ? "max-md:border-r" : ""} ${
@@ -113,9 +126,9 @@ export default function PaymentsPage() {
                 }`}
               >
                 <div className={i > 0 ? "md:pl-10" : ""}>
-                  <p className="text-numbers text-primary">{feat.value}</p>
+                  <p className="text-numbers text-primary">{stat.value}</p>
                   <p className="text-caption text-secondary mt-2">
-                    {feat.label}
+                    {stat.label}
                   </p>
                 </div>
               </div>
@@ -124,31 +137,40 @@ export default function PaymentsPage() {
         </div>
       </section>
 
-      {/* Capabilities */}
+      {/* The Opportunity */}
       <section className="py-[140px] max-md:py-20">
         <div className="max-w-[1160px] mx-auto px-20 max-lg:px-6">
-          <div className="flex flex-col md:flex-row md:items-start md:justify-between gap-6 mb-20">
-            <div>
-              <p className="text-label text-secondary mb-4">CAPABILITIES</p>
-              <h2 className="text-subhead text-primary max-w-md">
-                Everything you need to move money globally.
-              </h2>
-            </div>
-            <p className="text-secondary max-w-sm text-[14px] leading-[1.7] md:pt-8">
-              Rebasive is the platform. FAVA Payments is the infrastructure,
-              licensing, and regulatory backbone that makes it possible.
-            </p>
+          <p className="text-label text-secondary mb-4">THE OPPORTUNITY</p>
+          <h2 className="text-subhead text-primary max-w-xl mb-6">
+            Correspondent banking is retreating.
+          </h2>
+          <p className="text-secondary max-w-xl leading-[1.75] mb-16">
+            Africa has lost 10% of correspondent banking relationships in three
+            years. Cross-border payment infrastructure is fragmenting just as
+            demand accelerates.
+          </p>
+
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-x-12 gap-y-10 mb-20">
+            {opportunityStats.map((stat) => (
+              <div key={stat.label}>
+                <p className="text-numbers text-primary">{stat.value}</p>
+                <p className="text-caption text-secondary mt-2">{stat.label}</p>
+              </div>
+            ))}
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-x-20 gap-y-16">
-            {capabilities.map((cap) => (
-              <div key={cap.title}>
+          <div className="gold-rule mb-10" />
+          <p className="text-label text-secondary mb-10">STRUCTURAL DRIVERS</p>
+
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-x-20 gap-y-12">
+            {structuralDrivers.map((driver) => (
+              <div key={driver.title}>
                 <div className="w-8 h-[2px] bg-[#0EA5E9] mb-6" />
                 <h3 className="text-[15px] text-primary font-light mb-3">
-                  {cap.title}
+                  {driver.title}
                 </h3>
                 <p className="text-[14px] text-secondary leading-[1.75]">
-                  {cap.body}
+                  {driver.body}
                 </p>
               </div>
             ))}
@@ -156,65 +178,98 @@ export default function PaymentsPage() {
         </div>
       </section>
 
-      {/* Licensing */}
+      {/* Regulatory Footprint & Platform Capabilities */}
       <section className="py-[140px] max-md:py-20 border-t border-border">
         <div className="max-w-[1160px] mx-auto px-20 max-lg:px-6">
-          <p className="text-label text-secondary mb-4">LICENSING</p>
-          <h2 className="text-subhead text-primary mb-16 max-w-lg">
-            Regulated across three continents.
-          </h2>
+          <div className="flex flex-col md:flex-row gap-20">
+            {/* Regulatory Footprint */}
+            <div className="flex-1">
+              <p className="text-label text-secondary mb-4">REGULATORY FOOTPRINT</p>
+              <h2 className="text-subhead text-primary mb-12">
+                Licensed across three continents.
+              </h2>
 
-          <div className="border-t border-border">
-            {licences.map((lic) => (
-              <div
-                key={lic.region}
-                className="py-8 border-b border-border flex flex-col md:flex-row md:items-start gap-4 md:gap-16"
-              >
-                <h3 className="text-subhead text-primary md:w-48 shrink-0">
-                  {lic.region}
-                </h3>
-                <p className="text-[14px] text-secondary leading-[1.75]">
-                  {lic.detail}
-                </p>
+              <div className="border-t border-border">
+                <div className="grid grid-cols-[1fr_auto_auto] gap-x-8 py-4 border-b border-border">
+                  <p className="text-label text-tertiary">LICENCE</p>
+                  <p className="text-label text-tertiary">STATUS</p>
+                  <p className="text-label text-tertiary">YEAR</p>
+                </div>
+                {licences.map((lic) => (
+                  <div
+                    key={lic.licence}
+                    className="grid grid-cols-[1fr_auto_auto] gap-x-8 py-4 border-b border-border items-center"
+                  >
+                    <p className="text-[14px] text-primary">{lic.licence}</p>
+                    <p className={`text-[14px] ${lic.statusColor}`}>{lic.status}</p>
+                    <p className="text-[14px] text-secondary">{lic.year}</p>
+                  </div>
+                ))}
               </div>
-            ))}
+            </div>
+
+            {/* Platform Capabilities */}
+            <div className="md:w-[380px] shrink-0">
+              <p className="text-label text-secondary mb-4">PLATFORM CAPABILITIES</p>
+              <div className="flex flex-col gap-4 mt-12">
+                {platformCapabilities.map((cap) => (
+                  <div key={cap} className="flex items-start gap-3">
+                    <span className="w-1.5 h-1.5 bg-payments mt-2 shrink-0" />
+                    <span className="text-[14px] text-primary/70">{cap}</span>
+                  </div>
+                ))}
+              </div>
+            </div>
           </div>
         </div>
       </section>
 
-      {/* Rebasive Platform */}
+      {/* Transparent Pricing */}
       <section className="py-[140px] max-md:py-20 border-t border-border">
         <div className="max-w-[1160px] mx-auto px-20 max-lg:px-6">
-          <p className="text-label text-secondary mb-4">THE PLATFORM</p>
+          <p className="text-label text-secondary mb-4">PRICING</p>
           <h2 className="text-subhead text-primary mb-6 max-w-lg">
-            Rebasive &mdash; payments infrastructure for the next billion.
+            Transparent, competitive rates. No hidden fees.
           </h2>
           <p className="text-secondary max-w-xl leading-[1.75] mb-12">
-            Rebasive is the consumer and business-facing product powering FAVA
-            Payments. A modern fintech platform — think Revolut — with
-            multi-currency accounts, instant transfers, physical and virtual
-            cards, and an API for businesses that need to move money at scale.
-            Available at{" "}
-            <Link
-              href="https://rebasive.com"
-              target="_blank"
-              className="text-payments link-hover"
-            >
-              rebasive.com
-            </Link>
-            .
+            Rebasive earns from small margins on FX conversion and transaction
+            fees — not from hidden markups or predatory pricing. What you see is
+            what you pay.
           </p>
-          <div className="grid grid-cols-2 md:grid-cols-3 gap-8">
-            {[
-              "Multi-currency accounts",
-              "Physical & virtual cards",
-              "Cross-border transfers",
-              "Mobile money corridors",
-              "Business API",
-              "Real-time FX",
-            ].map((feature) => (
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-12">
+            <div>
+              <p className="text-numbers text-primary">0.4–0.8%</p>
+              <p className="text-caption text-secondary mt-2">FX conversion spread</p>
+            </div>
+            <div>
+              <p className="text-numbers text-primary">0–1%</p>
+              <p className="text-caption text-secondary mt-2">Transfer fees</p>
+            </div>
+            <div>
+              <p className="text-numbers text-primary">$0</p>
+              <p className="text-caption text-secondary mt-2">Account maintenance</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Brokerage Integration */}
+      <section className="py-[140px] max-md:py-20 border-t border-border">
+        <div className="max-w-[1160px] mx-auto px-20 max-lg:px-6">
+          <p className="text-label text-secondary mb-4">BROKERAGE INTEGRATION</p>
+          <h2 className="text-subhead text-primary mb-6 max-w-xl">
+            Rails that extend the brokerage.
+          </h2>
+          <p className="text-secondary max-w-xl leading-[1.75] mb-12">
+            Rebasive rails integrate into FAVA Markets, extending the brokerage
+            into a complete financial services environment.
+          </p>
+
+          <p className="text-label text-secondary mb-6">CLIENTS ACCESS</p>
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-6">
+            {brokerageFeatures.map((feature) => (
               <div key={feature} className="flex items-start gap-3">
-                <span className="w-1.5 h-1.5 bg-payments rounded-full mt-2 shrink-0" />
+                <span className="w-1.5 h-1.5 bg-payments mt-2 shrink-0" />
                 <span className="text-[14px] text-primary/70">{feature}</span>
               </div>
             ))}
@@ -226,11 +281,11 @@ export default function PaymentsPage() {
       <section className="border-t border-border py-[140px] max-md:py-20">
         <div className="max-w-[1160px] mx-auto px-20 max-lg:px-6">
           <h2 className="text-display-alt text-primary max-w-[560px]">
-            Ready to move money differently?
+            The rails underneath the ecosystem.
           </h2>
           <p className="text-secondary mt-6 max-w-[440px] leading-[1.7]">
-            Whether you&apos;re a consumer, a business, or a platform — Rebasive
-            has the infrastructure to power your payments.
+            Cross-border settlement infrastructure for consumers, businesses,
+            and platforms &mdash; licensed, operational, and scaling.
           </p>
           <div className="mt-10 flex items-center gap-8">
             <Link
@@ -238,7 +293,7 @@ export default function PaymentsPage() {
               target="_blank"
               className="text-label text-payments link-hover"
             >
-              Get started on Rebasive &rarr;
+              Visit Rebasive &rarr;
             </Link>
             <Link
               href="/contact"

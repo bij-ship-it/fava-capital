@@ -4,27 +4,52 @@ import { ChannelBadge } from "@/components/ui/ChannelBadge";
 import { MarketsIcon } from "@/components/ui/SubsidiaryIcons";
 
 export const metadata: Metadata = {
-  title: "FAVA Markets — Trade 1,000+ Instruments",
+  title: "FAVA Markets — Multi-Asset CFD & FX Brokerage",
   description:
-    "Institutional-grade execution across FX, indices, shares, commodities, and crypto CFDs. Tight spreads, lightning execution, full regulation.",
+    "Built on a proven operating model. Not a first-time build — a repeatable deployment framework with established infrastructure.",
 };
 
-const valueProps = [
+const trackRecord = [
+  { value: "15+", label: "YEARS IN FX CFD MARKETS" },
+  { value: "6", label: "BROKERAGE DEPLOYMENTS" },
+  { value: "$750B+", label: "NOTIONAL DELIVERED" },
+  { value: "25K+", label: "CLIENT BOOK BUILT" },
+];
+
+const whyFavaMarkets = [
   {
-    title: "Lightning Execution",
+    number: "01",
+    title: "Institutional-Grade Execution",
     description:
-      "Average fill speeds under 30ms. Co-located in LD4, NY4, and TY3.",
+      "Proprietary dealing desk with deep liquidity pool access. Your trades are routed directly to tier-1 liquidity providers for the tightest spreads and fastest fills.",
   },
   {
-    title: "Tight Spreads",
+    number: "02",
+    title: "Proven Track Record",
     description:
-      "Raw spreads from 0.0 pips. Tier-1 bank and non-bank liquidity.",
+      "Built by a team with 15+ years in FX/CFD markets and six successful brokerage deployments. Over $750 billion in notional volume executed across global markets.",
   },
   {
-    title: "Full Regulation",
+    number: "03",
+    title: "Beyond Trading",
     description:
-      "Multi-jurisdictional oversight. Segregated client funds with tier-1 banks.",
+      "Multi-currency wallets, cross-border transfers, cards, and savings — all integrated into your trading account. Powered by Rebasive, our payments infrastructure.",
   },
+];
+
+const caseBStats = [
+  { value: "102,040", label: "LOTS TRADED" },
+  { value: "$12.8M", label: "CLIENT DEPOSITS (Y1)" },
+  { value: "18,822", label: "ACTIVE TRADERS" },
+  { value: "590", label: "ACTIVE IB PARTNERS" },
+  { value: "$427K+", label: "PARTNER COMMISSIONS" },
+];
+
+const expansionTimeline = [
+  { phase: "DAY 1", regions: "West Africa (Nigeria)" },
+  { phase: "YEAR 1", regions: "Dubai · South Africa · South America" },
+  { phase: "YEAR 2", regions: "London · Cyprus · Melbourne" },
+  { phase: "YEAR 3+", regions: "8+ jurisdictions, 250K+ clients" },
 ];
 
 const instruments = [
@@ -65,11 +90,12 @@ export default function MarketsPage() {
             <div className="flex-1">
               <ChannelBadge name="FAVA MARKETS" color="#14B8A6" />
               <h1 className="text-display-alt text-primary">
-                Trade 1,000+ Instruments
+                Multi-Asset CFD &amp; FX Brokerage
               </h1>
               <p className="mt-5 text-secondary max-w-[520px]">
-                Institutional-grade execution, deep liquidity, and transparent
-                pricing across global markets. Built for traders who demand more.
+                Trade FX, indices, shares, commodities, and crypto CFDs with
+                institutional-grade execution. Deep liquidity, tight spreads,
+                and a team with 15+ years of market experience behind every trade.
               </p>
               <Link
                 href="/markets/accounts"
@@ -78,26 +104,119 @@ export default function MarketsPage() {
                 Open Live Account &rarr;
               </Link>
             </div>
-            <MarketsIcon size={160} className="opacity-20 shrink-0 hidden md:block" />
+            <MarketsIcon
+              size={160}
+              className="opacity-20 shrink-0 hidden md:block"
+            />
           </div>
         </div>
       </section>
 
-      {/* Value Props */}
+      {/* Track Record Stats Bar */}
+      <section className="border-t border-border">
+        <div className="max-w-[1160px] mx-auto px-20 max-lg:px-6">
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-10 py-14">
+            {trackRecord.map((stat) => (
+              <div key={stat.label}>
+                <p className="text-numbers text-primary">{stat.value}</p>
+                <p className="text-label text-tertiary mt-2">{stat.label}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Why FAVA Markets */}
       <section className="py-[140px] max-md:py-20 border-t border-border">
         <div className="max-w-[1160px] mx-auto px-20 max-lg:px-6">
-          <p className="text-label text-secondary mb-12">
-            01 &mdash; Why FAVA Markets
+          <p className="text-label text-secondary mb-4">
+            WHY FAVA MARKETS
           </p>
-          <div className="grid md:grid-cols-3 gap-16 max-md:gap-10">
-            {valueProps.map((prop) => (
-              <div key={prop.title}>
+          <h2 className="text-subhead text-primary mb-16 max-md:mb-10">
+            A trading experience built on real infrastructure, not marketing.
+          </h2>
+          <div className="grid md:grid-cols-3 gap-16 max-md:gap-12">
+            {whyFavaMarkets.map((engine) => (
+              <div key={engine.title}>
+                <p className="text-label text-markets mb-4">{engine.number}</p>
                 <h3 className="text-subhead text-primary mb-3">
-                  {prop.title}
+                  {engine.title}
                 </h3>
                 <p className="text-secondary text-[15px] leading-[1.7]">
-                  {prop.description}
+                  {engine.description}
                 </p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Proof of Model */}
+      <section className="py-[140px] max-md:py-20 border-t border-border">
+        <div className="max-w-[1160px] mx-auto px-20 max-lg:px-6">
+          <p className="text-label text-secondary mb-4">
+            OUR TRACK RECORD
+          </p>
+          <h2 className="text-subhead text-primary mb-4">
+            Built by operators, not first-timers.
+          </h2>
+          <p className="text-secondary max-w-[600px] mb-16 max-md:mb-10">
+            The team behind FAVA Markets has built and scaled brokerages
+            from scratch across multiple continents. This is what that looks like.
+          </p>
+
+          {/* Case A */}
+          <div className="border-t border-border pt-10 mb-16 max-md:mb-10">
+            <p className="text-label text-tertiary mb-4">
+              Case A &mdash; Long-term execution
+            </p>
+            <p className="text-accent text-primary max-w-[600px]">
+              $320M client deposits over nine years. One office. Six deployments
+              across Sub-Saharan Africa.
+            </p>
+          </div>
+
+          {/* Case B */}
+          <div className="border-t border-border pt-10">
+            <p className="text-label text-tertiary mb-8">
+              Case B &mdash; One-year snapshot
+            </p>
+            <div className="grid grid-cols-2 md:grid-cols-3 gap-x-16 gap-y-10">
+              {caseBStats.map((stat) => (
+                <div key={stat.label}>
+                  <p className="text-numbers text-primary">{stat.value}</p>
+                  <p className="text-label text-tertiary mt-2">{stat.label}</p>
+                </div>
+              ))}
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Global Reach */}
+      <section className="py-[140px] max-md:py-20 border-t border-border">
+        <div className="max-w-[1160px] mx-auto px-20 max-lg:px-6">
+          <p className="text-label text-secondary mb-4">GLOBAL REACH</p>
+          <h2 className="text-subhead text-primary mb-6 max-w-lg">
+            Trade from anywhere. We&apos;re expanding across every major market.
+          </h2>
+          <p className="text-secondary max-w-xl leading-[1.75] mb-16">
+            FAVA Markets is deploying across multiple jurisdictions to bring
+            institutional-grade execution closer to traders everywhere.
+          </p>
+
+          <div className="border-t border-border">
+            {expansionTimeline.map((phase) => (
+              <div
+                key={phase.phase}
+                className="flex items-baseline gap-10 py-5 border-b border-border"
+              >
+                <span className="text-label text-markets w-20 shrink-0">
+                  {phase.phase}
+                </span>
+                <span className="text-primary text-[15px]">
+                  {phase.regions}
+                </span>
               </div>
             ))}
           </div>
@@ -108,7 +227,7 @@ export default function MarketsPage() {
       <section className="py-[140px] max-md:py-20 border-t border-border">
         <div className="max-w-[1160px] mx-auto px-20 max-lg:px-6">
           <p className="text-label text-secondary mb-12">
-            02 &mdash; Instruments
+            INSTRUMENTS
           </p>
           <div className="border-t border-border">
             {instruments.map((inst) => (
@@ -139,56 +258,29 @@ export default function MarketsPage() {
         </div>
       </section>
 
-      {/* Platform Preview */}
-      <section className="py-[140px] max-md:py-20 border-t border-border">
-        <div className="max-w-[1160px] mx-auto px-20 max-lg:px-6">
-          <p className="text-label text-secondary mb-12">
-            03 &mdash; Platforms
-          </p>
-          <div className="flex flex-col md:flex-row gap-16 items-start">
-            <div className="flex-1">
-              <h2 className="text-subhead text-primary mb-4">Trade Your Way</h2>
-              <p className="text-secondary max-w-[440px]">
-                MetaTrader 4, MetaTrader 5, or our proprietary FAVA WebTrader.
-                Advanced charting, one-click execution, and full mobile support.
-              </p>
-              <Link
-                href="/markets/platforms"
-                className="inline-block mt-6 text-label text-markets hover:opacity-80 transition-opacity"
-              >
-                Compare Platforms &rarr;
-              </Link>
-            </div>
-            <div className="flex-1 w-full">
-              <div className="aspect-video bg-surface border border-border flex items-center justify-center">
-                <p className="text-caption text-tertiary">Platform Preview</p>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-
       {/* Final CTA */}
       <section className="py-[140px] max-md:py-20 border-t border-border">
         <div className="max-w-[1160px] mx-auto px-20 max-lg:px-6">
+          <div className="gold-rule mb-10" />
           <h2 className="text-display-alt text-primary mb-4">
-            Ready to Start Trading?
+            Ready to trade with FAVA Markets?
           </h2>
-          <p className="text-secondary mb-8">
-            Open an account in minutes. Fund instantly. Trade globally.
+          <p className="text-secondary mb-10 max-w-[520px]">
+            Open your account in minutes. Access 1,000+ instruments with
+            institutional-grade execution and a team built for global markets.
           </p>
           <div className="flex items-center gap-6">
             <Link
               href="/markets/accounts"
-              className="inline-block bg-markets text-base text-label px-6 py-3 hover:opacity-90 transition-opacity"
+              className="link-hover text-label text-markets"
             >
-              Open Live Account
+              Open Live Account &rarr;
             </Link>
             <Link
-              href="/markets/accounts"
-              className="inline-block border border-border text-label text-primary px-6 py-3 hover:border-border-hover transition-colors"
+              href="/contact"
+              className="link-hover text-label text-primary"
             >
-              Try Demo Account
+              Contact Us &rarr;
             </Link>
           </div>
         </div>
