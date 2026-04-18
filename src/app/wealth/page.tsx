@@ -64,6 +64,9 @@ export default function WealthPage() {
               no management or performance fees. AFSL-regulated.
             </p>
             <div className="gold-rule-left w-32 mt-10" />
+            <Link href="/contact" className="inline-block mt-8 text-label text-wealth link-hover">
+              Inquire now &rarr;
+            </Link>
           </div>
           <WealthIcon size={160} className="opacity-20 shrink-0 hidden md:block" />
         </div>
