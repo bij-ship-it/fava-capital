@@ -10,15 +10,15 @@ export function FlywheelSection() {
     >
       <Container>
         <div className="max-w-2xl mb-20">
-          <p className="text-label text-secondary mb-6">THE FLYWHEEL</p>
+          <p className="text-label text-secondary mb-6">THE ECOSYSTEM</p>
           <h2 id="flywheel-title" className="text-display-alt text-primary">
-            Each business strengthens the next.
+            One account. Every move your money makes.
           </h2>
           <p className="text-secondary mt-6 leading-[1.7]">
-            Every FAVA business can stand alone. The value is in the
-            connection. A client who enters through one product becomes
-            reachable across all five. Data, capital, and trust compound
-            as they move through the ecosystem.
+            Every FAVA business is complete on its own. The ecosystem is the
+            upside. Invest with one product, discover the others already fit
+            &mdash; trade, pay, hold, hedge &mdash; all from a platform that
+            works harder the more of it you use.
           </p>
         </div>
 

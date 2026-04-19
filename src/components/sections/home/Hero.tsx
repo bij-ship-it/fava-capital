@@ -118,9 +118,9 @@ export function Hero() {
             variants={fadeUp}
             className="mt-8 text-secondary leading-[1.7]"
           >
-            Five regulated businesses &mdash; managed investing, trading,
-            cross-border payments, digital assets, commodities &mdash; built
-            on one platform. Each stands alone. Together, they compound.
+            Invest, trade, move money, hold digital assets, access
+            commodities &mdash; in one place. Five regulated businesses,
+            one platform, built to work harder the more of it you use.
           </motion.p>
 
           <motion.div

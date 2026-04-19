@@ -19,10 +19,10 @@ export default function HomePage() {
       <LatestInsights />
       <CTAPanel
         eyebrow="TALK TO FAVA"
-        title="Let's see what the ecosystem can do for you."
-        description="Whether you're investing, trading, moving money, or building on our infrastructure — we'd like to hear from you."
+        title="Wherever you start, there's more the ecosystem can do for you."
+        description="Investing, trading, moving money, holding digital assets, or partnering with us on the rails — tell us what you're looking for and we'll point you to the right team."
         primary={{ href: "/contact", label: "Get in touch" }}
-        secondary={{ href: "/about", label: "Learn about FAVA" }}
+        secondary={{ href: "/about", label: "About FAVA" }}
         variant="gold"
       />
     </>
