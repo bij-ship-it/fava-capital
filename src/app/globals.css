@@ -20,12 +20,12 @@
   --color-gold-hover: #E3BD7A;
   --color-bright: #8B5CF6;
 
-  /* Subsidiary (used only within their sections) */
-  --color-wealth: #059669;
-  --color-markets: #14B8A6;
-  --color-crypto: #6366F1;
-  --color-commodities: #D97706;
-  --color-payments: #0EA5E9;
+  /* Subsidiary — each picked for character and WCAG AA on #0D0B14 */
+  --color-wealth: #3D8158;        /* muted forest — patient capital */
+  --color-markets: #3B82F6;       /* electric blue — data, precision */
+  --color-payments: #0891B2;      /* deep cyan — rails, flow */
+  --color-crypto: #7C6EF3;        /* tuned violet — cool, technical */
+  --color-commodities: #C47A3C;   /* copper — earthy, material */
 
   /* Typography */
   --font-display: "Fraunces", serif;

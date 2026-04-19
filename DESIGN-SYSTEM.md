@@ -97,14 +97,14 @@ Text (WCAG AA on `#0C0716`)
 | `text-tertiary` | #6E6388 | 3.1:1 (large-text AA) |
 | `text-gold` | #C4A265 | 6.5:1 |
 
-Subsidiaries
-| Token | Hex | Channel |
-|---|---|---|
-| `wealth` | #059669 | FAVA Wealth |
-| `markets` | #14B8A6 | FAVA Markets |
-| `payments` | #0EA5E9 | FAVA Payments |
-| `crypto` | #6366F1 | FAVA Digital |
-| `commodities` | #D97706 | FAVA Commodities |
+Subsidiaries (custom palette — character + WCAG AA)
+| Token | Hex | Channel | Character |
+|---|---|---|---|
+| `wealth` | #3D8158 | FAVA Wealth | muted forest — patient capital |
+| `markets` | #3B82F6 | FAVA Markets | electric blue — data, precision |
+| `payments` | #0891B2 | FAVA Payments | deep cyan — rails, flow |
+| `crypto` | #7C6EF3 | FAVA Digital | tuned violet — cool, technical |
+| `commodities` | #C47A3C | FAVA Commodities | copper — earthy, material |
 
 Each subsidiary token works as `text-*`, `bg-*`, `border-*`.
 
