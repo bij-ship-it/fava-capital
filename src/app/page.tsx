@@ -7,13 +7,13 @@ import { LatestInsights } from "@/components/sections/home/LatestInsights";
 
 export default function HomePage() {
   return (
-    <main>
+    <>
       <Hero />
       <StatsBar />
       <EcosystemRows />
       <TrustBar />
       <VisionStatement />
       <LatestInsights />
-    </main>
+    </>
   );
 }

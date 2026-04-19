@@ -1,5 +1,12 @@
+import type { Metadata } from "next";
 import Link from "next/link";
 import Image from "next/image";
+
+export const metadata: Metadata = {
+  title: "About",
+  description:
+    "FAVA Capital builds financial infrastructure that compounds — one connected platform for investing, trading, payments, digital assets, and commodities.",
+};
 
 const founders = [
   {

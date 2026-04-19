@@ -89,13 +89,13 @@ Borders
 | `border-border` | #1E1735 | All dividers, card borders (1px only) |
 | `border-border-hover` | #2D1B69 | Hover state on borders |
 
-Text
-| Token | Hex |
-|---|---|
-| `text-primary` | #E8E4EC |
-| `text-secondary` | #7B6F8E |
-| `text-tertiary` | #3D3156 |
-| `text-gold` | #C4A265 |
+Text (WCAG AA on `#0C0716`)
+| Token | Hex | Contrast |
+|---|---|---|
+| `text-primary` | #E8E4EC | 13.5:1 |
+| `text-secondary` | #9C90B4 | 5.4:1 |
+| `text-tertiary` | #6E6388 | 3.1:1 (large-text AA) |
+| `text-gold` | #C4A265 | 6.5:1 |
 
 Subsidiaries
 | Token | Hex | Channel |

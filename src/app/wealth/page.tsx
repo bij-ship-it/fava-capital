@@ -1,6 +1,13 @@
+import type { Metadata } from "next";
 import Link from "next/link";
 import { ChannelBadge } from "@/components/ui/ChannelBadge";
 import { WealthIcon } from "@/components/ui/SubsidiaryIcons";
+
+export const metadata: Metadata = {
+  title: "Wealth",
+  description:
+    "FAVA Wealth — a multi-strategy managed fund offering institutional-grade investing for long-horizon investors.",
+};
 
 const investmentTerms = [
   { label: "Target Return", value: "20% per annum" },
