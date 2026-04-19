@@ -154,20 +154,20 @@ export default function CryptoPage() {
       </section>
 
       {/* Price Ticker Strip */}
-      <section className="bg-[#120E1E]">
+      <section className="bg-surface">
         <div className="max-w-[1160px] mx-auto px-20 max-lg:px-6">
           <div className="flex overflow-x-auto">
             {tickers.map((t, i) => (
               <div
                 key={t.symbol}
                 className={`flex items-center gap-4 py-4 pr-8 shrink-0 ${
-                  i > 0 ? "pl-8 border-l border-[#1E1735]" : ""
+                  i > 0 ? "pl-8 border-l border-border" : ""
                 }`}
               >
-                <span className="text-label text-[#7B6F8E]">{t.symbol}</span>
-                <span className="text-numbers text-[#E8E4EC] text-[15px]">{t.price}</span>
+                <span className="text-label text-secondary">{t.symbol}</span>
+                <span className="text-numbers text-primary">{t.price}</span>
                 <span
-                  className={`font-mono text-[13px] ${
+                  className={`font-mono text-caption ${
                     t.up ? "text-green-400" : "text-[#C47272]"
                   }`}
                 >
@@ -182,15 +182,15 @@ export default function CryptoPage() {
       {/* Platform Services */}
       <section className="py-[120px]">
         <div className="max-w-[1160px] mx-auto px-20 max-lg:px-6">
-          <p className="text-label text-[#7B6F8E] mb-16">Platform Services</p>
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-[1px] bg-[#1E1735]">
+          <p className="text-label text-secondary mb-16">Platform Services</p>
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-[1px] bg-border">
             {platformServices.map((service) => (
               <div
                 key={service.title}
-                className="bg-[#120E1E] p-10 border-t-2 border-t-[#6366F1]"
+                className="bg-surface p-10 border-t-2 border-t-crypto"
               >
-                <h3 className="text-label text-[#E8E4EC] mb-3">{service.title}</h3>
-                <p className="text-[#7B6F8E] leading-[1.7] text-[14px]">
+                <h3 className="text-label text-primary mb-3">{service.title}</h3>
+                <p className="text-secondary leading-[1.7]">
                   {service.description}
                 </p>
               </div>
@@ -200,18 +200,18 @@ export default function CryptoPage() {
       </section>
 
       {/* Who Cryptorio Serves */}
-      <section className="bg-[#120E1E] py-[100px]">
+      <section className="bg-surface py-[100px]">
         <div className="max-w-[1160px] mx-auto px-20 max-lg:px-6">
-          <p className="text-label text-[#7B6F8E] mb-16">Who Cryptorio Serves</p>
+          <p className="text-label text-secondary mb-16">Who Cryptorio Serves</p>
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-10">
             {clientSegments.map((segment) => (
               <div key={segment.title}>
-                <h3 className="text-label text-[#E8E4EC] mb-5">{segment.title}</h3>
+                <h3 className="text-label text-primary mb-5">{segment.title}</h3>
                 <ul className="space-y-3">
                   {segment.items.map((item) => (
                     <li key={item} className="flex items-center gap-3">
-                      <span className="w-1.5 h-1.5 bg-[#6366F1] shrink-0" />
-                      <span className="text-[#7B6F8E] text-[14px]">{item}</span>
+                      <span className="w-1.5 h-1.5 bg-crypto shrink-0" />
+                      <span className="text-secondary">{item}</span>
                     </li>
                   ))}
                 </ul>
@@ -226,11 +226,11 @@ export default function CryptoPage() {
         <div className="max-w-[1160px] mx-auto px-20 max-lg:px-6">
           <div className="flex flex-col lg:flex-row gap-16">
             <div className="flex-1">
-              <p className="text-label text-[#6366F1] mb-6">EXECUTION</p>
-              <h2 className="text-subhead text-[#E8E4EC] mb-6">
+              <p className="text-label text-crypto mb-6">EXECUTION</p>
+              <h2 className="text-subhead text-primary mb-6">
                 Deep aggregated liquidity with intelligent routing.
               </h2>
-              <p className="text-[#7B6F8E] leading-[1.75] max-w-[480px]">
+              <p className="text-secondary leading-[1.75] max-w-[480px]">
                 Cryptorio aggregates liquidity across multiple global venues,
                 applying smart order routing to achieve optimal execution for
                 every trade. For large block orders, our OTC desk provides
@@ -239,11 +239,11 @@ export default function CryptoPage() {
               </p>
             </div>
             <div className="flex-1">
-              <div className="grid grid-cols-1 sm:grid-cols-2 gap-[1px] bg-[#1E1735]">
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-[1px] bg-border">
                 {executionItems.map((item) => (
-                  <div key={item.title} className="bg-[#120E1E] p-8">
-                    <h4 className="text-label text-[#E8E4EC] mb-2">{item.title}</h4>
-                    <p className="text-[#7B6F8E] text-[14px] leading-[1.7]">
+                  <div key={item.title} className="bg-surface p-8">
+                    <h4 className="text-label text-primary mb-2">{item.title}</h4>
+                    <p className="text-secondary leading-[1.7]">
                       {item.description}
                     </p>
                   </div>
@@ -255,17 +255,17 @@ export default function CryptoPage() {
       </section>
 
       {/* Compliance & Security */}
-      <section className="bg-[#120E1E] py-[100px]">
+      <section className="bg-surface py-[100px]">
         <div className="max-w-[1160px] mx-auto px-20 max-lg:px-6">
-          <p className="text-label text-[#6366F1] mb-6">COMPLIANCE</p>
-          <h2 className="text-subhead text-[#E8E4EC] mb-16">
+          <p className="text-label text-crypto mb-6">COMPLIANCE</p>
+          <h2 className="text-subhead text-primary mb-16">
             Institutional-grade compliance at every layer.
           </h2>
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-[1px] bg-[#1E1735]">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-[1px] bg-border">
             {complianceItems.map((item) => (
-              <div key={item.title} className="bg-[#120E1E] p-8">
-                <h4 className="text-label text-[#E8E4EC] mb-2">{item.title}</h4>
-                <p className="text-[#7B6F8E] text-[14px] leading-[1.7]">
+              <div key={item.title} className="bg-surface p-8">
+                <h4 className="text-label text-primary mb-2">{item.title}</h4>
+                <p className="text-secondary leading-[1.7]">
                   {item.description}
                 </p>
               </div>
@@ -275,27 +275,27 @@ export default function CryptoPage() {
       </section>
 
       {/* Banking & Partnerships */}
-      <section className="py-[100px] border-t border-[#1E1735]">
+      <section className="py-[100px] border-t border-border">
         <div className="max-w-[1160px] mx-auto px-20 max-lg:px-6">
-          <p className="text-label text-[#6366F1] mb-16">INFRASTRUCTURE</p>
+          <p className="text-label text-crypto mb-16">INFRASTRUCTURE</p>
           <div className="flex flex-col lg:flex-row gap-16">
             {/* Banking Partners */}
             <div className="flex-1">
-              <h3 className="text-label text-[#E8E4EC] mb-6">Banking Partners</h3>
+              <h3 className="text-label text-primary mb-6">Banking Partners</h3>
               <div className="space-y-4">
                 {bankingPartners.map((partner) => (
                   <div
                     key={partner.name}
-                    className="flex items-center justify-between bg-[#120E1E] p-5"
+                    className="flex items-center justify-between bg-surface p-5"
                   >
-                    <span className="text-[#E8E4EC] text-[14px]">{partner.name}</span>
+                    <span className="text-primary">{partner.name}</span>
                     <div className="flex items-center gap-2">
                       <span
                         className={`w-2 h-2 ${
-                          partner.active ? "bg-green-400" : "bg-[#C4A265]"
+                          partner.active ? "bg-green-400" : "bg-gold"
                         }`}
                       />
-                      <span className="text-[#7B6F8E] text-[13px]">{partner.status}</span>
+                      <span className="text-secondary text-caption">{partner.status}</span>
                     </div>
                   </div>
                 ))}
@@ -303,21 +303,21 @@ export default function CryptoPage() {
             </div>
             {/* Liquidity Partners */}
             <div className="flex-1">
-              <h3 className="text-label text-[#E8E4EC] mb-6">Liquidity Partners</h3>
+              <h3 className="text-label text-primary mb-6">Liquidity Partners</h3>
               <div className="space-y-4">
                 {liquidityPartners.map((partner) => (
                   <div
                     key={partner.name}
-                    className="flex items-center justify-between bg-[#120E1E] p-5"
+                    className="flex items-center justify-between bg-surface p-5"
                   >
-                    <span className="text-[#E8E4EC] text-[14px]">{partner.name}</span>
+                    <span className="text-primary">{partner.name}</span>
                     <div className="flex items-center gap-2">
                       <span
                         className={`w-2 h-2 ${
-                          partner.active ? "bg-green-400" : "bg-[#C4A265]"
+                          partner.active ? "bg-green-400" : "bg-gold"
                         }`}
                       />
-                      <span className="text-[#7B6F8E] text-[13px]">{partner.status}</span>
+                      <span className="text-secondary text-caption">{partner.status}</span>
                     </div>
                   </div>
                 ))}
@@ -328,80 +328,80 @@ export default function CryptoPage() {
       </section>
 
       {/* Regulatory Foundation */}
-      <section className="bg-[#120E1E] py-[80px]">
+      <section className="bg-surface py-[80px]">
         <div className="max-w-[1160px] mx-auto px-20 max-lg:px-6">
-          <p className="text-label text-[#6366F1] mb-10">REGULATORY FOUNDATION</p>
-          <p className="text-label text-[#7B6F8E] mb-6">OPERATIONAL</p>
+          <p className="text-label text-crypto mb-10">REGULATORY FOUNDATION</p>
+          <p className="text-label text-secondary mb-6">OPERATIONAL</p>
           <div className="space-y-4 mb-12">
             <div className="flex items-start gap-4">
               <span className="w-2 h-2 bg-green-400 shrink-0 mt-1.5" />
               <div>
-                <span className="text-[#E8E4EC] text-[14px]">El Salvador BSP</span>
-                <span className="text-[#7B6F8E] text-[13px] ml-3">Bitcoin Service Provider licence enabling regulated digital asset operations.</span>
+                <span className="text-primary">El Salvador BSP</span>
+                <span className="text-secondary text-caption ml-3">Bitcoin Service Provider licence enabling regulated digital asset operations.</span>
               </div>
             </div>
             <div className="flex items-start gap-4">
               <span className="w-2 h-2 bg-green-400 shrink-0 mt-1.5" />
               <div>
-                <span className="text-[#E8E4EC] text-[14px]">US FinCEN MSB</span>
-                <span className="text-[#7B6F8E] text-[13px] ml-3">Money Services Business registration for digital asset operations in the United States.</span>
+                <span className="text-primary">US FinCEN MSB</span>
+                <span className="text-secondary text-caption ml-3">Money Services Business registration for digital asset operations in the United States.</span>
               </div>
             </div>
             <div className="flex items-start gap-4">
               <span className="w-2 h-2 bg-green-400 shrink-0 mt-1.5" />
               <div>
-                <span className="text-[#E8E4EC] text-[14px]">Canadian FINTRAC MSB</span>
-                <span className="text-[#7B6F8E] text-[13px] ml-3">Money Services Business registration for digital asset services in Canada.</span>
+                <span className="text-primary">Canadian FINTRAC MSB</span>
+                <span className="text-secondary text-caption ml-3">Money Services Business registration for digital asset services in Canada.</span>
               </div>
             </div>
           </div>
 
-          <p className="text-label text-[#7B6F8E] mb-6">TARGET</p>
+          <p className="text-label text-secondary mb-6">TARGET</p>
           <div className="space-y-4 mb-10">
             <div className="flex items-start gap-4">
-              <span className="w-2 h-2 bg-[#C4A265] shrink-0 mt-1.5" />
+              <span className="w-2 h-2 bg-gold shrink-0 mt-1.5" />
               <div>
-                <span className="text-[#E8E4EC] text-[14px]">DASP &mdash; Europe</span>
-                <span className="text-[#7B6F8E] text-[13px] ml-3">Digital Asset Service Provider registration for European market access.</span>
+                <span className="text-primary">DASP &mdash; Europe</span>
+                <span className="text-secondary text-caption ml-3">Digital Asset Service Provider registration for European market access.</span>
               </div>
             </div>
             <div className="flex items-start gap-4">
-              <span className="w-2 h-2 bg-[#C4A265] shrink-0 mt-1.5" />
+              <span className="w-2 h-2 bg-gold shrink-0 mt-1.5" />
               <div>
-                <span className="text-[#E8E4EC] text-[14px]">VARA &mdash; Dubai, UAE</span>
-                <span className="text-[#7B6F8E] text-[13px] ml-3">Virtual Assets Regulatory Authority licence for operations in the UAE.</span>
+                <span className="text-primary">VARA &mdash; Dubai, UAE</span>
+                <span className="text-secondary text-caption ml-3">Virtual Assets Regulatory Authority licence for operations in the UAE.</span>
               </div>
             </div>
             <div className="flex items-start gap-4">
-              <span className="w-2 h-2 bg-[#C4A265] shrink-0 mt-1.5" />
+              <span className="w-2 h-2 bg-gold shrink-0 mt-1.5" />
               <div>
-                <span className="text-[#E8E4EC] text-[14px]">MiCA &mdash; Austria, Europe</span>
-                <span className="text-[#7B6F8E] text-[13px] ml-3">Markets in Crypto-Assets regulation for EU-wide passported operations.</span>
+                <span className="text-primary">MiCA &mdash; Austria, Europe</span>
+                <span className="text-secondary text-caption ml-3">Markets in Crypto-Assets regulation for EU-wide passported operations.</span>
               </div>
             </div>
             <div className="flex items-start gap-4">
-              <span className="w-2 h-2 bg-[#C4A265] shrink-0 mt-1.5" />
+              <span className="w-2 h-2 bg-gold shrink-0 mt-1.5" />
               <div>
-                <span className="text-[#E8E4EC] text-[14px]">VASP &mdash; Pakistan</span>
-                <span className="text-[#7B6F8E] text-[13px] ml-3">Virtual Asset Service Provider registration for the Pakistani market.</span>
+                <span className="text-primary">VASP &mdash; Pakistan</span>
+                <span className="text-secondary text-caption ml-3">Virtual Asset Service Provider registration for the Pakistani market.</span>
               </div>
             </div>
             <div className="flex items-start gap-4">
-              <span className="w-2 h-2 bg-[#C4A265] shrink-0 mt-1.5" />
+              <span className="w-2 h-2 bg-gold shrink-0 mt-1.5" />
               <div>
-                <span className="text-[#E8E4EC] text-[14px]">MAS &mdash; Singapore</span>
-                <span className="text-[#7B6F8E] text-[13px] ml-3">Monetary Authority of Singapore digital payment token service licence.</span>
+                <span className="text-primary">MAS &mdash; Singapore</span>
+                <span className="text-secondary text-caption ml-3">Monetary Authority of Singapore digital payment token service licence.</span>
               </div>
             </div>
             <div className="flex items-start gap-4">
-              <span className="w-2 h-2 bg-[#C4A265] shrink-0 mt-1.5" />
+              <span className="w-2 h-2 bg-gold shrink-0 mt-1.5" />
               <div>
-                <span className="text-[#E8E4EC] text-[14px]">AUSTRAC &mdash; Australia</span>
-                <span className="text-[#7B6F8E] text-[13px] ml-3">Digital currency exchange registration for the Australian market.</span>
+                <span className="text-primary">AUSTRAC &mdash; Australia</span>
+                <span className="text-secondary text-caption ml-3">Digital currency exchange registration for the Australian market.</span>
               </div>
             </div>
           </div>
-          <p className="text-[#7B6F8E] text-[14px] leading-[1.75] max-w-[640px]">
+          <p className="text-secondary leading-[1.75] max-w-[640px]">
             Centralised technology, jurisdiction-specific compliance. One
             platform, global operations.
           </p>

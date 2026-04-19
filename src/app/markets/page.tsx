@@ -122,7 +122,7 @@ export default function MarketsPage() {
                   i >= 2 ? "max-md:border-t max-md:pt-8" : ""
                 }`}
               >
-                <p className="text-[40px] max-md:text-[32px] font-bold tracking-tight text-primary leading-none">
+                <p className="text-numbers tracking-tight text-primary leading-none">
                   {stat.value}
                 </p>
                 <p className="text-caption text-tertiary mt-3 tracking-widest uppercase text-[11px]">
@@ -147,8 +147,8 @@ export default function MarketsPage() {
                 key={item.title}
                 className={`${i === 2 ? "md:col-span-2 md:max-w-[560px]" : ""}`}
               >
-                <div className="border-t-2 border-[#14B8A6] pt-8 pb-14">
-                  <span className="text-[48px] max-md:text-[36px] font-light text-markets leading-none tracking-tight">
+                <div className="border-t-2 border-markets pt-8 pb-14">
+                  <span className="text-numbers text-markets leading-none tracking-tight">
                     {item.number}
                   </span>
                   <h3 className="text-subhead text-primary mt-5 mb-3">
@@ -180,18 +180,18 @@ export default function MarketsPage() {
               <Link
                 key={inst.name}
                 href="/markets/products"
-                className="group block bg-surface border-t-2 border-transparent hover:border-[#14B8A6] transition-colors"
+                className="group block bg-surface border-t-2 border-transparent hover:border-markets transition-colors"
               >
                 <div className="p-8 max-md:p-6">
                   <div className="flex items-baseline justify-between mb-4">
-                    <h3 className="text-primary text-[17px] font-medium">
+                    <h3 className="text-primary">
                       {inst.name}
                     </h3>
-                    <span className="text-numbers text-markets text-[28px] max-md:text-[24px] font-bold leading-none">
+                    <span className="text-numbers text-markets leading-none">
                       {inst.count}
                     </span>
                   </div>
-                  <p className="text-secondary text-[14px] leading-[1.65] mb-6">
+                  <p className="text-secondary leading-[1.65] mb-6">
                     {inst.description}
                   </p>
                   <span className="text-label text-tertiary group-hover:text-markets transition-colors text-[12px] tracking-wider">
@@ -210,7 +210,7 @@ export default function MarketsPage() {
           <div className="grid md:grid-cols-2 gap-16 max-md:gap-10 py-[100px] max-md:py-16">
             <div>
               <p className="text-label text-secondary mb-8">OUR TRACK RECORD</p>
-              <blockquote className="text-[28px] max-md:text-[22px] text-primary leading-[1.4] italic font-light">
+              <blockquote className="text-subhead text-primary leading-[1.4] italic font-light">
                 &ldquo;Built and scaled from scratch. Six times. $320M in
                 deposits over nine years, from a single office across
                 Sub-Saharan Africa.&rdquo;
@@ -224,7 +224,7 @@ export default function MarketsPage() {
             <div className="flex flex-col justify-center">
               <div className="grid grid-cols-2 gap-x-12 gap-y-10">
                 <div>
-                  <p className="text-[36px] max-md:text-[28px] font-bold text-primary leading-none tracking-tight">
+                  <p className="text-numbers text-primary leading-none tracking-tight">
                     102K
                   </p>
                   <p className="text-caption text-tertiary mt-2 uppercase text-[11px] tracking-widest">
@@ -232,7 +232,7 @@ export default function MarketsPage() {
                   </p>
                 </div>
                 <div>
-                  <p className="text-[36px] max-md:text-[28px] font-bold text-primary leading-none tracking-tight">
+                  <p className="text-numbers text-primary leading-none tracking-tight">
                     18K+
                   </p>
                   <p className="text-caption text-tertiary mt-2 uppercase text-[11px] tracking-widest">
@@ -240,7 +240,7 @@ export default function MarketsPage() {
                   </p>
                 </div>
                 <div>
-                  <p className="text-[36px] max-md:text-[28px] font-bold text-primary leading-none tracking-tight">
+                  <p className="text-numbers text-primary leading-none tracking-tight">
                     $320M
                   </p>
                   <p className="text-caption text-tertiary mt-2 uppercase text-[11px] tracking-widest">
@@ -248,7 +248,7 @@ export default function MarketsPage() {
                   </p>
                 </div>
                 <div>
-                  <p className="text-[36px] max-md:text-[28px] font-bold text-primary leading-none tracking-tight">
+                  <p className="text-numbers text-primary leading-none tracking-tight">
                     590
                   </p>
                   <p className="text-caption text-tertiary mt-2 uppercase text-[11px] tracking-widest">
@@ -256,7 +256,7 @@ export default function MarketsPage() {
                   </p>
                 </div>
                 <div className="col-span-2">
-                  <p className="text-[36px] max-md:text-[28px] font-bold text-primary leading-none tracking-tight">
+                  <p className="text-numbers text-primary leading-none tracking-tight">
                     9 years
                   </p>
                   <p className="text-caption text-tertiary mt-2 uppercase text-[11px] tracking-widest">
@@ -285,13 +285,13 @@ export default function MarketsPage() {
               <div key={phase.phase} className="contents">
                 {/* Timeline column */}
                 <div className="flex flex-col items-center max-md:hidden">
-                  <div className="w-3 h-3 bg-[#14B8A6] shrink-0 mt-1" />
+                  <div className="w-3 h-3 bg-markets shrink-0 mt-1" />
                   {i < expansionTimeline.length - 1 && (
                     <div className="w-px flex-1 bg-border" />
                   )}
                 </div>
                 {/* Content column */}
-                <div className="pb-12 max-md:pb-8 max-md:border-l-2 max-md:border-[#14B8A6] max-md:pl-6 max-md:ml-1">
+                <div className="pb-12 max-md:pb-8 max-md:border-l-2 max-md:border-markets max-md:pl-6 max-md:ml-1">
                   <p className="text-label text-markets mb-1 text-[13px] tracking-wider">
                     {phase.phase}
                   </p>

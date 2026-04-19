@@ -120,7 +120,7 @@ export default function WealthPage() {
               )}
               {/* Step number dot */}
               <div className="relative z-10 flex items-center justify-center">
-                <span className="text-numbers text-gold text-[13px] font-semibold bg-base px-2">
+                <span className="text-gold text-[13px] font-semibold bg-base px-2">
                   {step.number}
                 </span>
               </div>
@@ -143,7 +143,7 @@ export default function WealthPage() {
                 <span className="absolute -left-8 top-[2px] w-[15px] h-[15px] border border-gold flex items-center justify-center">
                   <span className="w-[5px] h-[5px] bg-gold" />
                 </span>
-                <span className="text-numbers text-gold text-[12px] font-semibold">
+                <span className="text-gold text-[12px] font-semibold">
                   {step.number}
                 </span>
                 <h3 className="text-primary text-[14px] font-medium mt-1">
@@ -244,7 +244,7 @@ export default function WealthPage() {
       <section className="bg-surface border-t border-border">
         <div className="max-w-[1160px] mx-auto px-20 max-lg:px-6 py-[120px]">
           <div className="flex flex-col items-center text-center max-w-xl mx-auto">
-            <h2 className="text-display-alt text-primary text-[28px] max-md:text-[22px]">
+            <h2 className="text-subhead text-primary">
               Start your investment journey
             </h2>
             <p className="text-secondary text-[15px] leading-[1.7] font-light mt-5 mb-10">

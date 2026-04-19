@@ -34,7 +34,7 @@ export function TrustBar() {
               Built for people who take their money seriously.
             </h2>
           </div>
-          <p className="text-secondary max-w-sm text-[14px] leading-[1.7] md:pt-8">
+          <p className="text-secondary max-w-sm leading-[1.7] md:pt-8">
             We don&apos;t ask you to trust us. We give you every reason to.
             Licensing, infrastructure, transparency, and track record.
           </p>
@@ -54,10 +54,10 @@ export function TrustBar() {
               }}
             >
               <div className="gold-rule-left w-8 mb-6" />
-              <h3 className="text-[15px] text-primary font-light mb-3">
+              <h3 className="text-primary font-light mb-3">
                 {pillar.title}
               </h3>
-              <p className="text-[14px] text-secondary leading-[1.75]">
+              <p className="text-secondary leading-[1.75]">
                 {pillar.body}
               </p>
             </motion.div>

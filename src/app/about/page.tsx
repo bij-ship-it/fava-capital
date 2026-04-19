@@ -100,7 +100,7 @@ export default function AboutPage() {
         <h1 className="text-display text-primary max-w-3xl">
           We build financial infrastructure that compounds.
         </h1>
-        <p className="text-secondary text-[16px] leading-[1.75] max-w-2xl mt-8">
+        <p className="text-secondary leading-[1.75] max-w-2xl mt-8">
           FAVA Capital is a diversified holding company operating across wealth
           management, institutional trading, global payments, digital assets,
           and commodities. Each business is independent. Each is built to be
@@ -120,7 +120,7 @@ export default function AboutPage() {
               height={120}
               className="opacity-40 shrink-0"
             />
-            <blockquote className="text-[24px] md:text-[30px] text-primary font-light leading-[1.4] italic max-w-2xl" style={{ fontFamily: "var(--font-display)" }}>
+            <blockquote className="text-accent text-[24px] md:text-[30px] text-primary leading-[1.4] max-w-2xl">
               &ldquo;Independent businesses. Shared infrastructure.
               Scalable economics.&rdquo;
             </blockquote>
@@ -143,7 +143,7 @@ export default function AboutPage() {
                 <h3 className="text-[17px] text-primary font-medium mb-3">
                   {v.title}
                 </h3>
-                <p className="text-[14px] text-secondary leading-[1.75]">
+                <p className="text-secondary leading-[1.75]">
                   {v.body}
                 </p>
               </div>
@@ -182,7 +182,7 @@ export default function AboutPage() {
               <h2 className="text-subhead text-primary mb-6">
                 Regulated across three continents. Operational from day one.
               </h2>
-              <p className="text-secondary text-[14px] leading-[1.75] max-w-lg">
+              <p className="text-secondary leading-[1.75] max-w-lg">
                 FAVA holds licences and registrations across multiple jurisdictions,
                 with banking relationships, liquidity partnerships, and operational
                 teams in place. We don&apos;t announce markets we plan to enter &mdash;
