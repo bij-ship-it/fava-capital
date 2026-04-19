@@ -409,23 +409,25 @@ export default function CryptoPage() {
       </section>
 
       {/* CTA */}
-      <section className="bg-[#120E1E] border-t border-[#1E1735] py-[80px]">
-        <div className="max-w-[1160px] mx-auto px-20 max-lg:px-6 text-center">
-          <h2 className="text-subhead text-[#E8E4EC] mb-4">Trade on Cryptorio</h2>
-          <p className="text-[#7B6F8E] text-[14px] mb-10">
+      <section className="bg-surface border-t border-border">
+        <div className="max-w-[1160px] mx-auto px-20 max-lg:px-6 py-[100px] max-md:py-16 text-center">
+          <h2 className="text-display-alt text-primary mb-5">
+            Trade on Cryptorio
+          </h2>
+          <p className="text-caption text-secondary mb-10 tracking-wide">
             Regulated &middot; Institutional custody &middot; Deep liquidity
           </p>
-          <div className="flex items-center justify-center gap-8">
+          <div className="flex items-center justify-center gap-6 flex-wrap">
             <Link
               href="https://cryptorio.com"
               target="_blank"
-              className="text-label text-[#6366F1] link-hover"
+              className="inline-block border border-crypto text-crypto text-label px-10 py-4 tracking-wider uppercase text-[12px] hover:bg-crypto/10 transition-colors"
             >
-              Visit cryptorio.com &rarr;
+              Visit Cryptorio
             </Link>
             <Link
               href="/contact"
-              className="text-label text-[#7B6F8E] link-hover transition-colors hover:text-[#E8E4EC]"
+              className="text-label text-secondary link-hover transition-colors hover:text-primary"
             >
               Contact us &rarr;
             </Link>

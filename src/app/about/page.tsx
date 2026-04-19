@@ -320,9 +320,12 @@ export default function AboutPage() {
                 who wants to join the team &mdash; we&apos;d like to hear from you.
               </p>
             </div>
-            <div className="flex flex-col gap-4 shrink-0">
-              <Link href="/contact" className="text-label text-gold link-hover">
-                Get in touch &rarr;
+            <div className="flex flex-col gap-5 shrink-0">
+              <Link
+                href="/contact"
+                className="inline-block border border-gold text-gold text-label px-10 py-4 tracking-wider uppercase text-[12px] hover:bg-gold/10 transition-colors"
+              >
+                Get in Touch
               </Link>
               <Link href="/careers" className="text-label text-secondary link-hover hover:text-primary transition-colors">
                 View careers &rarr;

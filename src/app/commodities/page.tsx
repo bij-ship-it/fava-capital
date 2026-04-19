@@ -106,6 +106,9 @@ export default function CommoditiesPage() {
                 most essential markets with institutional execution, deep liquidity,
                 and expert research.
               </p>
+              <Link href="/commodities/apply" className="inline-block mt-8 text-label text-commodities link-hover">
+                Open an account &rarr;
+              </Link>
             </div>
             <CommoditiesIcon size={160} className="opacity-20 shrink-0 hidden md:block" />
           </div>
@@ -239,18 +242,18 @@ export default function CommoditiesPage() {
             <p className="text-secondary mt-4 text-[15px]">
               24+ instruments · Competitive spreads · Expert research
             </p>
-            <div className="flex items-center justify-center gap-10 mt-10">
+            <div className="flex items-center justify-center gap-6 mt-10 flex-wrap">
               <Link
                 href="/commodities/apply"
-                className="text-label text-commodities hover:text-primary transition-colors"
+                className="inline-block border border-commodities text-commodities text-label px-10 py-4 tracking-wider uppercase text-[12px] hover:bg-commodities/10 transition-colors"
               >
-                Open Account →
+                Open Account
               </Link>
               <Link
                 href="/commodities/instruments"
-                className="text-label text-secondary hover:text-primary transition-colors"
+                className="text-label text-secondary link-hover hover:text-primary transition-colors"
               >
-                View Instruments →
+                View Instruments &rarr;
               </Link>
             </div>
           </div>

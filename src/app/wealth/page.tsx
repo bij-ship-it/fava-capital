@@ -63,8 +63,7 @@ export default function WealthPage() {
               institutional execution infrastructure, paid quarterly, with
               no management or performance fees. AFSL-regulated.
             </p>
-            <div className="gold-rule-left w-32 mt-10" />
-            <Link href="/contact" className="inline-block mt-8 text-label text-wealth link-hover">
+            <Link href="/contact" className="inline-block mt-10 text-label text-wealth link-hover">
               Inquire now &rarr;
             </Link>
           </div>
@@ -245,7 +244,6 @@ export default function WealthPage() {
       <section className="bg-surface border-t border-border">
         <div className="max-w-[1160px] mx-auto px-20 max-lg:px-6 py-[120px]">
           <div className="flex flex-col items-center text-center max-w-xl mx-auto">
-            <div className="w-12 h-px bg-gold mb-10" />
             <h2 className="text-display-alt text-primary text-[28px] max-md:text-[22px]">
               Start your investment journey
             </h2>

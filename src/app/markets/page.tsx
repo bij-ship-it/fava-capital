@@ -314,16 +314,16 @@ export default function MarketsPage() {
           <p className="text-caption text-secondary mb-10 tracking-wide">
             1,000+ instruments &middot; Tight spreads &middot; Regulated
           </p>
-          <div className="flex items-center justify-center gap-8">
+          <div className="flex items-center justify-center gap-6 flex-wrap">
             <Link
               href="/markets/accounts"
-              className="text-label text-markets hover:opacity-80 transition-opacity"
+              className="inline-block border border-markets text-markets text-label px-10 py-4 tracking-wider uppercase text-[12px] hover:bg-markets/10 transition-colors"
             >
-              Open Live Account &rarr;
+              Open Live Account
             </Link>
             <Link
               href="/markets/platforms"
-              className="text-label text-secondary hover:text-primary transition-colors"
+              className="text-label text-secondary link-hover hover:text-primary transition-colors"
             >
               View Platforms &rarr;
             </Link>

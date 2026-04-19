@@ -136,8 +136,11 @@ export default function PartnersPage() {
           Speak with our partnerships team to explore the model that best fits your business.
           We respond to all enquiries within 24 hours.
         </p>
-        <Link href="/contact" className="link-hover text-gold text-label">
-          Get in Touch &rarr;
+        <Link
+          href="/contact"
+          className="inline-block border border-gold text-gold text-label px-10 py-4 tracking-wider uppercase text-[12px] hover:bg-gold/10 transition-colors"
+        >
+          Get in Touch
         </Link>
       </section>
     </div>

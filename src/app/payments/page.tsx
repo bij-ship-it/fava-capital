@@ -327,13 +327,13 @@ export default function PaymentsPage() {
             Licensed in three jurisdictions. Live in 180+ countries. Transparent
             rates. No hidden fees.
           </p>
-          <div className="mt-10 flex items-center justify-center gap-8">
+          <div className="mt-10 flex items-center justify-center gap-6 flex-wrap">
             <Link
               href="https://rebasive.com"
               target="_blank"
-              className="text-label text-payments link-hover"
+              className="inline-block border border-payments text-payments text-label px-10 py-4 tracking-wider uppercase text-[12px] hover:bg-payments/10 transition-colors"
             >
-              Visit Rebasive &rarr;
+              Visit Rebasive
             </Link>
             <Link
               href="/contact"
