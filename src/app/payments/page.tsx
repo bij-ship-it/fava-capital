@@ -283,44 +283,42 @@ export default function PaymentsPage() {
       </section>
 
       {/* Brokerage Integration */}
-      <section className="border-t border-border">
-        <div className="max-w-[1160px] mx-auto px-20 max-lg:px-6 py-[120px] max-md:py-20">
-          <div className="bg-surface border border-border p-10 md:p-14">
-            <div className="flex flex-col md:flex-row gap-14 md:gap-20">
-              {/* Left */}
-              <div className="flex-1">
-                <p className="text-label text-payments mb-4">
-                  BROKERAGE INTEGRATION
-                </p>
-                <h2 className="text-subhead text-primary mb-4">
-                  One account. Trading + Payments.
-                </h2>
-                <p className="text-[14px] text-secondary leading-[1.75] max-w-md">
-                  Rebasive rails integrate directly into FAVA Markets, giving
-                  brokerage clients a complete financial services environment
-                  from a single account.
-                </p>
-              </div>
+      <section className="bg-surface border-t border-b border-border">
+        <div className="max-w-[1160px] mx-auto px-20 max-lg:px-6 py-[100px] max-md:py-16">
+          <div className="flex flex-col md:flex-row gap-14 md:gap-20 items-start">
+            {/* Left */}
+            <div className="flex-1">
+              <p className="text-label text-payments mb-4">
+                BROKERAGE INTEGRATION
+              </p>
+              <h2 className="text-subhead text-primary mb-4">
+                One account. Trading + Payments.
+              </h2>
+              <p className="text-secondary leading-[1.75] max-w-md">
+                Rebasive rails integrate directly into FAVA Markets, giving
+                brokerage clients a complete financial services environment
+                from a single account.
+              </p>
+            </div>
 
-              {/* Right */}
-              <div className="md:w-[380px] shrink-0 flex flex-col gap-5">
-                <p className="text-label text-secondary mb-1">
-                  CLIENTS ACCESS
-                </p>
-                {brokerageItems.map((item) => (
-                  <div key={item} className="flex items-start gap-3">
-                    <span className="w-1.5 h-1.5 bg-payments mt-2 shrink-0" />
-                    <span className="text-[14px] text-primary/70">{item}</span>
-                  </div>
-                ))}
-              </div>
+            {/* Right */}
+            <div className="md:w-[420px] shrink-0 flex flex-col gap-4">
+              <p className="text-label text-secondary mb-2">
+                CLIENTS ACCESS
+              </p>
+              {brokerageItems.map((item) => (
+                <div key={item} className="flex items-start gap-3">
+                  <span className="w-1.5 h-1.5 bg-payments mt-2 shrink-0" />
+                  <span className="text-primary/70">{item}</span>
+                </div>
+              ))}
             </div>
           </div>
         </div>
       </section>
 
       {/* CTA */}
-      <section className="pb-[140px] max-md:pb-20">
+      <section className="py-[120px] max-md:py-20">
         <div className="max-w-[1160px] mx-auto px-20 max-lg:px-6">
           <div className="bg-surface p-14 max-lg:p-8 text-center">
             <h2 className="text-display-alt text-primary">
