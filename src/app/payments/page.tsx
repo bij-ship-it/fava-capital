@@ -1,59 +1,61 @@
-import Link from "next/link";
 import type { Metadata } from "next";
-import { ChannelBadge } from "@/components/ui/ChannelBadge";
-import { PaymentsIcon } from "@/components/ui/SubsidiaryIcons";
+import { SubsidiaryHero } from "@/components/ui/SubsidiaryHero";
+import { StatsStrip } from "@/components/ui/StatsStrip";
+import { Container } from "@/components/ui/Container";
+import { Card } from "@/components/ui/Card";
+import { SubNav, type SubNavItem } from "@/components/ui/SubNav";
+import { CTAPanel } from "@/components/ui/CTAPanel";
+import { EcosystemConnections } from "@/components/ui/EcosystemConnections";
+import { CONNECTIONS } from "@/lib/ecosystem";
 
 export const metadata: Metadata = {
-  title: "FAVA Payments — Cross-Border Payments & Settlement Infrastructure | FAVA Capital",
+  title: "Payments",
   description:
-    "Dual-rail settlement platform combining regulated fiat corridors with tokenised settlement. Licensed in Nigeria, US, and Canada. Powered by Rebasive.",
+    "FAVA Payments — cross-border payments and multi-currency accounts, powered by Rebasive. Licensed in Nigeria, the US, and Canada.",
 };
 
-const stats = [
-  { value: "180+", label: "PAYOUT COUNTRIES" },
-  { value: "130+", label: "CURRENCIES" },
-  { value: "25", label: "AFRICAN MARKETS" },
-  { value: "~$11M", label: "TPV TO DATE" },
+const navItems: SubNavItem[] = [
+  { id: "capabilities", label: "What you get" },
+  { id: "process", label: "How it works" },
+  { id: "compliance", label: "Compliance" },
+  { id: "why", label: "Why it matters" },
+  { id: "ecosystem", label: "Ecosystem" },
 ];
 
 const capabilities = [
   {
-    title: "Send Money Globally",
-    description:
-      "Transfer funds to 180+ countries with competitive rates and real-time tracking. Fast settlement, no hidden fees.",
+    title: "Send money globally",
+    body: "Transfer to 180+ countries with real-time tracking, transparent FX, and no hidden fees.",
   },
   {
-    title: "Multi-Currency Accounts",
-    description:
-      "Hold, convert, and manage balances in 130+ currencies. One account, multiple currencies, instant conversion.",
+    title: "Multi-currency accounts",
+    body: "Hold, convert, and settle in 130+ currencies. One account, one statement, instant conversion.",
   },
   {
-    title: "Cards & Wallets",
-    description:
-      "Virtual and physical cards for everyday spending. Fund from any wallet, spend anywhere cards are accepted.",
+    title: "Cards & wallets",
+    body: "Virtual and physical cards that spend from any balance, fund from any rail, and track every flow.",
   },
   {
     title: "Business API",
-    description:
-      "Integrate payments directly into your platform. RESTful API with webhooks, batch payouts, and white-label options.",
+    body: "Plug cross-border payouts into your own platform. REST, webhooks, batch, and white-label.",
   },
 ];
 
 const steps = [
   {
     number: "01",
-    title: "Sign Up",
-    description: "Create your account in minutes with simple verification.",
+    title: "Sign up",
+    body: "Open an account in minutes with streamlined verification.",
   },
   {
     number: "02",
-    title: "Fund Your Account",
-    description: "Deposit via bank transfer, card, or crypto rails.",
+    title: "Fund it",
+    body: "Deposit via bank transfer, card, or crypto rail.",
   },
   {
     number: "03",
-    title: "Send Anywhere",
-    description: "Move money to 180+ countries at transparent rates.",
+    title: "Send it anywhere",
+    body: "Move money to 180+ countries at transparent rates.",
   },
 ];
 
@@ -65,166 +67,90 @@ const licences = [
 ];
 
 const opportunityStats = [
-  { value: "$190T", label: "Annual Cross-Border Flows" },
-  { value: "$400B+", label: "Fees Extracted by Intermediaries" },
-  { value: "8.4%", label: "Avg Cost to Send to Africa" },
-  { value: "3–5 Days", label: "Avg Emerging Market Settlement" },
-];
-
-const brokerageItems = [
-  "Multi-currency wallets for trading and spending",
-  "Instant cross-border transfers between accounts",
-  "Card issuance linked to brokerage balances",
-  "Integrated savings and investment products",
+  { value: "$190T", label: "Annual cross-border flows" },
+  { value: "$400B+", label: "Fees extracted by intermediaries" },
+  { value: "8.4%", label: "Average cost to send to Africa" },
+  { value: "3–5 days", label: "Average emerging-market settlement" },
 ];
 
 export default function PaymentsPage() {
   return (
-    <div className="min-h-screen bg-base">
-      {/* Hero */}
-      <section className="pt-32 pb-20">
-        <div className="max-w-[1160px] mx-auto px-20 max-lg:px-6">
-          <div className="flex items-start justify-between gap-12">
-            <div className="flex-1">
-              <ChannelBadge name="FAVA PAYMENTS" color="#0EA5E9" />
-              <h1 className="text-display-alt text-primary">
-                Cross-Border Payments &amp; Settlement Infrastructure
-              </h1>
-              <p className="mt-6 text-secondary max-w-[560px] leading-[1.7]">
-                A dual-rail settlement platform combining regulated fiat
-                corridors with tokenised settlement. Powered by{" "}
-                <Link
-                  href="https://rebasive.com"
-                  target="_blank"
-                  className="text-payments link-hover"
-                >
-                  Rebasive
-                </Link>
-                , our consumer and business-facing payments platform.
-              </p>
-              <div className="mt-8 flex items-center gap-8">
-                <Link
-                  href="https://rebasive.com"
-                  target="_blank"
-                  className="text-label text-payments link-hover"
-                >
-                  Visit Rebasive &rarr;
-                </Link>
-                <Link
-                  href="/contact"
-                  className="text-label text-secondary link-hover transition-colors hover:text-primary"
-                >
-                  Partnership enquiries
-                </Link>
-              </div>
-            </div>
-            <PaymentsIcon size={160} className="opacity-20 shrink-0 hidden md:block" />
-          </div>
-        </div>
-      </section>
+    <>
+      <SubsidiaryHero
+        channel="payments"
+        eyebrow="FAVA PAYMENTS"
+        title="FAVA's cross-border payments platform, powered by Rebasive."
+        description="Send, hold, spend, and settle in 130+ currencies across 180+ countries — licensed in Nigeria, the US, and Canada, with the UK in progress."
+        primary={{
+          href: "https://rebasive.com",
+          label: "Launch Rebasive",
+          external: true,
+        }}
+        secondary={{ href: "/contact", label: "Partnership enquiries" }}
+      />
 
-      {/* Stats Bar */}
-      <section className="bg-surface border-t border-b border-border">
-        <div className="max-w-[1160px] mx-auto px-20 max-lg:px-6">
-          <div className="grid grid-cols-2 md:grid-cols-4">
-            {stats.map((stat, i) => (
-              <div
-                key={stat.label}
-                className={`py-10 ${
-                  i < stats.length - 1 ? "md:border-r border-border" : ""
-                } ${i % 2 === 0 && i < 2 ? "max-md:border-r" : ""} ${
-                  i < 2 ? "max-md:border-b border-border" : ""
-                }`}
-              >
-                <div className={i > 0 ? "md:pl-10" : ""}>
-                  <div className="w-8 h-[2px] bg-payments mb-5" />
-                  <p className="text-numbers text-primary">{stat.value}</p>
-                  <p className="text-caption text-secondary mt-2">
-                    {stat.label}
-                  </p>
-                </div>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
+      <StatsStrip
+        stats={[
+          { value: "180+", label: "Payout countries" },
+          { value: "130+", label: "Currencies" },
+          { value: "3", label: "Operational licences" },
+          { value: "~$11M", label: "TPV to date", accent: true },
+        ]}
+      />
 
-      {/* What Rebasive Does */}
-      <section className="py-[100px] max-md:py-16">
-        <div className="max-w-[1160px] mx-auto px-20 max-lg:px-6">
-          <p className="text-label text-payments mb-4">WHAT YOU GET</p>
-          <h2 className="text-subhead text-primary max-w-xl mb-16">
+      <SubNav items={navItems} variant="payments" />
+
+      <section id="capabilities" className="py-[100px] max-md:py-16">
+        <Container>
+          <p className="text-label text-secondary mb-6">WHAT YOU GET</p>
+          <h2 className="text-subhead text-primary mb-14 max-w-xl">
             Everything you need to move money across borders.
           </h2>
 
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
             {capabilities.map((cap) => (
-              <div
-                key={cap.title}
-                className="bg-surface border border-border p-10"
-              >
-                <div className="w-10 h-[2px] bg-payments mb-6" />
-                <h3 className="text-primary mb-3">
-                  {cap.title}
-                </h3>
-                <p className="text-[14px] text-secondary leading-[1.7]">
-                  {cap.description}
+              <Card key={cap.title} accent="payments">
+                <h3 className="text-primary">{cap.title}</h3>
+                <p className="text-sm-body text-secondary leading-[1.7] mt-3">
+                  {cap.body}
+                </p>
+              </Card>
+            ))}
+          </div>
+        </Container>
+      </section>
+
+      <section
+        id="process"
+        className="bg-surface border-y border-border py-[100px] max-md:py-16"
+      >
+        <Container>
+          <p className="text-label text-secondary mb-6">HOW IT WORKS</p>
+          <h2 className="text-subhead text-primary mb-14 max-w-xl">
+            Three steps. That&rsquo;s it.
+          </h2>
+
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-px bg-border">
+            {steps.map((step) => (
+              <div key={step.number} className="bg-base p-10">
+                <span className="text-numbers text-payments leading-none">
+                  {step.number}
+                </span>
+                <h3 className="text-primary mt-5">{step.title}</h3>
+                <p className="text-sm-body text-secondary leading-[1.7] mt-3">
+                  {step.body}
                 </p>
               </div>
             ))}
           </div>
-        </div>
+        </Container>
       </section>
 
-      {/* How It Works */}
-      <section className="border-t border-border">
-        <div className="max-w-[1160px] mx-auto px-20 max-lg:px-6 py-[100px] max-md:py-16">
-          <p className="text-label text-payments mb-4">HOW IT WORKS</p>
-          <h2 className="text-subhead text-primary mb-16">
-            Three steps. That&rsquo;s it.
-          </h2>
-
-          <div className="bg-surface border border-border p-10 md:p-14">
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-10 md:gap-0 relative">
-              {steps.map((step, i) => (
-                <div
-                  key={step.number}
-                  className={`relative ${
-                    i < steps.length - 1
-                      ? "md:border-r border-border md:pr-10"
-                      : ""
-                  } ${i > 0 ? "md:pl-10" : ""} ${
-                    i < steps.length - 1
-                      ? "max-md:border-b max-md:pb-10"
-                      : ""
-                  }`}
-                >
-                  <span className="text-numbers text-payments leading-none">
-                    {step.number}
-                  </span>
-                  <h3 className="text-primary mt-4 mb-2">
-                    {step.title}
-                  </h3>
-                  <p className="text-[14px] text-secondary leading-[1.7]">
-                    {step.description}
-                  </p>
-                </div>
-              ))}
-
-              {/* Connecting lines — desktop only */}
-              <div className="hidden md:block absolute top-5 left-[33.33%] w-[2px] h-3 bg-payments -translate-x-[1px]" />
-              <div className="hidden md:block absolute top-5 left-[66.66%] w-[2px] h-3 bg-payments -translate-x-[1px]" />
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* Regulatory Trust */}
-      <section className="bg-surface border-t border-b border-border py-[100px] max-md:py-16">
-        <div className="max-w-[1160px] mx-auto px-20 max-lg:px-6">
-          <p className="text-label text-payments mb-4">COMPLIANCE</p>
-          <h2 className="text-subhead text-primary mb-14">
-            Licensed &amp; Regulated
+      <section id="compliance" className="py-[100px] max-md:py-16">
+        <Container>
+          <p className="text-label text-secondary mb-6">COMPLIANCE</p>
+          <h2 className="text-subhead text-primary mb-14 max-w-xl">
+            Licensed where it matters. Regulated everywhere we operate.
           </h2>
 
           <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
@@ -232,119 +158,70 @@ export default function PaymentsPage() {
               <div key={lic.name} className="flex flex-col gap-3">
                 <div className="flex items-center gap-2.5">
                   <span
-                    className={`w-2 h-2 ${
-                      lic.operational ? "bg-green-400" : "bg-gold"
-                    }`}
+                    className={`w-2 h-2 ${lic.operational ? "bg-payments" : "bg-gold"}`}
                   />
-                  <span className="text-[12px] text-secondary uppercase tracking-wider">
-                    {lic.operational ? "Operational" : "In Progress"}
+                  <span className="text-caption text-secondary">
+                    {lic.operational ? "Operational" : "In progress"}
                   </span>
                 </div>
-                <p className="text-primary">
-                  {lic.name}
-                </p>
-                <p className="text-[13px] text-tertiary">{lic.year}</p>
+                <p className="text-primary">{lic.name}</p>
+                <p className="text-sm-body text-tertiary">{lic.year}</p>
               </div>
             ))}
           </div>
-        </div>
+        </Container>
       </section>
 
-      {/* The Opportunity Context */}
-      <section className="py-[100px] max-md:py-16">
-        <div className="max-w-[1160px] mx-auto px-20 max-lg:px-6">
-          <div className="bg-surface p-10 max-lg:p-6">
-            <div className="flex flex-col md:flex-row gap-16 md:gap-20 items-start">
-              {/* Left — narrative */}
-              <div className="flex-1">
-                <p className="text-label text-payments mb-6">WHY IT MATTERS</p>
-                <p className="text-display text-primary">
-                  8.4% is what it costs to send money to Africa.
-                </p>
-                <p className="text-display text-payments mt-1">
-                  We&rsquo;re changing that.
-                </p>
-              </div>
-
-              {/* Right — stats */}
-              <div className="md:w-[440px] shrink-0 grid grid-cols-2 gap-x-12 gap-y-10">
-                {opportunityStats.map((stat) => (
-                  <div key={stat.label}>
-                    <p className="text-numbers text-primary">{stat.value}</p>
-                    <p className="text-caption text-secondary mt-2">
-                      {stat.label}
-                    </p>
-                  </div>
-                ))}
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* Brokerage Integration */}
-      <section className="bg-surface border-t border-b border-border">
-        <div className="max-w-[1160px] mx-auto px-20 max-lg:px-6 py-[100px] max-md:py-16">
-          <div className="flex flex-col md:flex-row gap-14 md:gap-20 items-start">
-            {/* Left */}
-            <div className="flex-1">
-              <p className="text-label text-payments mb-4">
-                BROKERAGE INTEGRATION
+      <section
+        id="why"
+        className="bg-surface border-y border-border py-[100px] max-md:py-16"
+      >
+        <Container>
+          <div className="grid grid-cols-12 gap-12 items-start">
+            <div className="col-span-12 lg:col-span-7">
+              <p className="text-label text-secondary mb-6">WHY IT MATTERS</p>
+              <p className="text-display text-primary">
+                8.4% is what it costs to send money to Africa.
               </p>
-              <h2 className="text-subhead text-primary mb-4">
-                One account. Trading + Payments.
-              </h2>
-              <p className="text-secondary leading-[1.7] max-w-md">
-                Rebasive rails integrate directly into FAVA Markets, giving
-                brokerage clients a complete financial services environment
-                from a single account.
+              <p className="text-display text-payments mt-2">
+                We&rsquo;re changing that.
+              </p>
+              <p className="text-secondary mt-8 leading-[1.7] max-w-md">
+                Cross-border payments are still slow, opaque, and expensive in
+                most of the world. FAVA Payments is infrastructure designed
+                to close the gap &mdash; especially where the cost of moving
+                money matters most.
               </p>
             </div>
 
-            {/* Right */}
-            <div className="md:w-[420px] shrink-0 flex flex-col gap-4">
-              <p className="text-label text-secondary mb-2">
-                CLIENTS ACCESS
-              </p>
-              {brokerageItems.map((item) => (
-                <div key={item} className="flex items-start gap-3">
-                  <span className="w-1.5 h-1.5 bg-payments mt-2 shrink-0" />
-                  <span className="text-secondary">{item}</span>
+            <div className="col-span-12 lg:col-span-5 grid grid-cols-2 gap-8">
+              {opportunityStats.map((stat) => (
+                <div key={stat.label}>
+                  <p className="text-numbers text-primary">{stat.value}</p>
+                  <p className="text-caption text-secondary mt-2">
+                    {stat.label}
+                  </p>
                 </div>
               ))}
             </div>
           </div>
-        </div>
+        </Container>
       </section>
 
-      {/* CTA */}
-      <section className="py-[100px] max-md:py-16">
-        <div className="max-w-[1160px] mx-auto px-20 max-lg:px-6">
-          <div className="bg-surface p-14 max-lg:p-8 text-center">
-            <h2 className="text-display-alt text-primary">
-              Move money. Everywhere.
-            </h2>
-            <p className="text-caption text-secondary mt-5 mb-10 tracking-wide">
-              Licensed in 3 jurisdictions &middot; 180+ countries &middot; Transparent rates
-            </p>
-            <div className="flex items-center justify-center gap-6 flex-wrap">
-              <Link
-                href="https://rebasive.com"
-                target="_blank"
-                className="inline-block border border-payments text-payments text-label px-10 py-4 tracking-wider uppercase text-[12px] hover:bg-payments/10 transition-colors"
-              >
-                Visit Rebasive
-              </Link>
-              <Link
-                href="/contact"
-                className="text-label text-secondary link-hover transition-colors hover:text-primary"
-              >
-                Contact Us &rarr;
-              </Link>
-            </div>
-          </div>
-        </div>
-      </section>
-    </div>
+      <EcosystemConnections from="payments" links={CONNECTIONS.payments} />
+
+      <CTAPanel
+        eyebrow="GET STARTED"
+        title="Move money like the rails were built for you."
+        description="Open an account, plug our API into your platform, or talk to the team about partnership. Rebasive is live today."
+        primary={{
+          href: "https://rebasive.com",
+          label: "Launch Rebasive",
+          external: true,
+        }}
+        secondary={{ href: "/contact", label: "Partnership enquiries" }}
+        variant="payments"
+      />
+    </>
   );
 }
