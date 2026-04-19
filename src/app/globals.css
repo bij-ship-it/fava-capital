@@ -36,6 +36,11 @@
 /* Base */
 html {
   scroll-behavior: auto;
+  /* Mobile safety net — anything that escapes its parent gets clipped
+     instead of forcing a horizontal scrollbar on the whole document.
+     Tables and SubNav opt back in via overflow-x-auto on their own
+     wrappers. */
+  overflow-x: clip;
 }
 
 body {
@@ -48,12 +53,23 @@ body {
   color: var(--color-primary);
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  overflow-x: clip;
 }
 
 /* Selection */
 ::selection {
   background: rgba(139, 92, 246, 0.2);
   color: var(--color-primary);
+}
+
+/* CSS Grid + Flex gotcha: items default to min-content width and can
+   blow out narrow viewports if their text content has long tokens.
+   min-width: 0 lets them shrink to their track / available space.
+   Tables, SubNav and explicit-overflow wrappers handle their own
+   overflow via overflow-x-auto. */
+.grid > *,
+.flex > * {
+  min-width: 0;
 }
 
 /* Display typography — Fraunces */
@@ -65,6 +81,10 @@ body {
   line-height: 1.05;
   letter-spacing: -0.02em;
   font-variation-settings: "opsz" 144, "SOFT" 20, "WONK" 0;
+  /* Long compound words (counterparties, infrastructure) shouldn't
+     blow out a narrow viewport. */
+  overflow-wrap: break-word;
+  hyphens: auto;
 }
 
 .text-display-alt {
@@ -74,6 +94,8 @@ body {
   line-height: 1.05;
   letter-spacing: -0.02em;
   font-variation-settings: "opsz" 144, "SOFT" 20, "WONK" 0;
+  overflow-wrap: break-word;
+  hyphens: auto;
 }
 
 .text-subhead {
