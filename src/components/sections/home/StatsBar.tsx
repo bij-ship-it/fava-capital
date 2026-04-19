@@ -70,7 +70,7 @@ export function StatsBar() {
                 <p className="text-caption text-secondary mt-2">
                   {stat.label}
                 </p>
-                <p className="text-[12px] text-tertiary mt-1">
+                <p className="text-sm-body text-tertiary mt-1">
                   {stat.sublabel}
                 </p>
               </div>
