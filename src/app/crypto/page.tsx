@@ -224,30 +224,32 @@ export default function CryptoPage() {
       {/* Liquidity & Execution */}
       <section className="py-[120px]">
         <div className="max-w-[1160px] mx-auto px-20 max-lg:px-6">
-          <div className="flex flex-col lg:flex-row gap-16">
-            <div className="flex-1">
-              <p className="text-label text-crypto mb-6">EXECUTION</p>
-              <h2 className="text-subhead text-primary mb-6">
-                Deep aggregated liquidity with intelligent routing.
-              </h2>
-              <p className="text-secondary leading-[1.75] max-w-[480px]">
-                Cryptorio aggregates liquidity across multiple global venues,
-                applying smart order routing to achieve optimal execution for
-                every trade. For large block orders, our OTC desk provides
-                private execution with minimal market impact and competitive
-                pricing — no slippage, no information leakage.
-              </p>
-            </div>
-            <div className="flex-1">
-              <div className="grid grid-cols-1 sm:grid-cols-2 gap-[1px] bg-border">
-                {executionItems.map((item) => (
-                  <div key={item.title} className="bg-surface p-8">
-                    <h4 className="text-label text-primary mb-2">{item.title}</h4>
-                    <p className="text-secondary leading-[1.7]">
-                      {item.description}
-                    </p>
-                  </div>
-                ))}
+          <div className="bg-surface p-10 max-lg:p-6">
+            <div className="flex flex-col lg:flex-row gap-16">
+              <div className="flex-1">
+                <p className="text-label text-crypto mb-6">EXECUTION</p>
+                <h2 className="text-subhead text-primary mb-6">
+                  Deep aggregated liquidity with intelligent routing.
+                </h2>
+                <p className="text-secondary leading-[1.75] max-w-[480px]">
+                  Cryptorio aggregates liquidity across multiple global venues,
+                  applying smart order routing to achieve optimal execution for
+                  every trade. For large block orders, our OTC desk provides
+                  private execution with minimal market impact and competitive
+                  pricing — no slippage, no information leakage.
+                </p>
+              </div>
+              <div className="flex-1">
+                <div className="grid grid-cols-1 sm:grid-cols-2 gap-[1px] bg-border">
+                  {executionItems.map((item) => (
+                    <div key={item.title} className="bg-surface p-8">
+                      <h4 className="text-label text-primary mb-2">{item.title}</h4>
+                      <p className="text-secondary leading-[1.7]">
+                        {item.description}
+                      </p>
+                    </div>
+                  ))}
+                </div>
               </div>
             </div>
           </div>
@@ -277,50 +279,52 @@ export default function CryptoPage() {
       {/* Banking & Partnerships */}
       <section className="py-[100px] border-t border-border">
         <div className="max-w-[1160px] mx-auto px-20 max-lg:px-6">
-          <p className="text-label text-crypto mb-16">INFRASTRUCTURE</p>
-          <div className="flex flex-col lg:flex-row gap-16">
-            {/* Banking Partners */}
-            <div className="flex-1">
-              <h3 className="text-label text-primary mb-6">Banking Partners</h3>
-              <div className="space-y-4">
-                {bankingPartners.map((partner) => (
-                  <div
-                    key={partner.name}
-                    className="flex items-center justify-between bg-surface p-5"
-                  >
-                    <span className="text-primary">{partner.name}</span>
-                    <div className="flex items-center gap-2">
-                      <span
-                        className={`w-2 h-2 ${
-                          partner.active ? "bg-green-400" : "bg-gold"
-                        }`}
-                      />
-                      <span className="text-secondary text-caption">{partner.status}</span>
+          <div className="bg-surface p-10 max-lg:p-6">
+            <p className="text-label text-crypto mb-16">INFRASTRUCTURE</p>
+            <div className="flex flex-col lg:flex-row gap-16">
+              {/* Banking Partners */}
+              <div className="flex-1">
+                <h3 className="text-label text-primary mb-6">Banking Partners</h3>
+                <div className="space-y-4">
+                  {bankingPartners.map((partner) => (
+                    <div
+                      key={partner.name}
+                      className="flex items-center justify-between bg-surface p-5"
+                    >
+                      <span className="text-primary">{partner.name}</span>
+                      <div className="flex items-center gap-2">
+                        <span
+                          className={`w-2 h-2 ${
+                            partner.active ? "bg-green-400" : "bg-gold"
+                          }`}
+                        />
+                        <span className="text-secondary text-caption">{partner.status}</span>
+                      </div>
                     </div>
-                  </div>
-                ))}
+                  ))}
+                </div>
               </div>
-            </div>
-            {/* Liquidity Partners */}
-            <div className="flex-1">
-              <h3 className="text-label text-primary mb-6">Liquidity Partners</h3>
-              <div className="space-y-4">
-                {liquidityPartners.map((partner) => (
-                  <div
-                    key={partner.name}
-                    className="flex items-center justify-between bg-surface p-5"
-                  >
-                    <span className="text-primary">{partner.name}</span>
-                    <div className="flex items-center gap-2">
-                      <span
-                        className={`w-2 h-2 ${
-                          partner.active ? "bg-green-400" : "bg-gold"
-                        }`}
-                      />
-                      <span className="text-secondary text-caption">{partner.status}</span>
+              {/* Liquidity Partners */}
+              <div className="flex-1">
+                <h3 className="text-label text-primary mb-6">Liquidity Partners</h3>
+                <div className="space-y-4">
+                  {liquidityPartners.map((partner) => (
+                    <div
+                      key={partner.name}
+                      className="flex items-center justify-between bg-surface p-5"
+                    >
+                      <span className="text-primary">{partner.name}</span>
+                      <div className="flex items-center gap-2">
+                        <span
+                          className={`w-2 h-2 ${
+                            partner.active ? "bg-green-400" : "bg-gold"
+                          }`}
+                        />
+                        <span className="text-secondary text-caption">{partner.status}</span>
+                      </div>
                     </div>
-                  </div>
-                ))}
+                  ))}
+                </div>
               </div>
             </div>
           </div>

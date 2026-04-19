@@ -107,53 +107,55 @@ export default function WealthPage() {
       <section className="max-w-[1160px] mx-auto px-20 max-lg:px-6 pt-[120px] pb-[100px]">
         <p className="text-label text-secondary mb-16">How the Strategy Works</p>
 
-        {/* Desktop: horizontal flow */}
-        <div className="hidden lg:grid grid-cols-5 gap-0">
-          {steps.map((step, i) => (
-            <div key={step.number} className="relative flex flex-col">
-              {/* Connector line */}
-              {i < steps.length - 1 && (
-                <div className="absolute top-[11px] left-[calc(50%+12px)] right-0 h-px bg-border" />
-              )}
-              {i > 0 && (
-                <div className="absolute top-[11px] right-[calc(50%+12px)] left-0 h-px bg-border" />
-              )}
-              {/* Step number dot */}
-              <div className="relative z-10 flex items-center justify-center">
-                <span className="text-gold text-[13px] font-semibold bg-base px-2">
-                  {step.number}
-                </span>
-              </div>
-              <h3 className="text-primary text-[14px] font-medium mt-5 text-center px-2">
-                {step.title}
-              </h3>
-              <p className="text-secondary text-[13px] leading-[1.65] font-light mt-2 text-center px-1">
-                {step.description}
-              </p>
-            </div>
-          ))}
-        </div>
-
-        {/* Mobile: vertical flow with gold line */}
-        <div className="lg:hidden relative pl-8">
-          <div className="absolute left-[7px] top-2 bottom-2 w-px bg-gold/30" />
-          <div className="flex flex-col gap-10">
-            {steps.map((step) => (
-              <div key={step.number} className="relative">
-                <span className="absolute -left-8 top-[2px] w-[15px] h-[15px] border border-gold flex items-center justify-center">
-                  <span className="w-[5px] h-[5px] bg-gold" />
-                </span>
-                <span className="text-gold text-[12px] font-semibold">
-                  {step.number}
-                </span>
-                <h3 className="text-primary text-[14px] font-medium mt-1">
+        <div className="bg-surface p-10 max-lg:p-6">
+          {/* Desktop: horizontal flow */}
+          <div className="hidden lg:grid grid-cols-5 gap-0">
+            {steps.map((step, i) => (
+              <div key={step.number} className="relative flex flex-col">
+                {/* Connector line */}
+                {i < steps.length - 1 && (
+                  <div className="absolute top-[11px] left-[calc(50%+12px)] right-0 h-px bg-border" />
+                )}
+                {i > 0 && (
+                  <div className="absolute top-[11px] right-[calc(50%+12px)] left-0 h-px bg-border" />
+                )}
+                {/* Step number dot */}
+                <div className="relative z-10 flex items-center justify-center">
+                  <span className="text-gold text-[13px] font-semibold bg-surface px-2">
+                    {step.number}
+                  </span>
+                </div>
+                <h3 className="text-primary text-[14px] font-medium mt-5 text-center px-2">
                   {step.title}
                 </h3>
-                <p className="text-secondary text-[13px] leading-[1.65] font-light mt-1 max-w-md">
+                <p className="text-secondary text-[13px] leading-[1.65] font-light mt-2 text-center px-1">
                   {step.description}
                 </p>
               </div>
             ))}
+          </div>
+
+          {/* Mobile: vertical flow with gold line */}
+          <div className="lg:hidden relative pl-8">
+            <div className="absolute left-[7px] top-2 bottom-2 w-px bg-gold/30" />
+            <div className="flex flex-col gap-10">
+              {steps.map((step) => (
+                <div key={step.number} className="relative">
+                  <span className="absolute -left-8 top-[2px] w-[15px] h-[15px] border border-gold flex items-center justify-center">
+                    <span className="w-[5px] h-[5px] bg-gold" />
+                  </span>
+                  <span className="text-gold text-[12px] font-semibold">
+                    {step.number}
+                  </span>
+                  <h3 className="text-primary text-[14px] font-medium mt-1">
+                    {step.title}
+                  </h3>
+                  <p className="text-secondary text-[13px] leading-[1.65] font-light mt-1 max-w-md">
+                    {step.description}
+                  </p>
+                </div>
+              ))}
+            </div>
           </div>
         </div>
       </section>
@@ -180,64 +182,66 @@ export default function WealthPage() {
 
       {/* Illustrative Returns — Visual conversion table */}
       <section className="max-w-[1160px] mx-auto px-20 max-lg:px-6 py-[120px]">
-        <p className="text-label text-secondary mb-12">Illustrative Returns</p>
+        <div className="bg-surface p-10 max-lg:p-6">
+          <p className="text-label text-secondary mb-12">Illustrative Returns</p>
 
-        <div className="bg-surface border border-border">
-          <div className="border-l-2 border-wealth">
-            {/* Table header */}
-            <div className="grid grid-cols-3 px-8 max-md:px-5 py-5 border-b border-border">
-              <span className="text-caption text-secondary text-[11px] uppercase tracking-wider">
-                Investment
-              </span>
-              <span className="text-caption text-secondary text-[11px] uppercase tracking-wider text-right">
-                Quarterly
-              </span>
-              <span className="text-caption text-secondary text-[11px] uppercase tracking-wider text-right">
-                Annual
-              </span>
+          <div className="bg-surface border border-border">
+            <div className="border-l-2 border-wealth">
+              {/* Table header */}
+              <div className="grid grid-cols-3 px-8 max-md:px-5 py-5 border-b border-border">
+                <span className="text-caption text-secondary text-[11px] uppercase tracking-wider">
+                  Investment
+                </span>
+                <span className="text-caption text-secondary text-[11px] uppercase tracking-wider text-right">
+                  Quarterly
+                </span>
+                <span className="text-caption text-secondary text-[11px] uppercase tracking-wider text-right">
+                  Annual
+                </span>
+              </div>
+
+              {/* Table rows — increasing visual weight */}
+              {illustrativeReturns.map((row, i) => {
+                const scale = 15 + i * 1.5;
+                const opacity = 0.7 + i * 0.1;
+                return (
+                  <div
+                    key={row.investment}
+                    className={`grid grid-cols-3 px-8 max-md:px-5 items-center ${
+                      i < illustrativeReturns.length - 1
+                        ? "border-b border-border"
+                        : ""
+                    }`}
+                    style={{ paddingTop: "18px", paddingBottom: "18px" }}
+                  >
+                    <span
+                      className="text-primary font-light"
+                      style={{ fontSize: `${scale}px`, opacity }}
+                    >
+                      {row.investment}
+                    </span>
+                    <span
+                      className="text-primary font-light text-right"
+                      style={{ fontSize: `${scale}px`, opacity }}
+                    >
+                      {row.quarterly}
+                    </span>
+                    <span
+                      className="text-gold font-medium text-right"
+                      style={{ fontSize: `${scale + 1}px` }}
+                    >
+                      {row.annual}
+                    </span>
+                  </div>
+                );
+              })}
             </div>
-
-            {/* Table rows — increasing visual weight */}
-            {illustrativeReturns.map((row, i) => {
-              const scale = 15 + i * 1.5;
-              const opacity = 0.7 + i * 0.1;
-              return (
-                <div
-                  key={row.investment}
-                  className={`grid grid-cols-3 px-8 max-md:px-5 items-center ${
-                    i < illustrativeReturns.length - 1
-                      ? "border-b border-border"
-                      : ""
-                  }`}
-                  style={{ paddingTop: "18px", paddingBottom: "18px" }}
-                >
-                  <span
-                    className="text-primary font-light"
-                    style={{ fontSize: `${scale}px`, opacity }}
-                  >
-                    {row.investment}
-                  </span>
-                  <span
-                    className="text-primary font-light text-right"
-                    style={{ fontSize: `${scale}px`, opacity }}
-                  >
-                    {row.quarterly}
-                  </span>
-                  <span
-                    className="text-gold font-medium text-right"
-                    style={{ fontSize: `${scale + 1}px` }}
-                  >
-                    {row.annual}
-                  </span>
-                </div>
-              );
-            })}
           </div>
-        </div>
 
-        <p className="text-secondary text-[12px] font-light mt-5 italic">
-          Based on target 20% net annual return. Past performance is not indicative of future results.
-        </p>
+          <p className="text-secondary text-[12px] font-light mt-5 italic">
+            Based on target 20% net annual return. Past performance is not indicative of future results.
+          </p>
+        </div>
       </section>
 
       {/* CTA Section — Full-width conversion panel */}

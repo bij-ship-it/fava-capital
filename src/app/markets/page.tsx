@@ -141,25 +141,27 @@ export default function MarketsPage() {
           <h2 className="text-subhead text-primary mb-16 max-md:mb-10">
             A trading experience built on real infrastructure, not marketing.
           </h2>
-          <div className="grid md:grid-cols-2 gap-x-12 gap-y-0">
-            {whyFavaMarkets.map((item, i) => (
-              <div
-                key={item.title}
-                className={`${i === 2 ? "md:col-span-2 md:max-w-[560px]" : ""}`}
-              >
-                <div className="border-t-2 border-markets pt-8 pb-14">
-                  <span className="text-numbers text-markets leading-none tracking-tight">
-                    {item.number}
-                  </span>
-                  <h3 className="text-subhead text-primary mt-5 mb-3">
-                    {item.title}
-                  </h3>
-                  <p className="text-secondary text-[15px] leading-[1.7]">
-                    {item.description}
-                  </p>
+          <div className="bg-surface p-10 max-lg:p-6">
+            <div className="grid md:grid-cols-2 gap-x-12 gap-y-0">
+              {whyFavaMarkets.map((item, i) => (
+                <div
+                  key={item.title}
+                  className={`${i === 2 ? "md:col-span-2 md:max-w-[560px]" : ""}`}
+                >
+                  <div className="border-t-2 border-markets pt-8 pb-14">
+                    <span className="text-numbers text-markets leading-none tracking-tight">
+                      {item.number}
+                    </span>
+                    <h3 className="text-subhead text-primary mt-5 mb-3">
+                      {item.title}
+                    </h3>
+                    <p className="text-secondary text-[15px] leading-[1.7]">
+                      {item.description}
+                    </p>
+                  </div>
                 </div>
-              </div>
-            ))}
+              ))}
+            </div>
           </div>
         </div>
       </section>
@@ -280,27 +282,29 @@ export default function MarketsPage() {
             FAVA Markets is deploying across multiple jurisdictions to bring
             institutional-grade execution closer to traders everywhere.
           </p>
-          <div className="grid md:grid-cols-[auto_1fr] gap-x-16">
-            {expansionTimeline.map((phase, i) => (
-              <div key={phase.phase} className="contents">
-                {/* Timeline column */}
-                <div className="flex flex-col items-center max-md:hidden">
-                  <div className="w-3 h-3 bg-markets shrink-0 mt-1" />
-                  {i < expansionTimeline.length - 1 && (
-                    <div className="w-px flex-1 bg-border" />
-                  )}
+          <div className="bg-surface p-10 max-lg:p-6">
+            <div className="grid md:grid-cols-[auto_1fr] gap-x-16">
+              {expansionTimeline.map((phase, i) => (
+                <div key={phase.phase} className="contents">
+                  {/* Timeline column */}
+                  <div className="flex flex-col items-center max-md:hidden">
+                    <div className="w-3 h-3 bg-markets shrink-0 mt-1" />
+                    {i < expansionTimeline.length - 1 && (
+                      <div className="w-px flex-1 bg-border" />
+                    )}
+                  </div>
+                  {/* Content column */}
+                  <div className="pb-12 max-md:pb-8 max-md:border-l-2 max-md:border-markets max-md:pl-6 max-md:ml-1">
+                    <p className="text-label text-markets mb-1 text-[13px] tracking-wider">
+                      {phase.phase}
+                    </p>
+                    <p className="text-primary text-[17px] max-md:text-[15px]">
+                      {phase.regions}
+                    </p>
+                  </div>
                 </div>
-                {/* Content column */}
-                <div className="pb-12 max-md:pb-8 max-md:border-l-2 max-md:border-markets max-md:pl-6 max-md:ml-1">
-                  <p className="text-label text-markets mb-1 text-[13px] tracking-wider">
-                    {phase.phase}
-                  </p>
-                  <p className="text-primary text-[17px] max-md:text-[15px]">
-                    {phase.regions}
-                  </p>
-                </div>
-              </div>
-            ))}
+              ))}
+            </div>
           </div>
         </div>
       </section>

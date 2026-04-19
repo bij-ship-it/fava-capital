@@ -253,28 +253,30 @@ export default function PaymentsPage() {
       {/* The Opportunity Context */}
       <section className="py-[120px] max-md:py-20">
         <div className="max-w-[1160px] mx-auto px-20 max-lg:px-6">
-          <div className="flex flex-col md:flex-row gap-16 md:gap-20 items-start">
-            {/* Left — narrative */}
-            <div className="flex-1">
-              <p className="text-label text-payments mb-6">WHY IT MATTERS</p>
-              <p className="text-display text-primary">
-                8.4% is what it costs to send money to Africa.
-              </p>
-              <p className="text-display text-payments mt-1">
-                We&rsquo;re changing that.
-              </p>
-            </div>
+          <div className="bg-surface p-10 max-lg:p-6">
+            <div className="flex flex-col md:flex-row gap-16 md:gap-20 items-start">
+              {/* Left — narrative */}
+              <div className="flex-1">
+                <p className="text-label text-payments mb-6">WHY IT MATTERS</p>
+                <p className="text-display text-primary">
+                  8.4% is what it costs to send money to Africa.
+                </p>
+                <p className="text-display text-payments mt-1">
+                  We&rsquo;re changing that.
+                </p>
+              </div>
 
-            {/* Right — stats */}
-            <div className="md:w-[440px] shrink-0 grid grid-cols-2 gap-x-12 gap-y-10">
-              {opportunityStats.map((stat) => (
-                <div key={stat.label}>
-                  <p className="text-numbers text-primary">{stat.value}</p>
-                  <p className="text-caption text-secondary mt-2">
-                    {stat.label}
-                  </p>
-                </div>
-              ))}
+              {/* Right — stats */}
+              <div className="md:w-[440px] shrink-0 grid grid-cols-2 gap-x-12 gap-y-10">
+                {opportunityStats.map((stat) => (
+                  <div key={stat.label}>
+                    <p className="text-numbers text-primary">{stat.value}</p>
+                    <p className="text-caption text-secondary mt-2">
+                      {stat.label}
+                    </p>
+                  </div>
+                ))}
+              </div>
             </div>
           </div>
         </div>
