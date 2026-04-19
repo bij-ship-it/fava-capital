@@ -61,15 +61,15 @@ export function FavaLogo({
         FAVA
       </text>
       <text
-        x="200"
-        y="56"
+        x="193"
+        y="58"
         fill="currentColor"
-        opacity="0.65"
+        opacity="0.75"
         style={{
           fontFamily: "var(--font-heading), 'Outfit', sans-serif",
           fontWeight: 500,
-          fontSize: "16px",
-          letterSpacing: "0.22em",
+          fontSize: "20px",
+          letterSpacing: "0.2em",
           textTransform: "uppercase",
         }}
       >
