@@ -83,7 +83,7 @@ body {
 
 .text-numbers {
   font-family: var(--font-display);
-  font-weight: 400;
+  font-weight: 600;
   font-size: 32px;
   line-height: 1.0;
   letter-spacing: -0.02em;
@@ -110,7 +110,7 @@ body {
 
 .text-accent {
   font-family: var(--font-display);
-  font-weight: 300;
+  font-weight: 400;
   font-style: italic;
   font-size: 18px;
   line-height: 1.5;

@@ -210,7 +210,7 @@ export default function MarketsPage() {
           <div className="grid md:grid-cols-2 gap-16 max-md:gap-10 py-[100px] max-md:py-16">
             <div>
               <p className="text-label text-secondary mb-8">OUR TRACK RECORD</p>
-              <blockquote className="text-subhead text-primary leading-[1.4] italic font-light">
+              <blockquote className="text-subhead text-primary leading-[1.4] italic">
                 &ldquo;Built and scaled from scratch. Six times. $320M in
                 deposits over nine years, from a single office across
                 Sub-Saharan Africa.&rdquo;

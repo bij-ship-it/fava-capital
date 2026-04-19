@@ -54,7 +54,7 @@ export function TrustBar() {
               }}
             >
               <div className="gold-rule-left w-8 mb-6" />
-              <h3 className="text-primary font-light mb-3">
+              <h3 className="text-primary mb-3">
                 {pillar.title}
               </h3>
               <p className="text-secondary leading-[1.75]">

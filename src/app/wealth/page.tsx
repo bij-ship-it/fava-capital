@@ -57,7 +57,7 @@ export default function WealthPage() {
             <h1 className="text-display-alt text-primary">
               20% Annual Returns. Zero Fees.
             </h1>
-            <p className="text-secondary text-[15px] leading-[1.7] font-light max-w-xl mt-6">
+            <p className="text-secondary leading-[1.7] max-w-xl mt-6">
               A managed investment fund that generates returns from trading
               volume — not market direction. Your capital works through
               institutional execution infrastructure, paid quarterly, with
@@ -169,7 +169,7 @@ export default function WealthPage() {
                 <p className="text-caption text-secondary text-[11px] uppercase tracking-wider mb-2">
                   {term.label}
                 </p>
-                <p className="text-primary text-[17px] font-light">
+                <p className="text-primary">
                   {term.value}
                 </p>
               </div>
@@ -244,10 +244,10 @@ export default function WealthPage() {
       <section className="bg-surface border-t border-border">
         <div className="max-w-[1160px] mx-auto px-20 max-lg:px-6 py-[120px]">
           <div className="flex flex-col items-center text-center max-w-xl mx-auto">
-            <h2 className="text-subhead text-primary">
+            <h2 className="text-display-alt text-primary">
               Start your investment journey
             </h2>
-            <p className="text-secondary text-[15px] leading-[1.7] font-light mt-5 mb-10">
+            <p className="text-secondary mt-5 mb-10">
               For qualified investors seeking consistent, volume-based returns
               with full transparency and quarterly distributions.
             </p>

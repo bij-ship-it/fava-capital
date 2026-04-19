@@ -164,7 +164,7 @@ export default function PaymentsPage() {
                 className="bg-surface border border-border p-10"
               >
                 <div className="w-10 h-[2px] bg-payments mb-6" />
-                <h3 className="text-[17px] text-primary font-light mb-3">
+                <h3 className="text-primary mb-3">
                   {cap.title}
                 </h3>
                 <p className="text-[14px] text-secondary leading-[1.75]">
@@ -199,10 +199,10 @@ export default function PaymentsPage() {
                       : ""
                   }`}
                 >
-                  <span className="text-[32px] font-light text-payments leading-none">
+                  <span className="text-numbers text-payments leading-none">
                     {step.number}
                   </span>
-                  <h3 className="text-[17px] text-primary font-light mt-4 mb-2">
+                  <h3 className="text-primary mt-4 mb-2">
                     {step.title}
                   </h3>
                   <p className="text-[14px] text-secondary leading-[1.75]">
@@ -240,7 +240,7 @@ export default function PaymentsPage() {
                     {lic.operational ? "Operational" : "In Progress"}
                   </span>
                 </div>
-                <p className="text-[15px] text-primary font-light">
+                <p className="text-primary">
                   {lic.name}
                 </p>
                 <p className="text-[13px] text-tertiary">{lic.year}</p>
@@ -257,10 +257,10 @@ export default function PaymentsPage() {
             {/* Left — narrative */}
             <div className="flex-1">
               <p className="text-label text-payments mb-6">WHY IT MATTERS</p>
-              <p className="text-[28px] md:text-[34px] text-primary font-light italic leading-[1.35]">
+              <p className="text-display text-primary">
                 8.4% is what it costs to send money to Africa.
               </p>
-              <p className="text-[28px] md:text-[34px] text-payments font-light italic leading-[1.35] mt-1">
+              <p className="text-display text-payments mt-1">
                 We&rsquo;re changing that.
               </p>
             </div>

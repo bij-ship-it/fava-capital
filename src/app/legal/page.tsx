@@ -105,7 +105,7 @@ export default function LegalPage() {
       {/* Risk Warning Banner */}
       <section className="max-w-[1160px] mx-auto px-20 max-lg:px-6 mb-16">
         <div className="border border-commodities p-6">
-          <p className="text-commodities text-[15px] leading-[1.7] font-light">
+          <p className="text-commodities leading-[1.7]">
             Trading leveraged products such as forex and CFDs carries a high level of risk and may not be suitable for all investors.
             Cryptocurrency assets are highly volatile and unregulated. You should carefully consider your objectives, financial situation,
             needs, and level of experience before engaging with any FAVA Capital subsidiary. You may lose more than your initial investment.
@@ -146,7 +146,7 @@ export default function LegalPage() {
           {activeContent.sections.map((section, i) => (
             <div key={section.heading} className={`${i > 0 ? "mt-12" : ""}`}>
               <h3 className="text-subhead text-primary mb-4">{section.heading}</h3>
-              <p className="text-primary/60 text-[15px] leading-[1.7] font-light">
+              <p className="text-primary/60 leading-[1.7]">
                 {section.body}
               </p>
             </div>

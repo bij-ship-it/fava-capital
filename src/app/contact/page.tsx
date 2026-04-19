@@ -138,7 +138,7 @@ export default function ContactPage() {
           {offices.map((office) => (
             <div key={office.city} className="mb-8 md:mb-0">
               <p className="text-subhead text-primary mb-2">{office.city}</p>
-              <p className="text-secondary text-[15px] font-light leading-[1.7]">{office.address}</p>
+              <p className="text-secondary leading-[1.7]">{office.address}</p>
             </div>
           ))}
         </div>

@@ -151,7 +151,7 @@ export function EcosystemRows() {
                     <div className="hidden md:flex items-start gap-10 shrink-0">
                       {sub.stats.map((stat) => (
                         <div key={stat.label} className="text-right">
-                          <p className="text-[17px] text-primary font-light">
+                          <p className="text-primary">
                             {stat.value}
                           </p>
                           <p className="text-caption text-tertiary mt-1">

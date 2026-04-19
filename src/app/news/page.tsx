@@ -76,10 +76,10 @@ export default function NewsPage() {
 
         <div>
           <p className="text-caption text-secondary mb-4">{featuredArticle.date}</p>
-          <h2 className="text-subhead text-primary !text-[28px] !leading-[1.3] mb-6">
+          <h2 className="text-subhead text-primary mb-6">
             {featuredArticle.title}
           </h2>
-          <p className="text-primary/60 text-[15px] leading-[1.7] font-light max-w-2xl">
+          <p className="text-primary/60 leading-[1.7] max-w-2xl">
             {featuredArticle.excerpt}
           </p>
         </div>

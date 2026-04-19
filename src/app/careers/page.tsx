@@ -67,7 +67,7 @@ export default function CareersPage() {
         <h1 className="text-display text-primary">
           Build What&apos;s Next
         </h1>
-        <p className="text-secondary text-[15px] leading-[1.7] font-light max-w-xl mt-6">
+        <p className="text-secondary leading-[1.7] max-w-xl mt-6">
           Join a team of ambitious builders shaping the future of institutional finance,
           digital assets, and wealth management.
         </p>
@@ -82,7 +82,7 @@ export default function CareersPage() {
           {values.map((value) => (
             <div key={value.title}>
               <p className="text-label text-gold mb-4">{value.title}</p>
-              <p className="text-primary/60 text-[15px] leading-[1.7] font-light">
+              <p className="text-primary/60 leading-[1.7]">
                 {value.description}
               </p>
             </div>
@@ -111,8 +111,8 @@ export default function CareersPage() {
                 <span className={`text-caption ${pos.color}`}>{pos.subsidiary}</span>
               </div>
               <div className="flex items-center gap-6">
-                <span className="text-secondary text-[15px] font-light">{pos.location}</span>
-                <span className="text-secondary/50 text-[15px] font-light">{pos.type}</span>
+                <span className="text-secondary">{pos.location}</span>
+                <span className="text-secondary/50">{pos.type}</span>
               </div>
             </div>
           ))}
@@ -131,7 +131,7 @@ export default function CareersPage() {
           {benefits.map((benefit) => (
             <li key={benefit} className="flex items-start gap-4">
               <span className="text-gold mt-2 shrink-0 w-1 h-1 bg-gold block" />
-              <span className="text-primary/60 text-[15px] leading-[1.7] font-light">{benefit}</span>
+              <span className="text-primary/60 leading-[1.7]">{benefit}</span>
             </li>
           ))}
         </ul>
