@@ -1,3 +1,6 @@
+import Link from "next/link";
+import Image from "next/image";
+
 const founders = [
   {
     name: "Nathan Pasic",
@@ -61,187 +64,274 @@ const coreLeadership = [
   },
 ];
 
-const milestones = [
-  { year: "2021", description: "Nigerian Tier-1 MFB licence secured for Rebasive" },
-  { year: "2023", description: "US FinCEN MSB and Canadian FINTRAC MSB licences obtained" },
-  { year: "2024", description: "FAVA Capital established as the holding company" },
-  { year: "2025", description: "FAVA Markets goes live with proprietary dealing desk" },
-  { year: "2026", description: "UK EMI licence in progress. Full ecosystem operational." },
+const values = [
+  {
+    title: "Build to last",
+    body: "We don\u2019t chase trends. We build regulated, institutional-grade infrastructure designed to compound over decades \u2014 not quarters.",
+  },
+  {
+    title: "Earn trust through transparency",
+    body: "Published licences. Segregated capital. Audited infrastructure. We give you every reason to trust us \u2014 and never ask you to take our word for it.",
+  },
+  {
+    title: "Independence by design",
+    body: "Each business operates autonomously with its own leadership, P&L, and regulatory framework. Shared infrastructure is an advantage, not a dependency.",
+  },
+  {
+    title: "Move with conviction",
+    body: "We enter markets we understand deeply, with operators who\u2019ve done it before. Speed matters \u2014 but only when paired with precision.",
+  },
 ];
 
-const stats = [
-  { value: "3", label: "Operating Verticals" },
-  { value: "5+", label: "Regulatory Licences" },
-  { value: "180+", label: "Payout Countries" },
-  { value: "9", label: "Target Jurisdictions" },
+const ecosystem = [
+  { name: "FAVA Wealth", desc: "Managed investment fund", color: "bg-wealth", href: "/wealth" },
+  { name: "FAVA Markets", desc: "CFD & FX brokerage", color: "bg-markets", href: "/markets" },
+  { name: "FAVA Payments", desc: "Cross-border payments", color: "bg-payments", href: "/payments" },
+  { name: "FAVA Digital", desc: "Crypto exchange & OTC", color: "bg-crypto", href: "/crypto" },
+  { name: "FAVA Commodities", desc: "Commodity trading", color: "bg-commodities", href: "/commodities" },
 ];
 
 export default function AboutPage() {
   return (
     <div className="bg-base pt-32">
-      {/* Hero */}
-      <section className="max-w-[1160px] mx-auto px-20 max-lg:px-6 pb-[140px]">
-        <h1 className="text-display text-primary max-w-4xl">
-          Independent businesses. Shared infrastructure. Scalable economics.
+      {/* Hero — big, bold, emotional */}
+      <section className="max-w-[1160px] mx-auto px-20 max-lg:px-6 pb-[100px]">
+        <p className="text-label text-secondary mb-6">ABOUT FAVA CAPITAL</p>
+        <h1 className="text-display text-primary max-w-3xl">
+          We build financial infrastructure that compounds.
         </h1>
-        <div className="gold-rule w-32 mt-10" />
-      </section>
-
-      {/* Mission */}
-      <section className="max-w-[1160px] mx-auto px-20 max-lg:px-6 py-[140px] border-t border-border">
-        <p className="text-label text-secondary mb-12">Mission</p>
-        <p className="text-accent text-secondary max-w-3xl">
-          A diversified financial holding company building institutional-grade businesses across three
-          core verticals. Each business operates independently. Shared payments infrastructure is an
-          upside lever, not a dependency.
+        <p className="text-secondary text-[16px] leading-[1.75] max-w-2xl mt-8">
+          FAVA Capital is a diversified holding company operating across wealth
+          management, institutional trading, global payments, digital assets,
+          and commodities. Each business is independent. Each is built to be
+          the best in its category. Together, they form something bigger.
         </p>
+        <div className="gold-rule-left w-20 mt-10" />
       </section>
 
-      <div className="max-w-[1160px] mx-auto px-20 max-lg:px-6">
-        <div className="gold-rule" />
-      </div>
-
-      {/* Stats */}
-      <section className="max-w-[1160px] mx-auto px-20 max-lg:px-6 py-[140px]">
-        <div className="grid grid-cols-2 md:grid-cols-4 gap-12">
-          {stats.map((stat) => (
-            <div key={stat.label} className="flex flex-col gap-2">
-              <span className="text-numbers text-gold">{stat.value}</span>
-              <span className="text-caption text-secondary">{stat.label}</span>
-            </div>
-          ))}
+      {/* Full-width brand statement */}
+      <section className="bg-surface border-t border-b border-border">
+        <div className="max-w-[1160px] mx-auto px-20 max-lg:px-6 py-20 md:py-28">
+          <div className="flex flex-col md:flex-row md:items-center gap-12 md:gap-20">
+            <Image
+              src="/images/fava-lattice-mark-only-dark-bg.svg"
+              alt=""
+              width={80}
+              height={120}
+              className="opacity-40 shrink-0"
+            />
+            <blockquote className="text-[24px] md:text-[30px] text-primary font-light leading-[1.4] italic max-w-2xl" style={{ fontFamily: "var(--font-display)" }}>
+              &ldquo;Independent businesses. Shared infrastructure.
+              Scalable economics.&rdquo;
+            </blockquote>
+          </div>
         </div>
       </section>
 
-      <div className="max-w-[1160px] mx-auto px-20 max-lg:px-6">
-        <div className="gold-rule" />
-      </div>
+      {/* What we believe */}
+      <section className="py-[120px] max-md:py-20">
+        <div className="max-w-[1160px] mx-auto px-20 max-lg:px-6">
+          <p className="text-label text-secondary mb-4">WHAT WE BELIEVE</p>
+          <h2 className="text-subhead text-primary mb-16 max-w-md">
+            Principles that shape every decision we make.
+          </h2>
 
-      {/* Founders & Equity Holders */}
-      <section className="max-w-[1160px] mx-auto px-20 max-lg:px-6 py-[140px]">
-        <p className="text-label text-secondary mb-12">Founders & Equity Holders</p>
-
-        <div className="flex flex-col">
-          {founders.map((member, i) => (
-            <div
-              key={member.name}
-              className={`py-8 ${i < founders.length - 1 ? "border-b border-border" : ""}`}
-            >
-              <div className="flex flex-col md:flex-row md:gap-12">
-                <div className="flex items-start gap-4 md:w-80 shrink-0 mb-4 md:mb-0">
-                  <div className="w-10 h-10 bg-surface border border-border flex items-center justify-center shrink-0">
-                    <span className="text-caption text-gold">{member.initials}</span>
-                  </div>
-                  <div>
-                    <h3 className="text-subhead text-primary">{member.name}</h3>
-                    <p className="text-caption text-secondary mt-1">{member.title}</p>
-                  </div>
-                </div>
-                <p className="text-primary/60 text-[15px] leading-[1.7] font-light">
-                  {member.bio}
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-x-20 gap-y-14">
+            {values.map((v) => (
+              <div key={v.title}>
+                <div className="gold-rule-left w-10 mb-6" />
+                <h3 className="text-[17px] text-primary font-medium mb-3">
+                  {v.title}
+                </h3>
+                <p className="text-[14px] text-secondary leading-[1.75]">
+                  {v.body}
                 </p>
               </div>
-            </div>
-          ))}
-        </div>
-      </section>
-
-      <div className="max-w-[1160px] mx-auto px-20 max-lg:px-6">
-        <div className="gold-rule" />
-      </div>
-
-      {/* Core Leadership Team */}
-      <section className="max-w-[1160px] mx-auto px-20 max-lg:px-6 py-[140px]">
-        <p className="text-label text-secondary mb-12">Execution</p>
-
-        <div className="flex flex-col">
-          {coreLeadership.map((member, i) => (
-            <div
-              key={member.name}
-              className={`py-8 ${i < coreLeadership.length - 1 ? "border-b border-border" : ""}`}
-            >
-              <div className="flex flex-col md:flex-row md:gap-12">
-                <div className="flex items-start gap-4 md:w-80 shrink-0 mb-4 md:mb-0">
-                  <div className="w-10 h-10 bg-surface border border-border flex items-center justify-center shrink-0">
-                    <span className={`text-caption ${member.colorClass}`}>{member.initials}</span>
-                  </div>
-                  <div>
-                    <h3 className="text-subhead text-primary">{member.name}</h3>
-                    <p className="text-caption text-secondary mt-1">{member.title}</p>
-                  </div>
-                </div>
-                <p className="text-primary/60 text-[15px] leading-[1.7] font-light">
-                  {member.bio}
-                </p>
-              </div>
-            </div>
-          ))}
-        </div>
-      </section>
-
-      <div className="max-w-[1160px] mx-auto px-20 max-lg:px-6">
-        <div className="gold-rule" />
-      </div>
-
-      {/* Group Leadership Structure */}
-      <section className="max-w-[1160px] mx-auto px-20 max-lg:px-6 py-[140px]">
-        <p className="text-label text-secondary mb-12">Group Leadership Structure</p>
-
-        {/* Group CEO */}
-        <div className="flex flex-col items-center mb-16">
-          <div className="w-14 h-14 bg-surface border border-border flex items-center justify-center mb-4">
-            <span className="text-caption text-gold">NP</span>
-          </div>
-          <h3 className="text-subhead text-primary text-center">Nathan Pasic</h3>
-          <p className="text-caption text-secondary mt-1">Group CEO</p>
-          <div className="w-px h-12 bg-border mt-6" />
-        </div>
-
-        {/* Subsidiary CEOs */}
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8 border-t border-border pt-12">
-          <div className="flex flex-col items-center text-center">
-            <div className="w-14 h-14 bg-surface border border-border flex items-center justify-center mb-4">
-              <span className="text-caption text-markets">JM</span>
-            </div>
-            <h3 className="text-subhead text-primary">James Murray</h3>
-            <p className="text-caption text-secondary mt-1">CEO, FAVA Markets</p>
-          </div>
-          <div className="flex flex-col items-center text-center">
-            <div className="w-14 h-14 bg-surface border border-border flex items-center justify-center mb-4">
-              <span className="text-caption text-payments">DO</span>
-            </div>
-            <h3 className="text-subhead text-primary">David Onaolapo</h3>
-            <p className="text-caption text-secondary mt-1">CEO, Rebasive</p>
-          </div>
-          <div className="flex flex-col items-center text-center">
-            <div className="w-14 h-14 bg-surface border border-border flex items-center justify-center mb-4">
-              <span className="text-caption text-wealth">CT</span>
-            </div>
-            <h3 className="text-subhead text-primary">Corey Turner</h3>
-            <p className="text-caption text-secondary mt-1">CEO, FAVA Wealth</p>
+            ))}
           </div>
         </div>
       </section>
 
-      <div className="max-w-[1160px] mx-auto px-20 max-lg:px-6">
-        <div className="gold-rule" />
-      </div>
+      {/* The ecosystem — visual */}
+      <section className="bg-surface border-t border-b border-border py-[80px] max-md:py-16">
+        <div className="max-w-[1160px] mx-auto px-20 max-lg:px-6">
+          <p className="text-label text-secondary mb-12">THE ECOSYSTEM</p>
+          <div className="flex flex-wrap gap-4">
+            {ecosystem.map((e) => (
+              <Link
+                key={e.name}
+                href={e.href}
+                className="group flex items-center gap-3 bg-base border border-border px-6 py-4 hover:border-border-hover transition-colors"
+              >
+                <span className={`w-2 h-2 ${e.color} shrink-0`} />
+                <span className="text-primary text-[15px]">{e.name}</span>
+                <span className="text-tertiary text-[13px] hidden sm:inline">{e.desc}</span>
+                <span className="text-tertiary group-hover:text-gold transition-colors ml-2">&rarr;</span>
+              </Link>
+            ))}
+          </div>
+        </div>
+      </section>
 
-      {/* Timeline */}
-      <section className="max-w-[1160px] mx-auto px-20 max-lg:px-6 py-[140px]">
-        <p className="text-label text-secondary mb-12">Timeline</p>
-
-        <div className="flex flex-col gap-10">
-          {milestones.map((milestone) => (
-            <div key={milestone.year} className="flex flex-col md:flex-row md:gap-12">
-              <span className="text-numbers text-gold md:w-32 shrink-0">
-                {milestone.year}
-              </span>
-              <p className="text-primary/60 text-[15px] leading-[1.7] font-light mt-2 md:mt-1">
-                {milestone.description}
+      {/* Where we operate — replaces stale stats */}
+      <section className="py-[120px] max-md:py-20">
+        <div className="max-w-[1160px] mx-auto px-20 max-lg:px-6">
+          <div className="flex flex-col md:flex-row gap-16 md:gap-24">
+            <div className="flex-1">
+              <p className="text-label text-secondary mb-4">GLOBAL PRESENCE</p>
+              <h2 className="text-subhead text-primary mb-6">
+                Regulated across three continents. Operational from day one.
+              </h2>
+              <p className="text-secondary text-[14px] leading-[1.75] max-w-lg">
+                FAVA holds licences and registrations across multiple jurisdictions,
+                with banking relationships, liquidity partnerships, and operational
+                teams in place. We don&apos;t announce markets we plan to enter &mdash;
+                we enter them.
               </p>
             </div>
-          ))}
+            <div className="grid grid-cols-2 gap-x-16 gap-y-10 shrink-0">
+              <div>
+                <p className="text-numbers text-primary">5+</p>
+                <p className="text-caption text-secondary mt-2">Active Licences</p>
+              </div>
+              <div>
+                <p className="text-numbers text-primary">180+</p>
+                <p className="text-caption text-secondary mt-2">Payout Countries</p>
+              </div>
+              <div>
+                <p className="text-numbers text-primary">9</p>
+                <p className="text-caption text-secondary mt-2">Target Jurisdictions</p>
+              </div>
+              <div>
+                <p className="text-numbers text-primary">3</p>
+                <p className="text-caption text-secondary mt-2">Continents</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Founders — with more visual presence */}
+      <section className="bg-surface border-t border-b border-border py-[120px] max-md:py-20">
+        <div className="max-w-[1160px] mx-auto px-20 max-lg:px-6">
+          <p className="text-label text-secondary mb-4">FOUNDERS</p>
+          <h2 className="text-subhead text-primary mb-16">
+            Six co-founders. Operators, not observers.
+          </h2>
+
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-px bg-border">
+            {founders.map((member) => (
+              <div key={member.name} className="bg-surface p-8">
+                <div className="w-12 h-12 bg-elevated border border-border flex items-center justify-center mb-5">
+                  <span className="text-[13px] text-gold font-medium tracking-wider">
+                    {member.initials}
+                  </span>
+                </div>
+                <h3 className="text-[17px] text-primary font-medium">
+                  {member.name}
+                </h3>
+                <p className="text-caption text-gold mt-1 mb-4">
+                  {member.title}
+                </p>
+                <p className="text-[13px] text-secondary leading-[1.7]">
+                  {member.bio}
+                </p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Core leadership */}
+      <section className="py-[120px] max-md:py-20">
+        <div className="max-w-[1160px] mx-auto px-20 max-lg:px-6">
+          <p className="text-label text-secondary mb-4">LEADERSHIP</p>
+          <h2 className="text-subhead text-primary mb-16">
+            The operators running each vertical.
+          </h2>
+
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-px bg-border">
+            {coreLeadership.map((member) => (
+              <div key={member.name} className="bg-base p-8">
+                <div className="w-12 h-12 bg-surface border border-border flex items-center justify-center mb-5">
+                  <span className={`text-[13px] font-medium tracking-wider ${member.colorClass}`}>
+                    {member.initials}
+                  </span>
+                </div>
+                <h3 className="text-[17px] text-primary font-medium">
+                  {member.name}
+                </h3>
+                <p className={`text-caption mt-1 mb-4 ${member.colorClass}`}>
+                  {member.title}
+                </p>
+                <p className="text-[13px] text-secondary leading-[1.7]">
+                  {member.bio}
+                </p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Group structure — visual */}
+      <section className="bg-surface border-t border-border py-[100px] max-md:py-16">
+        <div className="max-w-[1160px] mx-auto px-20 max-lg:px-6">
+          <div className="flex flex-col items-center text-center">
+            <p className="text-label text-secondary mb-10">GROUP STRUCTURE</p>
+
+            {/* CEO */}
+            <div className="bg-elevated border border-border px-10 py-6 mb-2">
+              <p className="text-[13px] text-gold font-medium tracking-wider mb-1">GROUP CEO</p>
+              <p className="text-subhead text-primary">Nathan Pasic</p>
+            </div>
+
+            <div className="w-px h-8 bg-border" />
+
+            {/* Connector bar */}
+            <div className="w-full max-w-2xl h-px bg-border" />
+
+            {/* Subsidiary CEOs */}
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mt-0 w-full max-w-2xl">
+              {[
+                { name: "James Murray", role: "CEO, FAVA Markets", color: "text-markets", borderColor: "border-t-[#14B8A6]" },
+                { name: "David Onaolapo", role: "CEO, Rebasive", color: "text-payments", borderColor: "border-t-[#0EA5E9]" },
+                { name: "Corey Turner", role: "CEO, FAVA Wealth", color: "text-wealth", borderColor: "border-t-[#059669]" },
+              ].map((ceo) => (
+                <div key={ceo.name} className={`bg-base border border-border ${ceo.borderColor} border-t-2 p-5 text-center`}>
+                  <p className={`text-caption ${ceo.color} mb-2`}>{ceo.role}</p>
+                  <p className="text-primary text-[15px]">{ceo.name}</p>
+                </div>
+              ))}
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* CTA — Join us / Get in touch */}
+      <section className="py-[120px] max-md:py-20">
+        <div className="max-w-[1160px] mx-auto px-20 max-lg:px-6">
+          <div className="flex flex-col md:flex-row md:items-end md:justify-between gap-10">
+            <div>
+              <h2 className="text-display text-primary max-w-lg">
+                Want to be part of what we&apos;re building?
+              </h2>
+              <p className="text-secondary mt-6 max-w-md leading-[1.75]">
+                Whether you&apos;re an investor, a partner, or someone
+                who wants to join the team &mdash; we&apos;d like to hear from you.
+              </p>
+            </div>
+            <div className="flex flex-col gap-4 shrink-0">
+              <Link href="/contact" className="text-label text-gold link-hover">
+                Get in touch &rarr;
+              </Link>
+              <Link href="/careers" className="text-label text-secondary link-hover hover:text-primary transition-colors">
+                View careers &rarr;
+              </Link>
+              <Link href="/partners" className="text-label text-secondary link-hover hover:text-primary transition-colors">
+                Partner with us &rarr;
+              </Link>
+            </div>
+          </div>
         </div>
       </section>
     </div>
