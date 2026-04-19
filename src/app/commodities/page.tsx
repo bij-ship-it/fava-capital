@@ -1,111 +1,100 @@
 import type { Metadata } from "next";
 import { SubsidiaryHero } from "@/components/ui/SubsidiaryHero";
+import { StatsStrip } from "@/components/ui/StatsStrip";
 import { Container } from "@/components/ui/Container";
 import { Card } from "@/components/ui/Card";
 import { SubNav, type SubNavItem } from "@/components/ui/SubNav";
 import { CTAPanel } from "@/components/ui/CTAPanel";
 import { EcosystemConnections } from "@/components/ui/EcosystemConnections";
 import { CONNECTIONS } from "@/lib/ecosystem";
-import Link from "next/link";
 
 export const metadata: Metadata = {
   title: "Commodities",
   description:
-    "FAVA Commodities — trade metals, energy, and agriculture with research-led execution and transparent pricing across spot and futures markets.",
+    "FAVA Commodities — a physical commodities trading desk. We source, structure, and settle deals across energy, metals, and soft commodities. JV, fund, supply, or buy.",
 };
 
 const navItems: SubNavItem[] = [
-  { id: "markets", label: "Markets" },
-  { id: "why", label: "Why FAVA" },
-  { id: "instruments", label: "Instruments" },
-  { id: "research", label: "Research" },
+  { id: "how", label: "How we work" },
+  { id: "commodities", label: "Commodities" },
+  { id: "involvement", label: "Get involved" },
+  { id: "process", label: "Deal process" },
   { id: "ecosystem", label: "Ecosystem" },
 ];
 
-const livePrices = [
-  { name: "Gold", price: "$2,341.00", change: "+0.42%", up: true },
-  { name: "Silver", price: "$27.84", change: "+0.18%", up: true },
-  { name: "Crude Oil", price: "$78.52", change: "-0.31%", up: false },
-  { name: "Natural Gas", price: "$2.14", change: "+1.07%", up: true },
-];
-
-const categories = [
+const commodityGroups = [
   {
-    title: "Precious Metals",
-    body:
-      "Gold, silver, platinum, and palladium — timeless stores of value, traded spot and futures.",
-    count: "4 instruments",
+    heading: "Energy",
+    items: [
+      { name: "Crude oil", body: "Brent, WTI, Urals. Spot and term contracts." },
+      { name: "EN590", body: "10ppm ultra-low-sulphur diesel. ARA, ASWP, FOB." },
+      { name: "Jet fuel", body: "JP54, Jet A-1. Airport-bonded and bulk." },
+      { name: "LNG", body: "Cargo-level term and spot, DES and FOB." },
+      { name: "Coal", body: "Thermal and metallurgical. Indonesia, South Africa, Australia." },
+    ],
   },
   {
-    title: "Base Metals",
-    body:
-      "Copper, aluminium, zinc, nickel — the industrial backbone of every supply chain.",
-    count: "6 instruments",
+    heading: "Metals",
+    items: [
+      { name: "Gold bullion", body: "LBMA good delivery, 99.5% and 99.99% bars." },
+      { name: "Aluminium", body: "P1020 ingots and billets. LME-grade." },
+      { name: "Copper cathode", body: "LME Grade A, 99.99% Cu." },
+      { name: "Copper concentrate", body: "25–30% Cu content. Mine-origin, CIF." },
+      { name: "Iron ore", body: "62% Fe fines, lump, and pellets. FOB and CFR." },
+    ],
   },
   {
-    title: "Energy",
-    body:
-      "WTI and Brent crude, natural gas, heating oil — the markets that move with the macro.",
-    count: "5 instruments",
-  },
-  {
-    title: "Agriculture & Softs",
-    body:
-      "Wheat, corn, soybeans, coffee, cocoa, sugar, cotton and more — weather-driven, seasonal, dense with signal.",
-    count: "8 instruments",
+    heading: "Soft commodities",
+    items: [
+      { name: "Sugar", body: "ICUMSA 45 white, Brazilian raw. FOB Santos, CIF ASWP." },
+      { name: "Coffee", body: "Arabica and Robusta green beans. Origin to buyer." },
+    ],
   },
 ];
 
-const reasons = [
+const involvementModes = [
   {
-    title: "Research-led execution",
-    body:
-      "Weekly reports, seasonal analysis, and commentary from analysts who've traded these markets for decades.",
+    label: "01",
+    title: "Join as a JV partner",
+    body: "Partner with FAVA on deals we source. Share the structure, share the upside. Typical JVs run from single cargoes to multi-shipment off-take agreements.",
   },
   {
-    title: "Transparent pricing",
-    body:
-      "Live quotes and visible spreads across every instrument. No hidden markups, no surprise overnight financing.",
+    label: "02",
+    title: "Fund a deal",
+    body: "Bring capital to a deal that's already structured and de-risked. Transaction-secured, time-boxed, with defined returns on successful completion.",
   },
   {
-    title: "Spot and futures, one account",
-    body:
-      "Take positions indefinitely or trade defined expiries. Both sit inside the same FAVA Markets infrastructure.",
+    label: "03",
+    title: "Bring the supply",
+    body: "If you control origin — refinery, smelter, mine, mill — we bring qualified buyers, contracts, and settlement. Long-term off-take preferred.",
+  },
+  {
+    label: "04",
+    title: "Bring the buyer",
+    body: "If you represent demand — trader, end-user, state buyer — we source product, verify, and move it on terms your mandate requires.",
   },
 ];
 
-const instrumentSample = [
-  { name: "Gold", symbol: "XAU/USD", type: "Spot", spread: "0.30", margin: "1.0%" },
-  { name: "Silver", symbol: "XAG/USD", type: "Spot", spread: "0.02", margin: "2.0%" },
-  { name: "Copper", symbol: "HG", type: "Futures", spread: "0.0015", margin: "5.0%" },
-  { name: "WTI Crude", symbol: "CL", type: "Futures", spread: "0.03", margin: "3.0%" },
-  { name: "Brent Crude", symbol: "BRN", type: "Futures", spread: "0.03", margin: "3.0%" },
-  { name: "Natural Gas", symbol: "NG", type: "Futures", spread: "0.005", margin: "5.0%" },
-  { name: "Wheat", symbol: "ZW", type: "Futures", spread: "0.25", margin: "5.0%" },
-  { name: "Coffee", symbol: "KC", type: "Futures", spread: "0.15", margin: "8.0%" },
-];
-
-const research = [
+const processSteps = [
   {
-    category: "Energy",
-    date: "11 Apr 2026",
-    title: "Crude oil outlook: OPEC+ dynamics and summer demand",
-    excerpt:
-      "Production cuts extended through Q3. We examine the supply-demand balance into peak driving season.",
+    number: "01",
+    title: "Mandate & verification",
+    body: "NCNDA / ICPO or SCO. We verify counterparty, product spec, and commercial intent before anything else moves.",
   },
   {
-    category: "Precious Metals",
-    date: "8 Apr 2026",
-    title: "Gold in a rate-cutting cycle: historical patterns",
-    excerpt:
-      "Central banks keep accumulating reserves while real rates fall. We review prior easing cycles.",
+    number: "02",
+    title: "Deal structuring",
+    body: "Incoterms, payment instrument (SBLC, DLC, MT103/MT760), inspection regime, delivery window. Contract draft circulated for both sides to sign.",
   },
   {
-    category: "Agriculture",
-    date: "4 Apr 2026",
-    title: "Soft commodities: weather risk and planting season",
-    excerpt:
-      "La Niña is reshaping planting forecasts across the Americas. The impact on wheat, corn, soybeans.",
+    number: "03",
+    title: "Pre-shipment & inspection",
+    body: "SGS or CIQ inspection at load port. POP released on buyer confirmation. Shipping nominated, vessel booked.",
+  },
+  {
+    number: "04",
+    title: "Shipment & settlement",
+    body: "Cargo moves. Payment settles on presentation of documents — LC at sight, MT103 on Q88, or agreed hybrid. Settlement rails via FAVA Payments.",
   },
 ];
 
@@ -115,210 +104,159 @@ export default function CommoditiesPage() {
       <SubsidiaryHero
         channel="commodities"
         eyebrow="FAVA COMMODITIES"
-        title="Metals, energy, agriculture — traded with research at the core."
-        description="Access 40+ instruments across spot and futures with transparent pricing and live research from analysts who've traded these markets for decades."
-        primary={{ href: "/commodities/apply", label: "Open an account" }}
-        secondary={{ href: "#instruments", label: "See instruments" }}
+        title="A physical commodities desk. Real cargoes, real counterparties."
+        description="We source, structure, and settle physical deals across energy, metals, and soft commodities — matching qualified supply with qualified demand. JV partners, deal funders, producers, and buyers welcome."
+        primary={{ href: "/contact", label: "Bring a deal" }}
+        secondary={{ href: "#involvement", label: "Ways to get involved" }}
       />
 
-      <section className="w-full border-y border-border bg-surface">
+      <StatsStrip
+        stats={[
+          { value: "12", label: "Active commodities" },
+          { value: "40+", label: "Vetted counterparties" },
+          { value: "6", label: "Continents sourced", accent: true },
+          { value: "$0 fee", label: "To verified mandates" },
+        ]}
+      />
+
+      <SubNav items={navItems} variant="commodities" />
+
+      <section id="how" className="py-[100px] max-md:py-16">
         <Container>
-          <div className="flex items-center overflow-x-auto">
-            {livePrices.map((item, i) => (
-              <div
-                key={item.name}
-                className={`flex items-baseline gap-4 py-5 pr-6 shrink-0 ${
-                  i > 0 ? "pl-6 border-l border-border" : ""
-                }`}
-              >
-                <span className="text-label text-secondary">{item.name}</span>
-                <span className="text-ticker text-primary">{item.price}</span>
-                <span
-                  className={`text-ticker ${
-                    item.up ? "text-commodities" : "text-tertiary"
-                  }`}
-                >
-                  {item.change}
-                </span>
-              </div>
-            ))}
-            <span className="ml-auto pr-2 py-5 text-caption text-tertiary whitespace-nowrap">
-              Indicative, updated in trading hours
-            </span>
+          <div className="grid grid-cols-12 gap-12">
+            <div className="col-span-12 lg:col-span-5">
+              <p className="text-label text-secondary mb-6">HOW WE WORK</p>
+              <h2 className="text-subhead text-primary">
+                Not a broker. A trading desk with a network.
+              </h2>
+            </div>
+            <div className="col-span-12 lg:col-span-7">
+              <p className="text-secondary leading-[1.7]">
+                FAVA Commodities isn&rsquo;t a derivatives shop. We trade
+                physical cargoes &mdash; crude, EN590, bullion, cathode,
+                cargoes of sugar and coffee. We hold relationships with
+                refineries, smelters, mines, mills, end-users, state buyers,
+                and the banks that sit behind them.
+              </p>
+              <p className="text-secondary leading-[1.7] mt-5">
+                If you have a deal, we&rsquo;ll look at it. If you have
+                supply, we&rsquo;ll find the buyer. If you have demand, we&rsquo;ll
+                find the product. If you want to co-fund, there&rsquo;s
+                usually something open.
+              </p>
+            </div>
           </div>
         </Container>
       </section>
 
-      <SubNav items={navItems} variant="commodities" />
-
-      <section id="markets" className="py-[100px] max-md:py-16">
+      <section
+        id="commodities"
+        className="bg-surface border-y border-border py-[100px] max-md:py-16"
+      >
         <Container>
-          <p className="text-label text-secondary mb-6">MARKETS WE COVER</p>
+          <p className="text-label text-secondary mb-6">WHAT WE TRADE</p>
           <h2 className="text-subhead text-primary mb-14 max-w-xl">
-            From Gold to grain. From barrels to bushels.
+            Physical commodities across energy, metals, and softs.
           </h2>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-px bg-border">
-            {categories.map((cat) => (
-              <div key={cat.title} className="bg-surface p-10">
-                <div className="h-[2px] w-12 bg-commodities mb-6" />
-                <h3 className="text-subhead text-primary">{cat.title}</h3>
-                <p className="text-caption text-commodities mt-2">
-                  {cat.count}
-                </p>
-                <p className="text-sm-body text-secondary leading-[1.7] mt-4">
-                  {cat.body}
-                </p>
+          <div className="flex flex-col gap-16">
+            {commodityGroups.map((group) => (
+              <div key={group.heading}>
+                <div className="flex items-center gap-4 mb-8">
+                  <span className="h-[2px] w-8 bg-commodities" />
+                  <p className="text-caption text-commodities">
+                    {group.heading}
+                  </p>
+                </div>
+                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-px bg-border">
+                  {group.items.map((item) => (
+                    <div key={item.name} className="bg-surface p-8">
+                      <h3 className="text-primary">{item.name}</h3>
+                      <p className="text-sm-body text-secondary leading-[1.7] mt-3">
+                        {item.body}
+                      </p>
+                    </div>
+                  ))}
+                </div>
               </div>
+            ))}
+          </div>
+        </Container>
+      </section>
+
+      <section id="involvement" className="py-[100px] max-md:py-16">
+        <Container>
+          <p className="text-label text-secondary mb-6">GET INVOLVED</p>
+          <h2 className="text-subhead text-primary mb-4 max-w-xl">
+            Four ways into a deal.
+          </h2>
+          <p className="text-secondary leading-[1.7] max-w-xl mb-12">
+            Whether you bring capital, product, demand, or want to partner
+            on the structure &mdash; the desk is open.
+          </p>
+
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+            {involvementModes.map((mode) => (
+              <Card key={mode.label} accent="commodities">
+                <span className="text-numbers text-commodities">
+                  {mode.label}
+                </span>
+                <h3 className="text-subhead text-primary mt-4">
+                  {mode.title}
+                </h3>
+                <p className="text-sm-body text-secondary leading-[1.7] mt-4">
+                  {mode.body}
+                </p>
+              </Card>
             ))}
           </div>
         </Container>
       </section>
 
       <section
-        id="why"
+        id="process"
         className="bg-surface border-y border-border py-[100px] max-md:py-16"
       >
         <Container>
-          <p className="text-label text-secondary mb-6">WHY FAVA COMMODITIES</p>
+          <p className="text-label text-secondary mb-6">DEAL PROCESS</p>
           <h2 className="text-subhead text-primary mb-14 max-w-xl">
-            Same execution as Markets. Depth you&rsquo;d expect from a research desk.
+            From mandate to settlement.
           </h2>
 
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-10">
-            {reasons.map((reason) => (
-              <div key={reason.title}>
-                <div className="h-[2px] w-10 bg-commodities mb-6" />
-                <h3 className="text-subhead text-primary">{reason.title}</h3>
-                <p className="text-sm-body text-secondary leading-[1.7] mt-4">
-                  {reason.body}
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-px bg-border">
+            {processSteps.map((step) => (
+              <div key={step.number} className="bg-base p-8">
+                <span className="text-numbers text-commodities">
+                  {step.number}
+                </span>
+                <h3 className="text-primary mt-5">{step.title}</h3>
+                <p className="text-sm-body text-secondary leading-[1.7] mt-3">
+                  {step.body}
                 </p>
               </div>
             ))}
           </div>
-        </Container>
-      </section>
 
-      <section id="instruments" className="py-[100px] max-md:py-16">
-        <Container>
-          <p className="text-label text-secondary mb-6">INSTRUMENTS</p>
-          <h2 className="text-subhead text-primary mb-14 max-w-xl">
-            Spot for indefinite positions. Futures for the curve.
-          </h2>
-
-          <div className="grid grid-cols-12 gap-12">
-            <Card
-              size="standard"
-              className="col-span-12 md:col-span-6"
-              accent="commodities"
-            >
-              <h3 className="text-subhead text-primary">Spot</h3>
-              <p className="text-sm-body text-secondary mt-3 leading-[1.7]">
-                Hold positions indefinitely. Financing accrues on overnight
-                positions. Best for directional views without expiry pressure.
-              </p>
-            </Card>
-
-            <Card
-              size="standard"
-              className="col-span-12 md:col-span-6"
-              accent="commodities"
-            >
-              <h3 className="text-subhead text-primary">Futures</h3>
-              <p className="text-sm-body text-secondary mt-3 leading-[1.7]">
-                Defined expiry, standardised contracts, full forward curve.
-                Positions auto-roll near expiry unless closed.
-              </p>
-            </Card>
-          </div>
-
-          <div className="bg-surface border-l-2 border-l-commodities mt-12">
-            <div className="grid grid-cols-[1.5fr_1fr_0.8fr_0.8fr_0.8fr] gap-4 px-8 max-md:px-5 py-4 border-b border-border">
-              <span className="text-caption text-secondary">Instrument</span>
-              <span className="text-caption text-secondary">Symbol</span>
-              <span className="text-caption text-secondary">Type</span>
-              <span className="text-caption text-secondary text-right">
-                Spread
-              </span>
-              <span className="text-caption text-secondary text-right">
-                Margin
-              </span>
-            </div>
-            {instrumentSample.map((inst, i) => (
-              <div
-                key={inst.symbol}
-                className={`grid grid-cols-[1.5fr_1fr_0.8fr_0.8fr_0.8fr] gap-4 px-8 max-md:px-5 py-4 ${
-                  i < instrumentSample.length - 1 ? "border-b border-border" : ""
-                }`}
-              >
-                <span className="text-primary">{inst.name}</span>
-                <span className="text-ticker text-secondary">{inst.symbol}</span>
-                <span className="text-sm-body text-secondary">{inst.type}</span>
-                <span className="text-ticker text-secondary text-right">
-                  {inst.spread}
-                </span>
-                <span className="text-ticker text-commodities text-right">
-                  {inst.margin}
-                </span>
-              </div>
-            ))}
-          </div>
-
-          <p className="text-caption text-tertiary mt-4">
-            Sample of available instruments. Spreads widen in low-liquidity
-            conditions; margin may tighten in elevated volatility. Contact
-            us for the full spec sheet.
+          <p className="text-caption text-tertiary mt-8 max-w-3xl">
+            Standard procedures apply: NCNDA/IMFPA for introductions,
+            verifiable POP before payment instrument, SGS/CIQ inspection
+            at load port. Timelines vary by commodity, origin, and
+            counterparty.
           </p>
         </Container>
       </section>
 
-      <section
-        id="research"
-        className="bg-surface border-y border-border py-[100px] max-md:py-16"
-      >
-        <Container>
-          <div className="flex items-center justify-between mb-12">
-            <p className="text-label text-secondary">LATEST RESEARCH</p>
-            <Link
-              href="/news"
-              className="text-label text-commodities link-hover"
-            >
-              All research &rarr;
-            </Link>
-          </div>
-
-          <div className="border-t border-border">
-            {research.map((piece) => (
-              <article
-                key={piece.title}
-                className="border-b border-border py-7"
-              >
-                <div className="flex items-center gap-4 mb-2">
-                  <span className="text-caption text-commodities">
-                    {piece.category}
-                  </span>
-                  <span className="text-caption text-tertiary">
-                    {piece.date}
-                  </span>
-                </div>
-                <h3 className="text-subhead text-primary">{piece.title}</h3>
-                <p className="text-sm-body text-secondary leading-[1.7] mt-3 max-w-3xl">
-                  {piece.excerpt}
-                </p>
-              </article>
-            ))}
-          </div>
-        </Container>
-      </section>
-
-      <EcosystemConnections from="commodities" links={CONNECTIONS.commodities} />
+      <EcosystemConnections
+        from="commodities"
+        links={CONNECTIONS.commodities}
+      />
 
       <CTAPanel
-        eyebrow="OPEN AN ACCOUNT"
-        title="Trade the raw materials of growth."
-        description="40+ instruments · Spot and futures · Research-led · Same-day onboarding for qualified applicants."
-        primary={{ href: "/commodities/apply", label: "Open an account" }}
-        secondary={{ href: "/contact", label: "Talk to a specialist" }}
+        eyebrow="TALK TO THE DESK"
+        title="Got a deal? Got supply? Got demand? Got capital?"
+        description="Tell us what you're bringing and what you need. We respond within one business day to every qualified approach."
+        primary={{ href: "/contact", label: "Bring a deal" }}
+        secondary={{ href: "/about", label: "About FAVA" }}
         variant="commodities"
       />
     </>

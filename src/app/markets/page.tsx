@@ -59,9 +59,9 @@ const instruments = [
     body: "CFDs on US, UK, and EU equities. Long, short, flexible leverage.",
   },
   {
-    name: "Commodities",
+    name: "Commodity CFDs",
     count: "30+",
-    body: "Gold, oil, silver, natural gas, agri softs — spot and futures.",
+    body: "Gold, oil, silver, natural gas, agri softs — derivatives exposure. For physical cargoes, see FAVA Commodities.",
   },
   {
     name: "Crypto CFDs",
@@ -124,7 +124,7 @@ export default function MarketsPage() {
         channel="markets"
         eyebrow="FAVA MARKETS"
         title="Multi-asset execution, built for traders who know the difference."
-        description="Trade FX, indices, shares, commodities, and crypto CFDs on infrastructure with 15+ years of operator memory behind it."
+        description="Trade FX, indices, shares, commodity CFDs, and crypto CFDs on infrastructure with 15+ years of operator memory behind it."
         primary={{ href: "/contact", label: "Open a live account" }}
         secondary={{ href: "#accounts", label: "Compare accounts" }}
       />
