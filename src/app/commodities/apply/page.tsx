@@ -17,7 +17,7 @@ export default function ApplyPage() {
 
   return (
     <div className="min-h-screen bg-base pt-32">
-      <div className="max-w-[1160px] mx-auto px-20 max-lg:px-6">
+      <div className="max-w-[1280px] mx-auto px-20 max-lg:px-6">
         {/* Header */}
         <ChannelBadge channel="commodities" label="FAVA COMMODITIES" />
         <h1 className="text-display-alt text-primary">Open Your Account</h1>

@@ -103,7 +103,7 @@ export default function LegalPage() {
   return (
     <div className="bg-base pt-32">
       {/* Risk Warning Banner */}
-      <section className="max-w-[1160px] mx-auto px-20 max-lg:px-6 mb-16">
+      <section className="max-w-[1280px] mx-auto px-20 max-lg:px-6 mb-16">
         <div className="border border-commodities p-6">
           <p className="text-commodities leading-[1.7]">
             Trading leveraged products such as forex and CFDs carries a high level of risk and may not be suitable for all investors.
@@ -114,7 +114,7 @@ export default function LegalPage() {
       </section>
 
       {/* Hero */}
-      <section className="max-w-[1160px] mx-auto px-20 max-lg:px-6 pb-[140px]">
+      <section className="max-w-[1280px] mx-auto px-20 max-lg:px-6 pb-[140px]">
         <h1 className="text-display text-primary">
           Legal & Compliance
         </h1>
@@ -122,7 +122,7 @@ export default function LegalPage() {
       </section>
 
       {/* Tab Navigation */}
-      <section className="max-w-[1160px] mx-auto px-20 max-lg:px-6 border-t border-border">
+      <section className="max-w-[1280px] mx-auto px-20 max-lg:px-6 border-t border-border">
         <div className="flex gap-8 pt-1">
           {tabs.map((tab) => (
             <button
@@ -141,7 +141,7 @@ export default function LegalPage() {
       </section>
 
       {/* Tab Content */}
-      <section className="max-w-[1160px] mx-auto px-20 max-lg:px-6 py-[140px]">
+      <section className="max-w-[1280px] mx-auto px-20 max-lg:px-6 py-[140px]">
         <div className="max-w-3xl">
           {activeContent.sections.map((section, i) => (
             <div key={section.heading} className={`${i > 0 ? "mt-12" : ""}`}>

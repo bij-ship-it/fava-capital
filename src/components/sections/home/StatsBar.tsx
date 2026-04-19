@@ -48,7 +48,7 @@ const stats = [
 export function StatsBar() {
   return (
     <section className="border-t border-b border-border">
-      <div className="max-w-[1160px] mx-auto px-20 max-lg:px-6">
+      <div className="max-w-[1280px] mx-auto px-20 max-lg:px-6">
         <div className="grid grid-cols-2 md:grid-cols-4">
           {stats.map((stat, i) => (
             <motion.div

@@ -17,7 +17,7 @@ const legalLinks = [
 export function Footer() {
   return (
     <footer className="border-t border-border bg-base">
-      <div className="mx-auto max-w-[1160px] px-20 max-lg:px-6 py-20 max-md:py-16">
+      <div className="mx-auto max-w-[1280px] px-20 max-lg:px-6 py-20 max-md:py-16">
         <div className="grid grid-cols-12 gap-12 max-md:gap-10">
           <div className="col-span-12 md:col-span-4 flex flex-col gap-6">
             <FavaLogo variant="full" className="text-primary" />
