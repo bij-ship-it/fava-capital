@@ -1,4 +1,11 @@
+import type { Metadata } from "next";
 import Link from "next/link";
+
+export const metadata: Metadata = {
+  title: "Partners",
+  description:
+    "Partnership programmes across the FAVA Capital ecosystem — introducing brokers, white label, and institutional liquidity.",
+};
 
 const partnershipModels = [
   {

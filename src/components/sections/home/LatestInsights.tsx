@@ -73,7 +73,7 @@ export function LatestInsights() {
                   <p className="text-subhead text-primary transition-colors duration-300 group-hover:text-gold">
                     {item.title}
                   </p>
-                  <p className="text-[13px] text-secondary mt-2 max-w-xl">
+                  <p className="text-sm-body text-secondary mt-2 max-w-xl">
                     {item.excerpt}
                   </p>
                 </div>
