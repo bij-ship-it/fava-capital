@@ -382,28 +382,30 @@ export default function CryptoPage() {
       </section>
 
       {/* CTA */}
-      <section className="bg-surface border-t border-border">
-        <div className="max-w-[1160px] mx-auto px-20 max-lg:px-6 py-[100px] max-md:py-16 text-center">
-          <h2 className="text-display-alt text-primary mb-5">
-            Trade on Cryptorio
-          </h2>
-          <p className="text-caption text-secondary mb-10 tracking-wide">
-            Regulated &middot; Institutional custody &middot; Deep liquidity
-          </p>
-          <div className="flex items-center justify-center gap-6 flex-wrap">
-            <Link
-              href="https://cryptorio.com"
-              target="_blank"
-              className="inline-block border border-crypto text-crypto text-label px-10 py-4 tracking-wider uppercase text-[12px] hover:bg-crypto/10 transition-colors"
-            >
-              Visit Cryptorio
-            </Link>
-            <Link
-              href="/contact"
-              className="text-label text-secondary link-hover transition-colors hover:text-primary"
-            >
-              Contact us &rarr;
-            </Link>
+      <section className="py-[120px] max-md:py-20">
+        <div className="max-w-[1160px] mx-auto px-20 max-lg:px-6">
+          <div className="bg-surface p-14 max-lg:p-8 text-center">
+            <h2 className="text-display-alt text-primary mb-5">
+              Trade on Cryptorio
+            </h2>
+            <p className="text-caption text-secondary mb-10 tracking-wide">
+              Regulated &middot; Institutional custody &middot; Deep liquidity
+            </p>
+            <div className="flex items-center justify-center gap-6 flex-wrap">
+              <Link
+                href="https://cryptorio.com"
+                target="_blank"
+                className="inline-block border border-crypto text-crypto text-label px-10 py-4 tracking-wider uppercase text-[12px] hover:bg-crypto/10 transition-colors"
+              >
+                Visit Cryptorio
+              </Link>
+              <Link
+                href="/contact"
+                className="text-label text-secondary link-hover transition-colors hover:text-primary"
+              >
+                Contact us &rarr;
+              </Link>
+            </div>
           </div>
         </div>
       </section>

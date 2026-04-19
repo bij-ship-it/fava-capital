@@ -207,9 +207,9 @@ export default function MarketsPage() {
       </section>
 
       {/* Team Track Record */}
-      <section className="bg-surface">
+      <section className="py-[120px] max-md:py-20">
         <div className="max-w-[1160px] mx-auto px-20 max-lg:px-6">
-          <div className="grid md:grid-cols-2 gap-16 max-md:gap-10 py-[100px] max-md:py-16">
+          <div className="bg-surface p-10 max-lg:p-6 grid md:grid-cols-2 gap-16 max-md:gap-10">
             <div>
               <p className="text-label text-secondary mb-8">OUR TRACK RECORD</p>
               <blockquote className="text-subhead text-primary leading-[1.4] italic">
@@ -310,8 +310,9 @@ export default function MarketsPage() {
       </section>
 
       {/* CTA Section */}
-      <section className="bg-surface">
-        <div className="max-w-[1160px] mx-auto px-20 max-lg:px-6 py-[100px] max-md:py-16 text-center">
+      <section className="pb-[140px] max-md:pb-20">
+        <div className="max-w-[1160px] mx-auto px-20 max-lg:px-6">
+          <div className="bg-surface p-14 max-lg:p-8 text-center">
           <h2 className="text-display-alt text-primary mb-5">
             Start trading with FAVA Markets
           </h2>
@@ -331,6 +332,7 @@ export default function MarketsPage() {
             >
               View Platforms &rarr;
             </Link>
+          </div>
           </div>
         </div>
       </section>

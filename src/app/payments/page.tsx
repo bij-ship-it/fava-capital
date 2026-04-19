@@ -320,29 +320,30 @@ export default function PaymentsPage() {
       </section>
 
       {/* CTA */}
-      <section className="bg-surface border-t border-border py-[120px] max-md:py-20">
-        <div className="max-w-[1160px] mx-auto px-20 max-lg:px-6 text-center">
-          <h2 className="text-display-alt text-primary">
-            Move money. Everywhere.
-          </h2>
-          <p className="text-secondary mt-6 max-w-[480px] mx-auto leading-[1.75]">
-            Licensed in three jurisdictions. Live in 180+ countries. Transparent
-            rates. No hidden fees.
-          </p>
-          <div className="mt-10 flex items-center justify-center gap-6 flex-wrap">
-            <Link
-              href="https://rebasive.com"
-              target="_blank"
-              className="inline-block border border-payments text-payments text-label px-10 py-4 tracking-wider uppercase text-[12px] hover:bg-payments/10 transition-colors"
-            >
-              Visit Rebasive
-            </Link>
-            <Link
-              href="/contact"
-              className="text-label text-secondary link-hover transition-colors hover:text-primary"
-            >
-              Contact Us &rarr;
-            </Link>
+      <section className="pb-[140px] max-md:pb-20">
+        <div className="max-w-[1160px] mx-auto px-20 max-lg:px-6">
+          <div className="bg-surface p-14 max-lg:p-8 text-center">
+            <h2 className="text-display-alt text-primary">
+              Move money. Everywhere.
+            </h2>
+            <p className="text-caption text-secondary mt-5 mb-10 tracking-wide">
+              Licensed in 3 jurisdictions &middot; 180+ countries &middot; Transparent rates
+            </p>
+            <div className="flex items-center justify-center gap-6 flex-wrap">
+              <Link
+                href="https://rebasive.com"
+                target="_blank"
+                className="inline-block border border-payments text-payments text-label px-10 py-4 tracking-wider uppercase text-[12px] hover:bg-payments/10 transition-colors"
+              >
+                Visit Rebasive
+              </Link>
+              <Link
+                href="/contact"
+                className="text-label text-secondary link-hover transition-colors hover:text-primary"
+              >
+                Contact Us &rarr;
+              </Link>
+            </div>
           </div>
         </div>
       </section>
