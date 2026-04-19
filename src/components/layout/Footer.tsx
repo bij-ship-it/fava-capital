@@ -29,7 +29,7 @@ export function Footer() {
           />
 
           <span className="text-label text-secondary tracking-[0.2em]">
-            FAVA Capital Group
+            FAVA Capital
           </span>
 
           {/* Links */}
@@ -53,13 +53,13 @@ export function Footer() {
         {/* Divider */}
         <div className="border-t border-border mt-16 pt-8">
           <p className="text-center text-[11px] leading-relaxed text-tertiary max-w-2xl mx-auto">
-            FAVA Capital Group and its subsidiaries are regulated financial
+            FAVA Capital and its subsidiaries are regulated financial
             entities. Trading CFDs, forex, cryptocurrencies, and commodities
             carries significant risk. Past performance is not indicative of
             future results.
           </p>
           <p className="text-center text-[11px] text-tertiary mt-4">
-            &copy; {new Date().getFullYear()} FAVA Capital Group. All rights reserved.
+            &copy; {new Date().getFullYear()} FAVA Capital. All rights reserved.
           </p>
         </div>
       </div>

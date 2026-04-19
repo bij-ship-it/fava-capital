@@ -15,6 +15,7 @@ const subsidiaries = [
 
 const globalLinks = [
   { label: "About", href: "/about" },
+  { label: "News", href: "/news" },
 ];
 
 export function Navbar() {

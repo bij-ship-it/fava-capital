@@ -331,24 +331,74 @@ export default function CryptoPage() {
       <section className="bg-[#120E1E] py-[80px]">
         <div className="max-w-[1160px] mx-auto px-20 max-lg:px-6">
           <p className="text-label text-[#6366F1] mb-10">REGULATORY FOUNDATION</p>
-          <div className="space-y-5 mb-10">
-            <div className="flex items-center gap-4">
-              <span className="w-2 h-2 bg-green-400 shrink-0" />
-              <span className="text-[#E8E4EC] text-[14px]">
-                El Salvador BSP &mdash; Operational
-              </span>
-              <span className="text-[#7B6F8E] text-[13px] ml-2">
-                Bitcoin Service Provider licence enabling regulated digital asset operations.
-              </span>
+          <p className="text-label text-[#7B6F8E] mb-6">OPERATIONAL</p>
+          <div className="space-y-4 mb-12">
+            <div className="flex items-start gap-4">
+              <span className="w-2 h-2 bg-green-400 shrink-0 mt-1.5" />
+              <div>
+                <span className="text-[#E8E4EC] text-[14px]">El Salvador BSP</span>
+                <span className="text-[#7B6F8E] text-[13px] ml-3">Bitcoin Service Provider licence enabling regulated digital asset operations.</span>
+              </div>
             </div>
-            <div className="flex items-center gap-4">
-              <span className="w-2 h-2 bg-[#C4A265] shrink-0" />
-              <span className="text-[#E8E4EC] text-[14px]">
-                DASP &mdash; Target
-              </span>
-              <span className="text-[#7B6F8E] text-[13px] ml-2">
-                Digital Asset Service Provider registration for European market access.
-              </span>
+            <div className="flex items-start gap-4">
+              <span className="w-2 h-2 bg-green-400 shrink-0 mt-1.5" />
+              <div>
+                <span className="text-[#E8E4EC] text-[14px]">US FinCEN MSB</span>
+                <span className="text-[#7B6F8E] text-[13px] ml-3">Money Services Business registration for digital asset operations in the United States.</span>
+              </div>
+            </div>
+            <div className="flex items-start gap-4">
+              <span className="w-2 h-2 bg-green-400 shrink-0 mt-1.5" />
+              <div>
+                <span className="text-[#E8E4EC] text-[14px]">Canadian FINTRAC MSB</span>
+                <span className="text-[#7B6F8E] text-[13px] ml-3">Money Services Business registration for digital asset services in Canada.</span>
+              </div>
+            </div>
+          </div>
+
+          <p className="text-label text-[#7B6F8E] mb-6">TARGET</p>
+          <div className="space-y-4 mb-10">
+            <div className="flex items-start gap-4">
+              <span className="w-2 h-2 bg-[#C4A265] shrink-0 mt-1.5" />
+              <div>
+                <span className="text-[#E8E4EC] text-[14px]">DASP &mdash; Europe</span>
+                <span className="text-[#7B6F8E] text-[13px] ml-3">Digital Asset Service Provider registration for European market access.</span>
+              </div>
+            </div>
+            <div className="flex items-start gap-4">
+              <span className="w-2 h-2 bg-[#C4A265] shrink-0 mt-1.5" />
+              <div>
+                <span className="text-[#E8E4EC] text-[14px]">VARA &mdash; Dubai, UAE</span>
+                <span className="text-[#7B6F8E] text-[13px] ml-3">Virtual Assets Regulatory Authority licence for operations in the UAE.</span>
+              </div>
+            </div>
+            <div className="flex items-start gap-4">
+              <span className="w-2 h-2 bg-[#C4A265] shrink-0 mt-1.5" />
+              <div>
+                <span className="text-[#E8E4EC] text-[14px]">MiCA &mdash; Austria, Europe</span>
+                <span className="text-[#7B6F8E] text-[13px] ml-3">Markets in Crypto-Assets regulation for EU-wide passported operations.</span>
+              </div>
+            </div>
+            <div className="flex items-start gap-4">
+              <span className="w-2 h-2 bg-[#C4A265] shrink-0 mt-1.5" />
+              <div>
+                <span className="text-[#E8E4EC] text-[14px]">VASP &mdash; Pakistan</span>
+                <span className="text-[#7B6F8E] text-[13px] ml-3">Virtual Asset Service Provider registration for the Pakistani market.</span>
+              </div>
+            </div>
+            <div className="flex items-start gap-4">
+              <span className="w-2 h-2 bg-[#C4A265] shrink-0 mt-1.5" />
+              <div>
+                <span className="text-[#E8E4EC] text-[14px]">MAS &mdash; Singapore</span>
+                <span className="text-[#7B6F8E] text-[13px] ml-3">Monetary Authority of Singapore digital payment token service licence.</span>
+              </div>
+            </div>
+            <div className="flex items-start gap-4">
+              <span className="w-2 h-2 bg-[#C4A265] shrink-0 mt-1.5" />
+              <div>
+                <span className="text-[#E8E4EC] text-[14px]">AUSTRAC &mdash; Australia</span>
+                <span className="text-[#7B6F8E] text-[13px] ml-3">Digital currency exchange registration for the Australian market.</span>
+              </div>
             </div>
           </div>
           <p className="text-[#7B6F8E] text-[14px] leading-[1.75] max-w-[640px]">
