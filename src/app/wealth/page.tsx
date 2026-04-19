@@ -166,8 +166,9 @@ export default function WealthPage() {
       </section>
 
       {/* CTA */}
-      <section className="bg-surface border-t border-border">
-        <div className="max-w-[1160px] mx-auto px-20 max-lg:px-6 py-[100px] max-md:py-16 text-center">
+      <section className="pb-[140px] max-md:pb-20">
+        <div className="max-w-[1160px] mx-auto px-20 max-lg:px-6">
+          <div className="bg-surface p-14 max-lg:p-8 text-center">
           <h2 className="text-display-alt text-primary">
             Start your investment journey
           </h2>
@@ -187,6 +188,7 @@ export default function WealthPage() {
             >
               About FAVA Capital &rarr;
             </Link>
+          </div>
           </div>
         </div>
       </section>
