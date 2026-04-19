@@ -348,34 +348,36 @@ export default function DigitalPage() {
             always free; withdrawals cover network costs only.
           </p>
 
-          <div className="bg-base border border-border">
-            <div className="grid grid-cols-4 gap-4 px-6 py-4 border-b border-border">
-              <span className="text-caption text-secondary">Tier</span>
-              <span className="text-caption text-secondary">30-day volume</span>
-              <span className="text-caption text-secondary text-right">
-                Maker
-              </span>
-              <span className="text-caption text-secondary text-right">
-                Taker
-              </span>
-            </div>
-            {tradingTiers.map((t, i) => (
-              <div
-                key={t.tier}
-                className={`grid grid-cols-4 gap-4 px-6 py-4 ${
-                  i < tradingTiers.length - 1 ? "border-b border-border" : ""
-                }`}
-              >
-                <span className="text-primary">{t.tier}</span>
-                <span className="text-sm-body text-secondary">{t.volume}</span>
-                <span className="text-ticker text-primary text-right">
-                  {t.maker}
+          <div className="overflow-x-auto -mx-6 px-6 max-lg:-mx-0 max-lg:px-0">
+            <div className="bg-base border border-border min-w-[480px]">
+              <div className="grid grid-cols-4 gap-4 px-6 py-4 border-b border-border">
+                <span className="text-caption text-secondary">Tier</span>
+                <span className="text-caption text-secondary">30-day volume</span>
+                <span className="text-caption text-secondary text-right">
+                  Maker
                 </span>
-                <span className="text-ticker text-primary text-right">
-                  {t.taker}
+                <span className="text-caption text-secondary text-right">
+                  Taker
                 </span>
               </div>
-            ))}
+              {tradingTiers.map((t, i) => (
+                <div
+                  key={t.tier}
+                  className={`grid grid-cols-4 gap-4 px-6 py-4 ${
+                    i < tradingTiers.length - 1 ? "border-b border-border" : ""
+                  }`}
+                >
+                  <span className="text-primary">{t.tier}</span>
+                  <span className="text-sm-body text-secondary">{t.volume}</span>
+                  <span className="text-ticker text-primary text-right">
+                    {t.maker}
+                  </span>
+                  <span className="text-ticker text-primary text-right">
+                    {t.taker}
+                  </span>
+                </div>
+              ))}
+            </div>
           </div>
         </Container>
       </section>
