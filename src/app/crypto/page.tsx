@@ -279,54 +279,23 @@ export default function CryptoPage() {
       {/* Banking & Partnerships */}
       <section className="py-[100px] border-t border-border">
         <div className="max-w-[1160px] mx-auto px-20 max-lg:px-6">
-          <div className="bg-surface p-10 max-lg:p-6">
-            <p className="text-label text-crypto mb-16">INFRASTRUCTURE</p>
-            <div className="flex flex-col lg:flex-row gap-16">
-              {/* Banking Partners */}
-              <div className="flex-1">
-                <h3 className="text-label text-primary mb-6">Banking Partners</h3>
-                <div className="space-y-4">
-                  {bankingPartners.map((partner) => (
-                    <div
-                      key={partner.name}
-                      className="flex items-center justify-between bg-surface p-5"
-                    >
-                      <span className="text-primary">{partner.name}</span>
-                      <div className="flex items-center gap-2">
-                        <span
-                          className={`w-2 h-2 ${
-                            partner.active ? "bg-green-400" : "bg-gold"
-                          }`}
-                        />
-                        <span className="text-secondary text-caption">{partner.status}</span>
-                      </div>
-                    </div>
-                  ))}
-                </div>
+          <p className="text-label text-crypto mb-4">INFRASTRUCTURE</p>
+          <h2 className="text-subhead text-primary mb-12">
+            Integrated banking and deep liquidity from day one.
+          </h2>
+
+          <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-[1px] bg-border">
+            {[...bankingPartners, ...liquidityPartners].map((partner) => (
+              <div key={partner.name} className="bg-surface p-6 flex flex-col items-center text-center gap-3">
+                <span
+                  className={`w-2 h-2 ${
+                    partner.active ? "bg-green-400" : "bg-gold"
+                  }`}
+                />
+                <span className="text-primary">{partner.name}</span>
+                <span className="text-caption text-tertiary">{partner.status}</span>
               </div>
-              {/* Liquidity Partners */}
-              <div className="flex-1">
-                <h3 className="text-label text-primary mb-6">Liquidity Partners</h3>
-                <div className="space-y-4">
-                  {liquidityPartners.map((partner) => (
-                    <div
-                      key={partner.name}
-                      className="flex items-center justify-between bg-surface p-5"
-                    >
-                      <span className="text-primary">{partner.name}</span>
-                      <div className="flex items-center gap-2">
-                        <span
-                          className={`w-2 h-2 ${
-                            partner.active ? "bg-green-400" : "bg-gold"
-                          }`}
-                        />
-                        <span className="text-secondary text-caption">{partner.status}</span>
-                      </div>
-                    </div>
-                  ))}
-                </div>
-              </div>
-            </div>
+            ))}
           </div>
         </div>
       </section>
