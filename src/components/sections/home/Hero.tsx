@@ -89,21 +89,28 @@ export function Hero() {
     <section
       ref={sectionRef}
       className="hero-vignette relative min-h-screen flex items-center"
+      aria-labelledby="hero-title"
     >
       <div className="max-w-[1160px] mx-auto w-full px-20 max-lg:px-6 flex items-center justify-between gap-16 max-md:flex-col max-md:items-start max-md:gap-12">
-        {/* Left — Text content */}
         <motion.div
           className="flex-1 max-w-xl"
           variants={container}
           initial="hidden"
           animate="show"
         >
-          <motion.h1 variants={fadeUp}>
+          <motion.p
+            variants={fadeUp}
+            className="text-label text-secondary mb-8"
+          >
+            FAVA CAPITAL
+          </motion.p>
+
+          <motion.h1 variants={fadeUp} id="hero-title">
             <span className="text-display block text-primary">
-              Building Empires.
+              A connected financial
             </span>
-            <span className="text-display block text-primary mt-1">
-              Compounding Futures.
+            <span className="text-display-alt block text-primary mt-1">
+              ecosystem.
             </span>
           </motion.h1>
 
@@ -111,9 +118,9 @@ export function Hero() {
             variants={fadeUp}
             className="mt-8 text-secondary leading-[1.7]"
           >
-            FAVA Capital is a diversified financial holding company operating
-            across wealth management, institutional trading, digital assets,
-            and commodities. Regulated. Institutional-grade. Built to compound.
+            Five regulated businesses &mdash; managed investing, trading,
+            cross-border payments, digital assets, commodities &mdash; built
+            on one platform. Each stands alone. Together, they compound.
           </motion.p>
 
           <motion.div
@@ -124,10 +131,10 @@ export function Hero() {
 
           <motion.div variants={fadeUp} className="mt-10 flex items-center gap-8">
             <Link
-              href="#ecosystem"
+              href="#flywheel"
               className="text-label text-gold link-hover"
             >
-              Explore our ecosystem &rarr;
+              See how it works &rarr;
             </Link>
             <Link
               href="/contact"
@@ -138,12 +145,12 @@ export function Hero() {
           </motion.div>
         </motion.div>
 
-        {/* Right — Large scroll-driven Lattice mark */}
         <motion.div
           className="shrink-0 max-md:self-center"
           variants={markFade}
           initial="hidden"
           animate="show"
+          aria-hidden="true"
         >
           <svg
             width="220"
@@ -156,7 +163,6 @@ export function Hero() {
             {bars.map((bar) => (
               <ScrollBar key={bar.x} {...bar} progress={scrollYProgress} />
             ))}
-            {/* Gold connecting bar */}
             <rect
               x="13"
               y="56"
@@ -170,11 +176,11 @@ export function Hero() {
         </motion.div>
       </div>
 
-      {/* Pulsing vertical gold line at bottom center */}
       <motion.div
         className="absolute bottom-0 left-1/2 -translate-x-1/2 w-px h-10 bg-gold"
         animate={{ opacity: [0.15, 0.5, 0.15] }}
         transition={{ duration: 3, repeat: Infinity, ease: "easeInOut" }}
+        aria-hidden="true"
       />
     </section>
   );
