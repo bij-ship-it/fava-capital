@@ -23,6 +23,16 @@ const iconByChannel: Record<
   commodities: CommoditiesIcon,
 };
 
+// Radial glow behind the icon — uses the subsidiary colour itself
+// at low alpha so it reads as "this is the [channel]" hero.
+const glowByChannel: Record<ChannelSlug, string> = {
+  wealth: "rgba(61, 129, 88, 0.35)",
+  markets: "rgba(59, 130, 246, 0.35)",
+  payments: "rgba(8, 145, 178, 0.35)",
+  crypto: "rgba(124, 110, 243, 0.35)",
+  commodities: "rgba(196, 122, 60, 0.35)",
+};
+
 export function SubsidiaryHero({
   channel,
   eyebrow,
@@ -42,12 +52,13 @@ export function SubsidiaryHero({
 }) {
   const meta = CHANNELS[channel];
   const Icon = iconByChannel[channel];
+  const glow = glowByChannel[channel];
 
   return (
-    <section className="relative w-full pt-32 pb-[140px] max-md:pt-24 max-md:pb-20">
+    <section className="relative w-full pt-32 pb-[140px] max-md:pt-24 max-md:pb-20 overflow-hidden">
       <Container>
-        <div className="grid grid-cols-12 gap-8 items-end">
-          <div className="col-span-12 lg:col-span-8">
+        <div className="grid grid-cols-12 gap-8 items-center">
+          <div className="col-span-12 lg:col-span-8 relative z-10">
             <ChannelBadge
               channel={channel}
               label={eyebrow ?? meta.name.toUpperCase()}
@@ -60,7 +71,7 @@ export function SubsidiaryHero({
               {title}
             </h1>
             {description && (
-              <p className="text-secondary mt-6 max-w-xl leading-[1.7]">
+              <p className="text-secondary mt-8 max-w-xl leading-[1.6]">
                 {description}
               </p>
             )}
@@ -87,8 +98,18 @@ export function SubsidiaryHero({
             )}
           </div>
 
-          <div className="col-span-12 hidden lg:col-span-4 lg:flex justify-end">
-            <Icon size={160} className="opacity-20" />
+          <div
+            className="col-span-12 hidden lg:col-span-4 lg:flex justify-end items-center relative"
+            aria-hidden="true"
+          >
+            {/* Subsidiary-coloured radial glow — matches the home hero treatment. */}
+            <div
+              className="absolute inset-0 pointer-events-none blur-3xl"
+              style={{
+                background: `radial-gradient(closest-side, ${glow} 0%, transparent 70%)`,
+              }}
+            />
+            <Icon size={260} className="relative opacity-30" />
           </div>
         </div>
       </Container>
