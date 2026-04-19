@@ -224,7 +224,7 @@ CTA Panel (bg-base, py-[100px])
 
 ## Layout
 
-- Max width: `max-w-[1160px] mx-auto px-20 max-lg:px-6`
+- Max width: `max-w-[1280px] mx-auto px-20 max-lg:px-6`
 - Border radius: 0px everywhere
 - Borders: 1px only, `border-border`
 - Accent lines: 2px, subsidiary color

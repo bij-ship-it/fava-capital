@@ -70,7 +70,7 @@ export function Hero() {
       className="hero-vignette relative min-h-screen flex items-center overflow-hidden"
       aria-labelledby="hero-title"
     >
-      <div className="max-w-[1160px] mx-auto w-full px-20 max-lg:px-6 flex items-center justify-between gap-16 max-md:flex-col max-md:items-start max-md:gap-12">
+      <div className="max-w-[1280px] mx-auto w-full px-20 max-lg:px-6 flex items-center justify-between gap-16 max-md:flex-col max-md:items-start max-md:gap-12">
         <motion.div
           className="flex-1 max-w-xl relative z-10"
           variants={container}
@@ -85,21 +85,22 @@ export function Hero() {
           </motion.p>
 
           <motion.h1 variants={fadeUp} id="hero-title">
-            <span className="text-display block text-primary">
-              A connected financial
+            <span className="text-display-alt block text-primary">
+              Built to compound
             </span>
-            <span className="text-display-alt block text-primary mt-1">
-              ecosystem.
+            <span className="text-display block text-primary mt-1">
+              with you.
             </span>
           </motion.h1>
 
           <motion.p
             variants={fadeUp}
-            className="mt-8 text-secondary leading-[1.7]"
+            className="mt-8 text-secondary leading-[1.6] max-w-xl"
           >
-            Invest, trade, move money, hold digital assets, access
-            commodities &mdash; in one place. Five regulated businesses,
-            one platform, built to work harder the more of it you use.
+            FAVA Capital is five regulated businesses on one platform
+            &mdash; investing, trading, payments, digital assets,
+            commodities. The infrastructure institutions kept to
+            themselves, for every client who deserves it.
           </motion.p>
 
           <motion.div

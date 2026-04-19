@@ -35,7 +35,7 @@ const insights = [
 export function LatestInsights() {
   return (
     <section className="py-[140px] max-md:py-20">
-      <div className="max-w-[1160px] mx-auto px-20 max-lg:px-6">
+      <div className="max-w-[1280px] mx-auto px-20 max-lg:px-6">
         {/* Header row */}
         <div className="flex items-center justify-between mb-16">
           <p className="text-label text-secondary">INSIGHTS</p>

@@ -57,7 +57,7 @@ export default function PartnersPage() {
   return (
     <div className="bg-base pt-32">
       {/* Hero */}
-      <section className="max-w-[1160px] mx-auto px-20 max-lg:px-6 pb-[140px]">
+      <section className="max-w-[1280px] mx-auto px-20 max-lg:px-6 pb-[140px]">
         <h1 className="text-display text-primary">
           Partner With FAVA
         </h1>
@@ -69,7 +69,7 @@ export default function PartnersPage() {
       </section>
 
       {/* Partnership Models */}
-      <section className="max-w-[1160px] mx-auto px-20 max-lg:px-6 py-[140px] border-t border-border">
+      <section className="max-w-[1280px] mx-auto px-20 max-lg:px-6 py-[140px] border-t border-border">
         <p className="text-label text-secondary mb-16">Partnership Models</p>
 
         <div className="flex flex-col gap-24">
@@ -95,12 +95,12 @@ export default function PartnersPage() {
         </div>
       </section>
 
-      <div className="max-w-[1160px] mx-auto px-20 max-lg:px-6">
+      <div className="max-w-[1280px] mx-auto px-20 max-lg:px-6">
         <div className="gold-rule" />
       </div>
 
       {/* IB Programme Details */}
-      <section className="max-w-[1160px] mx-auto px-20 max-lg:px-6 py-[140px]">
+      <section className="max-w-[1280px] mx-auto px-20 max-lg:px-6 py-[140px]">
         <p className="text-label text-secondary mb-12">IB Programme</p>
 
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-16">
@@ -130,12 +130,12 @@ export default function PartnersPage() {
         </div>
       </section>
 
-      <div className="max-w-[1160px] mx-auto px-20 max-lg:px-6">
+      <div className="max-w-[1280px] mx-auto px-20 max-lg:px-6">
         <div className="gold-rule" />
       </div>
 
       {/* CTA */}
-      <section className="max-w-[1160px] mx-auto px-20 max-lg:px-6 py-[140px]">
+      <section className="max-w-[1280px] mx-auto px-20 max-lg:px-6 py-[140px]">
         <p className="text-label text-secondary mb-12">Get Started</p>
 
         <h2 className="text-subhead text-primary mb-4">Ready to Partner?</h2>

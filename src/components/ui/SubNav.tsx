@@ -56,7 +56,7 @@ export function SubNav({
 
   return (
     <div className="sticky top-14 z-30 border-y border-border bg-base/90 backdrop-blur-md">
-      <nav className="mx-auto flex max-w-[1160px] items-center gap-8 overflow-x-auto px-20 py-4 max-lg:px-6">
+      <nav className="mx-auto flex max-w-[1280px] items-center gap-8 overflow-x-auto px-20 py-4 max-lg:px-6">
         {items.map((item) => (
           <a
             key={item.id}

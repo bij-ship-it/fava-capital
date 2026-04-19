@@ -24,7 +24,7 @@ const pillars = [
 export function TrustBar() {
   return (
     <section className="py-[140px] max-md:py-20 border-t border-border">
-      <div className="max-w-[1160px] mx-auto px-20 max-lg:px-6">
+      <div className="max-w-[1280px] mx-auto px-20 max-lg:px-6">
         <div className="flex flex-col md:flex-row md:items-start md:justify-between gap-6 mb-20">
           <div>
             <p className="text-label text-secondary mb-4">

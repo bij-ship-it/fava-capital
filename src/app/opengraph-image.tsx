@@ -33,16 +33,16 @@ export default async function OpengraphImage() {
   const brandLabel = "FAVA CAPITAL";
   const sub = "Invest · Trade · Pay · Hold · Hedge";
 
-  const [cormorantBold, outfitMedium] = await Promise.all([
+  const [frauncesBold, jetbrainsMedium] = await Promise.all([
     loadFont(
-      "Cormorant Garamond",
+      "Fraunces",
       700,
       headline + "— ' \u2019" + "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz .",
     ),
     loadFont(
-      "Outfit",
+      "JetBrains Mono",
       500,
-      (brandLabel + sub).toUpperCase() + " ·",
+      (brandLabel + sub).toUpperCase() + " ·" + "FAVACAPITAL.COM",
     ),
   ]);
 
@@ -61,10 +61,10 @@ export default async function OpengraphImage() {
           height: "100%",
           display: "flex",
           flexDirection: "column",
-          background: "#0C0716",
+          background: "#0D0B14",
           position: "relative",
           padding: "80px 100px",
-          fontFamily: '"Cormorant Garamond"',
+          fontFamily: '"Fraunces"',
         }}
       >
         {/* Violet glow behind the lattice */}
@@ -88,7 +88,7 @@ export default async function OpengraphImage() {
             alignItems: "center",
             gap: 16,
             color: "#9C90B4",
-            fontFamily: '"Outfit"',
+            fontFamily: '"JetBrains Mono"',
             fontSize: 20,
             letterSpacing: "0.22em",
             textTransform: "uppercase",
@@ -98,7 +98,7 @@ export default async function OpengraphImage() {
             style={{
               width: 36,
               height: 2,
-              background: "#D4A843",
+              background: "#D9B166",
             }}
           />
           {brandLabel}
@@ -145,7 +145,7 @@ export default async function OpengraphImage() {
                 top: 130,
                 width: 196,
                 height: 10,
-                background: "#D4A843",
+                background: "#D9B166",
                 borderRadius: 3,
               }}
             />
@@ -167,7 +167,7 @@ export default async function OpengraphImage() {
                 lineHeight: 1.05,
                 letterSpacing: "-0.02em",
                 fontWeight: 700,
-                fontFamily: '"Cormorant Garamond"',
+                fontFamily: '"Fraunces"',
                 fontStyle: "italic",
               }}
             >
@@ -180,7 +180,7 @@ export default async function OpengraphImage() {
                 alignItems: "center",
                 gap: 20,
                 color: "#9C90B4",
-                fontFamily: '"Outfit"',
+                fontFamily: '"JetBrains Mono"',
                 fontSize: 22,
                 letterSpacing: "0.18em",
                 textTransform: "uppercase",
@@ -194,7 +194,7 @@ export default async function OpengraphImage() {
                       style={{
                         width: 4,
                         height: 4,
-                        background: "#D4A843",
+                        background: "#D9B166",
                         borderRadius: 2,
                       }}
                     />
@@ -214,7 +214,7 @@ export default async function OpengraphImage() {
             bottom: 60,
             height: 1,
             background:
-              "linear-gradient(90deg, transparent, #D4A843, transparent)",
+              "linear-gradient(90deg, transparent, #D9B166, transparent)",
           }}
         />
 
@@ -225,7 +225,7 @@ export default async function OpengraphImage() {
             left: 100,
             bottom: 30,
             color: "#6E6388",
-            fontFamily: '"Outfit"',
+            fontFamily: '"JetBrains Mono"',
             fontSize: 18,
             letterSpacing: "0.18em",
             textTransform: "uppercase",
@@ -239,14 +239,14 @@ export default async function OpengraphImage() {
       ...size,
       fonts: [
         {
-          name: "Cormorant Garamond",
-          data: cormorantBold,
+          name: "Fraunces",
+          data: frauncesBold,
           weight: 700,
           style: "italic",
         },
         {
-          name: "Outfit",
-          data: outfitMedium,
+          name: "JetBrains Mono",
+          data: jetbrainsMedium,
           weight: 500,
           style: "normal",
         },

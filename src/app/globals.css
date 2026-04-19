@@ -1,23 +1,23 @@
 @import "tailwindcss";
 
 @theme {
-  /* Backgrounds */
-  --color-base: #0C0716;
-  --color-surface: #120E1E;
-  --color-elevated: #17122A;
+  /* Backgrounds — warmer black with a whisper of brown */
+  --color-base: #0D0B14;
+  --color-surface: #141121;
+  --color-elevated: #1A162D;
 
   /* Borders */
-  --color-border: #1E1735;
+  --color-border: #22192E;
   --color-border-hover: #2D1B69;
 
-  /* Text */
+  /* Text (WCAG AA on #0D0B14) */
   --color-primary: #E8E4EC;
   --color-secondary: #9C90B4;
   --color-tertiary: #6E6388;
 
-  /* Accent */
-  --color-gold: #C4A265;
-  --color-gold-hover: #D4B87A;
+  /* Accent — brighter gold leaf */
+  --color-gold: #D9B166;
+  --color-gold-hover: #E3BD7A;
   --color-bright: #8B5CF6;
 
   /* Subsidiary (used only within their sections) */
@@ -28,9 +28,9 @@
   --color-payments: #0EA5E9;
 
   /* Typography */
-  --font-display: "Cormorant Garamond", serif;
-  --font-heading: "Outfit", sans-serif;
-  --font-body: "DM Sans", sans-serif;
+  --font-display: "Fraunces", serif;
+  --font-heading: "JetBrains Mono", monospace;
+  --font-body: "Inter", sans-serif;
 }
 
 /* Base */
@@ -40,10 +40,10 @@ html {
 
 body {
   font-family: var(--font-body);
-  font-weight: 300;
-  font-size: 15px;
-  line-height: 1.7;
-  letter-spacing: 0.01em;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 1.6;
+  letter-spacing: 0;
   background-color: var(--color-base);
   color: var(--color-primary);
   -webkit-font-smoothing: antialiased;
@@ -56,44 +56,50 @@ body {
   color: var(--color-primary);
 }
 
-/* Display typography */
+/* Display typography — Fraunces */
 .text-display {
   font-family: var(--font-display);
   font-weight: 700;
   font-style: italic;
-  font-size: 44px;
-  line-height: 1.12;
+  font-size: 88px;
+  line-height: 1.05;
   letter-spacing: -0.02em;
+  font-variation-settings: "opsz" 144, "SOFT" 20, "WONK" 0;
 }
 
 .text-display-alt {
   font-family: var(--font-display);
   font-weight: 700;
-  font-size: 44px;
-  line-height: 1.12;
+  font-size: 88px;
+  line-height: 1.05;
   letter-spacing: -0.02em;
+  font-variation-settings: "opsz" 144, "SOFT" 20, "WONK" 0;
 }
 
 .text-subhead {
   font-family: var(--font-display);
   font-weight: 700;
-  font-size: 22px;
-  line-height: 1.35;
+  font-size: 32px;
+  line-height: 1.2;
+  letter-spacing: -0.01em;
+  font-variation-settings: "opsz" 48, "SOFT" 20, "WONK" 0;
 }
 
 .text-numbers {
   font-family: var(--font-display);
   font-weight: 700;
-  font-size: 32px;
+  font-size: 48px;
   line-height: 1.0;
   letter-spacing: -0.02em;
+  font-variation-settings: "opsz" 72, "SOFT" 20, "WONK" 0;
   font-variant-numeric: tabular-nums;
 }
 
+/* Labels — JetBrains Mono at small caps. Subtle infrastructure feel. */
 .text-label {
   font-family: var(--font-heading);
   font-weight: 500;
-  font-size: 11px;
+  font-size: 12px;
   line-height: 1.0;
   letter-spacing: 0.18em;
   text-transform: uppercase;
@@ -102,9 +108,9 @@ body {
 .text-caption {
   font-family: var(--font-body);
   font-weight: 400;
-  font-size: 11px;
+  font-size: 12px;
   line-height: 1.4;
-  letter-spacing: 0.06em;
+  letter-spacing: 0.08em;
   text-transform: uppercase;
 }
 
@@ -112,25 +118,26 @@ body {
   font-family: var(--font-display);
   font-weight: 400;
   font-style: italic;
-  font-size: 18px;
-  line-height: 1.5;
-  letter-spacing: 0.01em;
+  font-size: 22px;
+  line-height: 1.45;
+  font-variation-settings: "opsz" 36, "SOFT" 30, "WONK" 0;
 }
 
 /* Body small — compact descriptions, bios, card text */
 .text-sm-body {
   font-family: var(--font-body);
   font-weight: 400;
-  font-size: 13px;
-  line-height: 1.7;
+  font-size: 14px;
+  line-height: 1.6;
 }
 
 /* Ticker numbers — inline prices, small data */
 .text-ticker {
   font-family: var(--font-body);
-  font-weight: 400;
-  font-size: 15px;
+  font-weight: 500;
+  font-size: 16px;
   font-variant-numeric: tabular-nums;
+  letter-spacing: -0.01em;
 }
 
 /* Gold line */
@@ -144,7 +151,7 @@ body {
   background: linear-gradient(90deg, var(--color-gold), transparent);
 }
 
-/* Grain overlay */
+/* Grain overlay — dialled back to preserve crispness. */
 .grain {
   position: relative;
 }
@@ -153,7 +160,7 @@ body {
   content: "";
   position: fixed;
   inset: 0;
-  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 512 512' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.75' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.025'/%3E%3C/svg%3E");
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 512 512' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.8' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.012'/%3E%3C/svg%3E");
   pointer-events: none;
   z-index: 9999;
 }
@@ -162,8 +169,8 @@ body {
 .hero-vignette {
   background: radial-gradient(
     ellipse at 25% 40%,
-    #120E1E 0%,
-    #0C0716 70%
+    #141121 0%,
+    #0D0B14 70%
   );
 }
 
@@ -278,19 +285,31 @@ body {
 
 /* Responsive display type */
 @media (max-width: 1159px) {
-  .text-display, .text-display-alt {
-    font-size: 36px;
+  .text-display,
+  .text-display-alt {
+    font-size: 64px;
+  }
+  .text-subhead {
+    font-size: 28px;
+  }
+  .text-numbers {
+    font-size: 40px;
   }
 }
 
 @media (max-width: 767px) {
-  .text-display, .text-display-alt {
-    font-size: 32px;
-  }
-  .text-numbers {
-    font-size: 28px;
+  .text-display,
+  .text-display-alt {
+    font-size: 44px;
+    line-height: 1.08;
   }
   .text-subhead {
-    font-size: 20px;
+    font-size: 24px;
+  }
+  .text-numbers {
+    font-size: 32px;
+  }
+  .text-accent {
+    font-size: 18px;
   }
 }

@@ -56,7 +56,7 @@ export function Navbar() {
             : "bg-transparent border-b border-transparent",
         )}
       >
-        <nav className="mx-auto flex max-w-[1160px] items-center justify-between px-20 max-lg:px-6 h-14">
+        <nav className="mx-auto flex max-w-[1280px] items-center justify-between px-20 max-lg:px-6 h-14">
           <Link href="/" className="flex items-center" aria-label="FAVA Capital home">
             <FavaLogo variant="nav" className="text-primary" />
           </Link>

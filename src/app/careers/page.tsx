@@ -69,7 +69,7 @@ export default function CareersPage() {
   return (
     <div className="bg-base pt-32">
       {/* Hero */}
-      <section className="max-w-[1160px] mx-auto px-20 max-lg:px-6 pb-[140px]">
+      <section className="max-w-[1280px] mx-auto px-20 max-lg:px-6 pb-[140px]">
         <h1 className="text-display text-primary">
           Build What&apos;s Next
         </h1>
@@ -81,7 +81,7 @@ export default function CareersPage() {
       </section>
 
       {/* Values */}
-      <section className="max-w-[1160px] mx-auto px-20 max-lg:px-6 py-[140px] border-t border-border">
+      <section className="max-w-[1280px] mx-auto px-20 max-lg:px-6 py-[140px] border-t border-border">
         <p className="text-label text-secondary mb-12">Values</p>
 
         <div className="grid grid-cols-1 md:grid-cols-2 gap-x-16 gap-y-12">
@@ -96,12 +96,12 @@ export default function CareersPage() {
         </div>
       </section>
 
-      <div className="max-w-[1160px] mx-auto px-20 max-lg:px-6">
+      <div className="max-w-[1280px] mx-auto px-20 max-lg:px-6">
         <div className="gold-rule" />
       </div>
 
       {/* Open Positions */}
-      <section className="max-w-[1160px] mx-auto px-20 max-lg:px-6 py-[140px]">
+      <section className="max-w-[1280px] mx-auto px-20 max-lg:px-6 py-[140px]">
         <p className="text-label text-secondary mb-12">Open Positions</p>
 
         <div className="flex flex-col">
@@ -125,12 +125,12 @@ export default function CareersPage() {
         </div>
       </section>
 
-      <div className="max-w-[1160px] mx-auto px-20 max-lg:px-6">
+      <div className="max-w-[1280px] mx-auto px-20 max-lg:px-6">
         <div className="gold-rule" />
       </div>
 
       {/* Benefits */}
-      <section className="max-w-[1160px] mx-auto px-20 max-lg:px-6 py-[140px]">
+      <section className="max-w-[1280px] mx-auto px-20 max-lg:px-6 py-[140px]">
         <p className="text-label text-secondary mb-12">Benefits</p>
 
         <ul className="flex flex-col gap-4 max-w-2xl">
