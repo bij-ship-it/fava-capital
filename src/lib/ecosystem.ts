@@ -57,14 +57,14 @@ export const CONNECTIONS: Record<ChannelSlug, Connection[]> = {
   ],
   commodities: [
     {
-      to: "markets",
-      headline: "Same trading desk, full coverage.",
-      body: "Metals, energy, and agriculture alongside FX, indices, and equities — the full commodities complex inside FAVA Markets' execution infrastructure.",
+      to: "payments",
+      headline: "Settle physical deals across borders.",
+      body: "High-value cross-border settlement on FAVA's payments rail. 130+ currencies, licensed corridors, and the infrastructure to move deal capital where it needs to land.",
     },
     {
       to: "wealth",
-      headline: "Commodities exposure, managed.",
-      body: "Gain diversified commodities exposure through FAVA Wealth's multi-strategy fund — research-led allocation, professional execution.",
+      headline: "Fund deals alongside FAVA.",
+      body: "FAVA Wealth co-invests into physical commodity deals sourced by the desk. Qualified investors can participate in the same structures on institutional terms.",
     },
   ],
 };
