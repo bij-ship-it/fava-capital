@@ -1,3 +1,11 @@
+import type { Metadata } from "next";
+
+export const metadata: Metadata = {
+  title: "Careers",
+  description:
+    "Build the connected financial ecosystem at FAVA Capital. Open roles across investing, trading, payments, digital assets, and commodities.",
+};
+
 const values = [
   {
     title: "Innovation",
