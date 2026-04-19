@@ -257,7 +257,7 @@ export default function DigitalPage() {
 
       <section id="execution" className="py-[100px] max-md:py-16">
         <Container>
-          <div className="grid grid-cols-12 gap-12 items-start">
+          <div className="grid grid-cols-12 gap-y-12 lg:gap-12 items-start">
             <div className="col-span-12 lg:col-span-5">
               <p className="text-label text-secondary mb-6">EXECUTION</p>
               <h2 className="text-subhead text-primary">
@@ -389,7 +389,7 @@ export default function DigitalPage() {
             Centralised technology. Jurisdiction-specific compliance.
           </h2>
 
-          <div className="grid grid-cols-12 gap-12">
+          <div className="grid grid-cols-12 gap-y-12 lg:gap-12">
             <div className="col-span-12 lg:col-span-6">
               <p className="text-caption text-crypto mb-6">OPERATIONAL</p>
               <div className="flex flex-col gap-6">

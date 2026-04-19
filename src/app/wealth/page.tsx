@@ -90,7 +90,7 @@ export default function WealthPage() {
 
       <section id="strategy" className="py-[100px] max-md:py-16">
         <Container>
-          <div className="grid grid-cols-12 gap-12">
+          <div className="grid grid-cols-12 gap-y-12 lg:gap-12">
             <div className="col-span-12 lg:col-span-5">
               <p className="text-label text-secondary mb-6">THE STRATEGY</p>
               <h2 className="text-subhead text-primary">
@@ -134,7 +134,7 @@ export default function WealthPage() {
 
       <section id="terms" className="bg-surface py-[100px] max-md:py-16 border-y border-border">
         <Container>
-          <div className="grid grid-cols-12 gap-12">
+          <div className="grid grid-cols-12 gap-y-12 lg:gap-12">
             <div className="col-span-12 lg:col-span-4">
               <p className="text-label text-secondary mb-6">INVESTMENT TERMS</p>
               <h2 className="text-subhead text-primary">

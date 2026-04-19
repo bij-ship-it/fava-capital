@@ -102,13 +102,6 @@ export function Navbar() {
             ))}
           </div>
 
-          <Link
-            href="/contact"
-            className="hidden text-label text-gold link-hover lg:block"
-          >
-            Contact &rarr;
-          </Link>
-
           <button
             onClick={() => setMobileOpen(!mobileOpen)}
             className="flex flex-col gap-1 lg:hidden"
