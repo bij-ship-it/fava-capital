@@ -63,12 +63,18 @@ body {
 }
 
 /* CSS Grid + Flex gotcha: items default to min-content width and can
-   blow out narrow viewports if their text content has long tokens.
-   min-width: 0 lets them shrink to their track / available space.
-   Tables, SubNav and explicit-overflow wrappers handle their own
-   overflow via overflow-x-auto. */
+   blow out narrow viewports. min-width: 0 lets them shrink to their
+   track / available space. We target div + p children of flex so we
+   don't break anchor-based horizontal navs (SubNav uses <a> children
+   with whitespace-nowrap that need their natural width). */
 .grid > *,
-.flex > * {
+.flex > div,
+.flex > p,
+.flex > article,
+.flex > section,
+.flex > h1,
+.flex > h2,
+.flex > h3 {
   min-width: 0;
 }
 

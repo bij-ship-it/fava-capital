@@ -26,7 +26,7 @@ const loops = [
 
 export function Flywheel() {
   return (
-    <div className="grid grid-cols-12 gap-12 items-start">
+    <div className="grid grid-cols-12 gap-y-12 lg:gap-12 items-start">
       <div className="col-span-12 lg:col-span-5">
         <FlywheelDiagram />
       </div>
@@ -72,11 +72,13 @@ function FlywheelDiagram() {
   });
 
   return (
-    <div className="relative">
+    <div className="relative w-full max-w-[420px] mx-auto">
       <motion.svg
         width="100%"
+        height="100%"
         viewBox={`0 0 ${size} ${size}`}
-        className="overflow-visible"
+        preserveAspectRatio="xMidYMid meet"
+        className="block w-full h-auto overflow-visible"
         initial={{ opacity: 0 }}
         whileInView={{ opacity: 1 }}
         viewport={{ once: true }}

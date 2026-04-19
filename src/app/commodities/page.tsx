@@ -123,7 +123,7 @@ export default function CommoditiesPage() {
 
       <section id="how" className="py-[100px] max-md:py-16">
         <Container>
-          <div className="grid grid-cols-12 gap-12">
+          <div className="grid grid-cols-12 gap-y-12 lg:gap-12">
             <div className="col-span-12 lg:col-span-5">
               <p className="text-label text-secondary mb-6">HOW WE WORK</p>
               <h2 className="text-subhead text-primary">

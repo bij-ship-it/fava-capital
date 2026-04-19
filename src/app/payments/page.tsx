@@ -177,7 +177,7 @@ export default function PaymentsPage() {
         className="bg-surface border-y border-border py-[100px] max-md:py-16"
       >
         <Container>
-          <div className="grid grid-cols-12 gap-12 items-start">
+          <div className="grid grid-cols-12 gap-y-12 lg:gap-12 items-start">
             <div className="col-span-12 lg:col-span-7">
               <p className="text-label text-secondary mb-6">WHY IT MATTERS</p>
               <p className="text-display text-primary">

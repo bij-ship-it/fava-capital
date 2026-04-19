@@ -303,7 +303,7 @@ export default function MarketsPage() {
 
       <section id="track-record" className="py-[100px] max-md:py-16">
         <Container>
-          <div className="grid grid-cols-12 gap-12 items-start">
+          <div className="grid grid-cols-12 gap-y-12 lg:gap-12 items-start">
             <div className="col-span-12 lg:col-span-6">
               <p className="text-label text-secondary mb-6">TRACK RECORD</p>
               <p className="text-accent text-primary leading-[1.4]">
