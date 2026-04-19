@@ -111,16 +111,16 @@ export default function AboutPage() {
 
       {/* Full-width brand statement */}
       <section className="bg-surface border-t border-b border-border">
-        <div className="max-w-[1160px] mx-auto px-20 max-lg:px-6 py-20 md:py-28">
-          <div className="flex flex-col md:flex-row md:items-center gap-12 md:gap-20">
+        <div className="max-w-[1160px] mx-auto px-20 max-lg:px-6 py-10 md:py-12">
+          <div className="flex flex-col md:flex-row md:items-center gap-8 md:gap-14">
             <Image
               src="/images/fava-lattice-mark-only-dark-bg.svg"
               alt=""
-              width={80}
-              height={120}
+              width={40}
+              height={60}
               className="opacity-40 shrink-0"
             />
-            <blockquote className="text-accent text-[24px] md:text-[30px] text-primary leading-[1.4] max-w-2xl">
+            <blockquote className="text-accent text-[20px] md:text-[24px] text-primary leading-[1.4] max-w-2xl">
               &ldquo;Independent businesses. Shared infrastructure.
               Scalable economics.&rdquo;
             </blockquote>
