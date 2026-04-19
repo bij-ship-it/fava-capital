@@ -43,19 +43,18 @@ export function EcosystemConnections({
       <Container>
         <div className="max-w-2xl mb-14">
           <p className="text-label text-secondary mb-6">
-            CONNECTED IN THE ECOSYSTEM
+            ACROSS THE ECOSYSTEM
           </p>
           <h2
             id="connections-title"
             className="text-display-alt text-primary"
           >
-            {fromChannel.shortName} is one node in the flywheel.
+            Where {fromChannel.shortName} meets the rest of FAVA.
           </h2>
           <p className="text-secondary mt-5 leading-[1.7]">
-            Clients rarely stay in a single product. Here&rsquo;s where
-            {" "}
-            {fromChannel.shortName.toLowerCase()} connects to the rest of
-            FAVA.
+            Clients rarely stop at one product. Here are the two places{" "}
+            {fromChannel.shortName} connects hardest &mdash; and the
+            leverage you get when they&rsquo;re used together.
           </p>
         </div>
 
