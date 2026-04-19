@@ -8,7 +8,7 @@ const loops = [
     number: "01",
     title: "One platform for every financial need.",
     description:
-      "Invest, trade, move money, hold digital assets, access commodities &mdash; all under one FAVA login. The products are connected so you don't have to be.",
+      "Invest, trade, move money, hold digital assets, access commodities — all under one FAVA login. The products are connected so you don't have to be.",
   },
   {
     number: "02",
@@ -80,8 +80,7 @@ function FlywheelDiagram() {
         preserveAspectRatio="xMidYMid meet"
         className="block w-full h-auto overflow-visible"
         initial={{ opacity: 0 }}
-        whileInView={{ opacity: 1 }}
-        viewport={{ once: true }}
+        animate={{ opacity: 1 }}
         transition={{ duration: 0.8 }}
         aria-hidden="true"
       >
@@ -100,8 +99,7 @@ function FlywheelDiagram() {
           stroke="url(#ring)"
           strokeWidth="1"
           initial={{ pathLength: 0 }}
-          whileInView={{ pathLength: 1 }}
-          viewport={{ once: true }}
+          animate={{ pathLength: 1 }}
           transition={{ duration: 1.4, ease: "easeInOut" }}
         />
 
@@ -126,8 +124,7 @@ function FlywheelDiagram() {
               strokeWidth="1"
               strokeOpacity="0.35"
               initial={{ pathLength: 0 }}
-              whileInView={{ pathLength: 1 }}
-              viewport={{ once: true }}
+              animate={{ pathLength: 1 }}
               transition={{ duration: 0.6, delay: 0.4 + i * 0.12 }}
             />
           );
@@ -138,9 +135,8 @@ function FlywheelDiagram() {
           return (
             <motion.g
               key={channel.slug}
-              initial={{ opacity: 0, scale: 0.8 }}
-              whileInView={{ opacity: 1, scale: 1 }}
-              viewport={{ once: true }}
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
               transition={{ duration: 0.4, delay: 0.5 + i * 0.08 }}
             >
               <circle
