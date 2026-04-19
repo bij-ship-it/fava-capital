@@ -12,43 +12,20 @@ const colorClasses: Record<
   commodities: { bar: "bg-commodities", text: "text-commodities" },
 };
 
-type NewProps = {
+export function ChannelBadge({
+  channel,
+  label,
+  className,
+}: {
   channel: ChannelSlug;
   label: string;
-  name?: never;
-  color?: never;
   className?: string;
-};
-
-type LegacyProps = {
-  channel?: never;
-  label?: never;
-  name: string;
-  color: string;
-  className?: string;
-};
-
-export type ChannelBadgeProps = NewProps | LegacyProps;
-
-export function ChannelBadge(props: ChannelBadgeProps) {
-  const { className } = props;
-
-  if ("channel" in props && props.channel) {
-    const { bar, text } = colorClasses[props.channel];
-    return (
-      <div className={cn("flex items-center gap-3 mb-6", className)}>
-        <span className={cn("h-[2px] w-6", bar)} />
-        <span className={cn("text-label", text)}>{props.label}</span>
-      </div>
-    );
-  }
-
+}) {
+  const { bar, text } = colorClasses[channel];
   return (
     <div className={cn("flex items-center gap-3 mb-6", className)}>
-      <span className="h-[2px] w-6" style={{ backgroundColor: props.color }} />
-      <span className="text-label" style={{ color: props.color }}>
-        {props.name}
-      </span>
+      <span className={cn("h-[2px] w-6", bar)} />
+      <span className={cn("text-label", text)}>{label}</span>
     </div>
   );
 }
