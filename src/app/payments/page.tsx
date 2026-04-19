@@ -90,7 +90,7 @@ export default function PaymentsPage() {
               <h1 className="text-display-alt text-primary">
                 Cross-Border Payments &amp; Settlement Infrastructure
               </h1>
-              <p className="mt-6 text-secondary max-w-[560px] leading-[1.75]">
+              <p className="mt-6 text-secondary max-w-[560px] leading-[1.7]">
                 A dual-rail settlement platform combining regulated fiat
                 corridors with tokenised settlement. Powered by{" "}
                 <Link
@@ -150,7 +150,7 @@ export default function PaymentsPage() {
       </section>
 
       {/* What Rebasive Does */}
-      <section className="py-[120px] max-md:py-20">
+      <section className="py-[100px] max-md:py-16">
         <div className="max-w-[1160px] mx-auto px-20 max-lg:px-6">
           <p className="text-label text-payments mb-4">WHAT YOU GET</p>
           <h2 className="text-subhead text-primary max-w-xl mb-16">
@@ -167,7 +167,7 @@ export default function PaymentsPage() {
                 <h3 className="text-primary mb-3">
                   {cap.title}
                 </h3>
-                <p className="text-[14px] text-secondary leading-[1.75]">
+                <p className="text-[14px] text-secondary leading-[1.7]">
                   {cap.description}
                 </p>
               </div>
@@ -178,7 +178,7 @@ export default function PaymentsPage() {
 
       {/* How It Works */}
       <section className="border-t border-border">
-        <div className="max-w-[1160px] mx-auto px-20 max-lg:px-6 py-[120px] max-md:py-20">
+        <div className="max-w-[1160px] mx-auto px-20 max-lg:px-6 py-[100px] max-md:py-16">
           <p className="text-label text-payments mb-4">HOW IT WORKS</p>
           <h2 className="text-subhead text-primary mb-16">
             Three steps. That&rsquo;s it.
@@ -205,7 +205,7 @@ export default function PaymentsPage() {
                   <h3 className="text-primary mt-4 mb-2">
                     {step.title}
                   </h3>
-                  <p className="text-[14px] text-secondary leading-[1.75]">
+                  <p className="text-[14px] text-secondary leading-[1.7]">
                     {step.description}
                   </p>
                 </div>
@@ -220,7 +220,7 @@ export default function PaymentsPage() {
       </section>
 
       {/* Regulatory Trust */}
-      <section className="bg-surface border-t border-b border-border py-[80px] max-md:py-16">
+      <section className="bg-surface border-t border-b border-border py-[100px] max-md:py-16">
         <div className="max-w-[1160px] mx-auto px-20 max-lg:px-6">
           <p className="text-label text-payments mb-4">COMPLIANCE</p>
           <h2 className="text-subhead text-primary mb-14">
@@ -251,7 +251,7 @@ export default function PaymentsPage() {
       </section>
 
       {/* The Opportunity Context */}
-      <section className="py-[120px] max-md:py-20">
+      <section className="py-[100px] max-md:py-16">
         <div className="max-w-[1160px] mx-auto px-20 max-lg:px-6">
           <div className="bg-surface p-10 max-lg:p-6">
             <div className="flex flex-col md:flex-row gap-16 md:gap-20 items-start">
@@ -294,7 +294,7 @@ export default function PaymentsPage() {
               <h2 className="text-subhead text-primary mb-4">
                 One account. Trading + Payments.
               </h2>
-              <p className="text-secondary leading-[1.75] max-w-md">
+              <p className="text-secondary leading-[1.7] max-w-md">
                 Rebasive rails integrate directly into FAVA Markets, giving
                 brokerage clients a complete financial services environment
                 from a single account.
@@ -309,7 +309,7 @@ export default function PaymentsPage() {
               {brokerageItems.map((item) => (
                 <div key={item} className="flex items-start gap-3">
                   <span className="w-1.5 h-1.5 bg-payments mt-2 shrink-0" />
-                  <span className="text-primary/70">{item}</span>
+                  <span className="text-secondary">{item}</span>
                 </div>
               ))}
             </div>
@@ -318,7 +318,7 @@ export default function PaymentsPage() {
       </section>
 
       {/* CTA */}
-      <section className="py-[120px] max-md:py-20">
+      <section className="py-[100px] max-md:py-16">
         <div className="max-w-[1160px] mx-auto px-20 max-lg:px-6">
           <div className="bg-surface p-14 max-lg:p-8 text-center">
             <h2 className="text-display-alt text-primary">

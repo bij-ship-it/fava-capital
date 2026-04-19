@@ -146,7 +146,7 @@ export default function LegalPage() {
           {activeContent.sections.map((section, i) => (
             <div key={section.heading} className={`${i > 0 ? "mt-12" : ""}`}>
               <h3 className="text-subhead text-primary mb-4">{section.heading}</h3>
-              <p className="text-primary/60 leading-[1.7]">
+              <p className="text-secondary leading-[1.7]">
                 {section.body}
               </p>
             </div>
@@ -154,7 +154,7 @@ export default function LegalPage() {
         </div>
 
         <div className="mt-16 pt-8 border-t border-border">
-          <p className="text-secondary/50 text-[11px] leading-relaxed">
+          <p className="text-tertiary text-[11px] leading-relaxed">
             Last updated: March 2026. FAVA Capital Holdings Ltd. All rights reserved.
             This document is for informational purposes only and does not constitute legal advice.
           </p>

@@ -120,7 +120,7 @@ export default function CryptoPage() {
                 Institutional Crypto Exchange
                 <br />& OTC Infrastructure
               </h1>
-              <p className="mt-6 text-secondary max-w-[560px] leading-[1.75]">
+              <p className="mt-6 text-secondary max-w-[560px] leading-[1.7]">
                 <Link
                   href="https://cryptorio.com"
                   target="_blank"
@@ -180,7 +180,7 @@ export default function CryptoPage() {
       </section>
 
       {/* Platform Services */}
-      <section className="py-[120px]">
+      <section className="py-[100px] max-md:py-16">
         <div className="max-w-[1160px] mx-auto px-20 max-lg:px-6">
           <p className="text-label text-secondary mb-16">Platform Services</p>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-[1px] bg-border">
@@ -200,7 +200,7 @@ export default function CryptoPage() {
       </section>
 
       {/* Who Cryptorio Serves */}
-      <section className="bg-surface py-[100px]">
+      <section className="bg-surface py-[100px] max-md:py-16">
         <div className="max-w-[1160px] mx-auto px-20 max-lg:px-6">
           <p className="text-label text-secondary mb-16">Who Cryptorio Serves</p>
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-10">
@@ -222,7 +222,7 @@ export default function CryptoPage() {
       </section>
 
       {/* Liquidity & Execution */}
-      <section className="py-[120px]">
+      <section className="py-[100px] max-md:py-16">
         <div className="max-w-[1160px] mx-auto px-20 max-lg:px-6">
           <div className="bg-surface p-10 max-lg:p-6">
             <div className="flex flex-col lg:flex-row gap-16">
@@ -231,7 +231,7 @@ export default function CryptoPage() {
                 <h2 className="text-subhead text-primary mb-6">
                   Deep aggregated liquidity with intelligent routing.
                 </h2>
-                <p className="text-secondary leading-[1.75] max-w-[480px]">
+                <p className="text-secondary leading-[1.7] max-w-[480px]">
                   Cryptorio aggregates liquidity across multiple global venues,
                   applying smart order routing to achieve optimal execution for
                   every trade. For large block orders, our OTC desk provides
@@ -257,7 +257,7 @@ export default function CryptoPage() {
       </section>
 
       {/* Compliance & Security */}
-      <section className="bg-surface py-[100px]">
+      <section className="bg-surface py-[100px] max-md:py-16">
         <div className="max-w-[1160px] mx-auto px-20 max-lg:px-6">
           <p className="text-label text-crypto mb-6">COMPLIANCE</p>
           <h2 className="text-subhead text-primary mb-16">
@@ -277,7 +277,7 @@ export default function CryptoPage() {
       </section>
 
       {/* Banking & Partnerships */}
-      <section className="py-[100px] border-t border-border">
+      <section className="py-[100px] max-md:py-16 border-t border-border">
         <div className="max-w-[1160px] mx-auto px-20 max-lg:px-6">
           <p className="text-label text-crypto mb-4">INFRASTRUCTURE</p>
           <h2 className="text-subhead text-primary mb-12">
@@ -301,7 +301,7 @@ export default function CryptoPage() {
       </section>
 
       {/* Regulatory Foundation */}
-      <section className="bg-surface py-[80px]">
+      <section className="bg-surface py-[100px] max-md:py-16">
         <div className="max-w-[1160px] mx-auto px-20 max-lg:px-6">
           <p className="text-label text-crypto mb-10">REGULATORY FOUNDATION</p>
           <p className="text-label text-secondary mb-6">OPERATIONAL</p>
@@ -374,7 +374,7 @@ export default function CryptoPage() {
               </div>
             </div>
           </div>
-          <p className="text-secondary leading-[1.75] max-w-[640px]">
+          <p className="text-secondary leading-[1.7] max-w-[640px]">
             Centralised technology, jurisdiction-specific compliance. One
             platform, global operations.
           </p>
@@ -382,7 +382,7 @@ export default function CryptoPage() {
       </section>
 
       {/* CTA */}
-      <section className="py-[120px] max-md:py-20">
+      <section className="py-[100px] max-md:py-16">
         <div className="max-w-[1160px] mx-auto px-20 max-lg:px-6">
           <div className="bg-surface p-14 max-lg:p-8 text-center">
             <h2 className="text-display-alt text-primary mb-5">

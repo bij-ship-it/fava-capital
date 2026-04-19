@@ -100,7 +100,7 @@ export default function AboutPage() {
         <h1 className="text-display text-primary max-w-3xl">
           We build financial infrastructure that compounds.
         </h1>
-        <p className="text-secondary leading-[1.75] max-w-2xl mt-8">
+        <p className="text-secondary leading-[1.7] max-w-2xl mt-8">
           FAVA Capital is a diversified holding company operating across wealth
           management, institutional trading, global payments, digital assets,
           and commodities. Each business is independent. Each is built to be
@@ -129,7 +129,7 @@ export default function AboutPage() {
       </section>
 
       {/* What we believe */}
-      <section className="py-[120px] max-md:py-20">
+      <section className="py-[100px] max-md:py-16">
         <div className="max-w-[1160px] mx-auto px-20 max-lg:px-6">
           <p className="text-label text-secondary mb-4">WHAT WE BELIEVE</p>
           <h2 className="text-subhead text-primary mb-16 max-w-md">
@@ -143,7 +143,7 @@ export default function AboutPage() {
                 <h3 className="text-[17px] text-primary font-medium mb-3">
                   {v.title}
                 </h3>
-                <p className="text-secondary leading-[1.75]">
+                <p className="text-secondary leading-[1.7]">
                   {v.body}
                 </p>
               </div>
@@ -153,7 +153,7 @@ export default function AboutPage() {
       </section>
 
       {/* The ecosystem — visual */}
-      <section className="bg-surface border-t border-b border-border py-[80px] max-md:py-16">
+      <section className="bg-surface border-t border-b border-border py-[100px] max-md:py-16">
         <div className="max-w-[1160px] mx-auto px-20 max-lg:px-6">
           <p className="text-label text-secondary mb-12">THE ECOSYSTEM</p>
           <div className="flex flex-wrap gap-4">
@@ -174,7 +174,7 @@ export default function AboutPage() {
       </section>
 
       {/* Where we operate — replaces stale stats */}
-      <section className="py-[120px] max-md:py-20">
+      <section className="py-[100px] max-md:py-16">
         <div className="max-w-[1160px] mx-auto px-20 max-lg:px-6">
           <div className="flex flex-col md:flex-row gap-16 md:gap-24">
             <div className="flex-1">
@@ -182,7 +182,7 @@ export default function AboutPage() {
               <h2 className="text-subhead text-primary mb-6">
                 Regulated across three continents. Operational from day one.
               </h2>
-              <p className="text-secondary leading-[1.75] max-w-lg">
+              <p className="text-secondary leading-[1.7] max-w-lg">
                 FAVA holds licences and registrations across multiple jurisdictions,
                 with banking relationships, liquidity partnerships, and operational
                 teams in place. We don&apos;t announce markets we plan to enter &mdash;
@@ -212,7 +212,7 @@ export default function AboutPage() {
       </section>
 
       {/* Founders — with more visual presence */}
-      <section className="bg-surface border-t border-b border-border py-[120px] max-md:py-20">
+      <section className="bg-surface border-t border-b border-border py-[100px] max-md:py-16">
         <div className="max-w-[1160px] mx-auto px-20 max-lg:px-6">
           <p className="text-label text-secondary mb-4">FOUNDERS</p>
           <h2 className="text-subhead text-primary mb-16">
@@ -243,7 +243,7 @@ export default function AboutPage() {
       </section>
 
       {/* Core leadership */}
-      <section className="py-[120px] max-md:py-20">
+      <section className="py-[100px] max-md:py-16">
         <div className="max-w-[1160px] mx-auto px-20 max-lg:px-6">
           <p className="text-label text-secondary mb-4">LEADERSHIP</p>
           <h2 className="text-subhead text-primary mb-16">
@@ -308,14 +308,14 @@ export default function AboutPage() {
       </section>
 
       {/* CTA — Join us / Get in touch */}
-      <section className="py-[120px] max-md:py-20">
+      <section className="py-[100px] max-md:py-16">
         <div className="max-w-[1160px] mx-auto px-20 max-lg:px-6">
           <div className="flex flex-col md:flex-row md:items-end md:justify-between gap-10">
             <div>
               <h2 className="text-display text-primary max-w-lg">
                 Want to be part of what we&apos;re building?
               </h2>
-              <p className="text-secondary mt-6 max-w-md leading-[1.75]">
+              <p className="text-secondary mt-6 max-w-md leading-[1.7]">
                 Whether you&apos;re an investor, a partner, or someone
                 who wants to join the team &mdash; we&apos;d like to hear from you.
               </p>

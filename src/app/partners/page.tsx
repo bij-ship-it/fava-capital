@@ -69,7 +69,7 @@ export default function PartnersPage() {
           {partnershipModels.map((model) => (
             <div key={model.title}>
               <h3 className="text-subhead text-primary mb-4">{model.title}</h3>
-              <p className="text-primary/60 leading-[1.7] max-w-2xl mb-8">
+              <p className="text-secondary leading-[1.7] max-w-2xl mb-8">
                 {model.description}
               </p>
               <ul className="flex flex-col gap-3 mb-8 max-w-lg">
@@ -99,13 +99,13 @@ export default function PartnersPage() {
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-16">
           <div>
             <h3 className="text-subhead text-primary mb-4">Grow With FAVA Markets</h3>
-            <p className="text-primary/60 leading-[1.7] mb-6">
+            <p className="text-secondary leading-[1.7] mb-6">
               Our Introducing Broker programme is designed for financial professionals, money managers,
               and affiliates who want to build a sustainable revenue stream by referring clients to
               FAVA Markets. With competitive commissions, real-time analytics, and dedicated support,
               you have everything you need to scale.
             </p>
-            <p className="text-primary/60 leading-[1.7]">
+            <p className="text-secondary leading-[1.7]">
               Whether you manage a network of sub-IBs or refer clients directly, our flexible
               commission structures and transparent reporting ensure you are always fairly rewarded
               for your contributions.
@@ -132,7 +132,7 @@ export default function PartnersPage() {
         <p className="text-label text-secondary mb-12">Get Started</p>
 
         <h2 className="text-subhead text-primary mb-4">Ready to Partner?</h2>
-        <p className="text-primary/60 leading-[1.7] max-w-lg mb-8">
+        <p className="text-secondary leading-[1.7] max-w-lg mb-8">
           Speak with our partnerships team to explore the model that best fits your business.
           We respond to all enquiries within 24 hours.
         </p>

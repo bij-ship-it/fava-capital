@@ -138,7 +138,7 @@ export function EcosystemRows() {
                         </span>
                       </div>
 
-                      <p className="text-accent text-primary/60 mb-3">
+                      <p className="text-accent text-secondary mb-3">
                         {sub.tagline}
                       </p>
 

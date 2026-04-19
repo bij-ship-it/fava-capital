@@ -76,7 +76,7 @@ export default function WealthPage() {
       </section>
 
       {/* How it works + Terms — side by side */}
-      <section className="py-[120px] max-md:py-20">
+      <section className="py-[100px] max-md:py-16">
         <div className="max-w-[1160px] mx-auto px-20 max-lg:px-6">
           <div className="flex flex-col lg:flex-row gap-12">
             {/* Left — How the strategy works */}
@@ -102,7 +102,7 @@ export default function WealthPage() {
                       </span>
                       <div>
                         <p className="text-primary text-[14px] font-medium">{step.title}</p>
-                        <p className="text-secondary text-[13px] leading-[1.6] mt-1">{step.desc}</p>
+                        <p className="text-secondary text-[13px] leading-[1.7] mt-1">{step.desc}</p>
                       </div>
                     </div>
                   ))}
@@ -132,7 +132,7 @@ export default function WealthPage() {
       </section>
 
       {/* Illustrative Returns */}
-      <section className="pb-[120px] max-md:pb-20">
+      <section className="pb-[100px] max-md:pb-16">
         <div className="max-w-[1160px] mx-auto px-20 max-lg:px-6">
           <p className="text-label text-secondary mb-8">Illustrative Returns</p>
 

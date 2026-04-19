@@ -57,7 +57,7 @@ export function TrustBar() {
               <h3 className="text-primary mb-3">
                 {pillar.title}
               </h3>
-              <p className="text-secondary leading-[1.75]">
+              <p className="text-secondary leading-[1.7]">
                 {pillar.body}
               </p>
             </motion.div>

@@ -109,7 +109,7 @@ export function Hero() {
 
           <motion.p
             variants={fadeUp}
-            className="mt-8 text-secondary leading-[1.75]"
+            className="mt-8 text-secondary leading-[1.7]"
           >
             FAVA Capital is a diversified financial holding company operating
             across wealth management, institutional trading, digital assets,

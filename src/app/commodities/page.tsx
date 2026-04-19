@@ -146,7 +146,7 @@ export default function CommoditiesPage() {
       </section>
 
       {/* Market Categories */}
-      <section className="py-[120px]">
+      <section className="py-[100px] max-md:py-16">
         <div className="max-w-[1160px] mx-auto px-20 max-lg:px-6">
           <p className="text-label text-secondary mb-12">Markets</p>
           <div className="grid grid-cols-2 max-lg:grid-cols-1 gap-[1px] bg-border">
@@ -158,7 +158,7 @@ export default function CommoditiesPage() {
                   <p className="text-numbers text-commodities mt-2">
                     {cat.instruments} instruments
                   </p>
-                  <p className="text-secondary mt-3 leading-[1.6] text-[15px]">
+                  <p className="text-secondary mt-3 leading-[1.7] text-[15px]">
                     {cat.description}
                   </p>
                 </div>
@@ -175,7 +175,7 @@ export default function CommoditiesPage() {
       </section>
 
       {/* Why FAVA Commodities */}
-      <section className="py-[100px] border-t border-border">
+      <section className="py-[100px] max-md:py-16 border-t border-border">
         <div className="max-w-[1160px] mx-auto px-20 max-lg:px-6">
           <p className="text-label text-secondary mb-12">Why FAVA Commodities</p>
           <div className="grid grid-cols-3 max-lg:grid-cols-1 gap-12">
@@ -193,7 +193,7 @@ export default function CommoditiesPage() {
       </section>
 
       {/* Research Preview */}
-      <section className="py-[100px]">
+      <section className="py-[100px] max-md:py-16">
         <div className="max-w-[1160px] mx-auto px-20 max-lg:px-6">
           <div className="bg-surface p-10 max-lg:p-6">
             <div className="flex items-center justify-between mb-10">
@@ -222,7 +222,7 @@ export default function CommoditiesPage() {
                     </span>
                   </div>
                   <h4 className="text-subhead text-primary">{piece.title}</h4>
-                  <p className="text-secondary mt-2 leading-[1.6] text-[15px] max-w-[680px]">
+                  <p className="text-secondary mt-2 leading-[1.7] text-[15px] max-w-[680px]">
                     {piece.excerpt}
                   </p>
                 </div>

@@ -135,7 +135,7 @@ export default function MarketsPage() {
       </section>
 
       {/* Why FAVA Markets */}
-      <section className="py-[120px] max-md:py-20">
+      <section className="py-[100px] max-md:py-16">
         <div className="max-w-[1160px] mx-auto px-20 max-lg:px-6">
           <p className="text-label text-secondary mb-4">WHY FAVA MARKETS</p>
           <h2 className="text-subhead text-primary mb-16 max-md:mb-10">
@@ -167,7 +167,7 @@ export default function MarketsPage() {
       </section>
 
       {/* Instruments */}
-      <section className="py-[120px] max-md:py-20 border-t border-border">
+      <section className="py-[100px] max-md:py-16 border-t border-border">
         <div className="max-w-[1160px] mx-auto px-20 max-lg:px-6">
           <p className="text-label text-secondary mb-4">INSTRUMENTS</p>
           <h2 className="text-subhead text-primary mb-4">
@@ -193,7 +193,7 @@ export default function MarketsPage() {
                       {inst.count}
                     </span>
                   </div>
-                  <p className="text-secondary leading-[1.65] mb-6">
+                  <p className="text-secondary leading-[1.7] mb-6">
                     {inst.description}
                   </p>
                   <span className="text-label text-tertiary group-hover:text-markets transition-colors text-[12px] tracking-wider">
@@ -207,7 +207,7 @@ export default function MarketsPage() {
       </section>
 
       {/* Team Track Record */}
-      <section className="py-[120px] max-md:py-20">
+      <section className="py-[100px] max-md:py-16">
         <div className="max-w-[1160px] mx-auto px-20 max-lg:px-6">
           <div className="bg-surface p-10 max-lg:p-6 grid md:grid-cols-2 gap-16 max-md:gap-10">
             <div>
@@ -272,13 +272,13 @@ export default function MarketsPage() {
       </section>
 
       {/* Global Expansion Timeline */}
-      <section className="py-[120px] max-md:py-20">
+      <section className="py-[100px] max-md:py-16">
         <div className="max-w-[1160px] mx-auto px-20 max-lg:px-6">
           <p className="text-label text-secondary mb-4">GLOBAL EXPANSION</p>
           <h2 className="text-subhead text-primary mb-4 max-w-lg">
             Trade from anywhere. We&apos;re expanding across every major market.
           </h2>
-          <p className="text-secondary max-w-[520px] leading-[1.75] mb-16 max-md:mb-10">
+          <p className="text-secondary max-w-[520px] leading-[1.7] mb-16 max-md:mb-10">
             FAVA Markets is deploying across multiple jurisdictions to bring
             institutional-grade execution closer to traders everywhere.
           </p>

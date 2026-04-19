@@ -83,7 +83,7 @@ body {
 
 .text-numbers {
   font-family: var(--font-display);
-  font-weight: 600;
+  font-weight: 700;
   font-size: 32px;
   line-height: 1.0;
   letter-spacing: -0.02em;
@@ -115,6 +115,22 @@ body {
   font-size: 18px;
   line-height: 1.5;
   letter-spacing: 0.01em;
+}
+
+/* Body small — compact descriptions, bios, card text */
+.text-sm-body {
+  font-family: var(--font-body);
+  font-weight: 400;
+  font-size: 13px;
+  line-height: 1.7;
+}
+
+/* Ticker numbers — inline prices, small data */
+.text-ticker {
+  font-family: var(--font-body);
+  font-weight: 400;
+  font-size: 15px;
+  font-variant-numeric: tabular-nums;
 }
 
 /* Gold line */
