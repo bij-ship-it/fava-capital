@@ -1,139 +1,168 @@
 "use client";
 
 import { useState } from "react";
+import { Container } from "@/components/ui/Container";
+import { cn } from "@/lib/cn";
 
-const categories = ["All", "Company", "Markets", "Crypto", "Commodities"];
+const categories = ["All", "Company", "Markets", "Digital", "Commodities"] as const;
+type Category = (typeof categories)[number];
 
-const featuredArticle = {
-  category: "Company",
-  title: "FAVA Capital Announces Multi-Vertical Expansion Across Four Subsidiaries",
-  date: "12 April 2026",
-  excerpt:
-    "FAVA Capital Holdings has completed the launch of its full ecosystem, spanning FX brokerage, institutional crypto exchange, multi-strategy wealth management, and physical commodity trading — marking a milestone in the group's ambition to build a vertically integrated financial infrastructure.",
+type Article = {
+  category: Exclude<Category, "All">;
+  title: string;
+  date: string;
+  excerpt?: string;
 };
 
-const articles = [
+const featuredArticle: Article = {
+  category: "Company",
+  title:
+    "FAVA Capital Announces Multi-Vertical Expansion Across Five Subsidiaries",
+  date: "12 April 2026",
+  excerpt:
+    "FAVA Capital has completed the launch of its full ecosystem — spanning FX brokerage, institutional digital assets, multi-strategy wealth management, cross-border payments, and physical commodities trading — marking a milestone in the group's ambition to build a vertically integrated financial platform.",
+};
+
+const articles: Article[] = [
   {
     category: "Markets",
-    title: "FAVA Markets Surpasses $2B in Monthly Trading Volume",
+    title: "FAVA Markets surpasses $2B in monthly trading volume",
     date: "8 April 2026",
   },
   {
-    category: "Crypto",
-    title: "FAVA Digital Receives Full FCA Cryptoasset Registration",
+    category: "Digital",
+    title: "FAVA Digital receives full FCA cryptoasset registration",
     date: "28 March 2026",
   },
   {
     category: "Company",
-    title: "FAVA Capital Appoints New Chief Technology Officer",
+    title: "FAVA Capital appoints new Chief Technology Officer",
     date: "15 March 2026",
   },
   {
     category: "Commodities",
-    title: "FAVA Commodities Launches Physical Gold Trading Desk",
+    title: "FAVA Commodities launches physical gold trading desk",
     date: "2 March 2026",
   },
   {
     category: "Markets",
-    title: "New Institutional Prime Brokerage Offering from FAVA Markets",
+    title: "New institutional prime brokerage offering from FAVA Markets",
     date: "18 February 2026",
   },
   {
-    category: "Crypto",
-    title: "FAVA Digital Partners with Leading Custody Provider for Institutional Storage",
+    category: "Digital",
+    title:
+      "FAVA Digital partners with leading custody provider for institutional storage",
     date: "5 February 2026",
   },
 ];
 
-const categoryColors: Record<string, string> = {
-  Company: "text-bright",
+const categoryColor: Record<Exclude<Category, "All">, string> = {
+  Company: "text-gold",
   Markets: "text-markets",
-  Crypto: "text-crypto",
+  Digital: "text-crypto",
   Commodities: "text-commodities",
 };
 
 export default function NewsPage() {
-  const [activeCategory, setActiveCategory] = useState("All");
+  const [activeCategory, setActiveCategory] = useState<Category>("All");
 
-  const filteredArticles =
+  const filtered =
     activeCategory === "All"
       ? articles
       : articles.filter((a) => a.category === activeCategory);
 
   return (
-    <div className="bg-base pt-32">
-      {/* Hero */}
-      <section className="max-w-[1160px] mx-auto px-20 max-lg:px-6 pb-[140px]">
-        <h1 className="text-display text-primary">
-          Newsroom
-        </h1>
-        <div className="gold-rule w-32 mt-10" />
+    <>
+      <section className="pt-32 pb-[80px] max-md:pt-24 max-md:pb-16">
+        <Container>
+          <p className="text-label text-secondary mb-6">NEWSROOM</p>
+          <h1 className="text-display text-primary max-w-2xl">
+            Announcements from across the FAVA ecosystem.
+          </h1>
+          <div className="gold-rule-left w-20 mt-10" />
+        </Container>
       </section>
 
-      {/* Featured Article */}
-      <section className="max-w-[1160px] mx-auto px-20 max-lg:px-6 py-[140px] border-t border-border">
-        <p className="text-label text-secondary mb-12">Featured</p>
+      <section className="border-y border-border bg-surface py-[100px] max-md:py-16">
+        <Container>
+          <p className="text-label text-secondary mb-10">FEATURED</p>
 
-        <div>
-          <p className="text-caption text-secondary mb-4">{featuredArticle.date}</p>
-          <h2 className="text-subhead text-primary mb-6">
-            {featuredArticle.title}
-          </h2>
-          <p className="text-secondary leading-[1.7] max-w-2xl">
-            {featuredArticle.excerpt}
-          </p>
-        </div>
-      </section>
-
-      <div className="max-w-[1160px] mx-auto px-20 max-lg:px-6">
-        <div className="gold-rule" />
-      </div>
-
-      {/* Category Filters + Article List */}
-      <section className="max-w-[1160px] mx-auto px-20 max-lg:px-6 py-[140px]">
-        <div className="flex flex-wrap gap-6 mb-16">
-          {categories.map((cat) => (
-            <button
-              key={cat}
-              onClick={() => setActiveCategory(cat)}
-              className={`text-label cursor-pointer transition-colors duration-200 ${
-                activeCategory === cat
-                  ? "text-gold"
-                  : "text-secondary hover:text-primary"
-              }`}
-            >
-              {cat}
-            </button>
-          ))}
-        </div>
-
-        <div className="flex flex-col">
-          {filteredArticles.map((article, i) => (
-            <div
-              key={article.title}
-              className={`py-6 flex flex-col md:flex-row md:items-center md:gap-12 cursor-pointer group ${
-                i < filteredArticles.length - 1 ? "border-b border-border" : ""
-              }`}
-            >
-              <div className="flex items-center gap-6 md:w-56 shrink-0 mb-2 md:mb-0">
-                <span className="text-caption text-secondary">{article.date}</span>
-                <span className={`text-caption ${categoryColors[article.category] || "text-secondary"}`}>
-                  {article.category}
-                </span>
-              </div>
-              <h3 className="text-subhead text-primary group-hover:text-gold transition-colors duration-200">
-                {article.title}
-              </h3>
+          <article className="max-w-3xl">
+            <div className="flex items-center gap-4 mb-4">
+              <span className={cn("text-caption", categoryColor[featuredArticle.category])}>
+                {featuredArticle.category}
+              </span>
+              <span className="text-caption text-tertiary">
+                {featuredArticle.date}
+              </span>
             </div>
-          ))}
-        </div>
-
-        <div className="mt-16">
-          <button className="text-label text-gold link-hover cursor-pointer">
-            Load More
-          </button>
-        </div>
+            <h2 className="text-display-alt text-primary">
+              {featuredArticle.title}
+            </h2>
+            {featuredArticle.excerpt && (
+              <p className="text-secondary leading-[1.7] mt-6">
+                {featuredArticle.excerpt}
+              </p>
+            )}
+          </article>
+        </Container>
       </section>
-    </div>
+
+      <section className="py-[100px] max-md:py-16">
+        <Container>
+          <div className="flex items-center justify-between gap-6 mb-12 flex-wrap">
+            <p className="text-label text-secondary">ALL ANNOUNCEMENTS</p>
+            <div className="flex items-center gap-6 flex-wrap">
+              {categories.map((cat) => (
+                <button
+                  key={cat}
+                  type="button"
+                  onClick={() => setActiveCategory(cat)}
+                  className={cn(
+                    "text-label cursor-pointer transition-colors",
+                    activeCategory === cat
+                      ? "text-gold"
+                      : "text-secondary hover:text-primary",
+                  )}
+                  aria-pressed={activeCategory === cat}
+                >
+                  {cat}
+                </button>
+              ))}
+            </div>
+          </div>
+
+          <div className="border-t border-border">
+            {filtered.map((article) => (
+              <article
+                key={article.title}
+                className="group border-b border-border py-7 flex flex-col md:flex-row md:items-center md:gap-12 cursor-pointer"
+              >
+                <div className="flex items-center gap-6 md:w-56 shrink-0 mb-2 md:mb-0">
+                  <span className="text-caption text-tertiary">
+                    {article.date}
+                  </span>
+                  <span
+                    className={cn("text-caption", categoryColor[article.category])}
+                  >
+                    {article.category}
+                  </span>
+                </div>
+                <h3 className="text-subhead text-primary group-hover:text-gold transition-colors">
+                  {article.title}
+                </h3>
+              </article>
+            ))}
+          </div>
+
+          {filtered.length === 0 && (
+            <p className="text-secondary mt-10">
+              No announcements in this category yet.
+            </p>
+          )}
+        </Container>
+      </section>
+    </>
   );
 }
