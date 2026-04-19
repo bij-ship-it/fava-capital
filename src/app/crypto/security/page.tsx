@@ -54,7 +54,7 @@ export default function SecurityPage() {
 
         {/* Security Sections */}
         <div className="border-t border-border">
-          {securitySections.map((section, i) => (
+          {securitySections.map((section) => (
             <div
               key={section.label}
               className="py-[60px] border-b border-border grid grid-cols-1 md:grid-cols-[200px_1fr] gap-10"

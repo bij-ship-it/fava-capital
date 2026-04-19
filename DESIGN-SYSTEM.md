@@ -74,6 +74,40 @@ TICKER NUMBER   15px  regular 400  DM Sans  tabular-nums
 Used ONLY for: channel badges, CTA buttons/links, accent lines, status indicators.
 NEVER for body text or descriptions.
 
+### Color Tokens — Hex Reference
+
+Backgrounds
+| Token | Hex | Usage |
+|---|---|---|
+| `bg-base` | #0C0716 | Page background |
+| `bg-surface` | #120E1E | Cards, panels, alternating sections |
+| `bg-elevated` | #17122A | Hover states on surfaces |
+
+Borders
+| Token | Hex | Usage |
+|---|---|---|
+| `border-border` | #1E1735 | All dividers, card borders (1px only) |
+| `border-border-hover` | #2D1B69 | Hover state on borders |
+
+Text
+| Token | Hex |
+|---|---|
+| `text-primary` | #E8E4EC |
+| `text-secondary` | #7B6F8E |
+| `text-tertiary` | #3D3156 |
+| `text-gold` | #C4A265 |
+
+Subsidiaries
+| Token | Hex | Channel |
+|---|---|---|
+| `wealth` | #059669 | FAVA Wealth |
+| `markets` | #14B8A6 | FAVA Markets |
+| `payments` | #0EA5E9 | FAVA Payments |
+| `crypto` | #6366F1 | FAVA Digital |
+| `commodities` | #D97706 | FAVA Commodities |
+
+Each subsidiary token works as `text-*`, `bg-*`, `border-*`.
+
 ---
 
 ## Spacing System
@@ -194,3 +228,38 @@ CTA Panel (bg-base, py-[100px])
 - Border radius: 0px everywhere
 - Borders: 1px only, `border-border`
 - Accent lines: 2px, subsidiary color
+
+---
+
+## Design Rules (global)
+
+1. **Border radius: 0px.** No exceptions.
+2. **Shadows: none.** Ever.
+3. **Border width: 1px.** Except 2px accent lines on cards/rows.
+4. **No hardcoded hex colors** in components — use theme tokens.
+5. **No inline `style={}` for fonts or colors** — use CSS classes.
+6. **No arbitrary pixel sizes** (`text-[14px]`) — use the type scale.
+7. **No Tailwind weight classes** on typography classes — weights are baked in.
+
+---
+
+## Page Structure — Reference Patterns
+
+### Hero Section
+- Label: `text-label` + subsidiary color (via `ChannelBadge`)
+- Headline: `text-display` (italic, holding co) or `text-display-alt` (subsidiary pages)
+- Description: body default, `text-secondary`
+- CTA: `text-label` + subsidiary color + `link-hover`
+- Icon: `SubsidiaryIcon` at 160px, `opacity-20`, right-aligned on desktop
+
+### Section Label + Headline
+- Label: `text-label text-secondary`
+- Headline: `text-subhead text-primary`
+
+### Bottom CTA Section
+- Background: `bg-surface border-t border-border`
+- Headline: `text-display-alt text-primary`
+- Subtitle: `text-caption text-secondary`
+- Primary button: subsidiary-colored bordered button (see CTA Button pattern above)
+- Secondary link: `text-label text-secondary link-hover hover:text-primary`
+
