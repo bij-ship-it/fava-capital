@@ -1,6 +1,6 @@
 import Link from "next/link";
-import Image from "next/image";
 import { CHANNELS_LIST } from "@/lib/channels";
+import { FavaLogo } from "@/components/ui/FavaLogo";
 
 const companyLinks = [
   { label: "About", href: "/about" },
@@ -20,15 +20,7 @@ export function Footer() {
       <div className="mx-auto max-w-[1160px] px-20 max-lg:px-6 py-20 max-md:py-16">
         <div className="grid grid-cols-12 gap-12 max-md:gap-10">
           <div className="col-span-12 md:col-span-4 flex flex-col gap-6">
-            <div className="flex items-center gap-3">
-              <Image
-                src="/images/fava-lattice-mark-only-dark-bg.svg"
-                alt="FAVA"
-                width={24}
-                height={36}
-              />
-              <span className="text-label text-primary">FAVA Capital</span>
-            </div>
+            <FavaLogo variant="full" className="text-primary" />
             <p className="text-sm-body text-secondary max-w-xs">
               A connected financial ecosystem. Five regulated businesses,
               built to compound across every client relationship.

@@ -1,11 +1,11 @@
 "use client";
 
 import Link from "next/link";
-import Image from "next/image";
 import { useState, useEffect } from "react";
 import { usePathname } from "next/navigation";
 import { CHANNELS_LIST, type ChannelSlug } from "@/lib/channels";
 import { cn } from "@/lib/cn";
+import { FavaLogo } from "@/components/ui/FavaLogo";
 
 const globalLinks = [
   { label: "About", href: "/about" },
@@ -58,13 +58,7 @@ export function Navbar() {
       >
         <nav className="mx-auto flex max-w-[1160px] items-center justify-between px-20 max-lg:px-6 h-14">
           <Link href="/" className="flex items-center" aria-label="FAVA Capital home">
-            <Image
-              src="/images/fava-lattice-logo-dark-bg.svg"
-              alt="FAVA Capital"
-              width={100}
-              height={40}
-              priority
-            />
+            <FavaLogo variant="nav" className="text-primary" />
           </Link>
 
           <div className="hidden items-center gap-8 lg:flex">
