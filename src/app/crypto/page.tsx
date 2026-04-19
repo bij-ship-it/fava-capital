@@ -1,63 +1,71 @@
-import Link from "next/link";
 import type { Metadata } from "next";
-import { ChannelBadge } from "@/components/ui/ChannelBadge";
-import { DigitalIcon } from "@/components/ui/SubsidiaryIcons";
+import { SubsidiaryHero } from "@/components/ui/SubsidiaryHero";
+import { Container } from "@/components/ui/Container";
+import { SubNav, type SubNavItem } from "@/components/ui/SubNav";
+import { CTAPanel } from "@/components/ui/CTAPanel";
+import { EcosystemConnections } from "@/components/ui/EcosystemConnections";
+import { CONNECTIONS } from "@/lib/ecosystem";
 
 export const metadata: Metadata = {
-  title: "FAVA Digital — Cryptorio | Institutional Crypto Exchange & OTC",
+  title: "Digital",
   description:
-    "Cryptorio combines exchange trading, OTC execution, institutional custody, and compliant fiat-stablecoin settlement into a single platform. Built for real capital.",
+    "FAVA Digital — institutional crypto exchange, OTC desk, custody, and compliant fiat-stablecoin settlement. Powered by Cryptorio.",
 };
 
+const navItems: SubNavItem[] = [
+  { id: "platform", label: "Platform" },
+  { id: "clients", label: "Who we serve" },
+  { id: "execution", label: "Execution" },
+  { id: "security", label: "Security" },
+  { id: "compliance", label: "Compliance" },
+  { id: "fees", label: "Fees" },
+  { id: "regulatory", label: "Regulatory" },
+  { id: "ecosystem", label: "Ecosystem" },
+];
+
 const tickers = [
-  { symbol: "BTC", name: "Bitcoin", price: "$67,432.18", change: "+2.41%", up: true },
-  { symbol: "ETH", name: "Ethereum", price: "$3,891.05", change: "+1.87%", up: true },
-  { symbol: "SOL", name: "Solana", price: "$187.42", change: "+5.63%", up: true },
-  { symbol: "AVAX", name: "Avalanche", price: "$42.18", change: "-0.92%", up: false },
-  { symbol: "LINK", name: "Chainlink", price: "$18.73", change: "+3.14%", up: true },
-  { symbol: "DOT", name: "Polkadot", price: "$9.41", change: "-1.23%", up: false },
+  { symbol: "BTC", price: "$67,432", change: "+2.41%", up: true },
+  { symbol: "ETH", price: "$3,891", change: "+1.87%", up: true },
+  { symbol: "SOL", price: "$187.42", change: "+5.63%", up: true },
+  { symbol: "AVAX", price: "$42.18", change: "-0.92%", up: false },
+  { symbol: "LINK", price: "$18.73", change: "+3.14%", up: true },
+  { symbol: "DOT", price: "$9.41", change: "-1.23%", up: false },
 ];
 
 const platformServices = [
   {
-    title: "Spot Exchange",
-    description:
-      "Institutional-grade spot trading with deep aggregated liquidity across major venues.",
+    title: "Spot exchange",
+    body: "Institutional-grade spot trading with aggregated liquidity across major venues.",
   },
   {
-    title: "OTC Desk",
-    description:
-      "Private execution for large block trades. Minimal market impact, competitive pricing, white-glove service.",
+    title: "OTC desk",
+    body: "Private block execution. Minimal market impact, competitive pricing, white-glove service.",
   },
   {
-    title: "Fiat & Stablecoin Ramps",
-    description:
-      "Seamless on/off-ramps between fiat currencies and digital assets. Integrated banking rails.",
+    title: "Fiat & stablecoin ramps",
+    body: "Seamless on/off-ramps between fiat and digital assets, on compliant banking rails.",
   },
   {
-    title: "Institutional Custody",
-    description:
-      "MPC-secured wallets with hot, warm, and cold architecture. Treasury controls and multi-sig authorisation.",
+    title: "Institutional custody",
+    body: "MPC-secured wallets with hot, warm, and cold architecture. Multi-sig treasury controls.",
   },
   {
-    title: "APIs & White-Label",
-    description:
-      "Enterprise-grade REST and WebSocket APIs. Full white-label infrastructure for platforms and institutions.",
+    title: "APIs & white-label",
+    body: "Enterprise REST and WebSocket. Full white-label infrastructure for platforms and institutions.",
   },
   {
-    title: "Settlement & Treasury",
-    description:
-      "Stablecoin-based settlement (USDC/USDT) with optional fiat rails. Flexible based on counterparty preference.",
+    title: "Settlement & treasury",
+    body: "USDC/USDT stablecoin settlement with optional fiat rails. Flexible to counterparty preference.",
   },
 ];
 
 const clientSegments = [
   {
     title: "Institutions",
-    items: ["Funds", "Corporates", "Miners", "Family Offices"],
+    items: ["Funds", "Corporates", "Miners", "Family offices"],
   },
   {
-    title: "Commodity Firms",
+    title: "Commodity firms",
     items: ["Oil traders", "Metals", "Resource companies", "Stablecoin settlement"],
   },
   {
@@ -65,350 +73,392 @@ const clientSegments = [
     items: ["Active traders", "HNWIs", "Secure access", "Compliant operations"],
   },
   {
-    title: "Governments & Sovereigns",
+    title: "Governments & sovereigns",
     items: ["CBDCs", "Reserves management", "Regulated adoption"],
   },
 ];
 
 const executionItems = [
-  { title: "Aggregated Multi-Venue Liquidity", description: "Deep pools across global venues" },
-  { title: "Smart Order Routing", description: "Optimal execution pathfinding" },
-  { title: "Minimal Market Impact", description: "OTC execution without slippage" },
-  { title: "Institutional APIs", description: "Direct integration and dashboards" },
+  { title: "Aggregated multi-venue liquidity", body: "Deep pools across global venues." },
+  { title: "Smart order routing", body: "Optimal execution pathfinding for every order." },
+  { title: "Minimal market impact", body: "OTC block execution without slippage or leakage." },
+  { title: "Institutional APIs", body: "Direct integration, FIX support, and real-time dashboards." },
+];
+
+const securitySections = [
+  {
+    stat: "95%",
+    label: "Cold storage",
+    body: "Client assets held in air-gapped, geographically distributed vaults. Multi-signature authorisation requires consensus. Keys generated inside HSMs that have never touched the internet.",
+  },
+  {
+    stat: "1:1",
+    label: "Proof of reserves",
+    body: "Cryptographically verifiable proof of reserves, published monthly and audited by an independent third party. Every client can verify their balance is backed via our Merkle-tree verification.",
+  },
+  {
+    stat: "$250M",
+    label: "Insurance coverage",
+    body: "Comprehensive policy covering assets in both hot and cold wallets, underwritten by Lloyd's of London syndicate partners. Covers theft, breach, and internal collusion.",
+  },
+  {
+    stat: "Type II",
+    label: "SOC 2 certified",
+    body: "Continuous monitoring. Annual penetration testing by leading cybersecurity firms. Real-time intrusion detection and full audit trail on every administrative action.",
+  },
+  {
+    stat: "100%",
+    label: "2FA enforced",
+    body: "Hardware security keys (YubiKey), TOTP, and biometric verification for mobile. Withdrawal address whitelisting with mandatory time-lock for new addresses.",
+  },
+  {
+    stat: "$100K",
+    label: "Bug bounty",
+    body: "Active bounty up to $100K for critical vulnerabilities. Partnered with leading security researchers and white-hat communities. Rapid remediation SLAs.",
+  },
 ];
 
 const complianceItems = [
-  { title: "KYC / KYB / KYT", description: "Identity verification for all participants" },
-  { title: "AML / CFT / Travel Rule", description: "Anti-money laundering and sanctions compliance" },
+  { title: "KYC / KYB / KYT", body: "Identity verification for every participant." },
+  { title: "AML / CFT / Travel Rule", body: "Anti-money laundering and sanctions compliance by design." },
+  { title: "Jurisdiction-aware onboarding", body: "Regulatory requirements adapted per geography." },
+  { title: "Treasury & liquidity risk", body: "Real-time monitoring with automated controls." },
+  { title: "Audit-ready reporting", body: "Comprehensive transaction audit trails." },
+  { title: "MPC custody", body: "Multi-party computation with cold, warm, and hot tiers." },
+];
+
+const tradingTiers = [
+  { tier: "Standard", volume: "< $50K", maker: "0.16%", taker: "0.26%" },
+  { tier: "Silver", volume: "$50K – $500K", maker: "0.14%", taker: "0.22%" },
+  { tier: "Gold", volume: "$500K – $5M", maker: "0.10%", taker: "0.18%" },
+  { tier: "Platinum", volume: "> $5M", maker: "0.06%", taker: "0.12%" },
+];
+
+const operationalLicences = [
   {
-    title: "Jurisdiction-Aware Onboarding",
-    description: "Regulatory requirements by geography",
+    name: "El Salvador BSP",
+    body: "Bitcoin Service Provider licence for regulated digital asset operations.",
   },
   {
-    title: "Treasury & Liquidity Risk",
-    description: "Real-time risk monitoring and controls",
+    name: "US FinCEN MSB",
+    body: "Money Services Business registration for digital asset operations in the US.",
   },
-  { title: "Audit-Ready Reporting", description: "Comprehensive transaction audit trails" },
   {
-    title: "MPC Custody Architecture",
-    description: "Multi-party computation with cold/warm/hot tiers",
+    name: "Canadian FINTRAC MSB",
+    body: "Money Services Business registration for digital asset services in Canada.",
   },
 ];
 
-const bankingPartners = [
-  { name: "FV Bank", status: "Onboarded", active: true },
-  { name: "Swissquote", status: "In Progress", active: false },
+const targetLicences = [
+  { name: "DASP — Europe", body: "Digital Asset Service Provider registration for European market access." },
+  { name: "VARA — Dubai, UAE", body: "Virtual Assets Regulatory Authority licence for UAE operations." },
+  { name: "MiCA — Austria, Europe", body: "Markets in Crypto-Assets regulation for EU-passported operations." },
+  { name: "MAS — Singapore", body: "Monetary Authority of Singapore digital payment token service licence." },
+  { name: "AUSTRAC — Australia", body: "Digital currency exchange registration for the Australian market." },
 ];
 
-const liquidityPartners = [
-  { name: "KuCoin", status: "Onboarded", active: true },
-  { name: "Bybit", status: "Onboarded", active: true },
-  { name: "Bitget", status: "Onboarded", active: true },
-  { name: "Gate.io", status: "Onboarded", active: true },
+const partners = [
+  { name: "FV Bank", kind: "Banking", active: true },
+  { name: "Swissquote", kind: "Banking", active: false },
+  { name: "KuCoin", kind: "Liquidity", active: true },
+  { name: "Bybit", kind: "Liquidity", active: true },
+  { name: "Bitget", kind: "Liquidity", active: true },
+  { name: "Gate.io", kind: "Liquidity", active: true },
 ];
 
-export default function CryptoPage() {
+export default function DigitalPage() {
   return (
-    <div className="min-h-screen">
-      {/* Hero */}
-      <section className="pt-32 pb-20">
-        <div className="max-w-[1160px] mx-auto px-20 max-lg:px-6">
-          <div className="flex items-start justify-between gap-12">
-            <div className="flex-1">
-              <ChannelBadge name="FAVA DIGITAL" color="#6366F1" />
-              <h1 className="text-display-alt text-primary">
-                Institutional Crypto Exchange
-                <br />& OTC Infrastructure
-              </h1>
-              <p className="mt-6 text-secondary max-w-[560px] leading-[1.7]">
-                <Link
-                  href="https://cryptorio.com"
-                  target="_blank"
-                  className="text-crypto link-hover"
-                >
-                  Cryptorio
-                </Link>{" "}
-                combines exchange trading, OTC execution, institutional custody,
-                and compliant fiat-stablecoin settlement into a single platform.
-                Built for real capital, not speculation.
-              </p>
-              <div className="mt-8 flex items-center gap-8">
-                <Link
-                  href="https://cryptorio.com"
-                  target="_blank"
-                  className="text-label text-crypto link-hover"
-                >
-                  Start trading on Cryptorio &rarr;
-                </Link>
-                <Link
-                  href="/contact"
-                  className="text-label text-secondary link-hover transition-colors hover:text-primary"
-                >
-                  OTC enquiries
-                </Link>
-              </div>
-            </div>
-            <DigitalIcon size={160} className="opacity-20 shrink-0 hidden md:block" />
-          </div>
-        </div>
-      </section>
+    <>
+      <SubsidiaryHero
+        channel="crypto"
+        eyebrow="FAVA DIGITAL"
+        title="FAVA's digital asset platform, powered by Cryptorio."
+        description="Exchange, OTC, custody, and compliant fiat-stablecoin settlement on one platform. Built for real capital, not speculation."
+        primary={{
+          href: "https://cryptorio.com",
+          label: "Launch Cryptorio",
+          external: true,
+        }}
+        secondary={{ href: "/contact", label: "OTC enquiries" }}
+      />
 
-      {/* Price Ticker Strip */}
-      <section className="bg-surface">
-        <div className="max-w-[1160px] mx-auto px-20 max-lg:px-6">
-          <div className="flex overflow-x-auto">
+      <section className="w-full border-y border-border bg-surface">
+        <Container>
+          <div className="flex items-center overflow-x-auto">
             {tickers.map((t, i) => (
               <div
                 key={t.symbol}
-                className={`flex items-center gap-4 py-4 pr-8 shrink-0 ${
-                  i > 0 ? "pl-8 border-l border-border" : ""
+                className={`flex items-center gap-4 py-4 pr-6 shrink-0 ${
+                  i > 0 ? "pl-6 border-l border-border" : ""
                 }`}
               >
                 <span className="text-label text-secondary">{t.symbol}</span>
-                <span className="text-numbers text-primary">{t.price}</span>
+                <span className="text-ticker text-primary">{t.price}</span>
                 <span
-                  className={`font-mono text-caption ${
-                    t.up ? "text-green-400" : "text-[#C47272]"
-                  }`}
+                  className={`text-ticker ${t.up ? "text-crypto" : "text-tertiary"}`}
                 >
                   {t.change}
                 </span>
               </div>
             ))}
           </div>
-        </div>
+        </Container>
       </section>
 
-      {/* Platform Services */}
-      <section className="py-[100px] max-md:py-16">
-        <div className="max-w-[1160px] mx-auto px-20 max-lg:px-6">
-          <p className="text-label text-secondary mb-16">Platform Services</p>
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-[1px] bg-border">
-            {platformServices.map((service) => (
-              <div
-                key={service.title}
-                className="bg-surface p-10 border-t-2 border-t-crypto"
-              >
-                <h3 className="text-label text-primary mb-3">{service.title}</h3>
-                <p className="text-secondary leading-[1.7]">
-                  {service.description}
+      <SubNav items={navItems} variant="crypto" />
+
+      <section id="platform" className="py-[100px] max-md:py-16">
+        <Container>
+          <p className="text-label text-secondary mb-6">THE PLATFORM</p>
+          <h2 className="text-subhead text-primary mb-14 max-w-xl">
+            Six services. One integrated platform.
+          </h2>
+
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-px bg-border">
+            {platformServices.map((s) => (
+              <div key={s.title} className="bg-surface p-10 border-t-2 border-crypto">
+                <h3 className="text-primary">{s.title}</h3>
+                <p className="text-sm-body text-secondary leading-[1.7] mt-3">
+                  {s.body}
                 </p>
               </div>
             ))}
           </div>
-        </div>
+        </Container>
       </section>
 
-      {/* Who Cryptorio Serves */}
-      <section className="bg-surface py-[100px] max-md:py-16">
-        <div className="max-w-[1160px] mx-auto px-20 max-lg:px-6">
-          <p className="text-label text-secondary mb-16">Who Cryptorio Serves</p>
+      <section
+        id="clients"
+        className="bg-surface border-y border-border py-[100px] max-md:py-16"
+      >
+        <Container>
+          <p className="text-label text-secondary mb-6">WHO WE SERVE</p>
+          <h2 className="text-subhead text-primary mb-14 max-w-xl">
+            Institutions to individuals. Regulated everywhere we operate.
+          </h2>
+
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-10">
-            {clientSegments.map((segment) => (
-              <div key={segment.title}>
-                <h3 className="text-label text-primary mb-5">{segment.title}</h3>
-                <ul className="space-y-3">
-                  {segment.items.map((item) => (
+            {clientSegments.map((seg) => (
+              <div key={seg.title}>
+                <p className="text-label text-primary mb-5">{seg.title}</p>
+                <ul className="flex flex-col gap-3">
+                  {seg.items.map((item) => (
                     <li key={item} className="flex items-center gap-3">
                       <span className="w-1.5 h-1.5 bg-crypto shrink-0" />
-                      <span className="text-secondary">{item}</span>
+                      <span className="text-sm-body text-secondary">{item}</span>
                     </li>
                   ))}
                 </ul>
               </div>
             ))}
           </div>
-        </div>
+        </Container>
       </section>
 
-      {/* Liquidity & Execution */}
-      <section className="py-[100px] max-md:py-16">
-        <div className="max-w-[1160px] mx-auto px-20 max-lg:px-6">
-          <div className="bg-surface p-10 max-lg:p-6">
-            <div className="flex flex-col lg:flex-row gap-16">
-              <div className="flex-1">
-                <p className="text-label text-crypto mb-6">EXECUTION</p>
-                <h2 className="text-subhead text-primary mb-6">
-                  Deep aggregated liquidity with intelligent routing.
-                </h2>
-                <p className="text-secondary leading-[1.7] max-w-[480px]">
-                  Cryptorio aggregates liquidity across multiple global venues,
-                  applying smart order routing to achieve optimal execution for
-                  every trade. For large block orders, our OTC desk provides
-                  private execution with minimal market impact and competitive
-                  pricing — no slippage, no information leakage.
+      <section id="execution" className="py-[100px] max-md:py-16">
+        <Container>
+          <div className="grid grid-cols-12 gap-12 items-start">
+            <div className="col-span-12 lg:col-span-5">
+              <p className="text-label text-secondary mb-6">EXECUTION</p>
+              <h2 className="text-subhead text-primary">
+                Deep aggregated liquidity. Intelligent routing.
+              </h2>
+              <p className="text-secondary mt-5 leading-[1.7]">
+                Cryptorio aggregates liquidity across global venues with smart
+                order routing for optimal fills. For block orders, the OTC
+                desk provides private execution &mdash; no slippage, no
+                information leakage.
+              </p>
+            </div>
+
+            <div className="col-span-12 lg:col-span-7 grid grid-cols-1 sm:grid-cols-2 gap-px bg-border">
+              {executionItems.map((e) => (
+                <div key={e.title} className="bg-surface p-8">
+                  <p className="text-label text-primary">{e.title}</p>
+                  <p className="text-sm-body text-secondary leading-[1.7] mt-3">
+                    {e.body}
+                  </p>
+                </div>
+              ))}
+            </div>
+          </div>
+        </Container>
+      </section>
+
+      <section
+        id="security"
+        className="bg-surface border-y border-border py-[100px] max-md:py-16"
+      >
+        <Container>
+          <p className="text-label text-secondary mb-6">SECURITY</p>
+          <h2 className="text-subhead text-primary mb-14 max-w-xl">
+            Institutional-grade protection at every layer.
+          </h2>
+
+          <div className="border-t border-border">
+            {securitySections.map((s) => (
+              <div
+                key={s.label}
+                className="border-b border-border py-10 grid grid-cols-1 md:grid-cols-[220px_1fr] gap-8 items-start"
+              >
+                <div>
+                  <p className="text-numbers text-primary">{s.stat}</p>
+                  <p className="text-caption text-crypto mt-2">{s.label}</p>
+                </div>
+                <p className="text-secondary leading-[1.7] max-w-3xl">
+                  {s.body}
                 </p>
               </div>
-              <div className="flex-1">
-                <div className="grid grid-cols-1 sm:grid-cols-2 gap-[1px] bg-border">
-                  {executionItems.map((item) => (
-                    <div key={item.title} className="bg-surface p-8">
-                      <h4 className="text-label text-primary mb-2">{item.title}</h4>
-                      <p className="text-secondary leading-[1.7]">
-                        {item.description}
+            ))}
+          </div>
+        </Container>
+      </section>
+
+      <section id="compliance" className="py-[100px] max-md:py-16">
+        <Container>
+          <p className="text-label text-secondary mb-6">COMPLIANCE</p>
+          <h2 className="text-subhead text-primary mb-14 max-w-xl">
+            Regulated by design, audited by default.
+          </h2>
+
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-px bg-border">
+            {complianceItems.map((c) => (
+              <div key={c.title} className="bg-surface p-8">
+                <p className="text-label text-primary">{c.title}</p>
+                <p className="text-sm-body text-secondary leading-[1.7] mt-3">
+                  {c.body}
+                </p>
+              </div>
+            ))}
+          </div>
+        </Container>
+      </section>
+
+      <section
+        id="fees"
+        className="bg-surface border-y border-border py-[100px] max-md:py-16"
+      >
+        <Container>
+          <p className="text-label text-secondary mb-6">FEES</p>
+          <h2 className="text-subhead text-primary mb-4 max-w-xl">
+            Transparent pricing. Volume-based discounts.
+          </h2>
+          <p className="text-secondary leading-[1.7] max-w-xl mb-12">
+            Maker-taker model, 30-day trailing volume tiers. Deposits are
+            always free; withdrawals cover network costs only.
+          </p>
+
+          <div className="bg-base border border-border">
+            <div className="grid grid-cols-4 gap-4 px-6 py-4 border-b border-border">
+              <span className="text-caption text-secondary">Tier</span>
+              <span className="text-caption text-secondary">30-day volume</span>
+              <span className="text-caption text-secondary text-right">
+                Maker
+              </span>
+              <span className="text-caption text-secondary text-right">
+                Taker
+              </span>
+            </div>
+            {tradingTiers.map((t, i) => (
+              <div
+                key={t.tier}
+                className={`grid grid-cols-4 gap-4 px-6 py-4 ${
+                  i < tradingTiers.length - 1 ? "border-b border-border" : ""
+                }`}
+              >
+                <span className="text-primary">{t.tier}</span>
+                <span className="text-sm-body text-secondary">{t.volume}</span>
+                <span className="text-ticker text-primary text-right">
+                  {t.maker}
+                </span>
+                <span className="text-ticker text-primary text-right">
+                  {t.taker}
+                </span>
+              </div>
+            ))}
+          </div>
+        </Container>
+      </section>
+
+      <section id="regulatory" className="py-[100px] max-md:py-16">
+        <Container>
+          <p className="text-label text-secondary mb-6">REGULATORY FOOTPRINT</p>
+          <h2 className="text-subhead text-primary mb-14 max-w-xl">
+            Centralised technology. Jurisdiction-specific compliance.
+          </h2>
+
+          <div className="grid grid-cols-12 gap-12">
+            <div className="col-span-12 lg:col-span-6">
+              <p className="text-caption text-crypto mb-6">OPERATIONAL</p>
+              <div className="flex flex-col gap-6">
+                {operationalLicences.map((lic) => (
+                  <div key={lic.name} className="flex items-start gap-4">
+                    <span className="w-2 h-2 bg-crypto mt-[10px] shrink-0" />
+                    <div>
+                      <p className="text-primary">{lic.name}</p>
+                      <p className="text-sm-body text-secondary leading-[1.7] mt-1">
+                        {lic.body}
                       </p>
                     </div>
-                  ))}
-                </div>
+                  </div>
+                ))}
               </div>
             </div>
-          </div>
-        </div>
-      </section>
 
-      {/* Compliance & Security */}
-      <section className="bg-surface py-[100px] max-md:py-16">
-        <div className="max-w-[1160px] mx-auto px-20 max-lg:px-6">
-          <p className="text-label text-crypto mb-6">COMPLIANCE</p>
-          <h2 className="text-subhead text-primary mb-16">
-            Institutional-grade compliance at every layer.
-          </h2>
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-[1px] bg-border">
-            {complianceItems.map((item) => (
-              <div key={item.title} className="bg-surface p-8">
-                <h4 className="text-label text-primary mb-2">{item.title}</h4>
-                <p className="text-secondary leading-[1.7]">
-                  {item.description}
-                </p>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* Banking & Partnerships */}
-      <section className="py-[100px] max-md:py-16 border-t border-border">
-        <div className="max-w-[1160px] mx-auto px-20 max-lg:px-6">
-          <p className="text-label text-crypto mb-4">INFRASTRUCTURE</p>
-          <h2 className="text-subhead text-primary mb-12">
-            Integrated banking and deep liquidity from day one.
-          </h2>
-
-          <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-[1px] bg-border">
-            {[...bankingPartners, ...liquidityPartners].map((partner) => (
-              <div key={partner.name} className="bg-surface p-6 flex flex-col items-center text-center gap-3">
-                <span
-                  className={`w-2 h-2 ${
-                    partner.active ? "bg-green-400" : "bg-gold"
-                  }`}
-                />
-                <span className="text-primary">{partner.name}</span>
-                <span className="text-caption text-tertiary">{partner.status}</span>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* Regulatory Foundation */}
-      <section className="bg-surface py-[100px] max-md:py-16">
-        <div className="max-w-[1160px] mx-auto px-20 max-lg:px-6">
-          <p className="text-label text-crypto mb-10">REGULATORY FOUNDATION</p>
-          <p className="text-label text-secondary mb-6">OPERATIONAL</p>
-          <div className="space-y-4 mb-12">
-            <div className="flex items-start gap-4">
-              <span className="w-2 h-2 bg-green-400 shrink-0 mt-1.5" />
-              <div>
-                <span className="text-primary">El Salvador BSP</span>
-                <span className="text-secondary text-caption ml-3">Bitcoin Service Provider licence enabling regulated digital asset operations.</span>
-              </div>
-            </div>
-            <div className="flex items-start gap-4">
-              <span className="w-2 h-2 bg-green-400 shrink-0 mt-1.5" />
-              <div>
-                <span className="text-primary">US FinCEN MSB</span>
-                <span className="text-secondary text-caption ml-3">Money Services Business registration for digital asset operations in the United States.</span>
-              </div>
-            </div>
-            <div className="flex items-start gap-4">
-              <span className="w-2 h-2 bg-green-400 shrink-0 mt-1.5" />
-              <div>
-                <span className="text-primary">Canadian FINTRAC MSB</span>
-                <span className="text-secondary text-caption ml-3">Money Services Business registration for digital asset services in Canada.</span>
+            <div className="col-span-12 lg:col-span-6">
+              <p className="text-caption text-gold mb-6">TARGET</p>
+              <div className="flex flex-col gap-6">
+                {targetLicences.map((lic) => (
+                  <div key={lic.name} className="flex items-start gap-4">
+                    <span className="w-2 h-2 bg-gold mt-[10px] shrink-0" />
+                    <div>
+                      <p className="text-primary">{lic.name}</p>
+                      <p className="text-sm-body text-secondary leading-[1.7] mt-1">
+                        {lic.body}
+                      </p>
+                    </div>
+                  </div>
+                ))}
               </div>
             </div>
           </div>
 
-          <p className="text-label text-secondary mb-6">TARGET</p>
-          <div className="space-y-4 mb-10">
-            <div className="flex items-start gap-4">
-              <span className="w-2 h-2 bg-gold shrink-0 mt-1.5" />
-              <div>
-                <span className="text-primary">DASP &mdash; Europe</span>
-                <span className="text-secondary text-caption ml-3">Digital Asset Service Provider registration for European market access.</span>
-              </div>
-            </div>
-            <div className="flex items-start gap-4">
-              <span className="w-2 h-2 bg-gold shrink-0 mt-1.5" />
-              <div>
-                <span className="text-primary">VARA &mdash; Dubai, UAE</span>
-                <span className="text-secondary text-caption ml-3">Virtual Assets Regulatory Authority licence for operations in the UAE.</span>
-              </div>
-            </div>
-            <div className="flex items-start gap-4">
-              <span className="w-2 h-2 bg-gold shrink-0 mt-1.5" />
-              <div>
-                <span className="text-primary">MiCA &mdash; Austria, Europe</span>
-                <span className="text-secondary text-caption ml-3">Markets in Crypto-Assets regulation for EU-wide passported operations.</span>
-              </div>
-            </div>
-            <div className="flex items-start gap-4">
-              <span className="w-2 h-2 bg-gold shrink-0 mt-1.5" />
-              <div>
-                <span className="text-primary">VASP &mdash; Pakistan</span>
-                <span className="text-secondary text-caption ml-3">Virtual Asset Service Provider registration for the Pakistani market.</span>
-              </div>
-            </div>
-            <div className="flex items-start gap-4">
-              <span className="w-2 h-2 bg-gold shrink-0 mt-1.5" />
-              <div>
-                <span className="text-primary">MAS &mdash; Singapore</span>
-                <span className="text-secondary text-caption ml-3">Monetary Authority of Singapore digital payment token service licence.</span>
-              </div>
-            </div>
-            <div className="flex items-start gap-4">
-              <span className="w-2 h-2 bg-gold shrink-0 mt-1.5" />
-              <div>
-                <span className="text-primary">AUSTRAC &mdash; Australia</span>
-                <span className="text-secondary text-caption ml-3">Digital currency exchange registration for the Australian market.</span>
-              </div>
-            </div>
-          </div>
-          <p className="text-secondary leading-[1.7] max-w-[640px]">
-            Centralised technology, jurisdiction-specific compliance. One
-            platform, global operations.
-          </p>
-        </div>
-      </section>
-
-      {/* CTA */}
-      <section className="py-[100px] max-md:py-16">
-        <div className="max-w-[1160px] mx-auto px-20 max-lg:px-6">
-          <div className="bg-surface p-14 max-lg:p-8 text-center">
-            <h2 className="text-display-alt text-primary mb-5">
-              Trade on Cryptorio
-            </h2>
-            <p className="text-caption text-secondary mb-10 tracking-wide">
-              Regulated &middot; Institutional custody &middot; Deep liquidity
+          <div className="mt-16">
+            <p className="text-caption text-secondary mb-6">
+              BANKING & LIQUIDITY PARTNERS
             </p>
-            <div className="flex items-center justify-center gap-6 flex-wrap">
-              <Link
-                href="https://cryptorio.com"
-                target="_blank"
-                className="inline-block border border-crypto text-crypto text-label px-10 py-4 tracking-wider uppercase text-[12px] hover:bg-crypto/10 transition-colors"
-              >
-                Visit Cryptorio
-              </Link>
-              <Link
-                href="/contact"
-                className="text-label text-secondary link-hover transition-colors hover:text-primary"
-              >
-                Contact us &rarr;
-              </Link>
+            <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-px bg-border">
+              {partners.map((p) => (
+                <div
+                  key={p.name}
+                  className="bg-surface p-6 flex flex-col items-center gap-2 text-center"
+                >
+                  <span
+                    className={`w-2 h-2 ${p.active ? "bg-crypto" : "bg-gold"}`}
+                  />
+                  <span className="text-sm-body text-primary">{p.name}</span>
+                  <span className="text-caption text-tertiary">{p.kind}</span>
+                </div>
+              ))}
             </div>
           </div>
-        </div>
+        </Container>
       </section>
-    </div>
+
+      <EcosystemConnections from="crypto" links={CONNECTIONS.crypto} />
+
+      <CTAPanel
+        eyebrow="TRADE ON CRYPTORIO"
+        title="Institutional crypto, without the theatre."
+        description="Regulated. Institutional custody. Deep liquidity. OTC when size matters."
+        primary={{
+          href: "https://cryptorio.com",
+          label: "Launch Cryptorio",
+          external: true,
+        }}
+        secondary={{ href: "/contact", label: "OTC enquiries" }}
+        variant="crypto"
+      />
+    </>
   );
 }
