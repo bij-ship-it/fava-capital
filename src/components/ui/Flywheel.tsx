@@ -6,21 +6,21 @@ import { CHANNELS_LIST } from "@/lib/channels";
 const loops = [
   {
     number: "01",
-    title: "Own the user across every touchpoint",
+    title: "One platform for every financial need.",
     description:
-      "Each business is another chance to acquire, retain, and deepen the client relationship. One person can be a Wealth investor, a Markets trader, a Payments user, a Digital holder, and a Commodities subscriber — all under FAVA.",
+      "Invest, trade, move money, hold digital assets, access commodities &mdash; all under one FAVA login. The products are connected so you don't have to be.",
   },
   {
     number: "02",
-    title: "Own the data across every financial action",
+    title: "One view of your money.",
     description:
-      "As clients interact across products, we build a richer picture of their behaviour, needs, and risk. Data from one business sharpens the others — underwriting, pricing, product design.",
+      "Your capital, positions, and activity in one place. See your full exposure across markets and products without juggling five platforms, five logins, five statements.",
   },
   {
     number: "03",
-    title: "Compound revenue across every channel",
+    title: "More you use, more you get.",
     description:
-      "Each business has its own P&L. Together they generate cross-sell, retention, and lifetime value that no single product could. Revenue from one channel funds expansion of the next.",
+      "Fund your trading from your wealth account. Hedge digital holdings on Markets. Move capital across borders in minutes. Every product makes the others work harder for you.",
   },
 ];
 

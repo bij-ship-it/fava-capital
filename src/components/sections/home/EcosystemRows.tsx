@@ -86,10 +86,10 @@ export function EcosystemRows() {
   return (
     <section id="ecosystem" className="py-[140px] max-md:py-20">
       <div className="max-w-[1160px] mx-auto px-20 max-lg:px-6">
-        <p className="text-label text-secondary mb-4">THE ECOSYSTEM</p>
+        <p className="text-label text-secondary mb-4">WHAT YOU CAN DO WITH FAVA</p>
         <h2 className="text-subhead text-primary mb-16 max-w-xl">
-          Five businesses. One platform. Each a standalone company &mdash;
-          built to work as one.
+          Five businesses. One platform. Each works on its own &mdash;
+          and together.
         </h2>
 
         <div className="flex flex-col">
