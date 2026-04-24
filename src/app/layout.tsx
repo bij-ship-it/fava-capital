@@ -56,9 +56,11 @@ export const metadata: Metadata = {
     title: `${SITE.name} — ${SITE.tagline}`,
     description: SITE.description,
   },
+  // PRE-LAUNCH: blocked from search engines. Flip both flags to true when
+  // ready to launch publicly. Paired with src/app/robots.ts.
   robots: {
-    index: true,
-    follow: true,
+    index: false,
+    follow: false,
   },
 };
 
