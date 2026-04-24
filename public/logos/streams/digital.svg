@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+  FAVA Digital — connected blocks representing blockchain / nodes.
+  Channel accent: #7C6EF3 (tuned violet).
+-->
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 80 80" width="80" height="80" role="img" aria-label="FAVA Digital">
+  <title>FAVA Digital</title>
+  <line x1="26" y1="26" x2="54" y2="26" stroke="#2D1B69" stroke-width="1.5"/>
+  <line x1="26" y1="54" x2="54" y2="54" stroke="#2D1B69" stroke-width="1.5"/>
+  <line x1="26" y1="26" x2="26" y2="54" stroke="#2D1B69" stroke-width="1.5"/>
+  <line x1="54" y1="26" x2="54" y2="54" stroke="#2D1B69" stroke-width="1.5"/>
+  <line x1="26" y1="26" x2="54" y2="54" stroke="#2D1B69" stroke-width="1"/>
+  <line x1="54" y1="26" x2="26" y2="54" stroke="#2D1B69" stroke-width="1"/>
+  <rect x="14" y="14" width="24" height="24" rx="3" fill="#4A2C8A"/>
+  <rect x="42" y="14" width="24" height="24" rx="3" fill="#6B3FA0"/>
+  <rect x="14" y="42" width="24" height="24" rx="3" fill="#8B5CF6"/>
+  <rect x="42" y="42" width="24" height="24" rx="3" fill="#A78BFA"/>
+  <rect x="30" y="30" width="20" height="20" rx="2" fill="#7C6EF3"/>
+  <rect x="35" y="35" width="10" height="10" rx="1" fill="#0D0B14"/>
+  <rect x="37" y="37" width="6" height="6" rx="0.5" fill="#7C6EF3"/>
+</svg>

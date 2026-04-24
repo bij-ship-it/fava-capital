@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+  FAVA Markets — candlestick chart pattern representing trading.
+  Channel accent: #3B82F6 (electric blue).
+-->
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 80 80" width="80" height="80" role="img" aria-label="FAVA Markets">
+  <title>FAVA Markets</title>
+  <line x1="16" y1="14" x2="16" y2="66" stroke="#2D1B69" stroke-width="1.5"/>
+  <line x1="32" y1="8" x2="32" y2="58" stroke="#2D1B69" stroke-width="1.5"/>
+  <line x1="48" y1="18" x2="48" y2="70" stroke="#2D1B69" stroke-width="1.5"/>
+  <line x1="64" y1="6" x2="64" y2="54" stroke="#2D1B69" stroke-width="1.5"/>
+  <rect x="10" y="24" width="12" height="28" rx="1" fill="#4A2C8A"/>
+  <rect x="26" y="18" width="12" height="24" rx="1" fill="#6B3FA0"/>
+  <rect x="42" y="30" width="12" height="26" rx="1" fill="#8B5CF6"/>
+  <rect x="58" y="14" width="12" height="30" rx="1" fill="#A78BFA"/>
+  <path d="M10 72 L70 72" stroke="#3B82F6" stroke-width="1.5" stroke-linecap="round" stroke-dasharray="3 4"/>
+  <rect x="58" y="10" width="12" height="4" rx="1" fill="#3B82F6"/>
+</svg>

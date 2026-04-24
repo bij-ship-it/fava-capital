@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+  FAVA Commodities — stacked layers representing raw materials / ingots.
+  Channel accent: #C47A3C (copper).
+-->
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 80 80" width="80" height="80" role="img" aria-label="FAVA Commodities">
+  <title>FAVA Commodities</title>
+  <path d="M12 62 L20 54 L60 54 L68 62 Z" fill="#2D1B69"/>
+  <rect x="12" y="62" width="56" height="8" rx="1" fill="#2D1B69"/>
+
+  <path d="M16 50 L24 42 L56 42 L64 50 Z" fill="#4A2C8A"/>
+  <rect x="16" y="50" width="48" height="8" rx="1" fill="#4A2C8A"/>
+
+  <path d="M20 38 L28 30 L52 30 L60 38 Z" fill="#6B3FA0"/>
+  <rect x="20" y="38" width="40" height="8" rx="1" fill="#6B3FA0"/>
+
+  <path d="M24 26 L32 18 L48 18 L56 26 Z" fill="#8B5CF6"/>
+  <rect x="24" y="26" width="32" height="8" rx="1" fill="#8B5CF6"/>
+
+  <path d="M30 16 L36 10 L44 10 L50 16 Z" fill="#C47A3C"/>
+  <rect x="30" y="16" width="20" height="4" rx="0.5" fill="#C47A3C"/>
+</svg>
