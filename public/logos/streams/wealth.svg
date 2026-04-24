@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+  FAVA Wealth — ascending stepped bars representing compounding growth.
+  Channel accent: #3D8158 (muted forest).
+-->
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 80 80" width="80" height="80" role="img" aria-label="FAVA Wealth">
+  <title>FAVA Wealth</title>
+  <rect x="8" y="52" width="12" height="20" rx="1.5" fill="#2D1B69"/>
+  <rect x="24" y="40" width="12" height="32" rx="1.5" fill="#4A2C8A"/>
+  <rect x="40" y="28" width="12" height="44" rx="1.5" fill="#6B3FA0"/>
+  <rect x="56" y="12" width="12" height="60" rx="1.5" fill="#8B5CF6"/>
+  <path d="M14 52 L30 40 L46 28 L62 12" stroke="#3D8158" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+  <circle cx="62" cy="12" r="3" fill="#3D8158"/>
+</svg>

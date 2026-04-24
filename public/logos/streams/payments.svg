@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+  FAVA Payments — card with money-flow arrows.
+  Channel accent: #0891B2 (deep cyan).
+-->
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 80 80" width="80" height="80" role="img" aria-label="FAVA Payments">
+  <title>FAVA Payments</title>
+  <rect x="8" y="18" width="64" height="44" rx="4" fill="#2D1B69"/>
+  <rect x="8" y="18" width="64" height="12" rx="4" fill="#4A2C8A"/>
+  <rect x="16" y="38" width="12" height="10" rx="2" fill="#6B3FA0"/>
+  <line x1="22" y1="38" x2="22" y2="48" stroke="#8B5CF6" stroke-width="1"/>
+  <line x1="16" y1="43" x2="28" y2="43" stroke="#8B5CF6" stroke-width="1"/>
+  <path d="M38 40 L54 40" stroke="#0891B2" stroke-width="2" stroke-linecap="round"/>
+  <path d="M50 36 L54 40 L50 44" stroke="#0891B2" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+  <path d="M62 48 L46 48" stroke="#8B5CF6" stroke-width="1.5" stroke-linecap="round"/>
+  <path d="M50 44.5 L46 48 L50 51.5" stroke="#8B5CF6" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+  <path d="M56 68 C60 64, 60 60, 56 56" stroke="#0891B2" stroke-width="1.5" stroke-linecap="round" fill="none"/>
+  <path d="M62 70 C68 64, 68 58, 62 52" stroke="#0891B2" stroke-width="1.5" stroke-linecap="round" fill="none" opacity="0.5"/>
+</svg>
