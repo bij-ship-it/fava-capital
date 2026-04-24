@@ -8,7 +8,6 @@ import { CHANNELS_LIST } from "@/lib/channels";
 type EnquiryType =
   | "Investor relations"
   | "Partnerships"
-  | "Media"
   | "General";
 
 const enquiryTypes: { label: EnquiryType; email: string; body: string }[] = [
@@ -22,11 +21,12 @@ const enquiryTypes: { label: EnquiryType; email: string; body: string }[] = [
     email: "partners@favacapital.com",
     body: "IBs, white-label, institutional liquidity, and bank/PSP integrations across the ecosystem.",
   },
-  {
-    label: "Media",
-    email: "press@favacapital.com",
-    body: "Press enquiries, interviews, and speaking requests.",
-  },
+  // Media enquiries hidden pre-launch — re-add when ready:
+  // {
+  //   label: "Media",
+  //   email: "press@favacapital.com",
+  //   body: "Press enquiries, interviews, and speaking requests.",
+  // },
   {
     label: "General",
     email: "info@favacapital.com",
